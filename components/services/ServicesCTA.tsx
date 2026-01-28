@@ -1,0 +1,31 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
+export default function ServicesCTA() {
+  return (
+    <section className="border-t border-blue-500/10 pt-24 mt-24">
+      {/* 深色背景 Banner */}
+      <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl p-8 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-lg">
+        <div className="flex-1">
+          <h2 className="text-2xl font-bold text-white tracking-tight mb-2">
+            准备开启您的适航认证之旅？
+          </h2>
+          <p className="text-sm text-gray-300 leading-relaxed">
+            我们的专业团队随时为您提供咨询支持，帮助您顺利完成适航取证流程
+          </p>
+        </div>
+
+        {/* 右侧按钮 */}
+        <div className="flex-shrink-0">
+          <Link
+            href="/contact"
+            className="group inline-flex items-center px-6 py-3 bg-white text-blue-600 text-sm font-bold rounded-lg hover:bg-blue-50 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+          >
+            <span>联系咨询顾问</span>
+            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
