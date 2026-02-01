@@ -43,7 +43,7 @@ const getNavItems = (t: (key: string) => string) => [
     ],
   },
   { label: t("nav.news"), href: "/news", labelKey: "nav.news" },
-  { label: t("nav.contact"), href: "/contact", labelKey: "nav.contact" },
+  // { label: t("nav.contact"), href: "/contact", labelKey: "nav.contact" },
 ];
 
 // Section ID 映射（新锚点ID -> 实际section ID）
@@ -110,7 +110,7 @@ export default function Header() {
       // 延迟聚焦，等待动画完成
       setTimeout(() => {
         searchInputRef.current?.focus();
-      }, 300);
+      }, 250);
     }
   };
 
@@ -240,7 +240,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm">
+    <header className="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -298,7 +298,7 @@ export default function Header() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors rounded-lg hover:bg-gray-100/50"
+                    className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors rounded-lg hover:bg-gray-100/50 flex items-center gap-1 relative z-10"
                   >
                     {item.label}
                   </Link>
@@ -307,7 +307,7 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Right Side Actions */}
+          {/* Language & SearchBar Actions */}
           <div className="flex items-center space-x-4">
             {/* Language Switcher */}
             <div className="relative">
@@ -356,7 +356,7 @@ export default function Header() {
                 </>
               )}
             </div>
-            {/* 搜索按钮和搜索框 */}
+            {/* Search Button */}
             <div className="hidden sm:block relative" ref={searchContainerRef}>
               <div className="flex items-center">
                 {/* 搜索图标按钮 */}
@@ -367,19 +367,19 @@ export default function Header() {
                 >
                   <Search className="w-5 h-5" />
                 </button>
-                
-                {/* 展开的搜索框 */}
-                <AnimatePresence>
-                  {searchExpanded && (
+              </div>
+
+              <AnimatePresence>
+                {searchExpanded &&
+                  <div
+                  className="absolute right-0 top-[150%]"
+                  >
+                    {/* 展开的搜索框（在输入框正下方） */}
                     <motion.div
-                      initial={{ width: 0, opacity: 0 }}
-                      animate={{ width: "auto", opacity: 1 }}
-                      exit={{ width: 0, opacity: 0 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 30,
-                      }}
+                      initial={{ y: -20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -20, opacity: 0 }}
+                      transition={{duration: 0.2}}
                       className="overflow-hidden"
                     >
                       <div className="flex items-center gap-2 ml-2">
@@ -396,50 +396,48 @@ export default function Header() {
                           />
                           <button
                             type="submit"
-                            className="px-4 py-2 bg-blue-500/80 text-white text-sm rounded-lg hover:bg-blue-500/90 transition-colors font-medium"
+                            className="px-4 py-2 shrink-0 bg-blue-500/80 text-white text-sm rounded-lg hover:bg-blue-500/90 transition-colors font-medium"
                           >
                             {t("search.button")}
                           </button>
                         </form>
                       </div>
                     </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-              
-              {/* 快速导航面板（在输入框正下方） */}
-              <AnimatePresence>
-                {searchFocused && searchExpanded && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute right-0 top-full mt-2 w-[360px] bg-white/80 backdrop-blur-md rounded-lg shadow-xl border border-gray-200 z-50 overflow-hidden"
-                  >
-                    <div className="p-4">
-                      <p className="text-xs font-semibold text-gray-500 uppercase mb-3 tracking-wider">
-                        {t("search.quickNav")}
-                      </p>
-                      <div className="grid grid-cols-2 gap-2">
-                        {quickLinks.map((link) => (
-                          <Link
-                            key={link.href}
-                            href={link.href}
-                            onClick={() => {
-                              setSearchExpanded(false);
-                              setSearchFocused(false);
-                              setSearchQuery("");
-                            }}
-                            className="px-3 py-2.5 text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 border border-transparent rounded-lg transition-all duration-200"
-                          >
-                            {link.label}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
+                  
+                    {/* 快速导航面板（在输入框更下方） */}
+                    {searchFocused && searchExpanded && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.2 }}
+                        className="mt-2 w-[360px] bg-white/80 backdrop-blur-md rounded-lg shadow-xl border border-gray-200 z-50 overflow-hidden"
+                      >
+                        <div className="p-4">
+                          <p className="text-xs font-semibold text-gray-500 uppercase mb-3 tracking-wider">
+                            {t("search.quickNav")}
+                          </p>
+                          <div className="grid grid-cols-2 gap-2">
+                            {quickLinks.map((link) => (
+                              <Link
+                                key={link.href}
+                                href={link.href}
+                                onClick={() => {
+                                  setSearchExpanded(false);
+                                  setSearchFocused(false);
+                                  setSearchQuery("");
+                                }}
+                                className="px-3 py-2.5 text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 border border-transparent rounded-lg transition-all duration-200"
+                              >
+                                {link.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </div>
+                }
               </AnimatePresence>
             </div>
             <Link
@@ -551,44 +549,44 @@ export default function Header() {
                     English
                   </button>
                 </div>
-                <div className="flex items-center space-x-4 px-4">
-                  {/* 移动端搜索框 */}
-                  <div className="flex-1">
-                    <form 
-                      onSubmit={(e) => {
-                        e.preventDefault();
-                        if (searchQuery.trim()) {
-                          router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
-                          setMobileMenuOpen(false);
-                          setSearchQuery("");
-                        }
-                      }} 
-                      className="flex items-center gap-2"
-                    >
-                      <input
-                        type="text"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        placeholder={t("search.placeholder")}
-                        className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-                      />
-                      <button
-                        type="submit"
-                        className="px-4 py-2 bg-blue-500/80 text-white text-sm rounded-lg hover:bg-blue-500/90 transition-colors"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        <Search className="w-4 h-4" />
-                      </button>
-                    </form>
-                  </div>
-                  <Link
-                    href="/contact"
-                    className="flex-1 inline-flex items-center justify-center px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-all duration-300"
-                    onClick={() => setMobileMenuOpen(false)}
+
+                {/* 移动端搜索框 */}
+                <div className="flex items-center space-x-4">
+                  <form 
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      if (searchQuery.trim()) {
+                        router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+                        setMobileMenuOpen(false);
+                        setSearchQuery("");
+                      }
+                    }}
+                    className="flex items-center gap-2 w-full"
                   >
-                    {t("nav.contactUs")}
-                  </Link>
+                    <input
+                      type="text"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder={t("search.placeholder")}
+                      className="grow shrink min-w-0 px-3 py-2 text-black border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                    />
+                    <button
+                      type="submit"
+                      className="px-4 py-2 bg-blue-500/80 text-white text-sm rounded-lg hover:bg-blue-500/90 transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <Search className="w-4 h-4" />
+                    </button>
+                  </form>
                 </div>
+
+                <Link
+                  href="/contact"
+                  className="flex grow shrink-0 items-center justify-center px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-all duration-300"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {t("nav.contactUs")}
+                </Link>
               </div>
             </nav>
           </div>
