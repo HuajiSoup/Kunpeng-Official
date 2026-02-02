@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
-import { ScanlineOverlay } from "@/components/ui/ScanlineOverlay";
 
 const carouselImages = [
   "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80&auto=format",
@@ -106,7 +105,7 @@ export default function HeroCarousel() {
           }}
           className="absolute inset-0"
         >
-          {/* 背景图片 - Ken Burns 效果 */}
+          {/* background + filter */}
           <motion.div
             className="absolute inset-0"
             animate={{
@@ -123,15 +122,9 @@ export default function HeroCarousel() {
               backgroundPosition: "center",
             }}
           >
-            {/* 深蓝色径向渐变叠加 */}
             <div className="absolute inset-0 bg-gradient-radial from-slate-950/90 via-slate-950/70 to-slate-950/90" />
-            
-            {/* 额外的蓝色调叠加 */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-950/30 via-transparent to-cyan-950/20" />
           </motion.div>
-
-          {/* 扫描线和数字噪点叠加 */}
-          <ScanlineOverlay />
 
           {/* 内容 */}
           <div className="relative z-20 container mx-auto px-6 sm:px-8 lg:px-12 h-full flex items-center">

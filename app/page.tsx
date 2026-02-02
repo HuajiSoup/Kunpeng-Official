@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import HeroCarousel from "@/components/HeroCarousel";
-import HeroFeatures from "@/components/HeroFeatures";
 import CoreCapabilities from "@/components/CoreCapabilities";
 import Statistics from "@/components/Statistics";
 import Qualifications from "@/components/Qualifications";
@@ -18,7 +17,6 @@ export default function Home() {
       <div className="relative z-10">
         <Header />
         <HeroCarousel />
-        {/* <HeroFeatures /> */}
         <CoreCapabilities />
         <Statistics />
         <Qualifications />

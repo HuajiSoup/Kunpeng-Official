@@ -3,7 +3,6 @@
 import { use } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { LightModeWrapper } from "@/components/ui/LightModeWrapper";
 import { BentoGrid, BentoCard } from "@/components/ui/BentoGrid";
 import { MovingBorder } from "@/components/ui/MovingBorder";
 import { ThreeDCard } from "@/components/ui/ThreeDCard";
@@ -11,9 +10,6 @@ import {
   FileCheck,
   Award,
   Shield,
-  Code,
-  Users,
-  Clock,
   CheckCircle,
   ArrowRight,
 } from "lucide-react";
@@ -69,7 +65,7 @@ export default function ServiceDetailPage({
   const Icon = service.icon;
 
   return (
-    <LightModeWrapper>
+    <>
       <Header />
       <main className="relative">
         {/* Hero Section */}
@@ -214,6 +210,6 @@ export default function ServiceDetailPage({
         </section>
       </main>
       <Footer />
-    </LightModeWrapper>
+    </>
   );
 }

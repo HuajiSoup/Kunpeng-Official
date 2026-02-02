@@ -136,7 +136,7 @@ export default function ExpertTeam() {
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="group flex-shrink-0 w-64 md:w-72 text-center hover-gentle-wiggle cursor-pointer snap-center"
+                className="group flex-shrink-0 w-64 md:w-72 text-center cursor-pointer snap-center"
               >
                 {/* 头像占位符 - 缩小尺寸 */}
                 <div className="aspect-square w-48 md:w-56 mx-auto rounded-xl bg-slate-100 mb-4 flex items-center justify-center overflow-hidden border-[0.5px] border-blue-500/20 group-hover:border-blue-500/50 transition-all duration-300 group-hover:shadow-[0_0_25px_rgba(59,130,246,0.2)] relative">
