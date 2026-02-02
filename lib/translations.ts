@@ -7,8 +7,9 @@ export const translations = {
       aboutSubmenu: {
         intro: "公司简介",
         org: "组织架构",
+        culture: "企业文化",
         team: "专家团队",
-        qualifications: "资质荣誉",
+        history: "发展历程",
       },
       testing: "试验检测中心",
       testingSubmenu: {
@@ -20,8 +21,10 @@ export const translations = {
       services: "适航技术服务",
       servicesSubmenu: {
         consulting: "适航咨询",
-        training: "适航培训",
         engineering: "工程技术",
+        training: "适航培训",
+        process: "服务流程",
+        success: "成功案例",
       },
       news: "新闻中心",
       contact: "联系我们",
@@ -341,8 +344,9 @@ export const translations = {
       aboutSubmenu: {
         intro: "Company Introduction",
         org: "Organization",
+        culture: "Corporate Culture",
         team: "Expert Team",
-        qualifications: "Qualifications",
+        history: "Development History",
       },
       testing: "Testing Center",
       testingSubmenu: {
@@ -354,8 +358,10 @@ export const translations = {
       services: "Aviation Services",
       servicesSubmenu: {
         consulting: "Aviation Consulting",
-        training: "Training",
         engineering: "Engineering",
+        training: "Training",
+        process: "Process Workflow",
+        success: "Success Stories",
       },
       news: "News",
       contact: "Contact",

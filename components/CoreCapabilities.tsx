@@ -64,8 +64,8 @@ export default function CoreCapabilities() {
         <IntroTitle title={t("home.capabilities.title")} desc={t("home.capabilities.subtitle")} />
 
         <div className="space-y-16">
-          {[testingCapabilities, consultCapabilities].map(capbilities => (
-            <>
+          {[testingCapabilities, consultCapabilities].map((capbilities, index) => (
+            <div key={index} className="space-y-16">
               <div className="flex items-center justify-center">
                 <div className="h-px w-12 bg-gray-300 mr-3"></div>
                 <h3 className="text-xl font-medium text-white">{capbilities.name}</h3>
@@ -92,7 +92,7 @@ export default function CoreCapabilities() {
                   );
                 })}
               </div>
-            </>
+            </div>
           ))}
         </div>
       </div>

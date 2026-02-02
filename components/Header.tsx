@@ -9,16 +9,35 @@ import { motion, AnimatePresence } from "framer-motion";
 
 // 导航数据结构（使用翻译key）
 const getNavItems = (t: (key: string) => string) => [
-  { label: t("nav.home"), href: "/", labelKey: "nav.home" },
+  {
+    label: t("nav.home"),
+    href: "/"
+  },
   {
     label: t("nav.about"),
     href: "/about",
     labelKey: "nav.about",
     submenu: [
-      { label: t("nav.aboutSubmenu.intro"), href: "/about#intro", labelKey: "nav.aboutSubmenu.intro" },
-      { label: t("nav.aboutSubmenu.org"), href: "/about#org", labelKey: "nav.aboutSubmenu.org" },
-      { label: t("nav.aboutSubmenu.team"), href: "/about#team", labelKey: "nav.aboutSubmenu.team" },
-      { label: t("nav.aboutSubmenu.qualifications"), href: "/about#qualifications", labelKey: "nav.aboutSubmenu.qualifications" },
+      {
+        label: t("nav.aboutSubmenu.intro"),
+        href: "/about#intro"
+      },
+      {
+        label: t("nav.aboutSubmenu.org"),
+        href: "/about#org"
+      },
+      {
+        label: t("nav.aboutSubmenu.culture"),
+        href: "/about#culture"
+      },
+      {
+        label: t("nav.aboutSubmenu.team"),
+        href: "/about#team"
+      },
+      {
+        label: t("nav.aboutSubmenu.history"),
+        href: "/about#history"
+      },
     ],
   },
   {
@@ -26,10 +45,22 @@ const getNavItems = (t: (key: string) => string) => [
     href: "/testing",
     labelKey: "nav.testing",
     submenu: [
-      { label: t("nav.testingSubmenu.env"), href: "/testing#env", labelKey: "nav.testingSubmenu.env" },
-      { label: t("nav.testingSubmenu.emc"), href: "/testing#emc", labelKey: "nav.testingSubmenu.emc" },
-      { label: t("nav.testingSubmenu.software"), href: "/testing#software", labelKey: "nav.testingSubmenu.software" },
-      { label: t("nav.testingSubmenu.components"), href: "/testing#components", labelKey: "nav.testingSubmenu.components" },
+      {
+        label: t("nav.testingSubmenu.env"),
+        href: "/testing#env"
+      },
+      {
+        label: t("nav.testingSubmenu.emc"),
+        href: "/testing#emc"
+      },
+      {
+        label: t("nav.testingSubmenu.software"),
+        href: "/testing#software"
+      },
+      {
+        label: t("nav.testingSubmenu.components"),
+        href: "/testing#components"
+      },
     ],
   },
   {
@@ -37,13 +68,32 @@ const getNavItems = (t: (key: string) => string) => [
     href: "/services",
     labelKey: "nav.services",
     submenu: [
-      { label: t("nav.servicesSubmenu.consulting"), href: "/services#consulting", labelKey: "nav.servicesSubmenu.consulting" },
-      { label: t("nav.servicesSubmenu.training"), href: "/services#training", labelKey: "nav.servicesSubmenu.training" },
-      { label: t("nav.servicesSubmenu.engineering"), href: "/services#engineering", labelKey: "nav.servicesSubmenu.engineering" },
+      {
+        label: t("nav.servicesSubmenu.consulting"),
+        href: "/services#consulting"
+      },
+      {
+        label: t("nav.servicesSubmenu.engineering"),
+        href: "/services#engineering"
+      },
+      {
+        label: t("nav.servicesSubmenu.training"),
+        href: "/services#training"
+      },
+      {
+        label: t("nav.servicesSubmenu.process"),
+        href: "/services#process"
+      },
+      {
+        label: t("nav.servicesSubmenu.success"),
+        href: "/services#success"
+      }
     ],
   },
-  { label: t("nav.news"), href: "/news", labelKey: "nav.news" },
-  // { label: t("nav.contact"), href: "/contact", labelKey: "nav.contact" },
+  {
+    label: t("nav.news"),
+    href: "/news"
+  },
 ];
 
 // Section ID 映射（新锚点ID -> 实际section ID）
@@ -51,17 +101,20 @@ const sectionIdMap: Record<string, string> = {
   // About 页面
   intro: "company-intro",
   org: "org-structure",
-  team: "team", // ExpertTeam section ID
-  qualifications: "corporate-culture", // 暂时映射到企业文化，后续可以添加专门的资质荣誉section
+  team: "team",
+  culture: "corporate-culture",
+  history: "development-history",
   // Testing 页面
   env: "environment-reliability",
   emc: "emc-testing",
   software: "software-components",
-  components: "components-section", // 元器件筛选的独立section ID
+  components: "components-section",
   // Services 页面
   consulting: "consulting",
   engineering: "engineering",
   training: "training",
+  process: "process-workflow",
+  success: "success-stories",
 };
 
 export default function Header() {
@@ -72,12 +125,13 @@ export default function Header() {
   const [searchExpanded, setSearchExpanded] = useState(false);
   const [searchFocused, setSearchFocused] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+
   const searchInputRef = useRef<HTMLInputElement>(null);
   const searchContainerRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const router = useRouter();
   const { language, setLanguage, t } = useLanguage();
-  
+ 
   const navItems = getNavItems(t);
 
   // 快速导航链接（静态链接）
@@ -153,7 +207,7 @@ export default function Header() {
 
       document.addEventListener("mousedown", handleClickOutside);
       document.addEventListener("keydown", handleEscKey);
-      
+     
       return () => {
         document.removeEventListener("mousedown", handleClickOutside);
         document.removeEventListener("keydown", handleEscKey);
@@ -161,39 +215,18 @@ export default function Header() {
     }
   }, [searchExpanded]);
 
-  // 处理页面加载后的锚点滚动
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.location.hash) {
-      const hash = window.location.hash.substring(1);
-      // 查找映射的section ID
-      const actualId = sectionIdMap[hash] || hash;
-      setTimeout(() => {
-        const element = document.getElementById(actualId);
-        if (element) {
-          const headerHeight = 64;
-          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-          const offsetPosition = elementPosition - headerHeight;
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth",
-          });
-        }
-      }, 300);
-    }
-  }, [pathname]);
-
   const handleLinkClick = (href: string) => {
     setMobileMenuOpen(false);
     setHoveredItem(null);
     setExpandedMobileItem(null);
-    
+   
     // 如果是锚点链接，处理平滑滚动
     if (href.includes("#")) {
       const [path, hash] = href.split("#");
-      
+     
       // 查找映射的section ID
       const actualId = sectionIdMap[hash] || hash;
-      
+     
       // 如果不在目标页面，先导航到目标页面
       if (pathname !== path) {
         router.push(`${path}#${hash}`);
@@ -202,9 +235,8 @@ export default function Header() {
           const element = document.getElementById(actualId);
           if (element) {
             const headerHeight = 64;
-            const navHeight = pathname === "/testing" ? 56 : 0; // Testing页面有sticky nav
             const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPosition = elementPosition - headerHeight - navHeight;
+            const offsetPosition = elementPosition - headerHeight;
             window.scrollTo({
               top: offsetPosition,
               behavior: "smooth",
@@ -213,22 +245,21 @@ export default function Header() {
         }, 500);
         return;
       }
-      
+     
       // 在目标页面，平滑滚动到锚点
       setTimeout(() => {
         const element = document.getElementById(actualId);
         if (element) {
           const headerHeight = 64;
-          const navHeight = pathname === "/testing" ? 56 : 0;
           const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-          const offsetPosition = elementPosition - headerHeight - navHeight;
+          const offsetPosition = elementPosition - headerHeight;
 
           window.scrollTo({
             top: offsetPosition,
             behavior: "smooth",
           });
         }
-      }, 100);
+      }, 300);
     } else {
       // 普通链接，使用 Next.js 路由
       router.push(href);
@@ -269,12 +300,12 @@ export default function Header() {
                       {item.label}
                       <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${hoveredItem === item.href ? "rotate-180" : ""}`} />
                     </Link>
-                    
+                   
                     {/* 透明桥接区域 - 防止鼠标移出时菜单消失 */}
                     {hoveredItem === item.href && (
                       <div className="absolute top-full left-0 w-full h-2 bg-transparent z-20" />
                     )}
-                    
+                   
                     {/* 下拉菜单 */}
                     {hoveredItem === item.href && (
                       <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-md shadow-xl border border-gray-200 overflow-hidden z-50 transition-all duration-200 ease-out opacity-100 translate-y-0">
@@ -403,7 +434,7 @@ export default function Header() {
                         </form>
                       </div>
                     </motion.div>
-                  
+                 
                     {/* 快速导航面板（在输入框更下方） */}
                     {searchFocused && searchExpanded && (
                       <motion.div
@@ -485,7 +516,7 @@ export default function Header() {
                           }`}
                         />
                       </button>
-                      
+                     
                       {/* 移动端子菜单（手风琴展开） */}
                       <div
                         className={`overflow-hidden transition-all duration-300 ease-in-out ${
@@ -516,7 +547,7 @@ export default function Header() {
                   )}
                 </div>
               ))}
-              
+             
               {/* 移动端底部操作区 */}
               <div className="pt-4 mt-4 border-t border-gray-200 space-y-3">
                 {/* 移动端语言切换 */}
@@ -552,7 +583,7 @@ export default function Header() {
 
                 {/* 移动端搜索框 */}
                 <div className="flex items-center space-x-4">
-                  <form 
+                  <form
                     onSubmit={(e) => {
                       e.preventDefault();
                       if (searchQuery.trim()) {
