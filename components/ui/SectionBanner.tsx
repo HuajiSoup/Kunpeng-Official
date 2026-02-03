@@ -15,7 +15,7 @@ export function SectionBanner({
   bottom
 }: SectionBannerProps) {
   return (<>
-    <section className="relative w-full h-[450px] lg:h-[550px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900">
+    <section className="hero-section relative w-full h-[450px] lg:h-[550px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900">
       {/* 科技感网格背景 */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0" style={{

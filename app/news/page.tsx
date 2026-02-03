@@ -252,10 +252,6 @@ export default function NewsPage() {
   const { t } = useLanguage();
   return (
     <main className="relative min-h-screen bg-white overflow-hidden">
-      {/* 浅色点状背景 */}
-      <DotBackground variant="light" />
-      
-      {/* 内容层 */}
       <div className="relative z-10">
         <Suspense fallback={
           <div className="min-h-screen flex items-center justify-center">

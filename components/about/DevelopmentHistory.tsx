@@ -71,7 +71,7 @@ export default function DevelopmentHistory() {
                       ? "lg:w-[48%] lg:mr-auto lg:pr-8" 
                       : "lg:w-[48%] lg:ml-auto lg:pl-8"
                   }`}>
-                    <ItemBox>
+                    <ItemBox fancy>
                       <div className={index % 2 === 0 ? "lg:text-right" : "lg:text-left"}>
                         <div className="text-3xl font-bold mb-3 text-slate-900 group-hover:text-blue-600 transition-colors">
                           {milestone.year}

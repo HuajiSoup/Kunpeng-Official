@@ -49,7 +49,7 @@ export default function TrainingSection() {
         </p>
       </div>
 
-      {/* 课程清单 - 干净的分割线样式 */}
+      {/* Courses */}
       <div className="bg-white/80 backdrop-blur-sm rounded-xl border-[0.5px] border-blue-500/20 shadow-sm overflow-hidden">
         {courses.map((course, index) => (
           <div
@@ -58,18 +58,16 @@ export default function TrainingSection() {
               index < courses.length - 1 ? "border-b border-blue-500/10" : ""
             } hover:bg-blue-50/40 transition-colors`}
           >
-            {/* 课程名称 (加粗) */}
             <div className="flex-1">
               <h3 className="text-base font-bold text-gray-900 mb-1">
                 {course.name}
               </h3>
-              {/* 讲师资质 (灰色小字) */}
+              
               <p className="text-xs text-gray-500">
                 {course.instructor}
               </p>
             </div>
 
-            {/* 适用标准 (标签化) */}
             <div className="flex items-center gap-2 flex-shrink-0">
               <span className="text-[10px] font-bold px-2 py-0.5 bg-blue-50 text-blue-700 rounded-full">
                 {course.standard}

@@ -41,7 +41,7 @@ export default function SuccessStories() {
         {successStories.map((story) => (
           <Link key={story.id} href={`/news?category=success`} className="block group">
             <div className="bg-white/80 backdrop-blur-sm border-[0.5px] border-blue-500/20 rounded-xl overflow-hidden hover:border-blue-500/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all duration-300 h-full flex flex-col">
-              {/* 图片占位符 */}
+              {/* 暂时不知道什么图片 */}
               <div className="aspect-video bg-gradient-to-br from-blue-50 to-gray-100 border-b border-gray-200 flex items-center justify-center relative">
                 <div className="absolute top-3 right-3">
                   <div className="bg-blue-600 text-white px-2 py-1 rounded text-[10px] font-bold flex items-center gap-1">
@@ -83,7 +83,7 @@ export default function SuccessStories() {
         ))}
       </div>
 
-      {/* 查看更多链接 */}
+      {/* more */}
       <div className="mt-8 text-center">
         <Link
           href="/news?category=success"

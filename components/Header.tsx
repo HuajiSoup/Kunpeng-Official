@@ -54,13 +54,13 @@ const getNavItems = (t: (key: string) => string) => [
         href: "/testing#emc"
       },
       {
-        label: t("nav.testingSubmenu.software"),
-        href: "/testing#software"
-      },
-      {
         label: t("nav.testingSubmenu.components"),
         href: "/testing#components"
       },
+      {
+        label: t("nav.testingSubmenu.core"),
+        href: "/testing#core"
+      }
     ],
   },
   {
@@ -107,8 +107,8 @@ const sectionIdMap: Record<string, string> = {
   // Testing 页面
   env: "environment-reliability",
   emc: "emc-testing",
-  software: "software-components",
-  components: "components-section",
+  components: "software-components",
+  core: "core-testings",
   // Services 页面
   consulting: "consulting",
   engineering: "engineering",
