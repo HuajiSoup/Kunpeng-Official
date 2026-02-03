@@ -18,7 +18,7 @@ interface NewsListProps {
 export default function NewsList({ news }: NewsListProps) {
   if (news.length === 0) {
     return (
-      <section className="py-16 lg:py-24 bg-gray-50">
+      <section className="py-16 lg:py-24">
         <div className="container mx-auto px-6 sm:px-8 lg:px-12">
           <div className="text-center py-12">
             <p className="text-gray-500">暂无新闻</p>
@@ -29,7 +29,7 @@ export default function NewsList({ news }: NewsListProps) {
   }
 
   return (
-    <section className="py-16 lg:py-24 bg-gray-50">
+    <section className="py-16 lg:py-24">
       <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
           {news.map((article) => (

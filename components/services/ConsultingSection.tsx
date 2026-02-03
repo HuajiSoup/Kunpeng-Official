@@ -34,7 +34,7 @@ export default function ConsultingSection() {
       <div className="grid md:grid-cols-3 gap-6">
         {consultingItems.map((item, index) => {
           const Icon = item.icon;
-          return (<>
+          return (
             <ItemBox key={index}>
               <div className="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-600 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
                 <Icon className="w-5 h-5" />
@@ -44,7 +44,7 @@ export default function ConsultingSection() {
                 {item.description}
               </p>
             </ItemBox>
-          </>);
+          );
         })}
       </div>
     </section>

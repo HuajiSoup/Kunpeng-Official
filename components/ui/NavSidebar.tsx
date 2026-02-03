@@ -2,11 +2,10 @@ interface NavSidebarProps {
   title: string;
   sections: {
     id: string;
-    sectionId: string;
     label: string;
   }[];
   activeId: string;
-  handleClick: (id: string, sectionId: string) => void;
+  handleClick: (id: string) => void;
 }
 
 export function NavSidebar({
@@ -22,7 +21,7 @@ export function NavSidebar({
         {sections.map((item) => (
           <li key={item.id}>
             <button
-              onClick={() => handleClick(item.id, item.sectionId)}
+              onClick={() => handleClick(item.id)}
               className={`block w-full text-left px-4 py-2 text-sm font-medium border-l-2 transition-all duration-300 rounded-r-lg ${
                 activeId === item.id
                   ? "border-blue-500 text-blue-600 bg-blue-50/80 shadow-sm"

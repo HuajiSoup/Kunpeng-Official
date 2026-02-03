@@ -13,10 +13,10 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { NavSidebar } from "@/components/ui/NavSidebar";
 
 const getCategories = (t: (key: string) => string) => [
-  { id: "environment", label: t("testing.categories.environment"), sectionId: "environment-reliability" },
-  { id: "emc", label: t("testing.categories.emc"), sectionId: "emc-testing" },
-  { id: "components", label: t("testing.categories.components"), sectionId: "software-components" },
-  { id: "core", label: t("testing.categories.core"), sectionId: "core-testings" },
+  { id: "environment-reliability", label: t("testing.categories.environment") },
+  { id: "emc-testing", label: t("testing.categories.emc") },
+  { id: "software-components", label: t("testing.categories.components") },
+  { id: "core-testings", label: t("testing.categories.core") },
 ];
 
 export default function TestingPage() {
@@ -32,8 +32,8 @@ export default function TestingPage() {
       // auto highlight
       const currentSection = [...categories]
         .reverse()
-        .find(({sectionId}) => {
-          const element = document.getElementById(sectionId);
+        .find(({id}) => {
+          const element = document.getElementById(id);
           if (element) {
             return element.getBoundingClientRect().top <= 100;
           }
@@ -63,10 +63,10 @@ export default function TestingPage() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (id: string, sectionId: string) => {
+  const handleNavClick = (id: string) => {
     setActiveItem(id);
 
-    const element = document.getElementById(sectionId);
+    const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }

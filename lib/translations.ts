@@ -240,6 +240,7 @@ export const translations = {
         title: "新闻中心",
         subtitle: "了解最新动态，掌握行业资讯",
       },
+      navTitle: "分类筛选",
       categories: {
         all: "全部",
         company: "公司动态",
@@ -590,6 +591,7 @@ export const translations = {
         title: "News Center",
         subtitle: "Stay Updated with Latest News and Industry Insights",
       },
+      navTitle: "Categories",
       categories: {
         all: "All",
         company: "Company News",

@@ -20,15 +20,15 @@ const getNavItems = (t: (key: string) => string) => [
     submenu: [
       {
         label: t("nav.aboutSubmenu.intro"),
-        href: "/about#intro"
+        href: "/about#company-intro"
       },
       {
         label: t("nav.aboutSubmenu.org"),
-        href: "/about#org"
+        href: "/about#org-structure"
       },
       {
         label: t("nav.aboutSubmenu.culture"),
-        href: "/about#culture"
+        href: "/about#corporate-culture"
       },
       {
         label: t("nav.aboutSubmenu.team"),
@@ -36,7 +36,7 @@ const getNavItems = (t: (key: string) => string) => [
       },
       {
         label: t("nav.aboutSubmenu.history"),
-        href: "/about#history"
+        href: "/about#development-history"
       },
     ],
   },
@@ -47,19 +47,19 @@ const getNavItems = (t: (key: string) => string) => [
     submenu: [
       {
         label: t("nav.testingSubmenu.env"),
-        href: "/testing#env"
+        href: "/testing#environment-reliability"
       },
       {
         label: t("nav.testingSubmenu.emc"),
-        href: "/testing#emc"
+        href: "/testing#emc-testing"
       },
       {
         label: t("nav.testingSubmenu.components"),
-        href: "/testing#components"
+        href: "/testing#software-components"
       },
       {
         label: t("nav.testingSubmenu.core"),
-        href: "/testing#core"
+        href: "/testing#core-testings"
       }
     ],
   },
@@ -82,11 +82,11 @@ const getNavItems = (t: (key: string) => string) => [
       },
       {
         label: t("nav.servicesSubmenu.process"),
-        href: "/services#process"
+        href: "/services#process-workflow"
       },
       {
         label: t("nav.servicesSubmenu.success"),
-        href: "/services#success"
+        href: "/services#success-stories"
       }
     ],
   },
@@ -95,27 +95,6 @@ const getNavItems = (t: (key: string) => string) => [
     href: "/news"
   },
 ];
-
-// Section ID 映射（新锚点ID -> 实际section ID）
-const sectionIdMap: Record<string, string> = {
-  // About 页面
-  intro: "company-intro",
-  org: "org-structure",
-  team: "team",
-  culture: "corporate-culture",
-  history: "development-history",
-  // Testing 页面
-  env: "environment-reliability",
-  emc: "emc-testing",
-  components: "software-components",
-  core: "core-testings",
-  // Services 页面
-  consulting: "consulting",
-  engineering: "engineering",
-  training: "training",
-  process: "process-workflow",
-  success: "success-stories",
-};
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -175,11 +154,6 @@ export default function Header() {
 
   // 输入框失去焦点（延迟关闭快速导航，允许点击链接）
   const handleSearchBlur = (e: React.FocusEvent) => {
-    // 检查焦点是否移到了快速导航面板
-    const relatedTarget = e.relatedTarget as HTMLElement;
-    if (relatedTarget && searchContainerRef.current?.contains(relatedTarget)) {
-      return;
-    }
     setTimeout(() => {
       setSearchFocused(false);
     }, 200);
@@ -224,44 +198,40 @@ export default function Header() {
     if (href.includes("#")) {
       const [path, hash] = href.split("#");
      
-      // 查找映射的section ID
-      const actualId = sectionIdMap[hash] || hash;
-     
-      // 如果不在目标页面，先导航到目标页面
       if (pathname !== path) {
+        // 如果不在目标页面，先导航到目标页面，再滚动
         router.push(`${path}#${hash}`);
-        // 等待页面加载后滚动到锚点
         setTimeout(() => {
-          const element = document.getElementById(actualId);
+          const element = document.getElementById(hash);
           if (element) {
             const headerHeight = 64;
             const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
             const offsetPosition = elementPosition - headerHeight;
+            
             window.scrollTo({
               top: offsetPosition,
               behavior: "smooth",
             });
           }
         }, 500);
-        return;
+      } else {
+        // 在目标页面，平滑滚动到锚点
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) {
+            const headerHeight = 64;
+            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - headerHeight;
+  
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth",
+            });
+          }
+        }, 300);
       }
-     
-      // 在目标页面，平滑滚动到锚点
-      setTimeout(() => {
-        const element = document.getElementById(actualId);
-        if (element) {
-          const headerHeight = 64;
-          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-          const offsetPosition = elementPosition - headerHeight;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth",
-          });
-        }
-      }, 300);
     } else {
-      // 普通链接，使用 Next.js 路由
+      // very normal link
       router.push(href);
     }
   };

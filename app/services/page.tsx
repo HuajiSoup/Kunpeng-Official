@@ -14,18 +14,19 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { NavSidebar } from "@/components/ui/NavSidebar";
 
 const getSidebarItems = (t: (key: string) => string) => [
-  { id: "consulting", label: t("services.sidebar.consulting"), sectionId: "consulting" },
-  { id: "engineering", label: t("services.sidebar.engineering"), sectionId: "engineering" },
-  { id: "training", label: t("services.sidebar.training"), sectionId: "training" },
-  { id: "process", label: t("services.sidebar.process"), sectionId: "process-workflow" },
-  { id: "cases", label: t("services.sidebar.cases"), sectionId: "success-stories" },
+  { id: "consulting", label: t("services.sidebar.consulting") },
+  { id: "engineering", label: t("services.sidebar.engineering") },
+  { id: "training", label: t("services.sidebar.training") },
+  { id: "process-workflow", label: t("services.sidebar.process") },
+  { id: "success-stories", label: t("services.sidebar.cases") },
 ];
 
 
 export default function ServicesPage() {
   const { t } = useLanguage();
   const sidebarItems = getSidebarItems(t);
-  const [activeItem, setActiveItem] = useState("consulting");
+  
+  const [activeItem, setActiveItem] = useState<string>("consulting");
   const [showSidebar, setShowSidebar] = useState(false);
 
   // sidebar navigator
@@ -36,8 +37,8 @@ export default function ServicesPage() {
       // auto highlight
       const currentSection = [...sidebarItems]
         .reverse()
-        .find(({sectionId}) => {
-          const element = document.getElementById(sectionId);
+        .find(({id}) => {
+          const element = document.getElementById(id);
           if (element) {
             return element.getBoundingClientRect().top <= 100;
           }
@@ -67,10 +68,10 @@ export default function ServicesPage() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [sidebarItems]);
 
-  const handleNavClick = (itemId: string, sectionId: string) => {
+  const handleNavClick = (itemId: string) => {
     setActiveItem(itemId);
 
-    const element = document.getElementById(sectionId);
+    const element = document.getElementById(itemId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }

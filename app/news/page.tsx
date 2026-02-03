@@ -5,12 +5,12 @@ import { useSearchParams } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NewsHero from "@/components/news/NewsHero";
-import NewsCategories from "@/components/news/NewsCategories";
 import FeaturedNews from "@/components/news/FeaturedNews";
 import NewsList from "@/components/news/NewsList";
 import NewsPagination from "@/components/news/NewsPagination";
 import { useLanguage } from "@/lib/LanguageContext";
-import { DotBackground } from "@/components/ui/DotBackground";
+import { useRouter } from "next/navigation";
+import { NavSidebar } from "@/components/ui/NavSidebar";
 
 interface NewsItem {
   id: string;
@@ -22,18 +22,25 @@ interface NewsItem {
   isSuccessStory?: boolean;
 }
 
-// Mock 新闻数据
+const getSidebarItems = (t: (key: string) => string) => [
+  { id: "all", label: t("news.categories.all") },
+  { id: "company", label: t("news.categories.company") },
+  { id: "industry", label: t("news.categories.industry") },
+  { id: "success", label: t("news.categories.success") },
+];
+
+// Test news. Where to fetch??
 const newsData: NewsItem[] = [
   {
     id: "1",
-    title: "浙江鲲鹏获得CNAS实验室认可证书",
+    title: "浙江鲲鹏获得CNAS实验室认可证书(feat)",
     excerpt: "经过严格评审，浙江鲲鹏航空技术测试验证有限公司成功获得中国合格评定国家认可委员会(CNAS)颁发的实验室认可证书，标志着公司在测试能力建设方面取得重要突破。",
     date: "2024-01-15",
     category: "company",
   },
   {
     id: "2",
-    title: "成功协助XX项目完成TC取证",
+    title: "成功协助XX项目完成TC取证(feat2)",
     excerpt: "经过18个月的共同努力，我们成功协助XX航空项目完成Type Certificate (TC)取证工作，该项目为国内首款符合DO-160G标准的通用航空器。",
     date: "2024-01-10",
     category: "success",
@@ -41,7 +48,7 @@ const newsData: NewsItem[] = [
   },
   {
     id: "3",
-    title: "FAA发布新的适航审定指南",
+    title: "FAA发布新的适航审定指南(feat3)",
     excerpt: "美国联邦航空管理局(FAA)近日发布了关于机载软件适航审定的最新指南AC 20-193，对DO-178C标准实施提供了更详细的指导说明。",
     date: "2024-01-08",
     category: "industry",
@@ -114,17 +121,16 @@ const newsData: NewsItem[] = [
   },
 ];
 
-const ITEMS_PER_PAGE = 9;
+const ITEMS_PER_PAGE = 6;
 
 function NewsContent() {
-  const { t } = useLanguage();
   const searchParams = useSearchParams();
   const categoryParam = searchParams?.get("category") || "all";
   
   const [activeCategory, setActiveCategory] = useState<string>(categoryParam);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
-  // 当 URL 参数改变时，更新 activeCategory
+  // 当 URL 参数改变时，更新 activeCategory 并重置为第一页
   useEffect(() => {
     const urlCategory = searchParams?.get("category") || "all";
     if (urlCategory !== activeCategory) {
@@ -135,7 +141,7 @@ function NewsContent() {
 
   // 筛选新闻并按时间倒序排列
   const filteredNews = useMemo(() => {
-    let filtered = activeCategory === "all" 
+    const filtered = activeCategory === "all" 
       ? newsData 
       : newsData.filter((item) => item.category === activeCategory);
     
@@ -149,19 +155,15 @@ function NewsContent() {
 
   // 获取精选新闻（仅在"全部"分类且第一页时显示前3条）
   const showFeaturedNews = activeCategory === "all" && currentPage === 1 && filteredNews.length >= 3;
-  const featuredNews = useMemo(() => {
-    if (showFeaturedNews) {
-      return filteredNews.slice(0, 3);
-    }
-    return [];
-  }, [filteredNews, showFeaturedNews]);
+  const featuredNews = useMemo(() => (
+    showFeaturedNews ? filteredNews.slice(0, 3) : []
+  ), [filteredNews, showFeaturedNews]);
 
   // 分页处理
   const paginatedNews = useMemo(() => {
-    const skipCount = showFeaturedNews ? 3 : 0; // 如果显示Featured News，跳过前3条
-    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-    const actualStartIndex = skipCount + startIndex;
-    return filteredNews.slice(actualStartIndex, actualStartIndex + ITEMS_PER_PAGE);
+    const skipCount = activeCategory === "all" ? 3 : 0;
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE + skipCount; // 3x featured news
+    return filteredNews.slice(startIndex, startIndex + ITEMS_PER_PAGE);
   }, [filteredNews, currentPage, showFeaturedNews]);
 
   // 计算总页数
@@ -172,12 +174,6 @@ function NewsContent() {
     return Math.max(1, Math.ceil(remainingItems / ITEMS_PER_PAGE));
   }, [filteredNews, showFeaturedNews]);
 
-  // 分类改变时重置到第一页
-  const handleCategoryChange = (categoryId: string) => {
-    setActiveCategory(categoryId);
-    setCurrentPage(1);
-  };
-
   // 确保页码有效
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= totalPages) {
@@ -186,80 +182,104 @@ function NewsContent() {
     }
   };
 
-  return (
-    <>
-      <Header />
-      <NewsHero />
-      
-      {/* 桌面端固定导航栏 */}
-      <NewsCategories 
-        activeCategory={activeCategory} 
-        onCategoryChange={handleCategoryChange}
-      />
-      
-      {/* 主要内容区域 - 使用grid布局，侧边栏在hero section下方 */}
-      <div className="bg-white">
-        <div className="flex gap-4 px-6 sm:px-8 lg:pr-12 lg:pl-[280px]">
-          {/* 移动端导航栏 - 在 flex 布局中 */}
-          <div className="flex-shrink-0 pt-8 lg:hidden">
-            <nav className="bg-white/80 backdrop-blur-sm border-[0.5px] border-blue-500/20 rounded-xl p-4 shadow-sm w-[200px]">
-              <h3 className="text-sm font-semibold text-gray-900 mb-4 px-2">分类筛选</h3>
-              <ul className="space-y-1">
-                {[
-                  { id: "all", label: "全部" },
-                  { id: "company", label: "公司新闻" },
-                  { id: "industry", label: "行业动态" },
-                  { id: "success", label: "成功案例" },
-                ].map((category) => (
-                  <li key={category.id}>
-                    <button
-                      onClick={() => handleCategoryChange(category.id)}
-                      className={`block w-full text-left px-4 py-2 text-sm font-medium border-l-2 transition-all duration-300 rounded-r-lg ${
-                        activeCategory === category.id
-                          ? "border-blue-500 text-blue-600 bg-blue-50/80 shadow-sm"
-                          : "border-transparent text-slate-600 hover:text-blue-600 hover:bg-blue-50/40 hover:border-blue-500/50"
-                      }`}
-                    >
-                      {category.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
-          
-          {/* 主内容区域 - flex-1占据剩余空间 */}
-          <main className="flex-1 min-w-0 py-8">
-            {showFeaturedNews && <FeaturedNews featuredNews={featuredNews} />}
-            <NewsList news={paginatedNews} />
-            {totalPages > 1 && (
-              <NewsPagination
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageChange={handlePageChange}
-              />
-            )}
-          </main>
-        </div>
-      </div>
-      
-      <Footer />
-    </>
-  );
+  return (<>
+    <main className="flex-1 min-w-0 py-8">
+      {showFeaturedNews && <FeaturedNews featuredNews={featuredNews} />}
+      <NewsList news={paginatedNews} />
+      {totalPages > 1 && (
+        <NewsPagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
+      )}
+    </main>
+  </>);
 }
 
 export default function NewsPage() {
+  const router = useRouter();
+
   const { t } = useLanguage();
+  const sidebarItems = getSidebarItems(t);
+
+  const [activeItem, setActiveItem] = useState<string>("all");
+  const [showSidebar, setShowSidebar] = useState(false);
+  
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const handleScroll = () => {
+      const heroSection = document.querySelector('section.hero-section');
+      const footer = document.querySelector('footer');
+
+      if (heroSection && footer) {
+        const scrollY = window.scrollY;
+        const heroBottom = heroSection.getBoundingClientRect().top + heroSection.getBoundingClientRect().height + scrollY;
+        const footerTop = footer.getBoundingClientRect().top + scrollY;
+
+        setShowSidebar(scrollY >= heroBottom && scrollY <= footerTop - 100);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    setTimeout(handleScroll, 500);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleNavClick = (id: string) => {
+    setActiveItem(id);
+    if (id === "all") {
+      router.push("/news", { scroll: false });
+    } else {
+      router.push(`/news?category=${id}`, { scroll: false });
+    }
+  };
+
   return (
     <main className="relative min-h-screen bg-white overflow-hidden">
       <div className="relative z-10">
-        <Suspense fallback={
-          <div className="min-h-screen flex items-center justify-center">
-            <div className="text-gray-500">{t("news.loading")}</div>
+        <Header />
+        <NewsHero />
+
+        <aside 
+          className={`hidden lg:block fixed left-6 top-20 z-30 transition-opacity duration-300 ${
+            showSidebar ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
+        >
+          <NavSidebar 
+            title={t("news.navTitle")}
+            sections={sidebarItems}
+            activeId={activeItem}
+            handleClick={handleNavClick}
+          />
+        </aside>
+
+        <div className="bg-white">
+          <div className="flex gap-4 px-6 sm:px-8 lg:pr-12 lg:pl-[280px]">
+            {/* 移动端导航栏 - 在 flex 布局中 */}
+            <div className="flex-shrink-0 pt-8 lg:hidden">
+              <NavSidebar 
+                title={t("news.navTitle")}
+                sections={sidebarItems}
+                activeId={activeItem}
+                handleClick={handleNavClick}
+              />
+            </div>
+            
+            <Suspense fallback={
+              <div className="min-h-screen flex items-center justify-center">
+                <div className="text-gray-500">{t("news.loading")}</div>
+              </div>
+            }>
+              <NewsContent />
+            </Suspense>
           </div>
-        }>
-          <NewsContent />
-        </Suspense>
+        </div>
+
+
+        <Footer />
       </div>
     </main>
   );
