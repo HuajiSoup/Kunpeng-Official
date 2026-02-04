@@ -1,15 +1,20 @@
 "use client";
 
-import { useState, useMemo, Suspense } from "react";
+import { useState, useMemo, Suspense, useRef } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { Search, ArrowRight, Calendar, FileText } from "lucide-react";
-import Link from "next/link";
+import { Search } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { NewsItem } from "@/components/news/NewsCard";
+import { SearchBar } from "@/components/search/SearchBar";
+import { SearchResultList } from "@/components/search/SearchResultList";
+
+export type searchResultCategory = "全部" | "实验检测" | "适航服务" | "公司动态" | "行业资讯" | "成功案例";
+const searchCategories: searchResultCategory[] = [
+  "全部", "实验检测", "适航服务", "公司动态", "行业资讯", "成功案例"
+];
 
 // 新闻数据（从新闻中心页面获取）
-
 const newsData: NewsItem[] = [
   {
     id: "1",
@@ -192,14 +197,20 @@ const serviceData: ServiceItem[] = [
 ];
 
 // 统一搜索结果接口
-interface SearchResult {
+export interface SearchResult {
   id: string;
   title: string;
   excerpt: string;
-  category: "实验检测" | "适航服务" | "公司新闻" | "行业动态" | "成功案例";
+  category: searchResultCategory;
   href: string;
   date?: string;
   type: "news" | "testing" | "service";
+}
+
+const newsCategoryMap: Record<string, searchResultCategory> = {
+  "company": "公司动态",
+  "industry": "行业资讯",
+  "success": "成功案例",
 }
 
 // 合并所有数据
@@ -212,13 +223,8 @@ const getAllData = (): SearchResult[] => {
       id: item.id,
       title: item.title,
       excerpt: item.excerpt,
-      category:
-        item.category === "company"
-          ? "公司新闻"
-          : item.category === "industry"
-          ? "行业动态"
-          : "成功案例",
-      href: "/",
+      category: newsCategoryMap[item.category],
+      href: `/news/${item.id}`,
       date: item.date,
       type: "news",
     });
@@ -251,34 +257,10 @@ const getAllData = (): SearchResult[] => {
   return results;
 };
 
-// 高亮匹配文本的辅助函数
-const highlightText = (text: string, query: string) => {
-  if (!query.trim()) return text;
-
-  const regex = new RegExp(`(${query})`, "gi");
-  const parts = text.split(regex);
-
-  return parts.map((part, index) => {
-    if (part.toLowerCase() === query.toLowerCase()) {
-      return (
-        <span key={index} className="text-blue-600 font-semibold">
-          {part}
-        </span>
-      );
-    }
-    return part;
-  });
-};
-
 function SearchContent() {
-  const { t } = useLanguage();
   const searchParams = useSearchParams();
-  const router = useRouter();
   const query = searchParams?.get("q") || "";
-  const [searchInput, setSearchInput] = useState(query);
-  const [activeCategory, setActiveCategory] = useState<
-    "全部" | "实验检测" | "适航服务" | "公司新闻" | "行业动态" | "成功案例"
-  >("全部");
+  const [activeCategory, setActiveCategory] = useState<searchResultCategory>("全部");
 
   // 搜索和筛选逻辑
   const filteredResults = useMemo(() => {
@@ -304,230 +286,98 @@ function SearchContent() {
     return results;
   }, [query, activeCategory]);
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchInput.trim()) {
-      router.push(`/search?q=${encodeURIComponent(searchInput.trim())}`);
-    }
-  };
-
-  // 动画变体
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.4,
-      },
-    },
-  };
-
-  // 获取分类标签颜色
-  const getCategoryBadge = (category: string) => {
-    const badgeClass = {
-      实验检测: "bg-blue-100 text-blue-700",
-      适航服务: "bg-purple-100 text-purple-700",
-      公司新闻: "bg-gray-100 text-gray-700",
-      行业动态: "bg-green-100 text-green-700",
-      成功案例: "bg-yellow-100 text-yellow-700",
-    }[category] || "bg-gray-100 text-gray-700";
-
-    return (
-      <span className={`px-2 py-0.5 text-xs font-medium rounded ${badgeClass}`}>
-        {category}
-      </span>
-    );
-  };
-
   return (<>
-    {/* Hero Section - 大搜索框 */}
-    <section className="relative py-16 lg:py-24 bg-white">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 text-center">
-              搜索结果
-            </h1>
+    <div className="container mx-auto my-8 px-6 sm:px-8 lg:px-12">
+      {query ? (
+        <>
+          {/* 结果统计和分类筛选 */}
+          <div className="mb-8">
+            <p className="text-gray-600 mb-4">
+              找到 <span className="text-blue-600 font-semibold">{filteredResults.length}</span> 条关于
+              "<span className="text-gray-900 font-semibold">{query}</span>" 的结果
+            </p>
 
-            {/* 大搜索框 */}
-            <form onSubmit={handleSearch} className="relative">
-              <div className="relative">
-                <input
-                  type="text"
-                  value={searchInput}
-                  onChange={(e) => setSearchInput(e.target.value)}
-                  placeholder={t("search.placeholder") || "输入关键词搜索..."}
-                  className="w-full px-6 py-4 text-lg bg-white/80 backdrop-blur-sm border-[0.5px] border-blue-500/20 rounded-xl focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20 text-gray-900 placeholder:text-gray-400 focus:outline-none transition-all shadow-sm"
-                />
+            {/* Filter Tabs */}
+            <div className="flex flex-wrap gap-2">
+              {searchCategories.map((category) => (
                 <button
-                  type="submit"
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-blue-600 hover:text-blue-700 transition-colors"
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  className={`px-4 py-2 rounded-lg border text-sm font-medium transition-all duration-200 ${
+                    activeCategory === category
+                      ? "bg-blue-600 text-white shadow-sm"
+                      : "bg-white text-gray-700 hover:bg-gray-100 border-gray-200"
+                  }`}
                 >
-                  <Search className="w-6 h-6" />
+                  {category}
                 </button>
-              </div>
-            </form>
-          </motion.div>
-        </div>
-      </div>
-    </section>
+              ))}
+            </div>
+          </div>
 
-    {/* 结果区域 */}
-    <section className="relative py-12 lg:py-16 bg-gray-50 min-h-screen">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-        {query ? (
-          <>
-            {/* 结果统计和分类筛选 */}
-            <div className="mb-8">
-              <p className="text-gray-600 mb-4">
-                找到 <span className="text-blue-600 font-semibold">{filteredResults.length}</span> 条关于 "
-                <span className="text-gray-900 font-semibold">{query}</span>" 的结果
+          {/* 结果列表 */}
+          {filteredResults.length > 0 ? (
+            <SearchResultList results={filteredResults} query={query} />
+          ) : (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center py-20"
+            >
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
+                <Search className="w-8 h-8 text-gray-400" />
+              </div>
+              <p className="text-gray-600 text-lg mb-2">未找到相关服务</p>
+              <p className="text-gray-500 text-sm">
+                请尝试搜索 <span className="text-blue-600">"EMC"</span> 或{" "}
+                <span className="text-blue-600">"适航"</span>
               </p>
-
-              {/* Filter Tabs */}
-              <div className="flex flex-wrap gap-2">
-                {(["全部", "实验检测", "适航服务", "公司新闻", "行业动态", "成功案例"] as const).map(
-                  (category) => (
-                    <button
-                      key={category}
-                      onClick={() => setActiveCategory(category)}
-                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                        activeCategory === category
-                          ? "bg-blue-600 text-white shadow-sm"
-                          : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200"
-                      }`}
-                    >
-                      {category}
-                    </button>
-                  )
-                )}
-              </div>
-            </div>
-
-            {/* 结果列表 */}
-            {filteredResults.length > 0 ? (
-              <motion.div
-                key={`results-${query}-${activeCategory}`}
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6"
-              >
-                {filteredResults.map((item) => (
-                  <motion.div 
-                    key={item.id} 
-                    variants={itemVariants}
-                    className="w-full"
-                  >
-                      <Link
-                        href={item.href}
-                        className="group block bg-white/80 backdrop-blur-sm border-[0.5px] border-blue-500/20 rounded-xl overflow-hidden hover:border-blue-500/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all duration-300 hover-gentle-wiggle h-full flex flex-col"
-                      >
-                        {/* 图片占位符 */}
-                        <div className="aspect-video bg-gray-100 border-b border-gray-200 flex items-center justify-center relative">
-                          {item.type === "news" && item.category === "成功案例" && (
-                            <div className="absolute top-3 right-3">
-                              <div className="bg-blue-600 text-white px-2 py-1 rounded text-xs font-semibold flex items-center gap-1">
-                                <FileText className="w-3 h-3" />
-                                <span>成功案例</span>
-                              </div>
-                            </div>
-                          )}
-                          <span className="text-gray-400 text-xs font-medium">
-                            {item.type === "testing" ? "Test Image" : item.type === "service" ? "Service Image" : "News Image"}
-                          </span>
-                        </div>
-
-                        {/* 卡片内容 */}
-                        <div className="p-5 flex-1 flex flex-col">
-                          <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
-                            {item.date && (
-                              <>
-                                <Calendar className="w-3 h-3" />
-                                <span>{item.date}</span>
-                              </>
-                            )}
-                            {getCategoryBadge(item.category)}
-                          </div>
-
-                          <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
-                            {highlightText(item.title, query)}
-                          </h3>
-
-                          <p className="text-sm text-gray-600 leading-relaxed mb-3 flex-1 line-clamp-3">
-                            {highlightText(item.excerpt, query)}
-                          </p>
-
-                          <div className="inline-flex items-center text-sm font-medium text-blue-600 group-hover:gap-2 transition-all mt-auto">
-                            <span>查看详情</span>
-                            <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                          </div>
-                        </div>
-                      </Link>
-                    </motion.div>
-                  ))}
-              </motion.div>
-            ) : (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-center py-20"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
-                  <Search className="w-8 h-8 text-gray-400" />
-                </div>
-                <p className="text-gray-600 text-lg mb-2">未找到相关服务</p>
-                <p className="text-gray-500 text-sm">
-                  请尝试搜索 <span className="text-blue-600">"EMC"</span> 或{" "}
-                  <span className="text-blue-600">"适航"</span>
-                </p>
-              </motion.div>
-            )}
-          </>
-        ) : (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center py-20"
-          >
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
-              <Search className="w-8 h-8 text-gray-400" />
-            </div>
-            <p className="text-gray-600 text-lg">请输入搜索关键词</p>
-          </motion.div>
-        )}
-      </div>
-    </section>
+            </motion.div>
+          )}
+        </>
+      ) : (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center py-20"
+        >
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
+            <Search className="w-8 h-8 text-gray-400" />
+          </div>
+          <p className="text-gray-600 text-lg">请输入搜索关键词</p>
+        </motion.div>
+      )}
+    </div>
   </>);
 }
 
 export default function SearchPage() {
   const { t } = useLanguage();
-  return (
-    <Suspense
-      fallback={
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="text-gray-500">{t("search.loading") || "加载中..."}</div>
-        </div>
-      }
-    >
-      <SearchContent />
-    </Suspense>
-  );
+
+  const router = useRouter();
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const searchInput = inputRef.current?.value;
+    if (searchInput && searchInput.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchInput.trim())}`);
+    }
+  };
+
+  return (<>
+    <section className="relative py-12 lg:py-16 bg-gray-50 min-h-screen">
+      <SearchBar inputRef={inputRef} handleSearch={handleSearch} />
+      <Suspense
+        fallback={
+          <div className="min-h-screen flex items-center justify-center">
+            <div className="text-gray-500">{t("search.loading")}</div>
+          </div>
+        }
+      >
+        <SearchContent />
+      </Suspense>
+    </section>
+  </>);
 }

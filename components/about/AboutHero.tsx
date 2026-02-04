@@ -1,3 +1,5 @@
+"use client";
+
 import { useLanguage } from "@/lib/LanguageContext";
 import { SectionBanner } from "../ui/SectionBanner";
 
