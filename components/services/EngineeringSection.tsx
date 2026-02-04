@@ -1,5 +1,7 @@
 "use client";
 
+import { PageSectionTitle } from "../ui/PageSectionTitle";
+
 const engineeringServices = [
   {
     title: "安全性评估",
@@ -21,14 +23,11 @@ const engineeringServices = [
 export default function EngineeringSection() {
   return (
     <section id="engineering" className="scroll-mt-24 border-t border-blue-500/10 pt-24" data-anchor="engineering">
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-900 tracking-tight mb-2">
-          工程技术支持
-        </h2>
-        <p className="text-sm text-gray-500">
-          提供专业的工程技术服务，涵盖安全性分析、可靠性工程、软件硬件保证等领域
-        </p>
-      </div>
+      <PageSectionTitle 
+        title="工程技术支持"
+        subtitle="ENGINEERING SUPPORT"
+        description="提供专业的工程技术服务，涵盖安全性分析、可靠性工程、软件硬件保证等领域"
+      />
 
       <div className="grid gap-8">
         {engineeringServices.map((service, index) => (

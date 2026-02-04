@@ -1,3 +1,5 @@
+import { PageSectionTitle } from "../ui/PageSectionTitle";
+
 const courses = [
   { 
     name: "DO-178C 软件适航培训", 
@@ -40,14 +42,11 @@ const courses = [
 export default function TrainingSection() {
   return (
     <section id="training" className="scroll-mt-24 border-t border-blue-500/10 pt-24" data-anchor="training">
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-900 tracking-tight mb-2">
-          专业培训课程
-        </h2>
-        <p className="text-sm text-gray-500">
-          由行业资深专家授课，提供定制化企业培训服务
-        </p>
-      </div>
+      <PageSectionTitle 
+        title="专业培训课程"
+        subtitle="PROFESSIONAL TRAINING"
+        description="由行业资深专家授课，提供定制化企业培训服务"
+      />
 
       {/* Courses */}
       <div className="bg-white/80 backdrop-blur-sm rounded-xl border-[0.5px] border-blue-500/20 shadow-sm overflow-hidden">

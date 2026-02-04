@@ -1,3 +1,5 @@
+import { PageSectionTitle } from "../ui/PageSectionTitle";
+
 const testNames = [
   "地面低温耐受试验和低温短时工作试验",
   "低温工作试验",
@@ -17,18 +19,11 @@ export default function CoreTestings() {
   return (
     <section id="core-testings" className="py-12 lg:py-16 bg-white">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="mb-10">
-          <span className="text-xs font-bold tracking-[0.2em] text-blue-600 uppercase block mb-4">
-            CORE CAPABILITIES
-          </span>
-          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 tracking-tight leading-tight">
-            核心测试项目
-          </h2>
-          <div className="h-1 w-10 bg-blue-600 mb-4"></div>
-          <p className="text-base text-gray-600 max-w-2xl leading-relaxed">
-            依据 DO-160G 《机载设备环境条件和试验程序》进行测试
-          </p>
-        </div>
+        <PageSectionTitle 
+          title="核心测试项目"
+          subtitle="CORE CAPABILITIES"
+          description="依据 DO-160G 《机载设备环境条件和试验程序》进行测试"
+        />
 
         <div className="bg-white/80 backdrop-blur-sm rounded-xl border-[0.5px] border-blue-500/20 overflow-hidden shadow-sm">
           <div className="block overflow-x-auto">

@@ -1,5 +1,6 @@
 import { Thermometer, Waves, Wind, Droplets, Sun } from "lucide-react";
 import { TestItemBox } from "./TestItemBox";
+import { PageSectionTitle } from "../ui/PageSectionTitle";
 
 const environmentTests = [
   {
@@ -50,18 +51,11 @@ export default function EnvironmentTesting() {
   return (
     <section id="environment-reliability" className="py-12 lg:py-16 bg-white scroll-mt-24" data-anchor="env">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="mb-10">
-          <span className="text-xs font-bold tracking-[0.2em] text-blue-600 uppercase block mb-4">
-            ENVIRONMENTAL RELIABILITY
-          </span>
-          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 tracking-tight leading-tight">
-            环境可靠性试验
-          </h2>
-          <div className="h-1 w-10 bg-blue-600 mb-4"></div>
-          <p className="text-base text-gray-600 max-w-2xl leading-relaxed">
-            XXXXXXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX
-          </p>
-        </div>
+        <PageSectionTitle 
+          title="环境可靠性试验"
+          subtitle="ENVIRONMENTAL RELIABILITY"
+          description="XXX XXX XXXXXXX"
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-8">
           {environmentTests.map((test, index) => 

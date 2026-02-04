@@ -3,19 +3,12 @@
 import { useState, useMemo, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { Search, ArrowRight, Calendar, TestTube, Plane, Phone, FileText } from "lucide-react";
+import { Search, ArrowRight, Calendar, FileText } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/lib/LanguageContext";
+import { NewsItem } from "@/components/news/NewsCard";
 
 // 新闻数据（从新闻中心页面获取）
-interface NewsItem {
-  id: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  category: "company" | "industry" | "success";
-  href: string;
-}
 
 const newsData: NewsItem[] = [
   {
@@ -24,7 +17,6 @@ const newsData: NewsItem[] = [
     excerpt: "经过严格评审，浙江鲲鹏航空技术测试验证有限公司成功获得中国合格评定国家认可委员会(CNAS)颁发的实验室认可证书，标志着公司在测试能力建设方面取得重要突破。",
     date: "2024-01-15",
     category: "company",
-    href: "/news/1",
   },
   {
     id: "2",
@@ -32,7 +24,6 @@ const newsData: NewsItem[] = [
     excerpt: "经过18个月的共同努力，我们成功协助XX航空项目完成Type Certificate (TC)取证工作，该项目为国内首款符合DO-160G标准的通用航空器。",
     date: "2024-01-10",
     category: "success",
-    href: "/news/2",
   },
   {
     id: "3",
@@ -40,7 +31,6 @@ const newsData: NewsItem[] = [
     excerpt: "美国联邦航空管理局(FAA)近日发布了关于机载软件适航审定的最新指南AC 20-193，对DO-178C标准实施提供了更详细的指导说明。",
     date: "2024-01-08",
     category: "industry",
-    href: "/news/3",
   },
   {
     id: "4",
@@ -48,7 +38,6 @@ const newsData: NewsItem[] = [
     excerpt: "应客户需求，公司于本月初成功举办DO-178C机载软件适航标准专题培训，来自全国各地的30余名航空电子工程师参加了此次培训。",
     date: "2024-01-05",
     category: "company",
-    href: "/news/4",
   },
   {
     id: "5",
@@ -56,7 +45,6 @@ const newsData: NewsItem[] = [
     excerpt: "在团队的专业指导下，XX无人机项目成功建立符合CAAC要求的生产质量体系，并获得生产许可证(PC)，为批量生产奠定基础。",
     date: "2023-12-28",
     category: "success",
-    href: "/news/5",
   },
   {
     id: "6",
@@ -64,7 +52,6 @@ const newsData: NewsItem[] = [
     excerpt: "欧洲航空安全局(EASA)正式采用DO-160G作为环境条件和测试程序的官方标准，替代了之前使用的DO-160F版本。",
     date: "2023-12-25",
     category: "industry",
-    href: "/news/6",
   },
   {
     id: "7",
@@ -72,7 +59,6 @@ const newsData: NewsItem[] = [
     excerpt: "公司技术团队再添两名适航委任代表(DER)，进一步增强了在适航审定领域的技术实力和服务能力。",
     date: "2023-12-20",
     category: "company",
-    href: "/news/7",
   },
   {
     id: "8",
@@ -80,7 +66,6 @@ const newsData: NewsItem[] = [
     excerpt: "我们协助XX公司的航电设备完成CTSO取证，该设备现已获得技术标准规定项目批准，可在多个航空器平台上使用。",
     date: "2023-12-15",
     category: "success",
-    href: "/news/8",
   },
   {
     id: "9",
@@ -88,7 +73,6 @@ const newsData: NewsItem[] = [
     excerpt: "RTCA发布了DO-254标准的补充说明文档，对复杂硬件设计保证提供了更详细的指导，有助于硬件适航审定工作的开展。",
     date: "2023-12-10",
     category: "industry",
-    href: "/news/9",
   },
   {
     id: "10",
@@ -96,7 +80,6 @@ const newsData: NewsItem[] = [
     excerpt: "经过6个月的深入分析，我们完成了XX航空项目的系统安全性评估工作，包括FHA、PSSA和SSA三个阶段的分析报告。",
     date: "2023-12-05",
     category: "company",
-    href: "/news/10",
   },
   {
     id: "11",
@@ -104,7 +87,6 @@ const newsData: NewsItem[] = [
     excerpt: "在适航咨询团队的全程支持下，XX通用航空飞机项目成功获得中国民用航空局颁发的型号合格证(TC)，标志着该项目正式进入市场。",
     date: "2023-11-28",
     category: "success",
-    href: "/news/11",
   },
   {
     id: "12",
@@ -112,7 +94,6 @@ const newsData: NewsItem[] = [
     excerpt: "中国民用航空局发布了最新的适航审定相关法规更新，对航空器及零部件适航管理提出了新的要求。",
     date: "2023-11-25",
     category: "industry",
-    href: "/news/12",
   },
 ];
 
@@ -237,7 +218,7 @@ const getAllData = (): SearchResult[] => {
           : item.category === "industry"
           ? "行业动态"
           : "成功案例",
-      href: item.href,
+      href: "/",
       date: item.date,
       type: "news",
     });

@@ -9,16 +9,7 @@ import NewsPagination from "@/components/news/NewsPagination";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useRouter } from "next/navigation";
 import { NavSidebar } from "@/components/ui/NavSidebar";
-
-interface NewsItem {
-  id: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  category: "all" | "company" | "industry" | "success";
-  image?: string;
-  isSuccessStory?: boolean;
-}
+import { NewsItem } from "@/components/news/NewsCard";
 
 const getSidebarItems = (t: (key: string) => string) => [
   { id: "all", label: t("news.categories.all") },
@@ -176,7 +167,9 @@ function NewsContent() {
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 300);
     }
   };
 
@@ -251,26 +244,30 @@ export default function NewsPage() {
       />
     </aside>
 
-    <div className="bg-white">
-      <div className="flex gap-4 px-6 sm:px-8 lg:pr-12 lg:pl-[280px]">
-        {/* 移动端导航栏 - 在 flex 布局中 */}
-        <div className="flex-shrink-0 pt-8 lg:hidden">
-          <NavSidebar 
-            title={t("news.navTitle")}
-            sections={sidebarItems}
-            activeId={activeItem}
-            handleClick={handleNavClick}
-          />
-        </div>
+    <section className="pt-8 pb-12 lg:pt-12 lg:pb-16">
+      <div className="w-full px-6 sm:px-8 lg:pr-5 lg:pl-[280px]">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+          {/* Page top NavBar for phone */}
+          <aside className="lg:col-span-1 lg:hidden">
+            <NavSidebar 
+              title={t("news.navTitle")}
+              sections={sidebarItems}
+              activeId={activeItem}
+              handleClick={handleNavClick}
+            />
+          </aside>
         
-        <Suspense fallback={
-          <div className="min-h-screen flex items-center justify-center">
-            <div className="text-gray-500">{t("news.loading")}</div>
+          <div className="lg:col-span-4">
+            <Suspense fallback={
+              <div className="min-h-screen flex items-center justify-center">
+                <div className="text-gray-500">{t("news.loading")}</div>
+              </div>
+            }>
+              <NewsContent />
+            </Suspense>
           </div>
-        }>
-          <NewsContent />
-        </Suspense>
+        </div>
       </div>
-    </div>
+    </section>
   </>);
 }

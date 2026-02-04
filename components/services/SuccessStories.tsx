@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Award, ArrowRight, Calendar } from "lucide-react";
+import { PageSectionTitle } from "../ui/PageSectionTitle";
 
 const successStories = [
   {
@@ -28,14 +29,11 @@ const successStories = [
 export default function SuccessStories() {
   return (
     <section id="success-stories" className="scroll-mt-24 border-t border-blue-500/10 pt-24">
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-900 tracking-tight mb-2">
-          成功案例
-        </h2>
-        <p className="text-sm text-gray-500">
-          我们已成功协助多个项目完成适航取证，积累了丰富的项目经验
-        </p>
-      </div>
+      <PageSectionTitle 
+        title="成功案例"
+        subtitle="SUCCESS STORIES"
+        description="我们已成功协助多个项目完成适航取证，积累了丰富的项目经验"
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {successStories.map((story) => (

@@ -107,7 +107,7 @@ export default function ServicesPage() {
           </aside>
 
           {/* Right Content (4 columns) */}
-          <div className="lg:col-span-4 space-y-24">
+          <div className="lg:col-span-4 py-16">
             <ConsultingSection />
             <EngineeringSection />
             <TrainingSection />

@@ -1,5 +1,6 @@
 import { FileCheck, Award, Shield } from "lucide-react";
 import { ItemBox } from "../ui/ItemBox";
+import { PageSectionTitle } from "../ui/PageSectionTitle";
 
 const consultingItems = [
   {
@@ -22,14 +23,11 @@ const consultingItems = [
 export default function ConsultingSection() {
   return (
     <section id="consulting" className="scroll-mt-24" data-anchor="consulting">
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-900 tracking-tight mb-2">
-          适航取证咨询
-        </h2>
-        <p className="text-sm text-gray-500">
-          为航空器及其零部件制造商提供全面的适航取证支持
-        </p>
-      </div>
+      <PageSectionTitle 
+        title="适航取证咨询"
+        subtitle="AIRWORHINESS CERTIFICATION CONSULTING"
+        description="为航空器及其零部件制造商提供全面的适航取证支持"
+      />
 
       <div className="grid md:grid-cols-3 gap-6">
         {consultingItems.map((item, index) => {

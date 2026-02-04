@@ -13,7 +13,8 @@ export function ItemBox({
   return (
     <div
       className={cn(
-        "group relative p-6 rounded-2xl bg-white/80 backdrop-blur-sm border-[0.5px] border-blue-500/20 hover:border-blue-500/50 hover:shadow-[0_0_25px_rgba(59,130,246,0.2)] hover:bg-blue-50/50 transition-all duration-300 hover-gentle-wiggle cursor-pointer overflow-hidden",
+        "group relative p-6 rounded-2xl bg-white/80 backdrop-blur-sm border-[0.5px] border-blue-500/20 hover:border-blue-500/50 hover:shadow-[0_0_25px_rgba(59,130,246,0.2)]\
+        hover:bg-blue-50/50 transition-all duration-300 hover-gentle-wiggle cursor-pointer overflow-hidden",
         className
       )}
     >
@@ -35,8 +36,8 @@ export function ItemBox({
         </div>
       </>}
       
+      {children}
       <div className="relative z-10">
-        {children}
       </div>
     </div>
   );

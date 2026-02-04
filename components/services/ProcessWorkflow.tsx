@@ -1,4 +1,5 @@
 import { Search, FileText, Rocket, CheckCircle, ArrowRight } from "lucide-react";
+import { PageSectionTitle } from "../ui/PageSectionTitle";
 
 const steps = [
   {
@@ -30,14 +31,11 @@ const steps = [
 export default function ProcessWorkflow() {
   return (
     <section id="process-workflow" className="scroll-mt-24 border-t border-blue-500/10 pt-24">
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-900 tracking-tight mb-2">
-          服务流程
-        </h2>
-        <p className="text-sm text-gray-500">
-          从需求分析到结项交付，我们提供全流程专业服务
-        </p>
-      </div>
+      <PageSectionTitle 
+        title="服务流程"
+        subtitle="SERVICE PROCESS"
+        description="从需求分析到结项交付，我们提供全流程专业服务"
+      />
 
       {/* Desktop: horizonal timeline */}
       <div className="hidden lg:block">

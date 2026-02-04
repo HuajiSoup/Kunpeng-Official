@@ -257,6 +257,7 @@ export const translations = {
         badge: "CONTACT US",
         getInTouch: "随时联系",
       },
+      navTitle: "联系我们",
       nav: {
         contact: "联系方式",
         downloads: "资料下载",
@@ -608,6 +609,7 @@ export const translations = {
         badge: "CONTACT US",
         getInTouch: "Get in Touch",
       },
+      navTitle: "Contact Us",
       nav: {
         contact: "Contact Information",
         downloads: "Downloads",
