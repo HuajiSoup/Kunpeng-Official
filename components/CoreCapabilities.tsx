@@ -9,7 +9,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
-import { IntroTitle } from "./ui/IntroTitle";
+import { IntroTitle } from "./ui/HomeSectionTitle";
 import { BentoCard } from "./ui/BentoGrid";
 
 const getCapabilities = (t: (key: string) => string) => ({

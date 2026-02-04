@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/lib/LanguageContext";
-import { IntroTitle } from "./ui/IntroTitle";
+import { IntroTitle } from "./ui/HomeSectionTitle";
 import { BentoCard } from "./ui/BentoGrid";
 
 export default function Qualifications() {

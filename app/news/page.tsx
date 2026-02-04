@@ -2,8 +2,6 @@
 
 import { useState, useMemo, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import NewsHero from "@/components/news/NewsHero";
 import FeaturedNews from "@/components/news/FeaturedNews";
 import NewsList from "@/components/news/NewsList";
@@ -237,50 +235,42 @@ export default function NewsPage() {
     }
   };
 
-  return (
-    <main className="relative min-h-screen bg-white overflow-hidden">
-      <div className="relative z-10">
-        <Header />
-        <NewsHero />
+  return (<>
+    <NewsHero />
 
-        <aside 
-          className={`hidden lg:block fixed left-6 top-20 z-30 transition-opacity duration-300 ${
-            showSidebar ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
-        >
+    <aside 
+      className={`hidden lg:block fixed left-6 top-20 z-30 transition-opacity duration-300 ${
+        showSidebar ? "opacity-100" : "opacity-0 pointer-events-none"
+      }`}
+    >
+      <NavSidebar 
+        title={t("news.navTitle")}
+        sections={sidebarItems}
+        activeId={activeItem}
+        handleClick={handleNavClick}
+      />
+    </aside>
+
+    <div className="bg-white">
+      <div className="flex gap-4 px-6 sm:px-8 lg:pr-12 lg:pl-[280px]">
+        {/* 移动端导航栏 - 在 flex 布局中 */}
+        <div className="flex-shrink-0 pt-8 lg:hidden">
           <NavSidebar 
             title={t("news.navTitle")}
             sections={sidebarItems}
             activeId={activeItem}
             handleClick={handleNavClick}
           />
-        </aside>
-
-        <div className="bg-white">
-          <div className="flex gap-4 px-6 sm:px-8 lg:pr-12 lg:pl-[280px]">
-            {/* 移动端导航栏 - 在 flex 布局中 */}
-            <div className="flex-shrink-0 pt-8 lg:hidden">
-              <NavSidebar 
-                title={t("news.navTitle")}
-                sections={sidebarItems}
-                activeId={activeItem}
-                handleClick={handleNavClick}
-              />
-            </div>
-            
-            <Suspense fallback={
-              <div className="min-h-screen flex items-center justify-center">
-                <div className="text-gray-500">{t("news.loading")}</div>
-              </div>
-            }>
-              <NewsContent />
-            </Suspense>
-          </div>
         </div>
-
-
-        <Footer />
+        
+        <Suspense fallback={
+          <div className="min-h-screen flex items-center justify-center">
+            <div className="text-gray-500">{t("news.loading")}</div>
+          </div>
+        }>
+          <NewsContent />
+        </Suspense>
       </div>
-    </main>
-  );
+    </div>
+  </>);
 }

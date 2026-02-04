@@ -94,43 +94,6 @@ export function BentoCard({
         />
       )}
 
-      {/* Content */}
-      {/* <div className="relative z-10 h-full flex flex-col">
-        {header && <div className="mb-4">{header}</div>}
-        {icon && (
-          <div
-            className={cn(
-              "mb-4 w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300",
-              isLight
-                ? "bg-blue-100 text-blue-600 group-hover:bg-blue-500 group-hover:text-white"
-                : "bg-blue-500/10 text-blue-400"
-            )}
-          >
-            {icon}
-          </div>
-        )}
-        {title && (
-          <h3
-            className={cn(
-              "text-lg font-semibold mb-2",
-              isLight ? "text-slate-900" : "text-white"
-            )}
-          >
-            {title}
-          </h3>
-        )}
-        {description && (
-          <p
-            className={cn(
-              "text-sm leading-relaxed",
-              isLight ? "text-slate-600" : "text-slate-400"
-            )}
-          >
-            {description}
-          </p>
-        )}
-        {children}
-      </div> */}
       {children}
     </motion.div>
   );

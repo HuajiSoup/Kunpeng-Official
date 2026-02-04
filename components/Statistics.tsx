@@ -2,7 +2,7 @@
 
 import { Award, Cpu, Users, Briefcase } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
-import { IntroTitle } from "./ui/IntroTitle";
+import { IntroTitle } from "./ui/HomeSectionTitle";
 import { BentoCard } from "./ui/BentoGrid";
 
 const getStats = (t: (key: string) => string) => [

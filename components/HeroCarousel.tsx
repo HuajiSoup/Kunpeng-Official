@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 
@@ -46,14 +46,14 @@ export default function HeroCarousel() {
   const [direction, setDirection] = useState(0);
 
   // 自动轮播
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setDirection(1);
-      setCurrentIndex((prev) => (prev + 1) % slides.length);
-    }, 6000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setDirection(1);
+  //     setCurrentIndex((prev) => (prev + 1) % slides.length);
+  //   }, 6000);
 
-    return () => clearInterval(interval);
-  }, [slides.length]);
+  //   return () => clearInterval(interval);
+  // }, [slides.length]);
 
   const goToSlide = (index: number) => {
     setDirection(index > currentIndex ? 1 : -1);
@@ -70,21 +70,26 @@ export default function HeroCarousel() {
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  const slideVariants = {
+  const slideVariants: Variants = {
     enter: (direction: number) => ({
       x: direction > 0 ? "100%" : "-100%",
       opacity: 0,
-      scale: 1.1,
     }),
     center: {
       x: 0,
       opacity: 1,
-      scale: 1,
+      transition: {
+        x: { ease: "circOut", duration: 0.5 },
+        opacity: { ease: "easeOut", duration: 0.5 }
+      }
     },
     exit: (direction: number) => ({
       x: direction > 0 ? "-100%" : "100%",
       opacity: 0,
-      scale: 0.9,
+      transition: {
+        x: { ease: "circIn", duration: 0.5 },
+        opacity: { ease: "easeIn", duration: 0.5 }
+      }
     }),
   };
 
@@ -98,11 +103,6 @@ export default function HeroCarousel() {
           initial="enter"
           animate="center"
           exit="exit"
-          transition={{
-            x: { type: "spring", stiffness: 300, damping: 30 },
-            opacity: { duration: 0.5 },
-            scale: { duration: 0.8 },
-          }}
           className="absolute inset-0"
         >
           {/* background + filter */}

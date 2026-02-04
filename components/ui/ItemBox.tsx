@@ -1,15 +1,21 @@
+import { cn } from "@/lib/utils";
 import React from "react";
 
 export function ItemBox({
   children,
   fancy = false,
+  className = "",
 }: {
-  children: React.ReactNode
-  fancy?: boolean
+  children: React.ReactNode,
+  fancy?: boolean,
+  className?: string,
 }) {
   return (
     <div
-      className="group relative p-6 rounded-2xl bg-white/80 backdrop-blur-sm border-[0.5px] border-blue-500/20 hover:border-blue-500/50 hover:shadow-[0_0_25px_rgba(59,130,246,0.2)] hover:bg-blue-50/50 transition-all duration-300 hover-gentle-wiggle cursor-pointer overflow-hidden"
+      className={cn(
+        "group relative p-6 rounded-2xl bg-white/80 backdrop-blur-sm border-[0.5px] border-blue-500/20 hover:border-blue-500/50 hover:shadow-[0_0_25px_rgba(59,130,246,0.2)] hover:bg-blue-50/50 transition-all duration-300 hover-gentle-wiggle cursor-pointer overflow-hidden",
+        className
+      )}
     >
       {/* Moving Border & background color*/}
       {fancy && <>

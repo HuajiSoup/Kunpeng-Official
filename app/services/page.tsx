@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import ServicesHero from "@/components/services/ServicesHero";
 import ConsultingSection from "@/components/services/ConsultingSection";
 import EngineeringSection from "@/components/services/EngineeringSection";
@@ -77,55 +75,48 @@ export default function ServicesPage() {
     }
   };
 
-  return (
-    <main className="relative min-h-screen bg-white overflow-hidden">
-      <div className="relative z-10">
-        <Header />
-        <ServicesHero />
+  return (<>
+    <ServicesHero />
 
-        {/* Fixed Sidebar Navigation - 固定在左上角 */}
-        <aside
-          className={`hidden lg:block fixed left-6 top-20 z-30 transition-opacity duration-300 ${
-            showSidebar ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
-        >
-          <NavSidebar
-            title={t("services.navTitle")}
-            sections={sidebarItems}
-            activeId={activeItem}
-            handleClick={handleNavClick}
-          />
-        </aside>
+    {/* Fixed Sidebar Navigation - 固定在左上角 */}
+    <aside
+      className={`hidden lg:block fixed left-6 top-20 z-30 transition-opacity duration-300 ${
+        showSidebar ? "opacity-100" : "opacity-0 pointer-events-none"
+      }`}
+    >
+      <NavSidebar
+        title={t("services.navTitle")}
+        sections={sidebarItems}
+        activeId={activeItem}
+        handleClick={handleNavClick}
+      />
+    </aside>
 
-        {/* Main Content - 5 Column Layout (1:4) */}
-        <section className="pt-8 pb-12 lg:pt-12 lg:pb-16">
-          <div className="w-full px-6 sm:px-8 lg:pr-5 lg:pl-[280px]">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-              {/* 占位空间 - 移动端显示导航栏 */}
-              <aside className="lg:col-span-1 lg:hidden">
-                <NavSidebar
-                  title={t("services.navTitle")}
-                  sections={sidebarItems}
-                  activeId={activeItem}
-                  handleClick={handleNavClick}
-                />
-              </aside>
+    {/* Main Content - 5 Column Layout (1:4) */}
+    <section className="pt-8 pb-12 lg:pt-12 lg:pb-16">
+      <div className="w-full px-6 sm:px-8 lg:pr-5 lg:pl-[280px]">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+          {/* 占位空间 - 移动端显示导航栏 */}
+          <aside className="lg:col-span-1 lg:hidden">
+            <NavSidebar
+              title={t("services.navTitle")}
+              sections={sidebarItems}
+              activeId={activeItem}
+              handleClick={handleNavClick}
+            />
+          </aside>
 
-              {/* Right Content (4 columns) */}
-              <div className="lg:col-span-4 space-y-24">
-                <ConsultingSection />
-                <EngineeringSection />
-                <TrainingSection />
-                <ProcessWorkflow />
-                <SuccessStories />
-                <ServicesCTA />
-              </div>
-            </div>
+          {/* Right Content (4 columns) */}
+          <div className="lg:col-span-4 space-y-24">
+            <ConsultingSection />
+            <EngineeringSection />
+            <TrainingSection />
+            <ProcessWorkflow />
+            <SuccessStories />
+            <ServicesCTA />
           </div>
-        </section>
-
-        <Footer />
+        </div>
       </div>
-    </main>
-  );
+    </section>
+  </>);
 }

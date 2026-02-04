@@ -1,8 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import TestingHero from "@/components/testing/TestingHero";
 import EnvironmentTesting from "@/components/testing/EnvironmentTesting";
 import EMCTesting from "@/components/testing/EMCTesting";
@@ -72,54 +70,47 @@ export default function TestingPage() {
     }
   };
 
-  return (
-    <main className="relative min-h-screen bg-white overflow-hidden">
-      <div className="relative z-10">
-        <Header />
-        <TestingHero />
+  return (<>
+    <TestingHero />
 
-        {/* Fixed NavBar for desktop */}
-        <aside
-          className={`hidden lg:block fixed left-6 top-20 z-30 transition-opacity duration-300 ${
-            showSidebar ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
-        >
-          <NavSidebar 
-            title={t("testing.navTitle")}
-            sections={categories}
-            activeId={activeItem}
-            handleClick={handleNavClick}
-          />
-        </aside>
+    {/* Fixed NavBar for desktop */}
+    <aside
+      className={`hidden lg:block fixed left-6 top-20 z-30 transition-opacity duration-300 ${
+        showSidebar ? "opacity-100" : "opacity-0 pointer-events-none"
+      }`}
+    >
+      <NavSidebar 
+        title={t("testing.navTitle")}
+        sections={categories}
+        activeId={activeItem}
+        handleClick={handleNavClick}
+      />
+    </aside>
 
-        {/* Main Content - 2 Column Layout */}
-        <section className="pt-8 pb-12 lg:pt-12 lg:pb-16">
-          <div className="w-full px-6 sm:px-8 lg:pr-5 lg:pl-[280px]">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-              {/* Page top NavBar for phone */}
-              <aside className="lg:col-span-1 lg:hidden">
-                <NavSidebar
-                  title={t("testing.navTitle")}
-                  sections={categories}
-                  activeId={activeItem}
-                  handleClick={handleNavClick}
-                />
-              </aside>
+    {/* Main Content - 2 Column Layout */}
+    <section className="pt-8 pb-12 lg:pt-12 lg:pb-16">
+      <div className="w-full px-6 sm:px-8 lg:pr-5 lg:pl-[280px]">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+          {/* Page top NavBar for phone */}
+          <aside className="lg:col-span-1 lg:hidden">
+            <NavSidebar
+              title={t("testing.navTitle")}
+              sections={categories}
+              activeId={activeItem}
+              handleClick={handleNavClick}
+            />
+          </aside>
 
-              {/* Right Content */}
-              <div className="lg:col-span-4">
-                <EnvironmentTesting />
-                <EMCTesting />
-                <SoftwareComponents />
-                <CoreTestings />
-                <TestingCTA />
-              </div>
-            </div>
+          {/* Right Content */}
+          <div className="lg:col-span-4">
+            <EnvironmentTesting />
+            <EMCTesting />
+            <SoftwareComponents />
+            <CoreTestings />
+            <TestingCTA />
           </div>
-        </section>
-
-        <Footer />
+        </div>
       </div>
-    </main>
-  );
+    </section>
+  </>);
 }

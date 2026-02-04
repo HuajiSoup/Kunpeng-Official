@@ -2,12 +2,9 @@
 
 import { useState, useMemo, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Search, ArrowRight, Calendar, TestTube, Plane, Phone, FileText } from "lucide-react";
 import Link from "next/link";
-import { DotBackground } from "@/components/ui/DotBackground";
 import { useLanguage } from "@/lib/LanguageContext";
 
 // 新闻数据（从新闻中心页面获取）
@@ -373,197 +370,183 @@ function SearchContent() {
     );
   };
 
-  return (
-    <>
-      <Header />
+  return (<>
+    {/* Hero Section - 大搜索框 */}
+    <section className="relative py-16 lg:py-24 bg-white">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 text-center">
+              搜索结果
+            </h1>
 
-      {/* Hero Section - 大搜索框 */}
-      <section className="relative py-16 lg:py-24 bg-white">
-        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 text-center">
-                搜索结果
-              </h1>
-
-              {/* 大搜索框 */}
-              <form onSubmit={handleSearch} className="relative">
-                <div className="relative">
-                  <input
-                    type="text"
-                    value={searchInput}
-                    onChange={(e) => setSearchInput(e.target.value)}
-                    placeholder={t("search.placeholder") || "输入关键词搜索..."}
-                    className="w-full px-6 py-4 text-lg bg-white/80 backdrop-blur-sm border-[0.5px] border-blue-500/20 rounded-xl focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20 text-gray-900 placeholder:text-gray-400 focus:outline-none transition-all shadow-sm"
-                  />
-                  <button
-                    type="submit"
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-blue-600 hover:text-blue-700 transition-colors"
-                  >
-                    <Search className="w-6 h-6" />
-                  </button>
-                </div>
-              </form>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* 结果区域 */}
-      <section className="relative py-12 lg:py-16 bg-gray-50 min-h-screen">
-        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-          {query ? (
-            <>
-              {/* 结果统计和分类筛选 */}
-              <div className="mb-8">
-                <p className="text-gray-600 mb-4">
-                  找到 <span className="text-blue-600 font-semibold">{filteredResults.length}</span> 条关于 "
-                  <span className="text-gray-900 font-semibold">{query}</span>" 的结果
-                </p>
-
-                {/* Filter Tabs */}
-                <div className="flex flex-wrap gap-2">
-                  {(["全部", "实验检测", "适航服务", "公司新闻", "行业动态", "成功案例"] as const).map(
-                    (category) => (
-                      <button
-                        key={category}
-                        onClick={() => setActiveCategory(category)}
-                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                          activeCategory === category
-                            ? "bg-blue-600 text-white shadow-sm"
-                            : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200"
-                        }`}
-                      >
-                        {category}
-                      </button>
-                    )
-                  )}
-                </div>
-              </div>
-
-              {/* 结果列表 */}
-              {filteredResults.length > 0 ? (
-                <motion.div
-                  key={`results-${query}-${activeCategory}`}
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visible"
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6"
+            {/* 大搜索框 */}
+            <form onSubmit={handleSearch} className="relative">
+              <div className="relative">
+                <input
+                  type="text"
+                  value={searchInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                  placeholder={t("search.placeholder") || "输入关键词搜索..."}
+                  className="w-full px-6 py-4 text-lg bg-white/80 backdrop-blur-sm border-[0.5px] border-blue-500/20 rounded-xl focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20 text-gray-900 placeholder:text-gray-400 focus:outline-none transition-all shadow-sm"
+                />
+                <button
+                  type="submit"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-blue-600 hover:text-blue-700 transition-colors"
                 >
-                  {filteredResults.map((item) => (
-                    <motion.div 
-                      key={item.id} 
-                      variants={itemVariants}
-                      className="w-full"
+                  <Search className="w-6 h-6" />
+                </button>
+              </div>
+            </form>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+
+    {/* 结果区域 */}
+    <section className="relative py-12 lg:py-16 bg-gray-50 min-h-screen">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+        {query ? (
+          <>
+            {/* 结果统计和分类筛选 */}
+            <div className="mb-8">
+              <p className="text-gray-600 mb-4">
+                找到 <span className="text-blue-600 font-semibold">{filteredResults.length}</span> 条关于 "
+                <span className="text-gray-900 font-semibold">{query}</span>" 的结果
+              </p>
+
+              {/* Filter Tabs */}
+              <div className="flex flex-wrap gap-2">
+                {(["全部", "实验检测", "适航服务", "公司新闻", "行业动态", "成功案例"] as const).map(
+                  (category) => (
+                    <button
+                      key={category}
+                      onClick={() => setActiveCategory(category)}
+                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                        activeCategory === category
+                          ? "bg-blue-600 text-white shadow-sm"
+                          : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200"
+                      }`}
                     >
-                        <Link
-                          href={item.href}
-                          className="group block bg-white/80 backdrop-blur-sm border-[0.5px] border-blue-500/20 rounded-xl overflow-hidden hover:border-blue-500/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all duration-300 hover-gentle-wiggle h-full flex flex-col"
-                        >
-                          {/* 图片占位符 */}
-                          <div className="aspect-video bg-gray-100 border-b border-gray-200 flex items-center justify-center relative">
-                            {item.type === "news" && item.category === "成功案例" && (
-                              <div className="absolute top-3 right-3">
-                                <div className="bg-blue-600 text-white px-2 py-1 rounded text-xs font-semibold flex items-center gap-1">
-                                  <FileText className="w-3 h-3" />
-                                  <span>成功案例</span>
-                                </div>
-                              </div>
-                            )}
-                            <span className="text-gray-400 text-xs font-medium">
-                              {item.type === "testing" ? "Test Image" : item.type === "service" ? "Service Image" : "News Image"}
-                            </span>
-                          </div>
-
-                          {/* 卡片内容 */}
-                          <div className="p-5 flex-1 flex flex-col">
-                            <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
-                              {item.date && (
-                                <>
-                                  <Calendar className="w-3 h-3" />
-                                  <span>{item.date}</span>
-                                </>
-                              )}
-                              {getCategoryBadge(item.category)}
-                            </div>
-
-                            <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
-                              {highlightText(item.title, query)}
-                            </h3>
-
-                            <p className="text-sm text-gray-600 leading-relaxed mb-3 flex-1 line-clamp-3">
-                              {highlightText(item.excerpt, query)}
-                            </p>
-
-                            <div className="inline-flex items-center text-sm font-medium text-blue-600 group-hover:gap-2 transition-all mt-auto">
-                              <span>查看详情</span>
-                              <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                            </div>
-                          </div>
-                        </Link>
-                      </motion.div>
-                    ))}
-                </motion.div>
-              ) : (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="text-center py-20"
-                >
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
-                    <Search className="w-8 h-8 text-gray-400" />
-                  </div>
-                  <p className="text-gray-600 text-lg mb-2">未找到相关服务</p>
-                  <p className="text-gray-500 text-sm">
-                    请尝试搜索 <span className="text-blue-600">"EMC"</span> 或{" "}
-                    <span className="text-blue-600">"适航"</span>
-                  </p>
-                </motion.div>
-              )}
-            </>
-          ) : (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-center py-20"
-            >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
-                <Search className="w-8 h-8 text-gray-400" />
+                      {category}
+                    </button>
+                  )
+                )}
               </div>
-              <p className="text-gray-600 text-lg">请输入搜索关键词</p>
-            </motion.div>
-          )}
-        </div>
-      </section>
+            </div>
 
-      <Footer />
-    </>
-  );
+            {/* 结果列表 */}
+            {filteredResults.length > 0 ? (
+              <motion.div
+                key={`results-${query}-${activeCategory}`}
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6"
+              >
+                {filteredResults.map((item) => (
+                  <motion.div 
+                    key={item.id} 
+                    variants={itemVariants}
+                    className="w-full"
+                  >
+                      <Link
+                        href={item.href}
+                        className="group block bg-white/80 backdrop-blur-sm border-[0.5px] border-blue-500/20 rounded-xl overflow-hidden hover:border-blue-500/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all duration-300 hover-gentle-wiggle h-full flex flex-col"
+                      >
+                        {/* 图片占位符 */}
+                        <div className="aspect-video bg-gray-100 border-b border-gray-200 flex items-center justify-center relative">
+                          {item.type === "news" && item.category === "成功案例" && (
+                            <div className="absolute top-3 right-3">
+                              <div className="bg-blue-600 text-white px-2 py-1 rounded text-xs font-semibold flex items-center gap-1">
+                                <FileText className="w-3 h-3" />
+                                <span>成功案例</span>
+                              </div>
+                            </div>
+                          )}
+                          <span className="text-gray-400 text-xs font-medium">
+                            {item.type === "testing" ? "Test Image" : item.type === "service" ? "Service Image" : "News Image"}
+                          </span>
+                        </div>
+
+                        {/* 卡片内容 */}
+                        <div className="p-5 flex-1 flex flex-col">
+                          <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
+                            {item.date && (
+                              <>
+                                <Calendar className="w-3 h-3" />
+                                <span>{item.date}</span>
+                              </>
+                            )}
+                            {getCategoryBadge(item.category)}
+                          </div>
+
+                          <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
+                            {highlightText(item.title, query)}
+                          </h3>
+
+                          <p className="text-sm text-gray-600 leading-relaxed mb-3 flex-1 line-clamp-3">
+                            {highlightText(item.excerpt, query)}
+                          </p>
+
+                          <div className="inline-flex items-center text-sm font-medium text-blue-600 group-hover:gap-2 transition-all mt-auto">
+                            <span>查看详情</span>
+                            <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                          </div>
+                        </div>
+                      </Link>
+                    </motion.div>
+                  ))}
+              </motion.div>
+            ) : (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-center py-20"
+              >
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
+                  <Search className="w-8 h-8 text-gray-400" />
+                </div>
+                <p className="text-gray-600 text-lg mb-2">未找到相关服务</p>
+                <p className="text-gray-500 text-sm">
+                  请尝试搜索 <span className="text-blue-600">"EMC"</span> 或{" "}
+                  <span className="text-blue-600">"适航"</span>
+                </p>
+              </motion.div>
+            )}
+          </>
+        ) : (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center py-20"
+          >
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
+              <Search className="w-8 h-8 text-gray-400" />
+            </div>
+            <p className="text-gray-600 text-lg">请输入搜索关键词</p>
+          </motion.div>
+        )}
+      </div>
+    </section>
+  </>);
 }
 
 export default function SearchPage() {
   const { t } = useLanguage();
   return (
-    <main className="relative min-h-screen bg-white overflow-hidden">
-      {/* 浅色点状背景 */}
-      <DotBackground variant="light" />
-      
-      {/* 内容层 */}
-      <div className="relative z-10">
-        <Suspense
-          fallback={
-            <div className="min-h-screen flex items-center justify-center">
-              <div className="text-gray-500">{t("search.loading") || "加载中..."}</div>
-            </div>
-          }
-        >
-          <SearchContent />
-        </Suspense>
-      </div>
-    </main>
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-gray-500">{t("search.loading") || "加载中..."}</div>
+        </div>
+      }
+    >
+      <SearchContent />
+    </Suspense>
   );
 }

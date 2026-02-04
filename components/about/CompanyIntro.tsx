@@ -1,3 +1,5 @@
+import { PageSectionTitle } from "../ui/PageSectionTitle"
+
 export default function CompanyIntro() {
   return (
     <section id="company-intro" className="relative py-12 lg:py-16 bg-white scroll-mt-24" data-anchor="intro">
@@ -5,17 +7,12 @@ export default function CompanyIntro() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* 左侧文本内容 */}
           <div className="space-y-6">
-            <div className="mb-10">
-              <span className="text-xs font-bold tracking-widest text-blue-600/70 uppercase block mb-4">
-                COMPANY PROFILE
-              </span>
-              <h2 className="text-2xl lg:text-3xl font-bold mb-6 tracking-tight leading-tight">
-                <span className="text-slate-900">
-                  公司简介
-                </span>
-              </h2>
-              <div className="h-1 w-10 bg-gradient-to-r from-blue-500 to-cyan-500"></div>
-            </div>
+            <PageSectionTitle 
+              title="公司简介"
+              subtitle="COMPANY PROFILE"
+              align="start"
+            />
+
             <div className="space-y-5 text-slate-600 leading-relaxed">
               <p className="text-sm lg:text-base">
                 浙江鲲鹏航空技术测试验证有限公司是龙兴航电（龙兴航电）的重要子公司，专注于航空技术测试、验证及适航咨询服务。

@@ -1,4 +1,5 @@
 import { ItemBox } from "../ui/ItemBox";
+import { PageSectionTitle } from "../ui/PageSectionTitle";
 
 const milestones = [
   {
@@ -22,20 +23,11 @@ export default function DevelopmentHistory() {
   return (
     <section id="development-history" className="relative py-12 lg:py-16 bg-white scroll-mt-24 border-t border-slate-200 pt-16">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="text-center mb-12">
-          <span className="text-xs font-bold tracking-widest text-blue-600/70 uppercase block mb-4">
-            DEVELOPMENT HISTORY
-          </span>
-          <h2 className="text-2xl lg:text-3xl font-bold mb-6 tracking-tight leading-tight">
-            <span className="text-slate-900">
-              发展历程
-            </span>
-          </h2>
-          <div className="h-1 w-10 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-4"></div>
-          <p className="text-base text-slate-600 font-light max-w-2xl mx-auto leading-relaxed">
-            XXXXXXXXXX XXXXXX XXXXXX XXXXXX
-          </p>
-        </div>
+        <PageSectionTitle 
+          title="发展历程"
+          subtitle="DEVELOPMENT HISTORY"
+          description="XXX XXX XXXXXXX"
+        />
 
         <div className="max-w-5xl mx-auto">
           {/* timeline wrapper */}
