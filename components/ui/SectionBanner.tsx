@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { TextReveal } from "./TextReveal";
+import { GridBackground } from "./GridBackground";
+import { HaloBackground } from "./HaloBackground";
 
 interface SectionBannerProps {
   top: string;
@@ -16,63 +18,8 @@ export function SectionBanner({
 }: SectionBannerProps) {
   return (<>
     <section className="hero-section relative w-full h-[450px] lg:h-[550px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900">
-      {/* 科技感网格背景 */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.4) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(59, 130, 246, 0.4) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px',
-        }}></div>
-      </div>
-
-      {/* 动态光晕效果 */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, 50, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"
-          animate={{
-            x: [0, -100, 0],
-            y: [0, -50, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      </div>
-
-      {/* 面包屑导航 */}
-      {/* <div className="absolute top-6 left-0 right-0 z-20">
-        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-          <motion.nav
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex items-center text-sm text-white/70"
-          >
-            <Link href="/" className="hover:text-white transition-colors flex items-center">
-              <Home className="w-4 h-4 mr-1" />
-              {t("nav.home")}
-            </Link>
-            <ChevronRight className="w-4 h-4 mx-2 text-white/50" />
-            <span className="text-white">{t("nav.about")}</span>
-          </motion.nav>
-        </div>
-      </div> */}
+      <GridBackground />
+      <HaloBackground />
 
       {/* 主要内容 */}
       <div className="relative z-10 container mx-auto px-6 sm:px-8 lg:px-12 text-center py-20">
@@ -110,20 +57,6 @@ export function SectionBanner({
             {bottom}
           </motion.p>
         </TextReveal>
-
-        {/* 装饰性光点 */}
-        <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-blue-400 rounded-full blur-sm"
-          animate={{
-            opacity: [0.5, 1, 0.5],
-            scale: [1, 1.5, 1],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
       </div>
 
       {/* 底部渐变过渡 */}

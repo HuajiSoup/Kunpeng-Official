@@ -1,9 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Phone, MapPin, Mail, Download, FileText, ChevronDown, ChevronUp } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
-import { SectionBanner } from "@/components/ui/SectionBanner";
 import { NavSidebar } from "@/components/ui/NavSidebar";
 import { ContactHero } from "@/components/contact/ContactHero";
 import { ContactInfo } from "@/components/contact/ContactInfo";
