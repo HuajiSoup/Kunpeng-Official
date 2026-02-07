@@ -4,6 +4,7 @@ import { Award, Cpu, Users, Briefcase } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { IntroTitle } from "./ui/HomeSectionTitle";
 import { BentoCard } from "./ui/BentoGrid";
+import { AnimatedNumber } from "./ui/AnimatedNumber";
 
 const getStats = (t: (key: string) => string) => [
   {
@@ -57,9 +58,11 @@ export default function Statistics() {
                   <Icon className="w-6 h-6 text-white" />
                 </div>
                 <div className="mb-2">
-                  <span className="text-3xl lg:text-4xl font-semibold text-white">
-                    {stat.value}{stat.suffix}
-                  </span>
+                  <AnimatedNumber
+                    className="text-3xl lg:text-4xl font-semibold text-white"
+                    endValue={stat.value}
+                    suffix={stat.suffix}
+                  />
                 </div>
                 <div className="text-base font-medium text-white mb-1">
                   {stat.label}
