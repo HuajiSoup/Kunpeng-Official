@@ -1,7 +1,8 @@
 import { useLanguage } from "@/lib/LanguageContext";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
-import { FormEvent } from "react";
+import { useSearchParams } from "next/navigation";
+import { FormEvent, useEffect } from "react";
 
 interface SearchBarProps {
   inputRef: React.RefObject<HTMLInputElement>;
@@ -9,7 +10,15 @@ interface SearchBarProps {
 }
 
 export function SearchBar({inputRef, handleSearch}: SearchBarProps) {
+  const searchParams = useSearchParams();
+  const query = searchParams?.get("q") || "";
   const { t } = useLanguage();
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.value = query;
+    }
+  }, [inputRef]);
 
   return (<>
     <section className="relative py-16 lg:py-24 bg-white">

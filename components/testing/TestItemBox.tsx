@@ -17,7 +17,7 @@ export function TestItemBox({
 }: TestItemBoxProps) {
   return (<>
     <div
-      className="group bg-white/80 backdrop-blur-sm border-[0.5px] border-blue-500/20 rounded-xl overflow-hidden hover:border-blue-500/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all duration-300 hover-gentle-wiggle cursor-pointer"
+      className="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-gray-300 hover:shadow-lg transition-all duration-300 hover-gentle-wiggle cursor-pointer"
     >
       {/* 暂时不知道怎么放图片 */}
       <div className="aspect-video bg-gray-100 border-b border-gray-200 flex items-center justify-center">

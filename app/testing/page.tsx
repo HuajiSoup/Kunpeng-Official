@@ -21,37 +21,24 @@ export default function TestingPage() {
   const { t } = useLanguage();
   const categories = getCategories(t);
   const [activeItem, setActiveItem] = useState("environment");
-  const [showSidebar, setShowSidebar] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
     const handleScroll = () => {
       // auto highlight
+      const limit = window.innerHeight / 2;
       const currentSection = [...categories]
-        .reverse()
         .find(({id}) => {
           const element = document.getElementById(id);
           if (element) {
-            return element.getBoundingClientRect().top <= 100;
+            return element.getBoundingClientRect().bottom >= limit;
           }
           return false;
         });
   
       if (currentSection) {
         setActiveItem(currentSection.id);
-      }
-
-      // Between .hero-section and Footer -> Show sidebar
-      const heroSection = document.querySelector('section.hero-section');
-      const footer = document.querySelector('footer');
-
-      if (heroSection && footer) {
-        const scrollY = window.scrollY;
-        const heroBottom = heroSection.getBoundingClientRect().top + heroSection.getBoundingClientRect().height + scrollY;
-        const footerTop = footer.getBoundingClientRect().top + scrollY;
-
-        setShowSidebar(scrollY >= heroBottom && scrollY <= footerTop - 100);
       }
     };
 
@@ -73,32 +60,19 @@ export default function TestingPage() {
   return (<>
     <TestingHero />
 
-    {/* Fixed NavBar for desktop */}
-    <aside
-      className={`hidden lg:block fixed left-6 top-20 z-30 transition-opacity duration-300 ${
-        showSidebar ? "opacity-100" : "opacity-0 pointer-events-none"
-      }`}
-    >
-      <NavSidebar 
-        title={t("testing.navTitle")}
-        sections={categories}
-        activeId={activeItem}
-        handleClick={handleNavClick}
-      />
-    </aside>
-
     {/* Main Content - 2 Column Layout */}
     <section className="pt-8 pb-12 lg:pt-12 lg:pb-16">
-      <div className="w-full px-6 sm:px-8 lg:pr-5 lg:pl-[280px]">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          {/* Page top NavBar for phone */}
-          <aside className="lg:col-span-1 lg:hidden">
-            <NavSidebar
-              title={t("testing.navTitle")}
-              sections={categories}
-              activeId={activeItem}
-              handleClick={handleNavClick}
-            />
+          <aside className="lg:col-span-1">
+            <div className="sticky top-20">
+              <NavSidebar
+                title={t("testing.navTitle")}
+                sections={categories}
+                activeId={activeItem}
+                handleClick={handleNavClick}
+              />
+            </div>
           </aside>
 
           {/* Right Content */}

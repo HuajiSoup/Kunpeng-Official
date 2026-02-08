@@ -5,9 +5,10 @@ import { SearchResultCard } from "./SearchResultCard";
 interface SearchResultListProps {
   results: SearchResult[];
   query: string;
+  category: string;
 }
 
-export function SearchResultList({ results, query }: SearchResultListProps) {
+export function SearchResultList({ results, query, category }: SearchResultListProps) {
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -21,7 +22,7 @@ export function SearchResultList({ results, query }: SearchResultListProps) {
 
   return (<>
     <motion.div
-        key={query}
+        key={`${query}-${category}`}
         variants={containerVariants}
         initial="hidden"
         animate="visible"

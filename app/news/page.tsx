@@ -195,29 +195,6 @@ export default function NewsPage() {
   const sidebarItems = getSidebarItems(t);
 
   const [activeItem, setActiveItem] = useState<string>("all");
-  const [showSidebar, setShowSidebar] = useState(false);
-  
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const handleScroll = () => {
-      const heroSection = document.querySelector('section.hero-section');
-      const footer = document.querySelector('footer');
-
-      if (heroSection && footer) {
-        const scrollY = window.scrollY;
-        const heroBottom = heroSection.getBoundingClientRect().top + heroSection.getBoundingClientRect().height + scrollY;
-        const footerTop = footer.getBoundingClientRect().top + scrollY;
-
-        setShowSidebar(scrollY >= heroBottom && scrollY <= footerTop - 100);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    setTimeout(handleScroll, 500);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const handleNavClick = (id: string) => {
     setActiveItem(id);
@@ -231,30 +208,18 @@ export default function NewsPage() {
   return (<>
     <NewsHero />
 
-    <aside 
-      className={`hidden lg:block fixed left-6 top-20 z-30 transition-opacity duration-300 ${
-        showSidebar ? "opacity-100" : "opacity-0 pointer-events-none"
-      }`}
-    >
-      <NavSidebar 
-        title={t("news.navTitle")}
-        sections={sidebarItems}
-        activeId={activeItem}
-        handleClick={handleNavClick}
-      />
-    </aside>
-
     <section className="pt-8 pb-12 lg:pt-12 lg:pb-16">
-      <div className="w-full px-6 sm:px-8 lg:pr-5 lg:pl-[280px]">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          {/* Page top NavBar for phone */}
-          <aside className="lg:col-span-1 lg:hidden">
-            <NavSidebar 
-              title={t("news.navTitle")}
-              sections={sidebarItems}
-              activeId={activeItem}
-              handleClick={handleNavClick}
-            />
+          <aside className="lg:col-span-1">
+            <div className="sticky top-20">
+              <NavSidebar 
+                title={t("news.navTitle")}
+                sections={sidebarItems}
+                activeId={activeItem}
+                handleClick={handleNavClick}
+              />
+            </div>
           </aside>
         
           <div className="lg:col-span-4">

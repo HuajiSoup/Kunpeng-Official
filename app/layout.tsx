@@ -18,12 +18,10 @@ export default function RootLayout({
     <html lang="zh-CN">
       <body className="text-sm">
         <LanguageProvider>
-        <main className="relative min-h-screen bg-white overflow-hidden">
-          <div className="relative z-10">
-            <Header />
+        <main className="relative min-h-screen bg-white">
+          <Header />
             {children}
-            <Footer />
-          </div>
+          <Footer />
         </main>
         </LanguageProvider>
       </body>

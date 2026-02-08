@@ -25,7 +25,6 @@ export default function ServicesPage() {
   const sidebarItems = getSidebarItems(t);
   
   const [activeItem, setActiveItem] = useState<string>("consulting");
-  const [showSidebar, setShowSidebar] = useState(false);
 
   // sidebar navigator
   useEffect(() => {
@@ -47,17 +46,6 @@ export default function ServicesPage() {
         setActiveItem(currentSection.id);
       }
 
-      // Between .hero-section and Footer -> Show sidebar
-      const heroSection = document.querySelector('section.hero-section');
-      const footer = document.querySelector('footer');
-
-      if (heroSection && footer) {
-        const scrollY = window.scrollY;
-        const heroBottom = heroSection.getBoundingClientRect().top + heroSection.getBoundingClientRect().height + scrollY;
-        const footerTop = footer.getBoundingClientRect().top + scrollY;
-
-        setShowSidebar(scrollY >= heroBottom && scrollY <= footerTop - 100);
-      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -78,35 +66,22 @@ export default function ServicesPage() {
   return (<>
     <ServicesHero />
 
-    {/* Fixed Sidebar Navigation - 固定在左上角 */}
-    <aside
-      className={`hidden lg:block fixed left-6 top-20 z-30 transition-opacity duration-300 ${
-        showSidebar ? "opacity-100" : "opacity-0 pointer-events-none"
-      }`}
-    >
-      <NavSidebar
-        title={t("services.navTitle")}
-        sections={sidebarItems}
-        activeId={activeItem}
-        handleClick={handleNavClick}
-      />
-    </aside>
-
-    {/* Main Content - 5 Column Layout (1:4) */}
+    {/* Main Content - 2 Column Layout */}
     <section className="pt-8 pb-12 lg:pt-12 lg:pb-16">
-      <div className="w-full px-6 sm:px-8 lg:pr-5 lg:pl-[280px]">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          {/* 占位空间 - 移动端显示导航栏 */}
-          <aside className="lg:col-span-1 lg:hidden">
-            <NavSidebar
-              title={t("services.navTitle")}
-              sections={sidebarItems}
-              activeId={activeItem}
-              handleClick={handleNavClick}
-            />
+          <aside className="lg:col-span-1">
+            <div className="sticky top-20">
+              <NavSidebar
+                title={t("services.navTitle")}
+                sections={sidebarItems}
+                activeId={activeItem}
+                handleClick={handleNavClick}
+              />
+            </div>
           </aside>
 
-          {/* Right Content (4 columns) */}
+          {/* Right Content */}
           <div className="lg:col-span-4 py-16">
             <ConsultingSection />
             <EngineeringSection />

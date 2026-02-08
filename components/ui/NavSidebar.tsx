@@ -15,7 +15,7 @@ export function NavSidebar({
   handleClick
 }: NavSidebarProps) {
   return (<>
-    <nav className="w-[240px] bg-white/80 backdrop-blur-sm border-[0.5px] border-blue-500/20 rounded-xl p-4 shadow-sm">
+    <nav className="bg-white border border-gray-200 rounded-lg p-3">
       <h3 className="text-sm font-semibold text-gray-900 mb-4 px-2">{title}</h3>
       <ul className="space-y-1">
         {sections.map((item) => (

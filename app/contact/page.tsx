@@ -16,7 +16,6 @@ const getSections = (t: (key: string) => string) => [
 
 export default function ContactPage() {
   const { t } = useLanguage();
-  const [showSidebar, setShowSidebar] = useState(false);
   const [activeItem, setActiveItem] = useState("contact");
 
   const sections = getSections(t);
@@ -39,18 +38,6 @@ export default function ContactPage() {
       if (currentSection) {
         setActiveItem(currentSection.id);
       }
-
-      // Between .hero-section and Footer -> Show sidebar
-      const heroSection = document.querySelector('section.hero-section');
-      const footer = document.querySelector('footer');
-
-      if (heroSection && footer) {
-        const scrollY = window.scrollY;
-        const heroBottom = heroSection.getBoundingClientRect().top + heroSection.getBoundingClientRect().height + scrollY;
-        const footerTop = footer.getBoundingClientRect().top + scrollY;
-
-        setShowSidebar(scrollY >= heroBottom && scrollY <= footerTop - 100);
-      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -70,27 +57,11 @@ export default function ContactPage() {
   return (<>
     <ContactHero />
 
-    <aside
-      className={`hidden lg:block fixed left-6 top-20 z-30 transition-opacity duration-300 ${
-        showSidebar ? "opacity-100" : "opacity-0 pointer-events-none"
-      }`}
-    >
-      <NavSidebar 
-        title={t("contact.navTitle")}
-        sections={sections}
-        activeId={activeItem}
-        handleClick={handleNavClick}
-      />
-    </aside>
-
     {/* Main Content - 2 Column Layout */}
     <section className="py-10 lg:py-12">
-      <div 
-        className="w-full px-6 sm:px-8 lg:pr-5 lg:pl-[280px]"
-      >
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-          {/* 占位空间 - 移动端显示导航栏 */}
-          <aside className="lg:col-span-1 lg:hidden">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+          <aside className="lg:col-span-1">
             <div className="sticky top-20">
               <NavSidebar 
                 title={t("contact.navTitle")}
@@ -102,7 +73,7 @@ export default function ContactPage() {
           </aside>
 
           {/* Right Content */}
-          <div className="lg:col-span-3 space-y-10">
+          <div className="lg:col-span-4 space-y-10">
             <ContactInfo />
             <Downloads />
             <FAQ />

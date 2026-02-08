@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, Suspense, useRef } from "react";
+import { useState, useMemo, Suspense, useRef, useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
@@ -317,7 +317,7 @@ function SearchContent() {
 
           {/* 结果列表 */}
           {filteredResults.length > 0 ? (
-            <SearchResultList results={filteredResults} query={query} />
+            <SearchResultList results={filteredResults} query={query} category={activeCategory} />
           ) : (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -368,7 +368,6 @@ export default function SearchPage() {
 
   return (<>
     <section className="relative py-12 lg:py-16 bg-gray-50 min-h-screen">
-      <SearchBar inputRef={inputRef} handleSearch={handleSearch} />
       <Suspense
         fallback={
           <div className="min-h-screen flex items-center justify-center">
@@ -376,6 +375,7 @@ export default function SearchPage() {
           </div>
         }
       >
+        <SearchBar inputRef={inputRef} handleSearch={handleSearch} />
         <SearchContent />
       </Suspense>
     </section>
