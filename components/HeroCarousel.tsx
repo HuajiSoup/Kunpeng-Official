@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
-import Image from "next/image";
 import Link from "next/link";
 
 const carouselImages = [
@@ -36,8 +35,8 @@ const getSlides = (t: (key: string) => string) => [
     title: t("home.hero.slide3.title"),
     subtitle: t("home.hero.slide3.subtitle"),
     description: t("home.hero.slide3.description"),
-    href: "/",
-    hrefText: "了解什么呢",
+    href: "/#qualifications",
+    hrefText: "了解资质认证",
   },
   {
     image: carouselImages[3],
@@ -53,20 +52,19 @@ export default function HeroCarousel() {
   const { t } = useLanguage();
   const slides = getSlides(t);
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  
+  const nextSlide = () => {
+    setCurrentIndex((cur) => (cur + 1) % slides.length);
+  }
+  const prevSlide = () => {
+    setCurrentIndex((cur) => cur ? cur - 1 : slides.length - 1);
+  }
   // 自动轮播
   useEffect(() => {
     const interval = setInterval(nextSlide, 6000);
 
     return () => clearInterval(interval);
   }, []);
-
-  const nextSlide = () => {
-    setCurrentIndex((currentIndex + 1) % slides.length);
-  }
-  const prevSlide = () => {
-    setCurrentIndex(currentIndex ? currentIndex - 1 : slides.length - 1);
-  }
 
   const imageVariants: Variants = {
     hidden: {
@@ -117,7 +115,7 @@ export default function HeroCarousel() {
   };
 
   return (
-    <section className="relative w-full h-[75vh] flex items-center justify-center overflow-hidden bg-slate-950">
+    <section className="home-hero relative w-full h-[75vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <AnimatePresence mode="popLayout">
           {/* background */}
@@ -129,11 +127,12 @@ export default function HeroCarousel() {
             animate="visible"
             exit="hidden"
           >
-            <Image
-              src={slides[currentIndex].image}
-              alt={slides[currentIndex].title}
-              fill
-            />
+            <div 
+              className="absolute inset-0 w-full h-full"
+              style={{
+                background: `url(${slides[currentIndex].image}) center / cover`
+              }}
+            ></div>
             <div className="absolute inset-0 bg-black/50"></div>            
           </motion.div>
 

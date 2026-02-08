@@ -3,18 +3,16 @@ interface IntroTitleProps {
   desc: string;
 }
 
-export function IntroTitle({
+export function HomeSectionTitle({
   title,
   desc
 }: IntroTitleProps) {
   return (<>
     <div className="text-center mb-12">
-      <h2 className="text-2xl lg:text-3xl font-semibold text-white mb-3 tracking-tight">
-        <span className="bg-gradient-to-r from-white via-blue-100 to-cyan-200 bg-clip-text text-transparent">
-          {title}
-        </span>
+      <h2 className="text-2xl lg:text-3xl font-semibold text-gray-900 mb-3 tracking-tight">
+        {title}
       </h2>
-      <p className="text-base text-slate-300 font-light">
+      <p className="text-base text-gray-500 max-w-2xl mx-auto leading-relaxed font-light">
         {desc}
       </p>
     </div>

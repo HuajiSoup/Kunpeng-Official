@@ -39,10 +39,6 @@ interface BentoCardProps {
 
 export function BentoCard({
   className,
-  title,
-  description,
-  header,
-  icon,
   children,
   theme = "dark",
 }: BentoCardProps) {
