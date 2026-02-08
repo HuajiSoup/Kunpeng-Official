@@ -36,7 +36,9 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/typography"),
+  ],
   safelist: [
     'md:col-span-1',
     'md:col-span-2',

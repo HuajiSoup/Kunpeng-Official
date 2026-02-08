@@ -1,7 +1,7 @@
-import { NewsCard, NewsItem } from "./NewsCard";
+import { NewsCard, NewsCardItem } from "./NewsCard";
 
 interface NewsListProps {
-  news: NewsItem[];
+  news: NewsCardItem[];
 }
 
 export default function NewsList({ news }: NewsListProps) {

@@ -3,10 +3,10 @@ import { Award, Calendar, ArrowRight } from "lucide-react";
 import { ItemBox } from "../ui/ItemBox";
 import { cn } from "@/lib/utils";
 
-export interface NewsItem {
+export interface NewsCardItem {
   id: string;
   title: string;
-  excerpt: string;
+  summary: string;
   date: string;
   category: "all" | "company" | "industry" | "success";
   image?: string;
@@ -25,7 +25,7 @@ export function NewsCard({
   featured = false,
   showArrow = true
 }: {
-  item: NewsItem,
+  item: NewsCardItem,
   className?: string,
   featured?: boolean,
   showArrow?: boolean,
@@ -63,7 +63,7 @@ export function NewsCard({
           </h3>
 
           <p className={`text-${featured ? "base" : "sm"} text-gray-600 leading-relaxed flex-1 line-clamp-3`}>
-            {item.excerpt}
+            {item.summary}
           </p>
 
           {showArrow && <div className="inline-flex items-center text-sm font-medium text-blue-600 mt-auto">
