@@ -52,33 +52,45 @@ export default function HeroCarousel() {
   const { t } = useLanguage();
   const slides = getSlides(t);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState<1 | -1>(1);
   
   const nextSlide = () => {
+    setDirection(1);
     setCurrentIndex((cur) => (cur + 1) % slides.length);
   }
   const prevSlide = () => {
+    setDirection(-1);
     setCurrentIndex((cur) => cur ? cur - 1 : slides.length - 1);
   }
   // 自动轮播
   useEffect(() => {
-    const interval = setInterval(nextSlide, 6000);
+    const interval = setInterval(() => {
+      setDirection(1);
+      nextSlide();
+    }, 6000);
 
     return () => clearInterval(interval);
   }, []);
 
-  const imageVariants: Variants = {
-    hidden: {
+  const boxVariants: Variants = {
+    enter: (direction) => ({
+      x: direction == 1 ? "100%" : "-100%",
+      opacity: 0,
+    }),
+    exit: (direction) => ({
+      x: direction == 1 ? "-100%" : "100%",
       opacity: 0,
       transition: {
         ease: "easeInOut",
-        duration: 0.5,
+        duration: 1.0,
       }
-    },
-    visible: {
+    }),
+    show: {
+      x: 0,
       opacity: 1,
       transition: {
         ease: "easeInOut",
-        duration: 0.5,
+        duration: 1.0,
       }
     }
   }
@@ -86,87 +98,90 @@ export default function HeroCarousel() {
   const textVariants: Variants = {
     hidden: {
       opacity: 0,
-      y: 20,
+      y: 40,
       transition: {
         opacity: {
           ease: "linear",
-          duration: 0.5,
+          duration: 1.0,
         },
         y: {
           ease: "easeInOut",
-          duration: 0.5,
+          duration: 1.0,
         },
       }
     },
-    visible: {
+    show: {
       opacity: 1,
       y: 0,
       transition: {
         opacity: {
           ease: "linear",
-          duration: 0.5,
+          delay: 0.5,
+          duration: 1.0,
         },
         y: {
           ease: "easeInOut",
-          duration: 0.5,
+          delay: 0.5,
+          duration: 1.0,
         },
       }
     }
   };
 
   return (
-    <section className="home-hero relative w-full h-[75vh] flex items-center justify-center overflow-hidden">
+    <section className="home-hero relative w-full h-[75vh] flex items-center justify-center overflow-hidden bg-black">
       <div className="absolute inset-0">
         <AnimatePresence mode="popLayout">
-          {/* background */}
           <motion.div
-            key={`${currentIndex}-image`}
+            key={currentIndex}
             className="absolute inset-0"
-            variants={imageVariants}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
+            variants={boxVariants}
+            custom={direction}
+            initial="enter"
+            animate="show"
+            exit="exit"
           >
+            {/* bg */}
             <div 
               className="absolute inset-0 w-full h-full"
               style={{
                 background: `url(${slides[currentIndex].image}) center / cover`
               }}
             ></div>
-            <div className="absolute inset-0 bg-black/50"></div>            
+            <div className="absolute inset-0 bg-black/50"></div>      
+
+            {/* text content */}
+            <motion.div
+              className="relative z-20 container mx-auto px-6 sm:px-8 lg:px-12 h-full flex items-center"
+              variants={textVariants}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+            >
+              <div className="mx-auto text-center">
+                <h1 className="text-4xl sm:text-5xl lg:text-5xl font-semibold text-white mb-3 leading-[1.1] tracking-tight drop-shadow-lg">
+                  <span className="block">
+                    {slides[currentIndex].title}
+                  </span>
+                  <span className="block text-white/90 mt-1.5 font-light">
+                    {slides[currentIndex].subtitle}
+                  </span>
+                </h1>
+                <p className="text-lg sm:text-xl lg:text-2xl text-slate-300 mt-6 max-w-3xl mx-auto leading-relaxed font-light">
+                  {slides[currentIndex].description}
+                </p>
+
+                <Link
+                  href={slides[currentIndex].href}
+                  className="group inline-flex items-center mt-6 px-5 py-2.5 bg-white text-gray-900 text-sm font-medium rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-lg"
+                >
+                  <span>{slides[currentIndex].hrefText}</span>
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </motion.div>
           </motion.div>
 
-          {/* text content */}
-          <motion.div
-            key={`${currentIndex}-text`}
-            className="relative z-20 container mx-auto px-6 sm:px-8 lg:px-12 h-full flex items-center"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-          >
-            <div className="mx-auto text-center">
-              <h1 className="text-4xl sm:text-5xl lg:text-5xl font-semibold text-white mb-3 leading-[1.1] tracking-tight drop-shadow-lg">
-                <span className="block">
-                  {slides[currentIndex].title}
-                </span>
-                <span className="block text-white/90 mt-1.5 font-light">
-                  {slides[currentIndex].subtitle}
-                </span>
-              </h1>
-              <p className="text-lg sm:text-xl lg:text-2xl text-slate-300 mt-6 max-w-3xl mx-auto leading-relaxed font-light">
-                {slides[currentIndex].description}
-              </p>
-
-              <Link
-                href={slides[currentIndex].href}
-                className="group inline-flex items-center mt-6 px-5 py-2.5 bg-white text-gray-900 text-sm font-medium rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-lg"
-              >
-                <span>{slides[currentIndex].hrefText}</span>
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </motion.div>
         </AnimatePresence>
       </div>
 

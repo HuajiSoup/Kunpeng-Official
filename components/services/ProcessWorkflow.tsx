@@ -30,7 +30,7 @@ const steps = [
 
 export default function ProcessWorkflow() {
   return (
-    <section id="process-workflow" className="scroll-mt-24 border-t border-blue-500/10 pt-24">
+    <section id="process-workflow" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12 border-t border-blue-500/10">
       <PageSectionTitle 
         title="服务流程"
         subtitle="SERVICE PROCESS"
@@ -53,9 +53,9 @@ export default function ProcessWorkflow() {
                     <div className="w-24 h-24 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-blue-500/30 shadow-sm">
                       <Icon className="w-10 h-10 text-blue-600" />
                     </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                    {/* <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
                       <span className="text-xs font-bold text-white">{step.number}</span>
-                    </div>
+                    </div> */}
                   </div>
 
                   <h3 className="text-base font-bold text-gray-900 mb-2 text-center">

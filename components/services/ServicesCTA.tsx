@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function ServicesCTA() {
   return (
-    <section className="border-t border-blue-500/10 pt-24 mt-24">
+    <section className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12 border-t border-blue-500/10 mt-24">
       {/* 深色背景 Banner */}
       <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl p-8 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-lg">
         <div className="flex-1">

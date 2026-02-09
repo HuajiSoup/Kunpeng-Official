@@ -209,10 +209,10 @@ export default function NewsPage() {
     <NewsHero />
 
     <section className="pt-8 pb-12 lg:pt-12 lg:pb-16">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          <aside className="lg:col-span-1">
-            <div className="sticky top-20">
+      <div className="w-full mx-auto px-0">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-6 lg:gap-0">
+          <aside className="mx-auto lg:col-span-1 w-full">
+            <div className="sticky top-20 w-4/5 mx-auto lg:w-10/12 lg:ml-auto lg:mr-0">
               <NavSidebar 
                 title={t("news.navTitle")}
                 sections={sidebarItems}

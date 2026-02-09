@@ -22,7 +22,7 @@ const engineeringServices = [
 
 export default function EngineeringSection() {
   return (
-    <section id="engineering" className="scroll-mt-24 border-t border-blue-500/10 pt-24" data-anchor="engineering">
+    <section id="engineering" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12 border-t border-blue-500/10" data-anchor="engineering">
       <PageSectionTitle 
         title="工程技术支持"
         subtitle="ENGINEERING SUPPORT"

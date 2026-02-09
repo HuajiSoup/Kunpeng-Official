@@ -7,30 +7,26 @@ interface NewsListProps {
 export default function NewsList({ news }: NewsListProps) {
   if (news.length === 0) {
     return (
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="text-center py-12">
-            <p className="text-gray-500">暂无其他新闻</p>
-          </div>
+      <section className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12">
+        <div className="text-center py-12">
+          <p className="text-gray-500">暂无其他新闻</p>
         </div>
       </section>
     );
   }
 
   return (
-    <section className="py-16 lg:py-24">
+    <section className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12">
       <div className="mb-12">
         <h2 className="text-4xl lg:text-5xl font-semibold text-gray-900 mb-4 tracking-tight">
           全部新闻
         </h2>
       </div>
       
-      <div className="w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-          {news.map((article, index) => (
-            <NewsCard item={article} key={index} />
-          ))}
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+        {news.map((article, index) => (
+          <NewsCard item={article} key={index} />
+        ))}
       </div>
     </section>
   );

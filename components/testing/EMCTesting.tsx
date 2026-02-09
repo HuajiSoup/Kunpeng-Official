@@ -49,19 +49,17 @@ const emcTests = [
 
 export default function EMCTesting() {
   return (
-    <section id="emc-testing" className="py-12 lg:py-16 bg-white scroll-mt-24" data-anchor="emc">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-        <PageSectionTitle 
-          title="电磁兼容性试验"
-          subtitle="Electro-Magnetic Compatibility"
-          description="XXX XXX XXXXXXX"
-        />
+    <section id="emc-testing" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12" data-anchor="emc">
+      <PageSectionTitle 
+        title="电磁兼容性试验"
+        subtitle="Electro-Magnetic Compatibility"
+        description="XXX XXX XXXXXXX"
+      />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
-          {emcTests.map((test, index) => (
-            <TestItemBox key={index} {...test} />
-          ))}
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+        {emcTests.map((test, index) => (
+          <TestItemBox key={index} {...test} />
+        ))}
       </div>
     </section>
   );

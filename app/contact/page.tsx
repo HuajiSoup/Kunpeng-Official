@@ -25,12 +25,12 @@ export default function ContactPage() {
 
     const handleScroll = () => {
       // auto highlight
+      const limit = window.innerHeight / 2;
       const currentSection = [...sections]
-        .reverse()
         .find(({id}) => {
           const element = document.getElementById(id);
           if (element) {
-            return element.getBoundingClientRect().top <= 100;
+            return element.getBoundingClientRect().bottom >= limit;
           }
           return false;
         });
@@ -50,7 +50,8 @@ export default function ContactPage() {
     setActiveItem(itemId);
     const element = document.getElementById(itemId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      const scrollTop = element.getBoundingClientRect().top + window.pageYOffset - 50;
+      window.scrollTo({ top: scrollTop, behavior: "smooth" });
     }
   };
   
@@ -59,10 +60,10 @@ export default function ContactPage() {
 
     {/* Main Content - 2 Column Layout */}
     <section className="py-10 lg:py-12">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-          <aside className="lg:col-span-1">
-            <div className="sticky top-20">
+      <div className="w-full mx-auto px-0">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-6 lg:gap-0">
+          <aside className="mx-auto lg:col-span-1 w-full">
+            <div className="sticky top-20 w-4/5 mx-auto lg:w-10/12 lg:ml-auto lg:mr-0">
               <NavSidebar 
                 title={t("contact.navTitle")}
                 sections={sections}

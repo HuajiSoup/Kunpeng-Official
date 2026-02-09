@@ -34,7 +34,7 @@ export function ContactInfo() {
   const contacts = getContacts(t);
 
   return (<>
-    <section id="contact" className="scroll-mt-20">
+    <section id="contact" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12">
       <h2 className="text-2xl font-bold text-gray-900 mb-5">{t("contact.sections.contact.title")}</h2>
 
       {/* Contact Infos */}

@@ -1,5 +1,5 @@
 import { SearchResult } from "@/app/search/page";
-import { motion, Variants } from "framer-motion";
+import { motion, stagger, Variants } from "framer-motion";
 import { SearchResultCard } from "./SearchResultCard";
 
 interface SearchResultListProps {
@@ -14,8 +14,7 @@ export function SearchResultList({ results, query, category }: SearchResultListP
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.1,
+        delayChildren: stagger(0.1),
       },
     },
   };

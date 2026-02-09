@@ -17,52 +17,50 @@ const tests = testNames.map(testname => ({
 
 export default function CoreTestings() {
   return (
-    <section id="core-testings" className="py-12 lg:py-16 bg-white">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-        <PageSectionTitle 
-          title="核心测试项目"
-          subtitle="CORE CAPABILITIES"
-          description="依据 DO-160G 《机载设备环境条件和试验程序》进行测试"
-        />
+    <section id="core-testings" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12">
+      <PageSectionTitle 
+        title="核心测试项目"
+        subtitle="CORE CAPABILITIES"
+        description="依据 DO-160G 《机载设备环境条件和试验程序》进行测试"
+      />
 
-        <div className="bg-white/80 backdrop-blur-sm rounded-xl border-[0.5px] border-blue-500/20 overflow-hidden shadow-sm">
-          <div className="block overflow-x-auto">
-            <table className="w-full">
-              <thead className="bg-gray-50 border-b border-gray-200">
-                <tr>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900 uppercase tracking-wider">
-                    序号
-                  </th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900 uppercase tracking-wider">
-                    测试项目
-                  </th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900 uppercase tracking-wider">
-                    测试标准
-                  </th>
+      <div className="bg-white/80 backdrop-blur-sm rounded-xl border-[0.5px] border-blue-500/20 overflow-hidden shadow-sm">
+        <div className="block overflow-x-auto">
+          <table className="w-full">
+            <thead className="bg-gray-50 border-b border-gray-200">
+              <tr>
+                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                  序号
+                </th>
+                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                  测试项目
+                </th>
+                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                  测试标准
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-200">
+              {tests.map((item, index) => (
+                <tr
+                  key={index}
+                  className={`hover:bg-gray-50 transition-colors ${
+                    index % 2 === 0 ? "bg-white" : "bg-gray-50/50"
+                  }`}
+                >
+                  <td className="px-6 py-4 text-sm font-medium text-gray-900">
+                    {index}
+                  </td>
+                  <td className="px-6 py-4 text-sm text-gray-600">
+                    {item.name}
+                  </td>
+                  <td className="px-6 py-4 text-sm text-gray-600">
+                    {item.standard}
+                  </td>
                 </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                {tests.map((item, index) => (
-                  <tr
-                    key={index}
-                    className={`hover:bg-gray-50 transition-colors ${
-                      index % 2 === 0 ? "bg-white" : "bg-gray-50/50"
-                    }`}
-                  >
-                    <td className="px-6 py-4 text-sm font-medium text-gray-900">
-                      {index}
-                    </td>
-                    <td className="px-6 py-4 text-sm text-gray-600">
-                      {item.name}
-                    </td>
-                    <td className="px-6 py-4 text-sm text-gray-600">
-                      {item.standard}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </section>

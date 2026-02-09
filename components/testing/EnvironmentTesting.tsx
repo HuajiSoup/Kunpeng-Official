@@ -49,19 +49,17 @@ const environmentTests = [
 
 export default function EnvironmentTesting() {
   return (
-    <section id="environment-reliability" className="py-12 lg:py-16 bg-white scroll-mt-24" data-anchor="env">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-        <PageSectionTitle 
-          title="环境可靠性试验"
-          subtitle="ENVIRONMENTAL RELIABILITY"
-          description="XXX XXX XXXXXXX"
-        />
+    <section id="environment-reliability" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12" data-anchor="env">
+      <PageSectionTitle 
+        title="环境可靠性试验"
+        subtitle="ENVIRONMENTAL RELIABILITY"
+        description="XXX XXX XXXXXXX"
+      />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-8">
-          {environmentTests.map((test, index) => 
-            <TestItemBox key={index} {...test} />
-          )}
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-8">
+        {environmentTests.map((test, index) => 
+          <TestItemBox key={index} {...test} />
+        )}
       </div>
     </section>
   );

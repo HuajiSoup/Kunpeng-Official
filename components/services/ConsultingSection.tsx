@@ -22,7 +22,7 @@ const consultingItems = [
 
 export default function ConsultingSection() {
   return (
-    <section id="consulting" className="scroll-mt-24" data-anchor="consulting">
+    <section id="consulting" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12" data-anchor="consulting">
       <PageSectionTitle 
         title="适航取证咨询"
         subtitle="AIRWORHINESS CERTIFICATION CONSULTING"

@@ -58,13 +58,13 @@ export function SearchResultCard({ item, query }: SearchResultCardProps) {
 
   return (<>
     <motion.div
-      key={`${item.id}+`}
+      key={item.id}
       variants={itemVariants}
       className="w-full"
     >
       <Link
         href={item.href}
-        className="group block bg-white/80 backdrop-blur-sm border-[0.5px] border-blue-500/20 rounded-xl overflow-hidden hover:border-blue-500/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all duration-300 hover-gentle-wiggle h-full flex flex-col"
+        className="group bg-white/80 backdrop-blur-sm border-[0.5px] border-blue-500/20 rounded-xl overflow-hidden hover:border-blue-500/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all duration-300 hover-gentle-wiggle h-full flex flex-col"
       >
         {/* 图片占位符 */}
         <div className="aspect-video bg-gray-100 border-b border-gray-200 flex items-center justify-center relative">

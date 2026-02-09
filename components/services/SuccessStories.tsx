@@ -28,7 +28,7 @@ const successStories = [
 
 export default function SuccessStories() {
   return (
-    <section id="success-stories" className="scroll-mt-24 border-t border-blue-500/10 pt-24">
+    <section id="success-stories" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12 border-t border-blue-500/10">
       <PageSectionTitle 
         title="成功案例"
         subtitle="SUCCESS STORIES"

@@ -40,7 +40,7 @@ export function Downloads() {
   const downloads = getDownloads(t);
 
   return (<>
-    <section id="downloads" className="scroll-mt-20">
+    <section id="downloads" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12">
       <h2 className="text-2xl font-bold text-gray-900 mb-5">{t("contact.sections.downloads.title")}</h2>
       <div className="space-y-2.5">
         {downloads.map((item) => {

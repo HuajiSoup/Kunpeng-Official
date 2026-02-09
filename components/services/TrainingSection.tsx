@@ -41,7 +41,7 @@ const courses = [
 
 export default function TrainingSection() {
   return (
-    <section id="training" className="scroll-mt-24 border-t border-blue-500/10 pt-24" data-anchor="training">
+    <section id="training" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12 border-t border-blue-500/10" data-anchor="training">
       <PageSectionTitle 
         title="专业培训课程"
         subtitle="PROFESSIONAL TRAINING"
