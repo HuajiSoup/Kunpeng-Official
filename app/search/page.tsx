@@ -9,9 +9,15 @@ import { NewsCardItem } from "@/components/news/NewsCard";
 import { SearchBar } from "@/components/search/SearchBar";
 import { SearchResultList } from "@/components/search/SearchResultList";
 
-export type searchResultCategory = "全部" | "实验检测" | "适航服务" | "公司动态" | "行业资讯" | "成功案例";
-const searchCategories: searchResultCategory[] = [
-  "全部", "实验检测", "适航服务", "公司动态", "行业资讯", "成功案例"
+export type searchResultCategory = "all" | "testing" | "services" | "company" | "industry" | "success";
+
+const getSearchCategories = (t: (key: string) => string) => [
+  { id: "all", label: t("search.categories.all") },
+  { id: "testing", label: t("search.categories.testing") },
+  { id: "services", label: t("search.categories.services") },
+  { id: "company", label: t("search.categories.company") },
+  { id: "industry", label: t("search.categories.industry") },
+  { id: "success", label: t("search.categories.success") },
 ];
 
 // 新闻数据（从新闻中心页面获取）
@@ -107,44 +113,44 @@ interface TestingItem {
   id: string;
   title: string;
   excerpt: string;
-  category: "实验检测";
+  category: "testing";
   href: string;
 }
 
-const testingData: TestingItem[] = [
+const getTestingData = (t: (key: string) => string): TestingItem[] => [
   {
     id: "test-1",
-    title: "电磁兼容(EMC)测试",
-    excerpt: "提供全面的EMC测试服务，包括辐射发射、传导发射、辐射抗扰度、传导抗扰度等测试项目，符合DO-160G标准。",
-    category: "实验检测",
+    title: t("search.testing.items.t1.title"),
+    excerpt: t("search.testing.items.t1.excerpt"),
+    category: "testing",
     href: "/testing#emc-testing",
   },
   {
     id: "test-2",
-    title: "环境可靠性试验",
-    excerpt: "高低温、湿热、振动、冲击、盐雾等环境适应性测试，确保航空产品在各种极端环境下的可靠性。",
-    category: "实验检测",
+    title: t("search.testing.items.t2.title"),
+    excerpt: t("search.testing.items.t2.excerpt"),
+    category: "testing",
     href: "/testing#environment-reliability",
   },
   {
     id: "test-3",
-    title: "DO-160G 标准测试",
-    excerpt: "严格按照DO-160G标准进行机载设备环境条件和测试程序验证，确保符合适航要求。",
-    category: "实验检测",
+    title: t("search.testing.items.t3.title"),
+    excerpt: t("search.testing.items.t3.excerpt"),
+    category: "testing",
     href: "/testing",
   },
   {
     id: "test-4",
-    title: "软件测试与验证",
-    excerpt: "机载软件验证与确认，符合DO-178C标准，提供软件测试计划、测试用例设计和测试执行服务。",
-    category: "实验检测",
+    title: t("search.testing.items.t4.title"),
+    excerpt: t("search.testing.items.t4.excerpt"),
+    category: "testing",
     href: "/testing#software-components",
   },
   {
     id: "test-5",
-    title: "元器件筛选测试",
-    excerpt: "对航空电子元器件进行全面的筛选测试，包括温度循环、老炼、电参数测试等。",
-    category: "实验检测",
+    title: t("search.testing.items.t5.title"),
+    excerpt: t("search.testing.items.t5.excerpt"),
+    category: "testing",
     href: "/testing#components-section",
   },
 ];
@@ -154,44 +160,44 @@ interface ServiceItem {
   id: string;
   title: string;
   excerpt: string;
-  category: "适航服务";
+  category: "services";
   href: string;
 }
 
-const serviceData: ServiceItem[] = [
+const getServiceData = (t: (key: string) => string): ServiceItem[] => [
   {
     id: "service-1",
-    title: "适航证申请咨询",
-    excerpt: "提供TC（型号合格证）、PC（生产许可证）、STC（补充型号合格证）等适航证申请全流程咨询服务。",
-    category: "适航服务",
+    title: t("search.services.items.s1.title"),
+    excerpt: t("search.services.items.s1.excerpt"),
+    category: "services",
     href: "/services#consulting",
   },
   {
     id: "service-2",
-    title: "CTSOA 认证支持",
-    excerpt: "协助客户完成CTSOA（技术标准规定项目批准书）申请，提供技术文件编制和审查服务。",
-    category: "适航服务",
+    title: t("search.services.items.s2.title"),
+    excerpt: t("search.services.items.s2.excerpt"),
+    category: "services",
     href: "/services#consulting",
   },
   {
     id: "service-3",
-    title: "DER 委任代表服务",
-    excerpt: "拥有多名适航委任代表（DER），可提供适航符合性验证、技术文件审查等专业服务。",
-    category: "适航服务",
+    title: t("search.services.items.s3.title"),
+    excerpt: t("search.services.items.s3.excerpt"),
+    category: "services",
     href: "/services#engineering",
   },
   {
     id: "service-4",
-    title: "适航培训课程",
-    excerpt: "提供DO-178C、DO-254、DO-160G等适航标准培训，以及适航法规和工程实践培训。",
-    category: "适航服务",
+    title: t("search.services.items.s4.title"),
+    excerpt: t("search.services.items.s4.excerpt"),
+    category: "services",
     href: "/services#training",
   },
   {
     id: "service-5",
-    title: "工程技术支持",
-    excerpt: "提供适航符合性验证、技术文件编制、工程审查等全方位的工程技术支持服务。",
-    category: "适航服务",
+    title: t("search.services.items.s5.title"),
+    excerpt: t("search.services.items.s5.excerpt"),
+    category: "services",
     href: "/services#engineering",
   },
 ];
@@ -208,13 +214,13 @@ export interface SearchResult {
 }
 
 const newsCategoryMap: Record<string, searchResultCategory> = {
-  "company": "公司动态",
-  "industry": "行业资讯",
-  "success": "成功案例",
-}
+  company: "company",
+  industry: "industry",
+  success: "success",
+};
 
 // 合并所有数据
-const getAllData = (): SearchResult[] => {
+const getAllData = (t: (key: string) => string): SearchResult[] => {
   const results: SearchResult[] = [];
 
   // 添加新闻数据
@@ -231,6 +237,7 @@ const getAllData = (): SearchResult[] => {
   });
 
   // 添加测试数据
+  const testingData = getTestingData(t);
   testingData.forEach((item) => {
     results.push({
       id: item.id,
@@ -243,6 +250,7 @@ const getAllData = (): SearchResult[] => {
   });
 
   // 添加服务数据
+  const serviceData = getServiceData(t);
   serviceData.forEach((item) => {
     results.push({
       id: item.id,
@@ -258,17 +266,19 @@ const getAllData = (): SearchResult[] => {
 };
 
 function SearchContent() {
+  const { t } = useLanguage();
+  const searchCategories = getSearchCategories(t);
   const searchParams = useSearchParams();
   const query = searchParams?.get("q") || "";
-  const [activeCategory, setActiveCategory] = useState<searchResultCategory>("全部");
+  const [activeCategory, setActiveCategory] = useState<searchResultCategory>("all");
 
   // 搜索和筛选逻辑
   const filteredResults = useMemo(() => {
-    const allData = getAllData();
+    const allData = getAllData(t);
     let results = allData;
 
     // 按分类筛选
-    if (activeCategory !== "全部") {
+    if (activeCategory !== "all") {
       results = results.filter((item) => item.category === activeCategory);
     }
 
@@ -293,23 +303,26 @@ function SearchContent() {
           {/* 结果统计和分类筛选 */}
           <div className="mb-8">
             <p className="text-gray-600 mb-4">
-              找到 <span className="text-blue-600 font-semibold">{filteredResults.length}</span> 条关于
-              "<span className="text-gray-900 font-semibold">{query}</span>" 的结果
+              {t("search.results.prefix")}
+              <span className="text-blue-600 font-semibold">{filteredResults.length}</span>
+              {t("search.results.middle")}
+              "<span className="text-gray-900 font-semibold">{query}</span>"
+              {t("search.results.suffix")}
             </p>
 
             {/* Filter Tabs */}
             <div className="flex flex-wrap gap-2">
               {searchCategories.map((category) => (
                 <button
-                  key={category}
-                  onClick={() => setActiveCategory(category)}
+                  key={category.id}
+                  onClick={() => setActiveCategory(category.id as searchResultCategory)}
                   className={`px-4 py-2 rounded-lg border text-sm font-medium transition-all duration-200 ${
-                    activeCategory === category
+                    activeCategory === category.id
                       ? "bg-blue-600 text-white shadow-sm"
                       : "bg-white text-gray-700 hover:bg-gray-100 border-gray-200"
                   }`}
                 >
-                  {category}
+                  {category.label}
                 </button>
               ))}
             </div>
@@ -327,10 +340,12 @@ function SearchContent() {
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
                 <Search className="w-8 h-8 text-gray-400" />
               </div>
-              <p className="text-gray-600 text-lg mb-2">未找到相关服务</p>
+              <p className="text-gray-600 text-lg mb-2">{t("search.noResults.title")}</p>
               <p className="text-gray-500 text-sm">
-                请尝试搜索 <span className="text-blue-600">"EMC"</span> 或{" "}
-                <span className="text-blue-600">"适航"</span>
+                {t("search.noResults.hintPrefix")}
+                <span className="text-blue-600">"{t("search.noResults.example1")}"</span>
+                {t("search.noResults.hintOr")}
+                <span className="text-blue-600">"{t("search.noResults.example2")}"</span>
               </p>
             </motion.div>
           )}
@@ -344,7 +359,7 @@ function SearchContent() {
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
             <Search className="w-8 h-8 text-gray-400" />
           </div>
-          <p className="text-gray-600 text-lg">请输入搜索关键词</p>
+          <p className="text-gray-600 text-lg">{t("search.empty.title")}</p>
         </motion.div>
       )}
     </div>

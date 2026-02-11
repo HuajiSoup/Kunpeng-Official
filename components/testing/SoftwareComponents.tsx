@@ -2,15 +2,18 @@
 
 import Link from "next/link";
 import { ArrowRight, Code, Cpu } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 
 export default function SoftwareComponents() {
+  const { t } = useLanguage();
+
   return (
     <section id="software-components" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12" data-anchor="software">
       <PageSectionTitle 
-        title="机载软件与元器件"
-        subtitle="SOFTWARS & COMPONENTS"
-        description="XXX XXX XXXXXXX"
+        title={t("testing.softwareComponents.title")}
+        subtitle={t("testing.softwareComponents.subtitle")}
+        description={t("testing.softwareComponents.description")}
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
@@ -22,7 +25,7 @@ export default function SoftwareComponents() {
             </div>
 
             <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              机载软件测评
+              {t("testing.softwareComponents.softwareCard.title")}
             </h3>
 
             <div className="mb-6">
@@ -54,7 +57,7 @@ export default function SoftwareComponents() {
               href="/services/software"
               className="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-700 group-hover:gap-2 transition-all"
             >
-              <span>了解更多</span>
+              <span>{t("testing.softwareComponents.softwareCard.linkText")}</span>
               <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
@@ -68,12 +71,12 @@ export default function SoftwareComponents() {
             </div>
 
             <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              元器件筛选 (DPA)
+              {t("testing.softwareComponents.componentsCard.title")}
             </h3>
 
             <div className="mb-6">
               <span className="inline-block px-3 py-1 text-xs font-semibold bg-gray-100 text-gray-700 rounded-full border border-gray-200 mb-4">
-                破坏性物理分析
+                {t("testing.softwareComponents.componentsCard.badge")}
               </span>
             </div>
 
@@ -88,13 +91,13 @@ export default function SoftwareComponents() {
 
             <div className="flex flex-wrap gap-2">
               <span className="px-2.5 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded border border-gray-200">
-                内部目检
+                {t("testing.softwareComponents.componentsCard.tags.internal")}
               </span>
               <span className="px-2.5 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded border border-gray-200">
-                物理分析
+                {t("testing.softwareComponents.componentsCard.tags.physical")}
               </span>
               <span className="px-2.5 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded border border-gray-200">
-                可靠性评估
+                {t("testing.softwareComponents.componentsCard.tags.reliability")}
               </span>
             </div>
           </div>

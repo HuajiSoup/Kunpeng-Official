@@ -1,27 +1,33 @@
+"use client";
+
+import { useLanguage } from "@/lib/LanguageContext";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 
-const testNames = [
-  "地面低温耐受试验和低温短时工作试验",
-  "低温工作试验",
-  "地面高温耐受试验和高温短时工作试验",
-  "高度试验",
-  "减压试验",
-  "过压试验",
-  "温度变化试验",
-  "湿热试验"
+const getTestNames = (t: (key: string) => string) => [
+  t("testing.core.items.i1"),
+  t("testing.core.items.i2"),
+  t("testing.core.items.i3"),
+  t("testing.core.items.i4"),
+  t("testing.core.items.i5"),
+  t("testing.core.items.i6"),
+  t("testing.core.items.i7"),
+  t("testing.core.items.i8"),
 ];
-const tests = testNames.map(testname => ({
-  name: testname,
-  standard: "DO-160G",
-}));
 
 export default function CoreTestings() {
+  const { t } = useLanguage();
+  const testNames = getTestNames(t);
+  const tests = testNames.map((testName) => ({
+    name: testName,
+    standard: "DO-160G",
+  }));
+
   return (
     <section id="core-testings" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12">
       <PageSectionTitle 
-        title="核心测试项目"
-        subtitle="CORE CAPABILITIES"
-        description="依据 DO-160G 《机载设备环境条件和试验程序》进行测试"
+        title={t("testing.core.title")}
+        subtitle={t("testing.core.subtitle")}
+        description={t("testing.core.description")}
       />
 
       <div className="bg-white/80 backdrop-blur-sm rounded-xl border-[0.5px] border-blue-500/20 overflow-hidden shadow-sm">
@@ -30,13 +36,13 @@ export default function CoreTestings() {
             <thead className="bg-gray-50 border-b border-gray-200">
               <tr>
                 <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900 uppercase tracking-wider">
-                  序号
+                  {t("testing.core.table.index")}
                 </th>
                 <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900 uppercase tracking-wider">
-                  测试项目
+                  {t("testing.core.table.item")}
                 </th>
                 <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900 uppercase tracking-wider">
-                  测试标准
+                  {t("testing.core.table.standard")}
                 </th>
               </tr>
             </thead>

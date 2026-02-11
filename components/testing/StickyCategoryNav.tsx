@@ -1,15 +1,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/lib/LanguageContext";
 
-const categories = [
-  { id: "all", label: "全部", sectionId: "" },
-  { id: "environment", label: "环境可靠性", sectionId: "environment-reliability" },
-  { id: "emc", label: "电磁兼容", sectionId: "emc-testing" },
-  { id: "software", label: "软件测评", sectionId: "software-components" },
+const getCategories = (t: (key: string) => string) => [
+  { id: "all", label: t("testing.stickyCategories.all"), sectionId: "" },
+  { id: "environment", label: t("testing.stickyCategories.environment"), sectionId: "environment-reliability" },
+  { id: "emc", label: t("testing.stickyCategories.emc"), sectionId: "emc-testing" },
+  { id: "software", label: t("testing.stickyCategories.software"), sectionId: "software-components" },
 ];
 
 export default function StickyCategoryNav() {
+  const { t } = useLanguage();
+  const categories = getCategories(t);
   const [activeCategory, setActiveCategory] = useState("all");
   const [isSticky, setIsSticky] = useState(false);
 

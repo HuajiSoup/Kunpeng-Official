@@ -30,7 +30,7 @@ export function SearchBar({inputRef, handleSearch}: SearchBarProps) {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 text-center">
-              搜索结果
+              {t("search.title")}
             </h1>
 
             {/* 大搜索框 */}

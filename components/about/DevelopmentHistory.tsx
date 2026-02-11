@@ -1,32 +1,38 @@
+"use client";
+
+import { useLanguage } from "@/lib/LanguageContext";
 import { ItemBox } from "../ui/ItemBox";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 
-const milestones = [
+const getMilestones = (t: (key: string) => string) => [
   {
     year: "2024",
-    title: "公司成立 / 获得CNAS认可",
-    description: "XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX",
+    title: t("about.history.items.y2024.title"),
+    description: t("about.history.items.y2024.description"),
   },
   {
     year: "2023",
-    title: "实验室建设启动",
-    description: "XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX",
+    title: t("about.history.items.y2023.title"),
+    description: t("about.history.items.y2023.description"),
   },
   {
     year: "2022",
-    title: "依托龙兴航电筹备组建",
-    description: "XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX",
+    title: t("about.history.items.y2022.title"),
+    description: t("about.history.items.y2022.description"),
   },
 ];
 
 export default function DevelopmentHistory() {
+  const { t } = useLanguage();
+  const milestones = getMilestones(t);
+
   return (
     <section id="development-history" className="relative py-12 lg:py-16 bg-white scroll-mt-24 border-t border-slate-200 pt-16">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <PageSectionTitle 
-          title="发展历程"
-          subtitle="DEVELOPMENT HISTORY"
-          description="XXX XXX XXXXXXX"
+          title={t("about.history.title")}
+          subtitle={t("about.history.subtitle")}
+          description={t("about.history.description")}
         />
 
         <div className="max-w-5xl mx-auto">

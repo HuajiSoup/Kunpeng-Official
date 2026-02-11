@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Award, Calendar, ArrowRight } from "lucide-react";
 import { ItemBox } from "../ui/ItemBox";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export interface NewsCardItem {
   id: string;
@@ -13,11 +14,11 @@ export interface NewsCardItem {
   isSuccessStory?: boolean;
 }
 
-const categoryMap: Record<string, string> = {
-  "company": "公司动态",
-  "industry": "行业资讯",
-  "success": "成功案例",
-}
+const getCategoryMap = (t: (key: string) => string): Record<string, string> => ({
+  company: t("news.categories.company"),
+  industry: t("news.categories.industry"),
+  success: t("news.categories.success"),
+});
 
 export function NewsCard({
   item,
@@ -30,6 +31,9 @@ export function NewsCard({
   featured?: boolean,
   showArrow?: boolean,
 }) {
+  const { t } = useLanguage();
+  const categoryMap = getCategoryMap(t);
+
   return (<>
     <Link href={`/news/${item.id}`} className={cn("block group", className)}>
       <ItemBox className="p-0 flex flex-col size-full">
@@ -39,7 +43,7 @@ export function NewsCard({
             <div className="absolute top-3 right-3">
               <div className="bg-blue-600 text-white px-2 py-1 rounded text-xs font-semibold flex items-center gap-1">
                 <Award className="w-3 h-3" />
-                <span>成功案例</span>
+                <span>{t("news.badges.success")}</span>
               </div>
             </div>
           )}
@@ -67,7 +71,7 @@ export function NewsCard({
           </p>
 
           {showArrow && <div className="inline-flex items-center text-sm font-medium text-blue-600 mt-auto">
-            <span>阅读更多</span>
+            <span>{t("news.actions.readMore")}</span>
             <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-2 transition-transform" />
           </div>}
         </div>

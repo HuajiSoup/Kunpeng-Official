@@ -247,7 +247,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
             <div className="text-xl font-semibold text-gray-900 group-hover:text-gray-700 transition-colors">
-              鲲鹏航空
+              {t("nav.brand")}
             </div>
           </Link>
 

@@ -1,59 +1,65 @@
+"use client";
+
 import { Thermometer, Waves, Wind, Droplets, Sun } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 import { TestItemBox } from "./TestItemBox";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 
-const environmentTests = [
+const getEnvironmentTests = (t: (key: string) => string) => [
   {
     icon: Thermometer,
-    title: "高低温试验",
+    title: t("testing.environment.items.highLowTemp.title"),
     standards: ["DO-160G", "GJB-150"],
-    specs: "温度范围: -70°C ~ +150°C，温度变化速率: ≤10°C/min",
-    description: "XXXXXX XXXXXX XXXXXX XXXXXX",
+    specs: t("testing.environment.items.highLowTemp.specs"),
+    description: t("testing.environment.items.highLowTemp.description"),
   },
   {
     icon: Droplets,
-    title: "湿热试验",
+    title: t("testing.environment.items.humidity.title"),
     standards: ["DO-160G", "RTCA/DO-160"],
-    specs: "相对湿度: 10% ~ 98% RH，温度: -10°C ~ +85°C",
-    description: "XXXXXX XXXXXX XXXXXX XXXXXX",
+    specs: t("testing.environment.items.humidity.specs"),
+    description: t("testing.environment.items.humidity.description"),
   },
   {
     icon: Waves,
-    title: "振动试验",
+    title: t("testing.environment.items.vibration.title"),
     standards: ["DO-160G", "MIL-STD-810"],
-    specs: "频率范围: 5Hz ~ 2000Hz，加速度: 0 ~ 20g",
-    description: "XXXXXX XXXXXX XXXXXX XXXXXX",
+    specs: t("testing.environment.items.vibration.specs"),
+    description: t("testing.environment.items.vibration.description"),
   },
   {
     icon: Wind,
-    title: "冲击试验",
+    title: t("testing.environment.items.shock.title"),
     standards: ["DO-160G", "GJB-150"],
-    specs: "冲击加速度: 15g ~ 75g，持续时间: 11ms",
-    description: "XXXXXX XXXXXX XXXXXX XXXXXX",
+    specs: t("testing.environment.items.shock.specs"),
+    description: t("testing.environment.items.shock.description"),
   },
   {
     icon: Sun,
-    title: "太阳辐射试验",
+    title: t("testing.environment.items.solar.title"),
     standards: ["DO-160G", "MIL-STD-810"],
-    specs: "辐射强度: 1120 W/m²，温度: -10°C ~ +85°C",
-    description: "XXXXXX XXXXXX XXXXXX XXXXXX",
+    specs: t("testing.environment.items.solar.specs"),
+    description: t("testing.environment.items.solar.description"),
   },
   {
     icon: Thermometer,
-    title: "温度冲击试验",
+    title: t("testing.environment.items.tempShock.title"),
     standards: ["DO-160G", "GJB-150"],
-    specs: "温度范围: -65°C ~ +150°C，转换时间: ≤5min",
-    description: "XXXXXX XXXXXX XXXXXX XXXXXX",
+    specs: t("testing.environment.items.tempShock.specs"),
+    description: t("testing.environment.items.tempShock.description"),
   },
 ];
 
 export default function EnvironmentTesting() {
+  const { t } = useLanguage();
+  const environmentTests = getEnvironmentTests(t);
+
   return (
     <section id="environment-reliability" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12" data-anchor="env">
       <PageSectionTitle 
-        title="环境可靠性试验"
-        subtitle="ENVIRONMENTAL RELIABILITY"
-        description="XXX XXX XXXXXXX"
+        title={t("testing.environment.title")}
+        subtitle={t("testing.environment.subtitle")}
+        description={t("testing.environment.description")}
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-8">

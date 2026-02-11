@@ -1,36 +1,42 @@
+"use client";
+
 import { Target, Eye, Heart, Award } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 import { ItemBox } from "../ui/ItemBox";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 
-const cultureItems = [
+const getCultureItems = (t: (key: string) => string) => [
   {
     icon: Target,
-    title: "使命",
-    englishTitle: "MISSION",
-    description: "为航空安全保驾护航",
+    title: t("about.culture.items.mission.title"),
+    englishTitle: t("about.culture.items.mission.englishTitle"),
+    description: t("about.culture.items.mission.description"),
   },
   {
     icon: Eye,
-    title: "愿景",
-    englishTitle: "VISION",
-    description: "成为行业标杆",
+    title: t("about.culture.items.vision.title"),
+    englishTitle: t("about.culture.items.vision.englishTitle"),
+    description: t("about.culture.items.vision.description"),
   },
   {
     icon: Heart,
-    title: "价值观",
-    englishTitle: "VALUES",
-    description: "严谨、创新、协作",
+    title: t("about.culture.items.values.title"),
+    englishTitle: t("about.culture.items.values.englishTitle"),
+    description: t("about.culture.items.values.description"),
   },
 ];
 
 export default function CorporateCulture() {
+  const { t } = useLanguage();
+  const cultureItems = getCultureItems(t);
+
   return (
     <section id="corporate-culture" className="relative py-12 lg:py-16 bg-white scroll-mt-24 border-t border-slate-200 pt-16" data-anchor="qualifications">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <PageSectionTitle 
-          title="企业文化"
-          subtitle="CORPORATE CULTURE"
-          description="XXX XXX XXXXXXX"
+          title={t("about.culture.title")}
+          subtitle={t("about.culture.subtitle")}
+          description={t("about.culture.description")}
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-5xl mx-auto">

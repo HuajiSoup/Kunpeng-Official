@@ -1,48 +1,54 @@
+"use client";
+
 import Link from "next/link";
 import { Users, Award, Package, MessageSquare, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 
-const valueProps = [
+const getValueProps = (t: (key: string) => string) => [
   {
     icon: Users,
-    title: "专家团队",
-    subtitle: "Expert Team",
-    description: "拥有多名适航委任代表(DER)及资深测试专家，具备丰富的项目经验",
+    title: t("services.whyChooseUs.items.team.title"),
+    subtitle: t("services.whyChooseUs.items.team.subtitle"),
+    description: t("services.whyChooseUs.items.team.description"),
     link: "/about#team",
-    linkText: "了解团队详情",
+    linkText: t("services.whyChooseUs.items.team.linkText"),
   },
   {
     icon: Award,
-    title: "成功案例",
-    subtitle: "Proven Track Record",
-    description: "已成功协助多个项目完成适航取证，拥有优秀的项目交付记录",
+    title: t("services.whyChooseUs.items.cases.title"),
+    subtitle: t("services.whyChooseUs.items.cases.subtitle"),
+    description: t("services.whyChooseUs.items.cases.description"),
   },
   {
     icon: Package,
-    title: "一站式服务",
-    subtitle: "One-stop Solution",
-    description: "提供测试、咨询、培训一体化服务，覆盖适航全生命周期需求",
+    title: t("services.whyChooseUs.items.oneStop.title"),
+    subtitle: t("services.whyChooseUs.items.oneStop.subtitle"),
+    description: t("services.whyChooseUs.items.oneStop.description"),
   },
   {
     icon: MessageSquare,
-    title: "高效沟通",
-    subtitle: "Efficient Communication",
-    description: "响应迅速，沟通顺畅，确保项目进度和质量的实时把控",
+    title: t("services.whyChooseUs.items.communication.title"),
+    subtitle: t("services.whyChooseUs.items.communication.subtitle"),
+    description: t("services.whyChooseUs.items.communication.description"),
   },
 ];
 
 export default function WhyChooseUs() {
+  const { t } = useLanguage();
+  const valueProps = getValueProps(t);
+
   return (
     <section id="why-choose-us" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12">
       <div className="mb-10">
         <span className="text-xs font-bold tracking-[0.2em] text-blue-600 uppercase block mb-4">
-          WHY CHOOSE US
+          {t("services.whyChooseUs.kicker")}
         </span>
         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 tracking-tight leading-tight">
-          为什么选择我们
+          {t("services.whyChooseUs.title")}
         </h2>
         <div className="h-1 w-10 bg-blue-600 mb-4"></div>
         <p className="text-base text-gray-600 max-w-2xl leading-relaxed">
-          专业的团队、丰富的经验、完善的服务体系
+          {t("services.whyChooseUs.description")}
         </p>
       </div>
 

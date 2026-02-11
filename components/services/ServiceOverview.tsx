@@ -1,43 +1,49 @@
+"use client";
+
 import Link from "next/link";
 import { FileText, Wrench, GraduationCap, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 
-const services = [
+const getServices = (t: (key: string) => string) => [
   {
     icon: FileText,
-    title: "适航咨询",
+    title: t("services.overview.items.consulting.title"),
     standards: ["TC", "PC", "VDA"],
-    description: "TC/PC/VDA认证支持，专业的适航取证咨询服务",
+    description: t("services.overview.items.consulting.description"),
     href: "#consulting",
   },
   {
     icon: Wrench,
-    title: "工程技术",
+    title: t("services.overview.items.engineering.title"),
     standards: ["FHA", "PSSA", "SSA"],
-    description: "系统安全性分析、可靠性工程，提供专业技术支持",
+    description: t("services.overview.items.engineering.description"),
     href: "#engineering",
   },
   {
     icon: GraduationCap,
-    title: "适航培训",
+    title: t("services.overview.items.training.title"),
     standards: ["DO-178C", "DO-254", "ARP4754A"],
-    description: "DO-178C/DO-254专业培训课程，行业专家授课",
+    description: t("services.overview.items.training.description"),
     href: "#training",
   },
 ];
 
 export default function ServiceOverview() {
+  const { t } = useLanguage();
+  const services = getServices(t);
+
   return (
     <section id="service-overview" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12">
       <div className="mb-10">
         <span className="text-xs font-bold tracking-[0.2em] text-blue-600 uppercase block mb-4">
-          CORE SERVICES
+          {t("services.overview.kicker")}
         </span>
         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 tracking-tight leading-tight">
-          核心服务
+          {t("services.overview.title")}
         </h2>
         <div className="h-1 w-10 bg-blue-600 mb-4"></div>
         <p className="text-base text-gray-600 max-w-2xl leading-relaxed">
-          为您的适航认证之路提供全方位的专业支持
+          {t("services.overview.description")}
         </p>
       </div>
 
@@ -90,7 +96,7 @@ export default function ServiceOverview() {
                   href={service.href}
                   className="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-700 hover:gap-2 transition-all group/link mt-4"
                 >
-                  <span>查看详情</span>
+                  <span>{t("services.overview.actions.viewDetails")}</span>
                   <ArrowRight className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
                 </Link>
               </div>

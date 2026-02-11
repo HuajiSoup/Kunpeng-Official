@@ -1,51 +1,57 @@
+"use client";
+
+import { useLanguage } from "@/lib/LanguageContext";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 
-const courses = [
+const getCourses = (t: (key: string) => string) => [
   { 
-    name: "DO-178C 软件适航培训", 
+    name: t("services.training.courses.c1.name"),
     standard: "DO-178C",
-    category: "软件适航",
-    instructor: "适航委任代表 (DER)"
+    category: t("services.training.courses.c1.category"),
+    instructor: t("services.training.courses.c1.instructor"),
   },
   { 
-    name: "DO-254 硬件适航培训", 
+    name: t("services.training.courses.c2.name"),
     standard: "DO-254",
-    category: "硬件适航",
-    instructor: "资深硬件工程师"
+    category: t("services.training.courses.c2.category"),
+    instructor: t("services.training.courses.c2.instructor"),
   },
   { 
-    name: "ARP4754A 系统开发培训", 
+    name: t("services.training.courses.c3.name"),
     standard: "ARP4754A",
-    category: "系统开发",
-    instructor: "系统安全专家"
+    category: t("services.training.courses.c3.category"),
+    instructor: t("services.training.courses.c3.instructor"),
   },
   { 
-    name: "DO-160G 环境试验培训", 
+    name: t("services.training.courses.c4.name"),
     standard: "DO-160G",
-    category: "环境试验",
-    instructor: "环境试验工程师"
+    category: t("services.training.courses.c4.category"),
+    instructor: t("services.training.courses.c4.instructor"),
   },
   { 
-    name: "RTCA/DO-178B 软件标准", 
+    name: t("services.training.courses.c5.name"),
     standard: "RTCA/DO-178B",
-    category: "软件标准",
-    instructor: "适航委任代表 (DER)"
+    category: t("services.training.courses.c5.category"),
+    instructor: t("services.training.courses.c5.instructor"),
   },
   { 
-    name: "FAA AC 20-152 工具鉴定", 
+    name: t("services.training.courses.c6.name"),
     standard: "FAA AC 20-152",
-    category: "工具鉴定",
-    instructor: "工具鉴定专家"
+    category: t("services.training.courses.c6.category"),
+    instructor: t("services.training.courses.c6.instructor"),
   },
 ];
 
 export default function TrainingSection() {
+  const { t } = useLanguage();
+  const courses = getCourses(t);
+
   return (
     <section id="training" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12 border-t border-blue-500/10" data-anchor="training">
       <PageSectionTitle 
-        title="专业培训课程"
-        subtitle="PROFESSIONAL TRAINING"
-        description="由行业资深专家授课，提供定制化企业培训服务"
+        title={t("services.training.title")}
+        subtitle={t("services.training.subtitle")}
+        description={t("services.training.description")}
       />
 
       {/* Courses */}

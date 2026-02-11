@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 
 interface NewsPaginationProps {
   currentPage: number;
@@ -9,6 +10,7 @@ interface NewsPaginationProps {
 }
 
 export default function NewsPagination({ currentPage, totalPages, onPageChange }: NewsPaginationProps) {
+  const { t } = useLanguage();
   if (totalPages <= 1) return null;
 
   return (
@@ -24,7 +26,7 @@ export default function NewsPagination({ currentPage, totalPages, onPageChange }
           }`}
         >
           <ChevronLeft className="w-4 h-4" />
-          <span>上一页</span>
+          <span>{t("news.pagination.prev")}</span>
         </button>
 
         <div className="flex items-center gap-2">
@@ -52,7 +54,7 @@ export default function NewsPagination({ currentPage, totalPages, onPageChange }
               : "border-blue-500/30 text-gray-700 hover:bg-blue-50/60 hover:border-blue-500/50"
           }`}
         >
-          <span>下一页</span>
+          <span>{t("news.pagination.next")}</span>
           <ChevronRight className="w-4 h-4" />
         </button>
       </div>

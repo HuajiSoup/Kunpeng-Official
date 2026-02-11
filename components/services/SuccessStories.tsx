@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Award, ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 import { NewsCard, NewsCardItem } from "../news/NewsCard";
 

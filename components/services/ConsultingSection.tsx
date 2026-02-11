@@ -1,32 +1,38 @@
+"use client";
+
 import { FileCheck, Award, Shield } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 import { ItemBox } from "../ui/ItemBox";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 
-const consultingItems = [
+const getConsultingItems = (t: (key: string) => string) => [
   {
-    title: "TC 型号合格证",
+    title: t("services.consulting.items.tc.title"),
     icon: FileCheck,
-    description: "型号合格证申请全程指导，技术文件编写与审核支持。",
+    description: t("services.consulting.items.tc.description"),
   },
   {
-    title: "PC 生产许可证",
+    title: t("services.consulting.items.pc.title"),
     icon: Award,
-    description: "生产许可证质量管理体系建立与维护咨询。",
+    description: t("services.consulting.items.pc.description"),
   },
   {
-    title: "CTSO 技术标准规定",
+    title: t("services.consulting.items.ctso.title"),
     icon: Shield,
-    description: "技术标准规定项目申请支持，零部件适航认证。",
+    description: t("services.consulting.items.ctso.description"),
   }
-]
+];
 
 export default function ConsultingSection() {
+  const { t } = useLanguage();
+  const consultingItems = getConsultingItems(t);
+
   return (
     <section id="consulting" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12" data-anchor="consulting">
       <PageSectionTitle 
-        title="适航取证咨询"
-        subtitle="AIRWORHINESS CERTIFICATION CONSULTING"
-        description="为航空器及其零部件制造商提供全面的适航取证支持"
+        title={t("services.consulting.title")}
+        subtitle={t("services.consulting.subtitle")}
+        description={t("services.consulting.description")}
       />
 
       <div className="grid md:grid-cols-3 gap-6">

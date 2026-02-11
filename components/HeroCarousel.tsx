@@ -20,7 +20,7 @@ const getSlides = (t: (key: string) => string) => [
     subtitle: t("home.hero.slide1.subtitle"),
     description: t("home.hero.slide1.description"),
     href: "/testing",
-    hrefText: "了解试验能力",
+    hrefText: t("home.hero.slide1.cta"),
   },
   {
     image: carouselImages[1],
@@ -28,7 +28,7 @@ const getSlides = (t: (key: string) => string) => [
     subtitle: t("home.hero.slide2.subtitle"),
     description: t("home.hero.slide2.description"),
     href: "/services",
-    hrefText: "了解服务范围",
+    hrefText: t("home.hero.slide2.cta"),
   },
   {
     image: carouselImages[2],
@@ -36,7 +36,7 @@ const getSlides = (t: (key: string) => string) => [
     subtitle: t("home.hero.slide3.subtitle"),
     description: t("home.hero.slide3.description"),
     href: "/#qualifications",
-    hrefText: "了解资质认证",
+    hrefText: t("home.hero.slide3.cta"),
   },
   {
     image: carouselImages[3],
@@ -44,7 +44,7 @@ const getSlides = (t: (key: string) => string) => [
     subtitle: t("home.hero.slide4.subtitle"),
     description: t("home.hero.slide4.description"),
     href: "/about",
-    hrefText: "了解我们",
+    hrefText: t("home.hero.slide4.cta"),
   },
 ];
 

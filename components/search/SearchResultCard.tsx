@@ -2,6 +2,7 @@ import { SearchResult } from "@/app/search/page";
 import { motion, Variants } from "framer-motion";
 import { FileText, Calendar, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { useLanguage } from "@/lib/LanguageContext";
 
 interface SearchResultCardProps {
   item: SearchResult;
@@ -28,23 +29,26 @@ const highlightText = (text: string, query: string) => {
 };
 
 // get category color
-const getCategoryBadge = (category: string) => {
+const getCategoryBadge = (category: string, t: (key: string) => string) => {
   const badgeClass = {
-    "实验检测": "bg-blue-100 text-blue-700",
-    "适航服务": "bg-purple-100 text-purple-700",
-    "公司动态": "bg-gray-100 text-gray-700",
-    "行业资讯": "bg-green-100 text-green-700",
-    "成功案例": "bg-yellow-100 text-yellow-700",
+    all: "bg-gray-100 text-gray-700",
+    testing: "bg-blue-100 text-blue-700",
+    services: "bg-purple-100 text-purple-700",
+    company: "bg-gray-100 text-gray-700",
+    industry: "bg-green-100 text-green-700",
+    success: "bg-yellow-100 text-yellow-700",
   }[category] || "bg-gray-100 text-gray-700";
 
   return (
     <span className={`px-2 py-0.5 text-xs font-medium rounded ${badgeClass}`}>
-      {category}
+      {t(`search.categories.${category}`)}
     </span>
   );
 };
 
 export function SearchResultCard({ item, query }: SearchResultCardProps) {
+  const { t } = useLanguage();
+
   const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -68,11 +72,11 @@ export function SearchResultCard({ item, query }: SearchResultCardProps) {
       >
         {/* 图片占位符 */}
         <div className="aspect-video bg-gray-100 border-b border-gray-200 flex items-center justify-center relative">
-          {item.type === "news" && item.category === "成功案例" && (
+          {item.type === "news" && item.category === "success" && (
             <div className="absolute top-3 right-3">
               <div className="bg-blue-600 text-white px-2 py-1 rounded text-xs font-semibold flex items-center gap-1">
                 <FileText className="w-3 h-3" />
-                <span>成功案例</span>
+                <span>{t("news.badges.success")}</span>
               </div>
             </div>
           )}
@@ -90,7 +94,7 @@ export function SearchResultCard({ item, query }: SearchResultCardProps) {
                 <span>{item.date}</span>
               </>
             )}
-            {getCategoryBadge(item.category)}
+            {getCategoryBadge(item.category, t)}
           </div>
 
           <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
@@ -102,7 +106,7 @@ export function SearchResultCard({ item, query }: SearchResultCardProps) {
           </p>
 
           <div className="inline-flex items-center text-sm font-medium text-blue-600 group-hover:gap-2 transition-all mt-auto">
-            <span>查看详情</span>
+            <span>{t("search.actions.viewDetails")}</span>
             <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
           </div>
         </div>

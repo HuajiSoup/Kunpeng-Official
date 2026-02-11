@@ -1,40 +1,46 @@
+"use client";
+
 import { Search, FileText, Rocket, CheckCircle, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 
-const steps = [
+const getSteps = (t: (key: string) => string) => [
   {
     number: 1,
     icon: Search,
-    title: "需求分析",
-    description: "深入了解客户需求，评估项目复杂度和适航要求",
+    title: t("services.process.steps.analysis.title"),
+    description: t("services.process.steps.analysis.description"),
   },
   {
     number: 2,
     icon: FileText,
-    title: "方案制定",
-    description: "制定详细的适航取证方案和技术路线图",
+    title: t("services.process.steps.plan.title"),
+    description: t("services.process.steps.plan.description"),
   },
   {
     number: 3,
     icon: Rocket,
-    title: "项目执行",
-    description: "按照方案执行，提供全程技术支持和文档编制",
+    title: t("services.process.steps.execution.title"),
+    description: t("services.process.steps.execution.description"),
   },
   {
     number: 4,
     icon: CheckCircle,
-    title: "结项交付",
-    description: "完成适航审查，交付合格证及相关技术文档",
+    title: t("services.process.steps.delivery.title"),
+    description: t("services.process.steps.delivery.description"),
   },
 ];
 
 export default function ProcessWorkflow() {
+  const { t } = useLanguage();
+  const steps = getSteps(t);
+
   return (
     <section id="process-workflow" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12 border-t border-blue-500/10">
       <PageSectionTitle 
-        title="服务流程"
-        subtitle="SERVICE PROCESS"
-        description="从需求分析到结项交付，我们提供全流程专业服务"
+        title={t("services.process.title")}
+        subtitle={t("services.process.subtitle")}
+        description={t("services.process.description")}
       />
 
       {/* Desktop: horizonal timeline */}

@@ -2,42 +2,45 @@
 
 import { useRef, useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 
-const teamMembers = [
+const getTeamMembers = (t: (key: string) => string) => [
   {
     name: "XXX",
-    role: "适航委任代表",
-    bio: "XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX",
+    role: t("about.team.members.m1.role"),
+    bio: t("about.team.members.m1.bio"),
   },
   {
     name: "XXX",
-    role: "高级测试工程师",
-    bio: "XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX",
+    role: t("about.team.members.m2.role"),
+    bio: t("about.team.members.m2.bio"),
   },
   {
     name: "XXX",
-    role: "技术总监",
-    bio: "XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX",
+    role: t("about.team.members.m3.role"),
+    bio: t("about.team.members.m3.bio"),
   },
   {
     name: "XXX",
-    role: "质量主管",
-    bio: "XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX",
+    role: t("about.team.members.m4.role"),
+    bio: t("about.team.members.m4.bio"),
   },
   {
     name: "XXX",
-    role: "EMC测试专家",
-    bio: "XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX",
+    role: t("about.team.members.m5.role"),
+    bio: t("about.team.members.m5.bio"),
   },
   {
     name: "XXX",
-    role: "环境试验专家",
-    bio: "XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX",
+    role: t("about.team.members.m6.role"),
+    bio: t("about.team.members.m6.bio"),
   },
 ];
 
 export default function ExpertTeam() {
+  const { t } = useLanguage();
+  const teamMembers = getTeamMembers(t);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -95,9 +98,9 @@ export default function ExpertTeam() {
     <section id="team" className="relative py-12 lg:py-16 bg-white scroll-mt-24 border-t border-slate-200 pt-16" data-anchor="team">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <PageSectionTitle 
-          title="专家团队"
-          subtitle="EXPER TEAM"
-          description="汇聚行业顶尖人才，拥有多名适航委任代表(DER)及资深测试专家"
+          title={t("about.team.title")}
+          subtitle={t("about.team.subtitle")}
+          description={t("about.team.description")}
         />
 
         {/* 横向滚动容器 */}
@@ -154,7 +157,7 @@ export default function ExpertTeam() {
                 ? "text-blue-600 hover:bg-blue-50 hover:border-blue-500/50 hover:scale-110 hover:shadow-lg"
                 : "text-gray-300 cursor-not-allowed opacity-50"
             }`}
-            aria-label="向左滑动"
+            aria-label={t("about.team.actions.scrollLeft")}
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -168,7 +171,7 @@ export default function ExpertTeam() {
                 ? "text-blue-600 hover:bg-blue-50 hover:border-blue-500/50 hover:scale-110 hover:shadow-lg"
                 : "text-gray-300 cursor-not-allowed opacity-50"
             }`}
-            aria-label="向右滑动"
+            aria-label={t("about.team.actions.scrollRight")}
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -176,7 +179,7 @@ export default function ExpertTeam() {
 
         {/* 滚动提示 - 移动端显示 */}
         <div className="flex justify-center mt-6 md:hidden">
-          <p className="text-xs text-gray-400">左右滑动查看更多</p>
+          <p className="text-xs text-gray-400">{t("about.team.actions.hint")}</p>
         </div>
       </div>
     </section>

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Users,
   Wrench,
@@ -8,28 +10,32 @@ import {
   Shield,
   Building2,
 } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 import { ItemBox } from "../ui/ItemBox";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 
-const departments = [
-  { icon: Users, name: "总经理办公室", description: "XXXXXX" },
-  { icon: Target, name: "质量部", description: "XXXXXX" },
-  { icon: Wrench, name: "技术部", description: "XXXXXX" },
-  { icon: BarChart3, name: "市场部", description: "XXXXXX" },
-  { icon: FileText, name: "综合部", description: "XXXXXX" },
-  { icon: Building2, name: "环境试验实验室", description: "XXXXXX" },
-  { icon: Shield, name: "EMC测试实验室", description: "XXXXXX" },
-  { icon: Briefcase, name: "软件测试实验室", description: "XXXXXX" },
+const getDepartments = (t: (key: string) => string) => [
+  { icon: Users, name: t("about.org.departments.gmOffice"), description: "XXXXXX" },
+  { icon: Target, name: t("about.org.departments.quality"), description: "XXXXXX" },
+  { icon: Wrench, name: t("about.org.departments.tech"), description: "XXXXXX" },
+  { icon: BarChart3, name: t("about.org.departments.marketing"), description: "XXXXXX" },
+  { icon: FileText, name: t("about.org.departments.general"), description: "XXXXXX" },
+  { icon: Building2, name: t("about.org.departments.environmentLab"), description: "XXXXXX" },
+  { icon: Shield, name: t("about.org.departments.emcLab"), description: "XXXXXX" },
+  { icon: Briefcase, name: t("about.org.departments.softwareLab"), description: "XXXXXX" },
 ];
 
 export default function OrgStructure() {
+  const { t } = useLanguage();
+  const departments = getDepartments(t);
+
   return (
     <section id="org-structure" className="relative py-12 lg:py-16 bg-white scroll-mt-24 border-t border-slate-200 pt-16" data-anchor="org">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <PageSectionTitle
-          title="组织架构"
-          subtitle="ORGANIZATION"
-          description="XXX XXX XXXXXXX"
+          title={t("about.org.title")}
+          subtitle={t("about.org.subtitle")}
+          description={t("about.org.description")}
         />
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">

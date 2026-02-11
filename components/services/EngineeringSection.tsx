@@ -1,32 +1,36 @@
 "use client";
 
+import { useLanguage } from "@/lib/LanguageContext";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 
-const engineeringServices = [
+const getEngineeringServices = (t: (key: string) => string) => [
   {
-    title: "安全性评估",
+    title: t("services.engineering.items.safety.title"),
     standards: ["FHA", "PSSA", "SSA"],
-    description: "功能危险性评估、初步系统安全性评估、系统安全性评估，涵盖 DO-178C/DO-254 Level A-D，提供功能危险性评估及系统安全性评估服务。",
+    description: t("services.engineering.items.safety.description"),
   },
   {
-    title: "可靠性分析",
-    standards: ["FMEA", "FTA", "可靠性预测"],
-    description: "故障模式与影响分析、故障树分析、可靠性预测，符合 MIL-HDBK-217、IEC 62380 标准。",
+    title: t("services.engineering.items.reliability.title"),
+    standards: ["FMEA", "FTA", t("services.engineering.standards.reliabilityPrediction")],
+    description: t("services.engineering.items.reliability.description"),
   },
   {
-    title: "软件/硬件保证",
+    title: t("services.engineering.items.assurance.title"),
     standards: ["DO-178C", "DO-254", "Level A-D"],
-    description: "机载软件/硬件适航保证，工具鉴定支持，提供 Level A-D 软件/硬件保证服务。",
+    description: t("services.engineering.items.assurance.description"),
   },
 ];
 
 export default function EngineeringSection() {
+  const { t } = useLanguage();
+  const engineeringServices = getEngineeringServices(t);
+
   return (
     <section id="engineering" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12 border-t border-blue-500/10" data-anchor="engineering">
       <PageSectionTitle 
-        title="工程技术支持"
-        subtitle="ENGINEERING SUPPORT"
-        description="提供专业的工程技术服务，涵盖安全性分析、可靠性工程、软件硬件保证等领域"
+        title={t("services.engineering.title")}
+        subtitle={t("services.engineering.subtitle")}
+        description={t("services.engineering.description")}
       />
 
       <div className="grid gap-8">

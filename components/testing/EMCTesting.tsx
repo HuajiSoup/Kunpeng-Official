@@ -1,59 +1,65 @@
+"use client";
+
 import { Radio, Wifi, RadioIcon, Zap as Lightning } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 import { TestItemBox } from "./TestItemBox";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 
-const emcTests = [
+const getEmcTests = (t: (key: string) => string) => [
   {
     icon: Radio,
-    title: "辐射发射 (RE)",
+    title: t("testing.emc.items.re.title"),
     standards: ["DO-160G", "RTCA/DO-160"],
-    specs: "频率范围: 10kHz ~ 18GHz，测量距离: 1m / 3m",
-    description: "XXXXXX XXXXXX XXXXXX XXXXXX",
+    specs: t("testing.emc.items.re.specs"),
+    description: t("testing.emc.items.re.description"),
   },
   {
     icon: RadioIcon,
-    title: "传导发射 (CE)",
+    title: t("testing.emc.items.ce.title"),
     standards: ["DO-160G", "MIL-STD-461"],
-    specs: "频率范围: 10kHz ~ 108MHz，阻抗: 50Ω",
-    description: "XXXXXX XXXXXX XXXXXX XXXXXX",
+    specs: t("testing.emc.items.ce.specs"),
+    description: t("testing.emc.items.ce.description"),
   },
   {
     icon: Wifi,
-    title: "高强辐射场 (HIRF)",
+    title: t("testing.emc.items.hirf.title"),
     standards: ["DO-160G", "RTCA/DO-160"],
-    specs: "场强: 200V/m ~ 8000V/m，频率: 10kHz ~ 40GHz",
-    description: "XXXXXX XXXXXX XXXXXX XXXXXX",
+    specs: t("testing.emc.items.hirf.specs"),
+    description: t("testing.emc.items.hirf.description"),
   },
   {
     icon: Lightning,
-    title: "间接雷电效应",
+    title: t("testing.emc.items.lightning.title"),
     standards: ["DO-160G", "RTCA/DO-160"],
-    specs: "波形: 6.4/69μs，能量: 2.5J ~ 5J",
-    description: "XXXXXX XXXXXX XXXXXX XXXXXX",
+    specs: t("testing.emc.items.lightning.specs"),
+    description: t("testing.emc.items.lightning.description"),
   },
   {
     icon: Radio,
-    title: "电磁敏感度 (RS)",
+    title: t("testing.emc.items.rs.title"),
     standards: ["DO-160G", "MIL-STD-461"],
-    specs: "频率范围: 10kHz ~ 18GHz，场强: 1V/m ~ 200V/m",
-    description: "XXXXXX XXXXXX XXXXXX XXXXXX",
+    specs: t("testing.emc.items.rs.specs"),
+    description: t("testing.emc.items.rs.description"),
   },
   {
     icon: RadioIcon,
-    title: "传导敏感度 (CS)",
+    title: t("testing.emc.items.cs.title"),
     standards: ["DO-160G", "RTCA/DO-160"],
-    specs: "频率范围: 10kHz ~ 400MHz，注入电平: 0.1V ~ 5V",
-    description: "XXXXXX XXXXXX XXXXXX XXXXXX",
+    specs: t("testing.emc.items.cs.specs"),
+    description: t("testing.emc.items.cs.description"),
   },
 ];
 
 export default function EMCTesting() {
+  const { t } = useLanguage();
+  const emcTests = getEmcTests(t);
+
   return (
     <section id="emc-testing" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12" data-anchor="emc">
       <PageSectionTitle 
-        title="电磁兼容性试验"
-        subtitle="Electro-Magnetic Compatibility"
-        description="XXX XXX XXXXXXX"
+        title={t("testing.emc.title")}
+        subtitle={t("testing.emc.subtitle")}
+        description={t("testing.emc.description")}
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">

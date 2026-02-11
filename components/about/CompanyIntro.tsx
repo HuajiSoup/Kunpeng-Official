@@ -1,6 +1,11 @@
-import { PageSectionTitle } from "../ui/PageSectionTitle"
+"use client";
+
+import { useLanguage } from "@/lib/LanguageContext";
+import { PageSectionTitle } from "../ui/PageSectionTitle";
 
 export default function CompanyIntro() {
+  const { t } = useLanguage();
+
   return (
     <section id="company-intro" className="relative py-12 lg:py-16 bg-white scroll-mt-24" data-anchor="intro">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
@@ -8,20 +13,20 @@ export default function CompanyIntro() {
           {/* 左侧文本内容 */}
           <div className="space-y-6">
             <PageSectionTitle 
-              title="公司简介"
-              subtitle="COMPANY PROFILE"
+              title={t("about.companyIntro.title")}
+              subtitle={t("about.companyIntro.subtitle")}
               align="start"
             />
 
             <div className="space-y-5 text-slate-600 leading-relaxed">
               <p className="text-sm lg:text-base">
-                浙江鲲鹏航空技术测试验证有限公司是龙兴航电（龙兴航电）的重要子公司，专注于航空技术测试、验证及适航咨询服务。
+                {t("about.companyIntro.paragraphs.p1")}
               </p>
               <p className="text-sm lg:text-base">
-                公司依托龙兴航电深厚的技术积淀和行业资源，在浙江之江航空技术发展中心的支持下，致力于为航空产业提供专业的测试验证解决方案。
+                {t("about.companyIntro.paragraphs.p2")}
               </p>
               <p className="text-sm lg:text-base font-medium text-slate-700 mt-6 border-l-4 border-blue-500/50 pl-4 bg-blue-50/50 rounded-r-lg py-2">
-                致力于成为国内领先的航空技术测试验证解决方案提供商。
+                {t("about.companyIntro.highlight")}
               </p>
             </div>
             

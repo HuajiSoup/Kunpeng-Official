@@ -1,3 +1,6 @@
+"use client";
+
+import { useLanguage } from "@/lib/LanguageContext";
 import { NewsCard, NewsCardItem } from "./NewsCard";
 
 interface FeaturedNewsProps {
@@ -5,6 +8,7 @@ interface FeaturedNewsProps {
 }
 
 export default function FeaturedNews({ featuredNews }: FeaturedNewsProps) {
+  const { t } = useLanguage();
   if (featuredNews.length === 0) return null;
 
   const [heroArticle, ...sideArticles] = featuredNews;
@@ -13,7 +17,7 @@ export default function FeaturedNews({ featuredNews }: FeaturedNewsProps) {
     <section className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12">
       <div className="mb-12">
         <h2 className="text-4xl lg:text-5xl font-semibold text-gray-900 mb-4 tracking-tight">
-          精选新闻
+          {t("news.list.featuredTitle")}
         </h2>
       </div>
 
