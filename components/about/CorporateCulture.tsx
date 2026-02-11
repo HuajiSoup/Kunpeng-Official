@@ -38,8 +38,8 @@ export default function CorporateCulture() {
             const Icon = item.icon;
             return (
               <ItemBox fancy className="text-center" key={index}>
-                <div className="w-20 h-20 bg-blue-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-gradient-to-br group-hover:from-blue-500 group-hover:to-cyan-500 transition-all duration-300 border-[0.5px] border-blue-500/30 group-hover:border-blue-500/50">
-                  <Icon className="w-10 h-10 text-blue-600 group-hover:text-white transition-colors" />
+                <div className="w-20 h-20 bg-gray-900/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-gradient-to-br group-hover:from-gray-900 group-hover:to-gray-700 transition-all duration-300 border-[0.5px] border-gray-900/20 group-hover:border-gray-900/40">
+                  <Icon className="w-10 h-10 text-gray-900 group-hover:text-white transition-colors" />
                 </div>
                 <div className="text-xs font-semibold text-blue-600/70 tracking-widest uppercase mb-2">
                   {item.englishTitle}

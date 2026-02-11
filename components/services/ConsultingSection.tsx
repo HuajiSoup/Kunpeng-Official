@@ -34,8 +34,8 @@ export default function ConsultingSection() {
           const Icon = item.icon;
           return (
             <ItemBox key={index}>
-              <div className="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-600 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
-                <Icon className="w-5 h-5" />
+              <div className="w-12 h-12 mb-4 bg-gray-100 rounded-lg flex items-center justify-center group-hover:bg-gray-200 transition-colors">
+                <Icon className="w-6 h-6 text-gray-900" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
               <p className="text-sm text-gray-600 leading-relaxed">

@@ -63,19 +63,22 @@ export default function HeroCarousel() {
     setCurrentIndex((cur) => cur ? cur - 1 : slides.length - 1);
   }
   // 自动轮播
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setDirection(1);
-      nextSlide();
-    }, 6000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setDirection(1);
+  //     nextSlide();
+  //   }, 6000);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   const boxVariants: Variants = {
     enter: (direction) => ({
       x: direction == 1 ? "100%" : "-100%",
       opacity: 0,
+      transition: {
+        duration: 0,
+      }
     }),
     exit: (direction) => ({
       x: direction == 1 ? "-100%" : "100%",
@@ -129,9 +132,9 @@ export default function HeroCarousel() {
   };
 
   return (
-    <section className="home-hero relative w-full h-[75vh] flex items-center justify-center overflow-hidden bg-black">
+    <section className="home-hero relative w-full h-[80vh] flex items-center justify-center overflow-hidden bg-black">
       <div className="absolute inset-0">
-        <AnimatePresence mode="popLayout">
+        <AnimatePresence mode="popLayout" custom={direction}>
           <motion.div
             key={currentIndex}
             className="absolute inset-0"

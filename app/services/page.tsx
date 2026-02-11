@@ -83,7 +83,7 @@ export default function ServicesPage() {
           </aside>
 
           {/* Right Content */}
-          <div className="lg:col-span-4 py-16">
+          <div className="lg:col-span-4">
             <ConsultingSection />
             <EngineeringSection />
             <TrainingSection />

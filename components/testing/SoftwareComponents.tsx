@@ -17,8 +17,8 @@ export default function SoftwareComponents() {
         {/* 软件测评卡片 */}
         <div className="group bg-white/80 backdrop-blur-sm border-[0.5px] border-blue-500/20 rounded-2xl overflow-hidden hover:border-blue-500/50 hover:shadow-[0_0_25px_rgba(59,130,246,0.2)] transition-all duration-300 hover-gentle-wiggle cursor-pointer">
           <div className="p-8">
-            <div className="w-16 h-16 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
-              <Code className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors" />
+            <div className="w-16 h-16 bg-gray-900/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gray-900 group-hover:text-white transition-all duration-300">
+              <Code className="w-8 h-8 text-gray-900 group-hover:text-white transition-colors" />
             </div>
 
             <h3 className="text-2xl font-semibold text-gray-900 mb-4">
@@ -63,8 +63,8 @@ export default function SoftwareComponents() {
         {/* 元器件筛选卡片 */}
         <div id="components-section" className="group bg-white/80 backdrop-blur-sm border border-blue-500/20 rounded-2xl overflow-hidden hover:border-blue-500/50 hover:shadow-[0_0_25px_rgba(59,130,246,0.2)] transition-all duration-300 hover-gentle-wiggle cursor-pointer" data-anchor="components">
           <div className="p-8">
-            <div className="w-16 h-16 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
-              <Cpu className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors" />
+            <div className="w-16 h-16 bg-gray-900/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gray-900 group-hover:text-white transition-all duration-300">
+              <Cpu className="w-8 h-8 text-gray-900 group-hover:text-white transition-colors" />
             </div>
 
             <h3 className="text-2xl font-semibold text-gray-900 mb-4">

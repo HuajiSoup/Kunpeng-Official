@@ -43,8 +43,8 @@ export function ContactInfo() {
           const Icon = item.icon;
           return (
             <ItemBox key={index}>
-              <div className="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center mb-3 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
-                <Icon className="w-5 h-5 text-blue-600 group-hover:text-white transition-colors" />
+              <div className="w-10 h-10 bg-gray-900/10 rounded-lg flex items-center justify-center mb-3 group-hover:bg-gray-900 group-hover:text-white transition-all duration-300">
+                <Icon className="w-5 h-5 text-gray-900 group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-base font-semibold text-gray-900 mb-1">{item.title}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">

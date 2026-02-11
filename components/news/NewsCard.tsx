@@ -68,7 +68,7 @@ export function NewsCard({
 
           {showArrow && <div className="inline-flex items-center text-sm font-medium text-blue-600 mt-auto">
             <span>阅读更多</span>
-            <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-2 transition-transform" />
           </div>}
         </div>
       </ItemBox>

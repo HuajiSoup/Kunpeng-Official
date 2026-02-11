@@ -5,7 +5,7 @@ export default function ServicesCTA() {
   return (
     <section className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12 border-t border-blue-500/10 mt-24">
       {/* 深色背景 Banner */}
-      <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl p-8 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-lg">
+      <div className="bg-gray-900 rounded-xl p-8 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-6">
         <div className="flex-1">
           <h2 className="text-2xl font-bold text-white tracking-tight mb-2">
             准备开启您的适航认证之旅？
@@ -19,7 +19,7 @@ export default function ServicesCTA() {
         <div className="flex-shrink-0">
           <Link
             href="/contact"
-            className="group inline-flex items-center px-6 py-3 bg-white text-blue-600 text-sm font-bold rounded-lg hover:bg-blue-50 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+            className="group inline-flex items-center px-6 py-3 bg-white text-gray-900 text-sm font-bold rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-lg"
           >
             <span>联系咨询顾问</span>
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

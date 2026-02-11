@@ -43,13 +43,13 @@ export default function CoreTestings() {
             <tbody className="divide-y divide-gray-200">
               {tests.map((item, index) => (
                 <tr
-                  key={index}
+                  key={index+1}
                   className={`hover:bg-gray-50 transition-colors ${
                     index % 2 === 0 ? "bg-white" : "bg-gray-50/50"
                   }`}
                 >
                   <td className="px-6 py-4 text-sm font-medium text-gray-900">
-                    {index}
+                    {index+1}
                   </td>
                   <td className="px-6 py-4 text-sm text-gray-600">
                     {item.name}

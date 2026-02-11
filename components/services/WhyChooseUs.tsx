@@ -51,8 +51,8 @@ export default function WhyChooseUs() {
           const Icon = prop.icon;
           const CardContent = (
             <>
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-50 rounded-lg mb-4 group-hover:bg-blue-100 transition-colors">
-                <Icon className="w-8 h-8 text-blue-600" />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-100 rounded-lg mb-4 group-hover:bg-gray-200 transition-colors">
+                <Icon className="w-8 h-8 text-gray-900" />
               </div>
 
               <h3 className="text-lg font-semibold text-gray-900 mb-2">{prop.title}</h3>

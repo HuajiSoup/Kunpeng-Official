@@ -37,8 +37,8 @@ export default function OrgStructure() {
             const Icon = dept.icon;
             return (   
                 <ItemBox fancy className="text-center" key={index}>
-                  <div className="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-br group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:text-white transition-all duration-300 border-[0.5px] border-blue-500/30 group-hover:border-blue-500/50">
-                    <Icon className="w-7 h-7 text-blue-600 group-hover:text-white transition-colors" />
+                  <div className="w-14 h-14 bg-gray-900/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-br group-hover:from-gray-900 group-hover:to-gray-700 group-hover:text-white transition-all duration-300 border-[0.5px] border-gray-900/20 group-hover:border-gray-900/40">
+                    <Icon className="w-7 h-7 text-gray-900 group-hover:text-white transition-colors" />
                   </div>
                   <h3 className="text-lg font-semibold text-slate-900 mb-1">
                     {dept.name}

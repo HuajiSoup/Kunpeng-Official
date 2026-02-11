@@ -33,16 +33,10 @@ export default function DevelopmentHistory() {
           {/* timeline wrapper */}
           <div className="relative">
             {/* timeline - center for pc */}
-            <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/50 to-transparent"></div>
-              <div className="absolute inset-0 bg-blue-500/30 animate-pulse"></div>
-            </div>
+            <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gray-300"></div>
             
             {/* timeline - left for phone */}
-            <div className="lg:hidden absolute inset-0 bottom-0 w-0.5">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/50 to-transparent"></div>
-              <div className="absolute inset-0 bg-blue-500/30 animate-pulse"></div>
-            </div>
+            <div className="lg:hidden absolute top-0 bottom-0 w-px bg-gray-300"></div>
 
             {/* tiemline cards */}
             <div className="space-y-16 lg:space-y-20">
@@ -51,10 +45,9 @@ export default function DevelopmentHistory() {
                   key={index}
                   className="relative group"
                 >
-                  {/* node */}
-                  <div className="absolute left-0 lg:left-1/2 lg:-translate-x-1/2 -translate-x-1/2 z-10 w-8 h-8 bg-white border-4 border-blue-500/50 rounded-full flex items-center justify-center group-hover:border-blue-500 transition-all duration-300 shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/50 group-hover:scale-110">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                    <div className="absolute inset-0 rounded-full bg-blue-500/20 animate-ping"></div>
+                  {/* 时间点圆环 */}
+                  <div className="absolute left-0 lg:left-1/2 lg:-translate-x-1/2 -translate-x-1/2 z-10 w-8 h-8 bg-white border-4 border-gray-300 rounded-full flex items-center justify-center group-hover:border-gray-900 transition-colors shadow-sm">
+                    <div className="w-2 h-2 bg-gray-900 rounded-full"></div>
                   </div>
 
                   {/* 内容卡片 */}
@@ -63,19 +56,19 @@ export default function DevelopmentHistory() {
                       ? "lg:w-[48%] lg:mr-auto lg:pr-8" 
                       : "lg:w-[48%] lg:ml-auto lg:pl-8"
                   }`}>
-                    <ItemBox fancy>
-                      <div className={index % 2 === 0 ? "lg:text-right" : "lg:text-left"}>
-                        <div className="text-3xl font-bold mb-3 text-slate-900 group-hover:text-blue-600 transition-colors">
-                          {milestone.year}
-                        </div>
-                        <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
-                          {milestone.title}
-                        </h3>
-                        <p className="text-slate-600 leading-relaxed">
-                          {milestone.description}
-                        </p>
+                    <div className={`p-6 lg:p-8 rounded-2xl bg-white border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-lg hover-gentle-wiggle cursor-pointer ${
+                      index % 2 === 0 ? "lg:text-right" : "lg:text-left"
+                    }`}>
+                      <div className="text-3xl font-bold text-gray-900 mb-3">
+                        {milestone.year}
                       </div>
-                    </ItemBox>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                        {milestone.title}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        {milestone.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               ))}

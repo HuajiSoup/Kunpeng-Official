@@ -102,20 +102,6 @@ export default function ExpertTeam() {
 
         {/* 横向滚动容器 */}
         <div className="relative">
-          {/* 左箭头按钮 */}
-          <button
-            onClick={() => scroll("left")}
-            disabled={!canScrollLeft}
-            className={`hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full items-center justify-center transition-all duration-300 shadow-md border-[0.5px] border-blue-500/20 bg-white/90 backdrop-blur-sm ${
-              canScrollLeft
-                ? "text-blue-600 hover:bg-blue-50 hover:border-blue-500/50 hover:scale-110 hover:shadow-lg"
-                : "text-gray-300 cursor-not-allowed opacity-50"
-            }`}
-            aria-label="向左滑动"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-
           {/* 滚动容器 */}
           <div
             ref={scrollContainerRef}
@@ -131,10 +117,10 @@ export default function ExpertTeam() {
                 className="group flex-shrink-0 w-64 md:w-72 text-center cursor-pointer snap-center"
               >
                 {/* 头像 */}
-                <div className="aspect-square w-48 md:w-56 mx-auto rounded-xl bg-slate-100 my-4 flex items-center justify-center overflow-hidden border-[0.5px] border-blue-500/20 group-hover:border-blue-500/50 transition-all duration-300 group-hover:shadow-[0_0_25px_rgba(59,130,246,0.2)] relative">
+                <div className="aspect-square w-48 md:w-56 mx-auto rounded-xl bg-slate-100 my-4 flex items-center justify-center overflow-hidden  border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-lg">
                   <span className="text-slate-400 text-xs font-medium">Photo</span>
                   {/* 悬停时的发光边框 */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  {/* <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <div className="absolute inset-0 rounded-xl border border-transparent bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-500 bg-[length:200%_100%] animate-[border-beam_3s_linear_infinite]"
                       style={{
                         mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
@@ -144,7 +130,7 @@ export default function ExpertTeam() {
                         padding: "1px",
                       }}
                     />
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* 文本信息 */}
@@ -159,11 +145,25 @@ export default function ExpertTeam() {
             ))}
           </div>
 
+          {/* 左箭头按钮 */}
+          <button
+            onClick={() => scroll("left")}
+            disabled={!canScrollLeft}
+            className={`hidden md:flex absolute left-0 top-32 -translate-y-1/2 z-10 w-10 h-10 rounded-full items-center justify-center transition-all duration-300 shadow-md border-[0.5px] border-blue-500/20 bg-white/90 backdrop-blur-sm ${
+              canScrollLeft
+                ? "text-blue-600 hover:bg-blue-50 hover:border-blue-500/50 hover:scale-110 hover:shadow-lg"
+                : "text-gray-300 cursor-not-allowed opacity-50"
+            }`}
+            aria-label="向左滑动"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
           {/* 右箭头按钮 */}
           <button
             onClick={() => scroll("right")}
             disabled={!canScrollRight}
-            className={`hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full items-center justify-center transition-all duration-300 shadow-md border-[0.5px] border-blue-500/20 bg-white/90 backdrop-blur-sm ${
+            className={`hidden md:flex absolute right-0 top-32 -translate-y-1/2 z-10 w-10 h-10 rounded-full items-center justify-center transition-all duration-300 shadow-md border-[0.5px] border-blue-500/20 bg-white/90 backdrop-blur-sm ${
               canScrollRight
                 ? "text-blue-600 hover:bg-blue-50 hover:border-blue-500/50 hover:scale-110 hover:shadow-lg"
                 : "text-gray-300 cursor-not-allowed opacity-50"

@@ -50,8 +50,8 @@ export default function ProcessWorkflow() {
                 <div key={index} className="relative flex-1 flex flex-col items-center px-2">
                   {/* index ball */}
                   <div className="relative mb-4">
-                    <div className="w-24 h-24 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-blue-500/30 shadow-sm">
-                      <Icon className="w-10 h-10 text-blue-600" />
+                    <div className="w-24 h-24 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-gray-900/20 shadow-sm">
+                      <Icon className="w-10 h-10 text-gray-900" />
                     </div>
                     {/* <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
                       <span className="text-xs font-bold text-white">{step.number}</span>
@@ -87,8 +87,8 @@ export default function ProcessWorkflow() {
             <div key={index} className="relative flex gap-4">
               {/* connect line + icons */}
               <div className="flex flex-col items-center flex-shrink-0">
-                <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center border-2 border-blue-500/30 z-10">
-                  <Icon className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-gray-900/10 rounded-full flex items-center justify-center border-2 border-gray-900/20 z-10">
+                  <Icon className="w-6 h-6 text-gray-900" />
                 </div>
                 {index < steps.length - 1 && (
                   <div className="w-0.5 h-full bg-gray-200 mt-2 min-h-[60px]"></div>

@@ -27,8 +27,8 @@ export function TestItemBox({
       {/* 卡片内容 */}
       <div className="p-6">
         <div className="flex items-start justify-between mb-4">
-          <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center group-hover:bg-blue-100 transition-colors">
-            <Icon className="w-6 h-6 text-blue-600" />
+          <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center group-hover:bg-gray-200 transition-colors">
+            <Icon className="w-6 h-6 text-gray-900" />
           </div>
         </div>
 
