@@ -62,15 +62,16 @@ export default function HeroCarousel() {
     setDirection(-1);
     setCurrentIndex((cur) => cur ? cur - 1 : slides.length - 1);
   }
+  
   // 自动轮播
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setDirection(1);
-  //     nextSlide();
-  //   }, 6000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDirection(1);
+      nextSlide();
+    }, 6000);
 
-  //   return () => clearInterval(interval);
-  // }, []);
+    return () => clearInterval(interval);
+  }, []);
 
   const boxVariants: Variants = {
     enter: (direction) => ({

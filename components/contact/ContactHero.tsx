@@ -2,15 +2,19 @@
 
 import { useLanguage } from "@/lib/LanguageContext";
 import { SectionBanner } from "../ui/SectionBanner";
+import { Phone } from "lucide-react";
 
 export function ContactHero() {
   const { t } = useLanguage();
 
   return (<>
     <SectionBanner 
-      top="CONTACT US"
-      middle={t("contact.hero.title")}
-      bottom={t("contact.hero.subtitle")}
+      titleTop="CONTACT US"
+      titleMain={t("contact.hero.title")}
+      titleBottom={t("contact.hero.subtitle")}
+      LabelIcon={Phone}
+      labelTitleMain={t("contact.hero.labelTitleMain")}
+      labelTitleBottom={t("contact.hero.labelTitleBottom")}
     />
   </>);
 }

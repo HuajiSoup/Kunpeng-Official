@@ -203,6 +203,8 @@ export const translations = {
       hero: {
         title: "走进鲲鹏",
         subtitle: "公正 · 科学 · 准确 · 高效",
+        labelTitleMain: "企业实力",
+        labelTitleBottom: "权威资质与专业团队，持续输出可靠的航空技术服务。",
       },
       companyIntro: {
         title: "公司简介",
@@ -311,6 +313,8 @@ export const translations = {
       hero: {
         title: "试验检测中心",
         subtitle: "专业、权威、可靠的航空产品测试验证服务",
+        labelTitleMain: "专业测试",
+        labelTitleBottom: "覆盖环境、EMC与软件测试，保障产品可靠性。",
       },
       categories: {
         all: "全部",
@@ -449,6 +453,8 @@ export const translations = {
       hero: {
         title: "适航技术服务",
         subtitle: "专业的适航审定与咨询解决方案",
+        labelTitleMain: "合规认证",
+        labelTitleBottom: "专业的适航取证服务，确保您的产品符合国际标准。",
       },
       navTitle: "服务导航",
       sidebar: {
@@ -620,6 +626,8 @@ export const translations = {
       hero: {
         title: "新闻中心",
         subtitle: "了解最新动态，掌握行业资讯",
+        labelTitleMain: "行业动态",
+        labelTitleBottom: "聚焦政策、项目与技术进展，第一时间传递信息。",
       },
       navTitle: "分类筛选",
       categories: {
@@ -656,6 +664,8 @@ export const translations = {
         subtitle: "专业的适航技术服务合作伙伴",
         badge: "CONTACT US",
         getInTouch: "随时联系",
+        labelTitleMain: "快速响应",
+        labelTitleBottom: "多渠道沟通，提供及时专业的服务对接。",
       },
       navTitle: "联系我们",
       nav: {
@@ -1031,6 +1041,8 @@ export const translations = {
       hero: {
         title: "About Us",
         subtitle: "Fair · Scientific · Accurate · Efficient",
+        labelTitleMain: "Company Strength",
+        labelTitleBottom: "Accredited expertise and experienced teams delivering trusted aviation services.",
       },
       companyIntro: {
         title: "Company Profile",
@@ -1139,6 +1151,8 @@ export const translations = {
       hero: {
         title: "Testing Center",
         subtitle: "Professional, Authoritative, Reliable Aviation Product Testing & Verification Services",
+        labelTitleMain: "Professional Testing",
+        labelTitleBottom: "End-to-end environmental, EMC, and software testing for reliability.",
       },
       categories: {
         all: "All",
@@ -1277,6 +1291,8 @@ export const translations = {
       hero: {
         title: "Aviation Services",
         subtitle: "Professional Airworthiness Certification & Consulting Solutions",
+        labelTitleMain: "Compliance Certification",
+        labelTitleBottom: "Professional airworthiness certification to meet global standards.",
       },
       navTitle: "Service Navigation",
       sidebar: {
@@ -1448,6 +1464,8 @@ export const translations = {
       hero: {
         title: "News Center",
         subtitle: "Stay Updated with Latest News and Industry Insights",
+        labelTitleMain: "Industry Updates",
+        labelTitleBottom: "Tracking policy, projects, and technology progress as they happen.",
       },
       navTitle: "Categories",
       categories: {
@@ -1484,6 +1502,8 @@ export const translations = {
         subtitle: "Professional Aviation Technology Service Partner",
         badge: "CONTACT US",
         getInTouch: "Get in Touch",
+        labelTitleMain: "Fast Response",
+        labelTitleBottom: "Multi-channel communication for timely, professional support.",
       },
       navTitle: "Contact Us",
       nav: {

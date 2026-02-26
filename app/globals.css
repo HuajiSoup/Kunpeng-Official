@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* NOTICE: A LOT OF DECEPRETED */
+
 @layer base {
   body {
     @apply bg-slate-950 text-white;
@@ -152,24 +154,24 @@
     }
   }
 
-  /* 卡片展开动画 - Fan-out 效果 */
+  /* card expansion */
   .hero-cards-container {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .hero-cards-container:hover .hero-card-1 {
-    transform: translate(-16px, -16px) rotate(-2deg) !important;
+    transform: translate(-12px, -12px) rotate(-1.5deg) !important;
   }
 
   .hero-cards-container:hover .hero-card-2 {
-    transform: translate(-2px, 4px) rotate(1deg) !important;
+    transform: translate(-2px, -2px) rotate(1deg) !important;
   }
 
   .hero-cards-container:hover .hero-card-3 {
-    transform: translate(8px, 8px) rotate(2deg) !important;
+    transform: translate(8px, 8px) rotate(3.5deg) !important;
   }
 
-  /* Shimmer 效果类 */
+  /* Shimmer loading effect */
   .shimmer-effect {
     position: relative;
     overflow: hidden;
