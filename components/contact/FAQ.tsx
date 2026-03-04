@@ -1,6 +1,7 @@
+import getFaq, { FaqItem } from "@/api/http/getFaq";
 import { useLanguage } from "@/lib/LanguageContext";
 import { ChevronUp, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,24 +28,15 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
   );
 }
 
-const getFaqItems = (t: (key: string) => string) => [
-  {
-    question: t("contact.sections.faq.items.q1.question"),
-    answer: t("contact.sections.faq.items.q1.answer"),
-  },
-  {
-    question: t("contact.sections.faq.items.q2.question"),
-    answer: t("contact.sections.faq.items.q2.answer"),
-  },
-  {
-    question: t("contact.sections.faq.items.q3.question"),
-    answer: t("contact.sections.faq.items.q3.answer"),
-  },
-];
-
 export function FAQ() {
   const { t } = useLanguage();
-  const faqItems = getFaqItems(t);
+  const [faqItems, setFaqItems] = useState<FaqItem[]>([]);
+
+  useEffect(() => {
+    getFaq().then((faq) => {
+      setFaqItems(faq);
+    });
+  }, []);
   
   return (<>
     <section id="faq" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12">
