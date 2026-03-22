@@ -2,18 +2,21 @@
 
 import { useState, useEffect } from "react";
 import TestingHero from "@/components/testing/TestingHero";
-import EnvironmentTesting from "@/components/testing/EnvironmentTesting";
-import EMCTesting from "@/components/testing/EMCTesting";
+import TestingsEnvironment from "@/components/testing/TestingsEnvironment";
+import TestingsEMC from "@/components/testing/TestingsEMC";
 import SoftwareComponents from "@/components/testing/SoftwareComponents";
 import CoreTestings from "@/components/testing/CoreTestings";
 import TestingCTA from "@/components/testing/TestingCTA";
 import { useLanguage } from "@/lib/LanguageContext";
 import { NavSidebar } from "@/components/ui/NavSidebar";
+import TestingsDevices from "@/components/testing/TestingsDevices";
+import TestingsMechanical from "@/components/testing/TestingsMechanical";
 
 const getCategories = (t: (key: string) => string) => [
+  { id: "testings-devices", label: "设备级测试" },
   { id: "environment-reliability", label: t("testing.categories.environment") },
+  { id: "mechanical-special", label: "机械及特殊环境试验" },
   { id: "emc-testing", label: t("testing.categories.emc") },
-  { id: "software-components", label: t("testing.categories.components") },
   { id: "core-testings", label: t("testing.categories.core") },
 ];
 
@@ -78,9 +81,11 @@ export default function TestingPage() {
 
           {/* Right Content */}
           <div className="lg:col-span-4">
-            <EnvironmentTesting />
-            <EMCTesting />
-            <SoftwareComponents />
+            <TestingsDevices />
+            <TestingsEnvironment />
+            <TestingsMechanical />
+            <TestingsEMC />
+            {/* <SoftwareComponents /> */}
             <CoreTestings />
             <TestingCTA />
           </div>

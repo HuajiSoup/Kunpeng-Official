@@ -9,9 +9,9 @@ export default function AboutPage() {
   return (<>
     <AboutHero />
     <CompanyIntro />
-    <OrgStructure />
+    {/* <OrgStructure /> */}
     <CorporateCulture />
-    <ExpertTeam />
-    <DevelopmentHistory />
+    {/* <ExpertTeam /> */}
+    {/* <DevelopmentHistory /> */}
   </>);
 }

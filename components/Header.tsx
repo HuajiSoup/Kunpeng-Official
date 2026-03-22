@@ -50,6 +50,10 @@ const getNavItems = (t: (key: string) => string) => [
         href: "/testing#environment-reliability"
       },
       {
+        label: "机械及特殊环境试验",
+        href: "/testing#mechanical-special"
+      },
+      {
         label: t("nav.testingSubmenu.emc"),
         href: "/testing#emc-testing"
       },
