@@ -3,7 +3,7 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { ChevronUp, ChevronDown } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
-function FAQItem({ question, answer }: { question: string; answer: string }) {
+function FAQItemBox({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -43,7 +43,7 @@ export function FAQ() {
       <h2 className="text-2xl font-bold text-gray-900 mb-5">{t("contact.sections.faq.title")}</h2>
       <div className="space-y-3">
         {faqItems.map((item) => (
-          <FAQItem
+          <FAQItemBox
             key={item.question}
             question={item.question}
             answer={item.answer}
