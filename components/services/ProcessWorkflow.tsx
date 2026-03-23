@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, FileText, Rocket, CheckCircle, ArrowRight } from "lucide-react";
+import { Search, FileText, Rocket, CheckCircle, ArrowRight, ShieldCheck, Pen, PenTool, BookmarkCheck } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 
@@ -8,27 +8,33 @@ const getSteps = (t: (key: string) => string) => [
   {
     number: 1,
     icon: Search,
-    title: t("services.process.steps.analysis.title"),
-    description: t("services.process.steps.analysis.description"),
+    title: "项目受理和启动",
+    description: "协助提交申请书，组建审查组，召开首次会议",
   },
   {
     number: 2,
     icon: FileText,
-    title: t("services.process.steps.plan.title"),
-    description: t("services.process.steps.plan.description"),
+    title: "要求确定",
+    description: "确定审定基础，制定认证计划，明确局方审查重点",
   },
   {
     number: 3,
-    icon: Rocket,
-    title: t("services.process.steps.execution.title"),
-    description: t("services.process.steps.execution.description"),
+    icon: PenTool,
+    title: "符合性计划制定",
+    description: "协助制定详细的符合性验证计划，确定符合性方法",
   },
   {
     number: 4,
     icon: CheckCircle,
-    title: t("services.process.steps.delivery.title"),
-    description: t("services.process.steps.delivery.description"),
+    title: "符合性确认",
+    description: "完成局方验证和确认工作（文件评审、试验目击、审定飞行试验等）",
   },
+  {
+    number: 5,
+    icon: BookmarkCheck,
+    title: "颁证",
+    description: "完成最终TCB会议，配合局方完成审查报告，获取相关适航证件",
+  }
 ];
 
 export default function ProcessWorkflow() {
@@ -90,19 +96,19 @@ export default function ProcessWorkflow() {
         {steps.map((step, index) => {
           const Icon = step.icon;
           return (
-            <div key={index} className="relative flex gap-4">
+            <div key={index} className="relative flex">
               {/* connect line + icons */}
               <div className="flex flex-col items-center flex-shrink-0">
-                <div className="w-12 h-12 bg-gray-900/10 rounded-full flex items-center justify-center border-2 border-gray-900/20 z-10">
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center border-2 border-gray-900/20 z-10 flex-shrink-0">
                   <Icon className="w-6 h-6 text-gray-900" />
                 </div>
                 {index < steps.length - 1 && (
-                  <div className="w-0.5 h-full bg-gray-200 mt-2 min-h-[60px]"></div>
+                  <div className="w-0.5 flex-grow bg-gray-200 min-h-full"></div>
                 )}
               </div>
 
               {/* content */}
-              <div className="flex-1 pb-6">
+              <div className="flex-1 pb-6 pl-4 flex-shrink-0">
                 <div className="flex items-center gap-3 mb-2">
                   <span className="text-sm font-bold text-gray-400">{step.number}</span>
                   <h3 className="text-base font-bold text-gray-900">{step.title}</h3>

@@ -3,8 +3,6 @@
 import { useEffect, useState } from "react";
 import ServicesHero from "@/components/services/ServicesHero";
 import ConsultingSection from "@/components/services/ConsultingSection";
-import EngineeringSection from "@/components/services/EngineeringSection";
-import TrainingSection from "@/components/services/TrainingSection";
 import ProcessWorkflow from "@/components/services/ProcessWorkflow";
 import SuccessStories from "@/components/services/SuccessStories";
 import ServicesCTA from "@/components/services/ServicesCTA";
@@ -13,8 +11,6 @@ import { NavSidebar } from "@/components/ui/NavSidebar";
 
 const getSidebarItems = (t: (key: string) => string) => [
   { id: "consulting", label: t("services.sidebar.consulting") },
-  { id: "engineering", label: t("services.sidebar.engineering") },
-  { id: "training", label: t("services.sidebar.training") },
   { id: "process-workflow", label: t("services.sidebar.process") },
   { id: "success-stories", label: t("services.sidebar.cases") },
 ];
@@ -45,7 +41,6 @@ export default function ServicesPage() {
       if (currentSection) {
         setActiveItem(currentSection.id);
       }
-
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -85,8 +80,8 @@ export default function ServicesPage() {
           {/* Right Content */}
           <div className="lg:col-span-4">
             <ConsultingSection />
-            <EngineeringSection />
-            <TrainingSection />
+            {/* <EngineeringSection /> */}
+            {/* <TrainingSection /> */}
             <ProcessWorkflow />
             <SuccessStories />
             <ServicesCTA />

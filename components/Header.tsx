@@ -23,20 +23,8 @@ const getNavItems = (t: (key: string) => string) => [
         href: "/about#company-intro"
       },
       {
-        label: t("nav.aboutSubmenu.org"),
-        href: "/about#org-structure"
-      },
-      {
         label: t("nav.aboutSubmenu.culture"),
         href: "/about#corporate-culture"
-      },
-      {
-        label: t("nav.aboutSubmenu.team"),
-        href: "/about#team"
-      },
-      {
-        label: t("nav.aboutSubmenu.history"),
-        href: "/about#development-history"
       },
     ],
   },
@@ -45,6 +33,10 @@ const getNavItems = (t: (key: string) => string) => [
     href: "/testing",
     labelKey: "nav.testing",
     submenu: [
+      {
+        label: "设备级测试",
+        href: "/testing#testings-devices"
+      },
       {
         label: t("nav.testingSubmenu.env"),
         href: "/testing#environment-reliability"
@@ -56,10 +48,6 @@ const getNavItems = (t: (key: string) => string) => [
       {
         label: t("nav.testingSubmenu.emc"),
         href: "/testing#emc-testing"
-      },
-      {
-        label: t("nav.testingSubmenu.components"),
-        href: "/testing#software-components"
       },
       {
         label: t("nav.testingSubmenu.core"),
@@ -75,14 +63,6 @@ const getNavItems = (t: (key: string) => string) => [
       {
         label: t("nav.servicesSubmenu.consulting"),
         href: "/services#consulting"
-      },
-      {
-        label: t("nav.servicesSubmenu.engineering"),
-        href: "/services#engineering"
-      },
-      {
-        label: t("nav.servicesSubmenu.training"),
-        href: "/services#training"
       },
       {
         label: t("nav.servicesSubmenu.process"),

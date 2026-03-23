@@ -37,28 +37,28 @@ export const translations = {
     home: {
       hero: {
         slide1: {
+          title: "铸就航空品质，护航低空腾飞",
+          subtitle: "行业顶尖人才汇聚",
+          description: "多名适航委任代表及资深测试专家，提供专业可靠的技术服务",
+          cta: "了解我们",
+        },
+        slide2: {
           title: "专业航空技术测试验证",
           subtitle: "解决方案提供商",
           description: "依托龙兴航电深厚积淀，提供一站式适航审定与检测服务",
           cta: "了解试验能力",
         },
-        slide2: {
+        slide3: {
           title: "权威认证，技术领先",
           subtitle: "CNAS认可实验室",
           description: "拥有完整的适航审定能力和先进的测试设备，为航空安全保驾护航",
           cta: "查看资质能力",
         },
-        slide3: {
+        slide4: {
           title: "先进设备，精密测试",
           subtitle: "行业领先的测试平台",
           description: "配备国际先进的测试设备与仪器，确保测试结果的准确性和可靠性",
           cta: "查看设备",
-        },
-        slide4: {
-          title: "专家团队，经验丰富",
-          subtitle: "行业顶尖人才汇聚",
-          description: "多名适航委任代表及资深测试专家，提供专业可靠的技术服务",
-          cta: "了解我们",
         },
         prev: "上一张",
         next: "下一张",
@@ -863,32 +863,32 @@ export const translations = {
     home: {
       hero: {
         slide1: {
+          title: "Forging Aviation Quality, Safeguarding Low-Altitude Flight",
+          subtitle: "Gathering Industry Top Talents",
+          description:
+            "Multiple airworthiness designees and senior testing experts providing professional and reliable technical services",
+          cta: "Learn More",
+        },
+        slide2: {
           title: "Professional Aviation Testing & Verification",
           subtitle: "Solution Provider",
           description:
             "Leveraging Longxing Avionics' deep expertise to provide one-stop airworthiness certification and testing services",
           cta: "Learn Testing Capabilities",
         },
-        slide2: {
+        slide3: {
           title: "Authoritative Certification, Leading Technology",
           subtitle: "CNAS Accredited Laboratory",
           description:
             "Complete airworthiness certification capabilities and advanced testing equipment to ensure aviation safety",
           cta: "View Qualifications",
         },
-        slide3: {
+        slide4: {
           title: "Advanced Equipment, Precision Testing",
           subtitle: "Industry-Leading Testing Platform",
           description:
             "Equipped with internationally advanced testing equipment and instruments to ensure accuracy and reliability of test results",
           cta: "View Equipment",
-        },
-        slide4: {
-          title: "Expert Team, Rich Experience",
-          subtitle: "Gathering Industry Top Talents",
-          description:
-            "Multiple airworthiness designees and senior testing experts providing professional and reliable technical services",
-          cta: "Learn More",
         },
         prev: "Previous",
         next: "Next",
