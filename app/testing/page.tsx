@@ -13,9 +13,9 @@ import TestingsDevices from "@/components/testing/TestingsDevices";
 import TestingsMechanical from "@/components/testing/TestingsMechanical";
 
 const getCategories = (t: (key: string) => string) => [
-  { id: "testings-devices", label: "设备级测试" },
+  { id: "testings-devices", label: t("testing.categories.devices") },
   { id: "environment-reliability", label: t("testing.categories.environment") },
-  { id: "mechanical-special", label: "机械及特殊环境试验" },
+  { id: "mechanical-special", label: t("testing.categories.mechanical") },
   { id: "emc-testing", label: t("testing.categories.emc") },
   { id: "core-testings", label: t("testing.categories.core") },
 ];

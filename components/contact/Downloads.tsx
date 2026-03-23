@@ -3,7 +3,7 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { FileText, Download } from "lucide-react";
 import { useEffect, useState } from "react";
 
-function DownloadItemBox({ item }: { item: DownloadItem }) {
+function DownloadItemBox({ item, t }: { item: DownloadItem; t: (key: string) => string }) {
   return (
     <div
       key={item.id}
@@ -25,7 +25,7 @@ function DownloadItemBox({ item }: { item: DownloadItem }) {
         className="flex items-center gap-2 px-3.5 py-1.5 bg-gray-900 text-white text-sm rounded-lg hover:bg-gray-800 transition-colors"
       >
         <Download className="w-4 h-4" />
-        <span>查看</span>
+        <span>{t("contact.sections.downloads.view")}</span>
       </a>
     </div>
   );
@@ -46,7 +46,7 @@ export function Downloads() {
       <h2 className="text-2xl font-bold text-gray-900 mb-5">{t("contact.sections.downloads.title")}</h2>
       <div className="space-y-2.5">
         {downloads.map((item) => (
-          <DownloadItemBox key={item.id} item={item} />
+          <DownloadItemBox key={item.id} item={item} t={t} />
         ))}
       </div>
     </section>

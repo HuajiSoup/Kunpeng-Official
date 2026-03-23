@@ -34,7 +34,7 @@ const getNavItems = (t: (key: string) => string) => [
     labelKey: "nav.testing",
     submenu: [
       {
-        label: "设备级测试",
+        label: t("nav.testingSubmenu.devices"),
         href: "/testing#testings-devices"
       },
       {
@@ -42,7 +42,7 @@ const getNavItems = (t: (key: string) => string) => [
         href: "/testing#environment-reliability"
       },
       {
-        label: "机械及特殊环境试验",
+        label: t("nav.testingSubmenu.mechanical"),
         href: "/testing#mechanical-special"
       },
       {
@@ -302,7 +302,7 @@ export default function Header() {
                 aria-label="Language"
               >
                 <Globe className="w-4 h-4" />
-                <span className="hidden sm:inline">{language === "zh" ? "中文" : "EN"}</span>
+                <span className="hidden sm:inline">{language === "zh" ? t("common.language.zh") : "EN"}</span>
               </button>
               {languageMenuOpen && (
                 <>
@@ -322,7 +322,7 @@ export default function Header() {
                           : "text-gray-600 hover:bg-gray-50"
                       }`}
                     >
-                      中文
+                      {t("common.language.zh")}
                     </button>
                     <button
                       onClick={() => {
@@ -535,7 +535,7 @@ export default function Header() {
                   </button>
                 </div>
 
-                {/* 移动端搜索框 */}
+                    {t("common.language.zh")}
                 <div className="flex items-center space-x-4">
                   <form
                     onSubmit={(e) => {

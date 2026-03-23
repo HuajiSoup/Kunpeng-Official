@@ -14,15 +14,15 @@ export default function ServicesHero() {
       titleBottom={t("services.hero.subtitle")}
       statistics={[
         {
-          label: "成功案例",
+          label: t("services.hero.statistics.successCases"),
           value: "30+"
         },
         {
-          label: "认证标准",
+          label: t("services.hero.statistics.certificationStandards"),
           value: "50+"
         },
         {
-          label: "专业团队",
+          label: t("services.hero.statistics.professionalTeam"),
           value: "10+"
         }
       ]}

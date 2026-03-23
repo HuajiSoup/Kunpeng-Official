@@ -1,6 +1,6 @@
 "use client";
 
-import { Target, Eye, Heart, Award } from "lucide-react";
+import { Target, Eye, Heart } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { ItemBox } from "../ui/ItemBox";
 import { PageSectionTitle } from "../ui/PageSectionTitle";

@@ -14,15 +14,15 @@ export default function TestingHero() {
       titleBottom={t("testing.hero.subtitle")}
       statistics={[
         {
-          label: "测试设备",
+          label: t("testing.hero.statistics.testEquipment"),
           value: "20+"
         },
         {
-          label: "测试标准",
+          label: t("testing.hero.statistics.testStandards"),
           value: "50+"
         },
         {
-          label: "测试项目",
+          label: t("testing.hero.statistics.testItems"),
           value: "100+"
         }
       ]}

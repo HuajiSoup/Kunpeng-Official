@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, FileText, Rocket, CheckCircle, ArrowRight, ShieldCheck, Pen, PenTool, BookmarkCheck } from "lucide-react";
+import { Search, FileText, CheckCircle, ArrowRight, PenTool, Award } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 
@@ -8,32 +8,32 @@ const getSteps = (t: (key: string) => string) => [
   {
     number: 1,
     icon: Search,
-    title: "项目受理和启动",
-    description: "协助提交申请书，组建审查组，召开首次会议",
+    title: t("services.process.workflow.steps.s1.title"),
+    description: t("services.process.workflow.steps.s1.description"),
   },
   {
     number: 2,
     icon: FileText,
-    title: "要求确定",
-    description: "确定审定基础，制定认证计划，明确局方审查重点",
+    title: t("services.process.workflow.steps.s2.title"),
+    description: t("services.process.workflow.steps.s2.description"),
   },
   {
     number: 3,
     icon: PenTool,
-    title: "符合性计划制定",
-    description: "协助制定详细的符合性验证计划，确定符合性方法",
+    title: t("services.process.workflow.steps.s3.title"),
+    description: t("services.process.workflow.steps.s3.description"),
   },
   {
     number: 4,
     icon: CheckCircle,
-    title: "符合性确认",
-    description: "完成局方验证和确认工作（文件评审、试验目击、审定飞行试验等）",
+    title: t("services.process.workflow.steps.s4.title"),
+    description: t("services.process.workflow.steps.s4.description"),
   },
   {
     number: 5,
-    icon: BookmarkCheck,
-    title: "颁证",
-    description: "完成最终TCB会议，配合局方完成审查报告，获取相关适航证件",
+    icon: Award,
+    title: t("services.process.workflow.steps.s5.title"),
+    description: t("services.process.workflow.steps.s5.description"),
   }
 ];
 
