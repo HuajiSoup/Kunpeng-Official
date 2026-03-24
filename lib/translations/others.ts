@@ -190,7 +190,7 @@ export const othersTranslations = {
             title: "天翎科",
             description: "国内首家倾转涵道翼eVTOL整机设计制造商"
           },
-          sunny: {
+          shunyu: {
             title: "舜宇光学",
             description: "国内领先的光学产品制造企业"
           },
@@ -494,8 +494,8 @@ export const othersTranslations = {
             title: "Tianlingke",
             description: "China's first complete eVTOL aircraft designer and manufacturer of tilt-ducted-wing platforms"
           },
-          sunny: {
-            title: "Sunny Optical",
+          shunyu: {
+            title: "shunyu Optical",
             description: "A leading domestic manufacturer of optical products"
           },
           longxing: {

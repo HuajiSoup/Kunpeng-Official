@@ -1,29 +1,33 @@
 "use client";
 
 import { useLanguage } from "@/lib/LanguageContext";
+import LongxingLogo from "@/assets/longxinghangdian.svg";
+import XidianLogo from "@/assets/xiandianzi.svg";
+import ShanghaiLogo from "@/assets/SSA.svg";
+import JingkaiLogo from "@/assets/jingkaiguokong.svg";
 import { HomeSectionTitle } from "./ui/HomeSectionTitle";
 import { ItemBox } from "./ui/ItemBox";
 
 const getSupportItems = (t: (key: string) => string) => [
   {
-    initial: t("home.technicalSupport.items.longxing.initial"),
     title: t("home.technicalSupport.items.longxing.title"),
     description: t("home.technicalSupport.items.longxing.description"),
+    logo: LongxingLogo,
   },
   {
-    initial: t("home.technicalSupport.items.xidian.initial"),
     title: t("home.technicalSupport.items.xidian.title"),
     description: t("home.technicalSupport.items.xidian.description"),
+    logo: XidianLogo,
   },
   {
-    initial: t("home.technicalSupport.items.shanghai.initial"),
     title: t("home.technicalSupport.items.shanghai.title"),
     description: t("home.technicalSupport.items.shanghai.description"),
+    logo: ShanghaiLogo,
   },
   {
-    initial: t("home.technicalSupport.items.jingkai.initial"),
     title: t("home.technicalSupport.items.jingkai.title"),
     description: t("home.technicalSupport.items.jingkai.description"),
+    logo: JingkaiLogo,
   },
 ];
 
@@ -45,10 +49,12 @@ export default function TechnicalSupport() {
               className="text-center"
             >
               {/* Logo区域 - 圆形占位符，浅灰色背景 */}
-              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-gray-900 transition-all duration-300">
-                <div className="text-xl lg:text-2xl font-semibold text-gray-700 group-hover:text-white transition-colors">
-                  {item.initial}
-                </div>
+              <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden mx-auto mb-4 group-hover:bg-gray-900 transition-all duration-300">
+                <item.logo
+                  className={`w-11 h-11 text-gray-700 group-hover:text-white transition-colors duration-300`}
+                  aria-hidden
+                  focusable="false"
+                />
               </div>
 
               <h3 className="text-sm lg:text-base font-medium text-gray-900 mb-1.5 leading-tight">
