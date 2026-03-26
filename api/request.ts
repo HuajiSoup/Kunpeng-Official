@@ -21,7 +21,7 @@ export default async function request<Data>(
   config: AxiosRequestConfig
 ): Promise<Data | null> {
   const instance = axios.create({
-    // baseURL: process.env.NEXT_PUBLIC_SERVER_BASE_URL,
+    // baseURL: process.env.SERVER_BASE_URL,
     baseURL: "/api",
     timeout: 60000,
   });

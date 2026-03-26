@@ -37,9 +37,12 @@ export function Downloads() {
 
   useEffect(() => {
     getDownloads().then((items) => {
+      for (const item of items) {
+        item.filePath = process.env.SERVER_FILE_URL + item.filePath.substring(item.filePath.lastIndexOf("/uploads/"));
+      }
       setDownloads(items);
     })
-  })
+  }, []);
 
   return (<>
     <section id="downloads" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12">

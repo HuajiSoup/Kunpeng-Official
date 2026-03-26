@@ -22,14 +22,14 @@ const getSidebarItems = (t: (key: string) => string) => [
 const newsData: NewsCardItem[] = [
   {
     id: "1",
-    title: "浙江鲲鹏获得CNAS实验室认可证书(feat)",
+    title: "浙江鲲鹏获得CNAS实验室认可证书(唯一的头条)",
     summary: "经过严格评审，浙江鲲鹏航空技术测试验证有限公司成功获得中国合格评定国家认可委员会(CNAS)颁发的实验室认可证书，标志着公司在测试能力建设方面取得重要突破。",
     date: "2024-01-15",
     category: "company",
   },
   {
     id: "2",
-    title: "成功协助XX项目完成TC取证(feat2)",
+    title: "成功协助XX项目完成TC取证(时间上最新)",
     summary: "经过18个月的共同努力，我们成功协助XX航空项目完成Type Certificate (TC)取证工作，该项目为国内首款符合DO-160G标准的通用航空器。",
     date: "2024-01-10",
     category: "success",
@@ -37,7 +37,7 @@ const newsData: NewsCardItem[] = [
   },
   {
     id: "3",
-    title: "FAA发布新的适航审定指南(feat3)",
+    title: "FAA发布新的适航审定指南(时间上次新)",
     summary: "美国联邦航空管理局(FAA)近日发布了关于机载软件适航审定的最新指南AC 20-193，对DO-178C标准实施提供了更详细的指导说明。",
     date: "2024-01-08",
     category: "industry",

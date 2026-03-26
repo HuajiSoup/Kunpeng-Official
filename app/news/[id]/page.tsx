@@ -6,7 +6,7 @@ async function fetchNews(id: string): Promise<NewsItem> {
   const news: NewsItem = {
     id: "0",
     title: `标题标题：这是第${id}篇文章`,
-    author: "鲁迅",
+    author: "作者",
     summary: "简介简介简介简介简介简介简介简介简介",
     coverImage: "",
     content: "<p>这里有一些测试文字，<br /></p>\

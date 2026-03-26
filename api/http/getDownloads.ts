@@ -23,5 +23,7 @@ export default async function getDownloads(): Promise<DownloadItem[]> {
     url: "/downloads"
   });
 
+  if (!res) return [];
+
   return res ? res.downloads : [];
 }
