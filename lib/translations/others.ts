@@ -124,25 +124,10 @@ export const othersTranslations = {
         title: "资质认证",
         subtitle: "权威认可，专业保障",
         items: {
-          cnas: {
-            fullName: "CNAS 实验室认可",
-            subtitle: "国家级权威资质",
-            description: "报告全球互认"
-          },
-          iso17025: {
-            fullName: "ISO/IEC 17025 标准",
-            subtitle: "国际通用技术准则",
-            description: "数据精准可靠"
-          },
-          as9100d: {
-            fullName: "AS9100D 体系认证",
-            subtitle: "航空航天质量标杆",
-            description: "准入高端制造"
-          },
-          iso9001: {
-            fullName: "ISO 9001 进阶管理",
-            subtitle: "高可靠性质控体系",
-            description: "全流程严苛管控"
+          cma: {
+            fullName: "CMA中国计量认证",
+            subtitle: "国家级权威资质， 报告全球互认",
+            description: "涵盖电工电子产品环境试验、军用装备实验室环境试验以及电子电器原件相关试验登多个关键领域"
           }
         }
       },
@@ -428,25 +413,10 @@ export const othersTranslations = {
         title: "Qualifications & Certifications",
         subtitle: "Authoritative Recognition, Professional Assurance",
         items: {
-          cnas: {
-            fullName: "CNAS Accreditation",
-            subtitle: "National Authority",
-            description: "Globally recognized reports."
-          },
-          iso17025: {
-            fullName: "ISO/IEC 17025 Standard",
-            subtitle: "Universal Technical Criteria",
-            description: "Precise and reliable data."
-          },
-          as9100d: {
-            fullName: "AS9100D Certification",
-            subtitle: "Aerospace Quality Benchmark",
-            description: "Access to high-end manufacturing."
-          },
-          iso9001: {
-            fullName: "ISO 9001 Advanced Management",
-            subtitle: "High-Reliability QC System",
-            description: "Strict full-process control."
+          cma: {
+            fullName: "CMA China Metrology Accreditation",
+            subtitle: "National authoritative qualification with globally recognized reports",
+            description: "Covering key fields including environmental testing of electrical and electronic products, environmental testing in military equipment laboratories, and related testing of electronic and electrical components"
           }
         }
       },

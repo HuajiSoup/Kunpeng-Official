@@ -9,28 +9,10 @@ export default function Qualifications() {
   
   const qualifications = [
     {
-      name: "CNAS",
-      fullName: t("home.qualifications.items.cnas.fullName"),
-      subtitle: t("home.qualifications.items.cnas.subtitle"),
-      description: t("home.qualifications.items.cnas.description"),
-    },
-    {
-      name: "ISO/IEC 17025",
-      fullName: t("home.qualifications.items.iso17025.fullName"),
-      subtitle: t("home.qualifications.items.iso17025.subtitle"),
-      description: t("home.qualifications.items.iso17025.description"),
-    },
-    {
-      name: "AS9100D",
-      fullName: t("home.qualifications.items.as9100d.fullName"),
-      subtitle: t("home.qualifications.items.as9100d.subtitle"),
-      description: t("home.qualifications.items.as9100d.description"),
-    },
-    {
-      name: "ISO 9001",
-      fullName: t("home.qualifications.items.iso9001.fullName"),
-      subtitle: t("home.qualifications.items.iso9001.subtitle"),
-      description: t("home.qualifications.items.iso9001.description"),
+      name: "CMA",
+      fullName: t("home.qualifications.items.cma.fullName"),
+      subtitle: t("home.qualifications.items.cma.subtitle"),
+      description: t("home.qualifications.items.cma.description"),
     },
   ];
 
@@ -39,12 +21,12 @@ export default function Qualifications() {
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <HomeSectionTitle title={t("home.qualifications.title")} desc={t("home.qualifications.subtitle")} />
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="w-full flex items-center justify-center mt-10">
           {qualifications.map((qual, index) => (
             <ItemBox
               key={index}
               fancy
-              className="text-center"
+              className="w-full text-center lg:w-1/4"
             >
               <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-gray-900 transition-all duration-300">
                 <div className="text-xs lg:text-sm font-semibold text-gray-700 group-hover:text-white transition-colors text-center px-1 leading-tight">

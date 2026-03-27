@@ -1,4 +1,4 @@
-import getDownloads, { DownloadItem } from "@/api/http/getDownloads";
+import getDownloads, { DownloadItem } from "@/lib/api/http/getDownloads";
 import { useLanguage } from "@/lib/LanguageContext";
 import { FileText, Download } from "lucide-react";
 import { useEffect, useState } from "react";

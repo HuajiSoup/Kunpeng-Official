@@ -89,13 +89,13 @@ export default function TestingsDevices() {
           <table className="w-full">
             <thead className="bg-gray-50 border-b border-gray-200">
               <tr>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                <th className="px-6 py-4 w-1/5 text-left text-sm font-semibold text-gray-900 uppercase tracking-wider">
                   {t("testing.devices.table.field")}
                 </th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                <th className="px-6 py-4 w-1/5 text-left text-sm font-semibold text-gray-900 uppercase tracking-wider">
                   {t("testing.devices.table.standard")}
                 </th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                <th className="px-6 py-4 w-3/5 text-left text-sm font-semibold text-gray-900 uppercase tracking-wider">
                   {t("testing.devices.table.content")}
                 </th>
               </tr>
@@ -109,7 +109,7 @@ export default function TestingsDevices() {
                   }`}
                 >
                   <td className="px-6 py-4 text-sm text-gray-600">
-                    {item.field}
+                    <b>{item.field}</b>
                   </td>
                   <td className="px-6 py-4 text-sm text-gray-600">
                     {item.standard}

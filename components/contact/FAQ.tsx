@@ -1,4 +1,4 @@
-import getFaq, { FaqItem } from "@/api/http/getFaq";
+import getFaq, { FaqItem } from "@/lib/api/http/getFaq";
 import { useLanguage } from "@/lib/LanguageContext";
 import { ChevronUp, ChevronDown } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";

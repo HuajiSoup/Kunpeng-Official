@@ -34,7 +34,7 @@ export const aboutTranslations = {
       culture: {
         title: "企业文化",
         subtitle: "CORPORATE CULTURE",
-        description: "XXX XXX XXXXXXX",
+        description: "致力于成为国内领先的解决方案提供商",
         items: {
           mission: {
             title: "使命",
@@ -145,7 +145,7 @@ export const aboutTranslations = {
       culture: {
         title: "Corporate Culture",
         subtitle: "",
-        description: "XXX XXX XXXXXXX",
+        description: "Committed to becoming a leading provider of solutions in China",
         items: {
           mission: {
             title: "Mission",

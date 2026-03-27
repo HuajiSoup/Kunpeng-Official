@@ -10,8 +10,8 @@ import { FAQ } from "@/components/contact/FAQ";
 
 const getSections = (t: (key: string) => string) => [
   { id: "contact", label: t("contact.nav.contact") },
-  { id: "downloads", label: t("contact.nav.downloads") },
-  { id: "faq", label: t("contact.nav.faq") },
+  // { id: "downloads", label: t("contact.nav.downloads") },
+  // { id: "faq", label: t("contact.nav.faq") },
 ]
 
 export default function ContactPage() {
@@ -76,8 +76,8 @@ export default function ContactPage() {
           {/* Right Content */}
           <div className="lg:col-span-4 space-y-10">
             <ContactInfo />
-            <Downloads />
-            <FAQ />
+            {/* <Downloads />
+            <FAQ /> */}
           </div>
         </div>
       </div>

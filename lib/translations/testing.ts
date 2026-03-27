@@ -31,7 +31,7 @@ export const testingTranslations = {
       environment: {
         title: "环境可靠性试验",
         subtitle: "ENVIRONMENTAL RELIABILITY",
-        description: "XXX XXX XXXXXXX",
+        description: "拥有高精度气候环境试验设备，具备温度、湿度、高度、砂尘、流体等多因素综合模拟能力。试验箱均采用国际一流品牌控制系统，温场均匀、数据稳定，可同时满足DO-160G、GJB 150A、GB/T 2423对气候环境试验的严苛要求。特别是在高空低气压、快速温变及温-湿-高综合试验方面，具备行业领先优势。",
         items: {
           highLowTemp: {
             title: "高低温试验",
@@ -149,7 +149,7 @@ export const testingTranslations = {
         title: "设备级测试",
         subtitle: "Device-Level Testing",
         section: {
-          description: "覆盖航空机载、军用装备、民用电子、汽车电子、低空经济及工程技术服务等测试能力"
+          description: "不论是航空机载设备的适航取证，还是地面装备的定型鉴定，我们均能为您提供专业、精准、高效的解决方案。"
         },
         table: {
           field: "业务方向",
@@ -222,7 +222,7 @@ export const testingTranslations = {
         title: "机械及特殊环境试验",
         subtitle: "Mechanical & Special Environment Testing",
         section: {
-          description: "覆盖振动、冲击坠撞、加速度与可燃性等机械及特殊环境试验能力"
+          description: "拥有大推力振动系统和高加速度冲击台，能够模拟从运输振动到坠撞冲击的全频谱机械应力。振动系统配置800×800mm大台面和水平滑台，可满足大尺寸机载设备及机柜的测试需求。同时，我们具备航空级防火试验能力，为机载非金属材料和电气设备提供全面的安全性评估。"
         },
         items: {
           i1: {
@@ -356,7 +356,7 @@ export const testingTranslations = {
         title: "电磁兼容性试验",
         subtitle: "Electro-Magnetic Compatibility",
         section: {
-          description: "覆盖航空、军标与民品/汽车电子EMC测试能力，支持发射与敏感度全链路验证"
+          description: "配置3米法半电波暗室，测试系统覆盖9kHz至40GHz全频段，能够完整执行RTCA DO-160G第15至22条及第25条的全部EMC测试项目，同时兼容GJB 151B-2013及主要民品/车规EMC标准。特别是在射频辐射敏感度领域，我们具备200V/m的高场强测试能力，能够满足最严苛的航空电子设备抗干扰验证需求。"
         },
         items: {
           i1: {
@@ -446,7 +446,7 @@ export const testingTranslations = {
       environment: {
         title: "Environmental Reliability",
         subtitle: "",
-        description: "XXX XXX XXXXXXX",
+        description: "Equipped with high-precision climatic test systems, we provide multi-factor integrated simulation capabilities covering temperature, humidity, altitude, sand and dust, and fluid exposure. All chambers use internationally leading control systems with uniform thermal fields and stable data, meeting stringent climatic test requirements in DO-160G, GJB 150A, and GB/T 2423. We are especially strong in high-altitude low-pressure, rapid temperature transition, and combined temperature-humidity-altitude testing.",
         items: {
           highLowTemp: {
             title: "High/Low Temperature Test",
@@ -564,7 +564,7 @@ export const testingTranslations = {
         title: "Device-Level Testing",
         subtitle: "",
         section: {
-          description: "Covering test capabilities for airborne systems, military equipment, consumer electronics, automotive electronics, low-altitude economy scenarios, and engineering technical services."
+          description: "Whether for airworthiness certification of airborne equipment or type qualification of ground equipment, we provide professional, precise, and highly efficient solutions."
         },
         table: {
           field: "Business Area",
@@ -637,7 +637,7 @@ export const testingTranslations = {
         title: "Mechanical & Special Environment Testing",
         subtitle: "",
         section: {
-          description: "Covers mechanical and special-environment testing capabilities including vibration, crash/shock, acceleration, and flammability."
+          description: "With a high-thrust vibration system and high-acceleration shock table, we can simulate full-spectrum mechanical stress from transport vibration to crash impact. Our vibration system features an 800x800 mm large table and horizontal slip table, supporting large airborne equipment and cabinet-level tests. We also provide aviation-grade fire testing to deliver comprehensive safety evaluation for onboard non-metallic materials and electrical equipment."
         },
         items: {
           i1: {
@@ -771,7 +771,7 @@ export const testingTranslations = {
         title: "Electro-Magnetic Compatibility",
         subtitle: "",
         section: {
-          description: "Covers aviation, military, and commercial/automotive EMC testing capabilities, supporting full-chain verification of emissions and susceptibility."
+          description: "Featuring a 3 m semi-anechoic chamber, our test system covers the full 9 kHz to 40 GHz band. We can execute all EMC items in RTCA DO-160G Sections 15 to 22 and Section 25, while also supporting GJB 151B-2013 and major commercial/automotive EMC standards. In radiated RF susceptibility, we offer high-field testing up to 200 V/m to meet the most stringent anti-interference validation requirements for avionics equipment."
         },
         items: {
           i1: {
