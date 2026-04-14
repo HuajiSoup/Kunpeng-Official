@@ -13,7 +13,7 @@ export function ItemBox({
   return (
     <div
       className={cn(
-        `group p-6 rounded-xl bg-white border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-lg cursor-pointer`,
+        `group p-6 rounded-xl overflow-hidden bg-white border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-lg cursor-pointer`,
         fancy ? "hover-gentle-wiggle" : "",
         className
       )}

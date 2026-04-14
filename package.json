@@ -10,6 +10,10 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
+    "@tiptap/core": "^3.22.3",
+    "@tiptap/extension-image": "^3.22.3",
+    "@tiptap/html": "^3.22.3",
+    "@tiptap/starter-kit": "^3.22.3",
     "axios": "^1.13.6",
     "clsx": "^2.1.1",
     "framer-motion": "^12.29.0",

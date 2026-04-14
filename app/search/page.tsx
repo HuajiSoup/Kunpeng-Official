@@ -5,7 +5,6 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
-import { NewsCardItem } from "@/components/news/NewsCard";
 import { SearchBar } from "@/components/search/SearchBar";
 import { SearchResultList } from "@/components/search/SearchResultList";
 

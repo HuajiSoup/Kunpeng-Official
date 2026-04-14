@@ -1,17 +1,16 @@
 "use client";
 
 import { useLanguage } from "@/lib/LanguageContext";
-import { NewsCard, NewsCardItem } from "./NewsCard";
+import { NewsCard } from "./NewsCard";
+import type { NewsItem } from "@/lib/api/http/getNews";
 
 interface FeaturedNewsProps {
-  featuredNews: NewsCardItem[];
+  headline: NewsItem;
+  latest: NewsItem[];
 }
 
-export default function FeaturedNews({ featuredNews }: FeaturedNewsProps) {
+export default function FeaturedNews({ headline, latest }: FeaturedNewsProps) {
   const { t } = useLanguage();
-  if (featuredNews.length === 0) return null;
-
-  const [heroArticle, ...sideArticles] = featuredNews;
 
   return (
     <section className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12">
@@ -24,12 +23,12 @@ export default function FeaturedNews({ featuredNews }: FeaturedNewsProps) {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6">
         {/* 大文章 - 左侧 */}
         <div className="lg:col-span-2 group">
-          <NewsCard item={heroArticle} className="h-full" featured />
+          <NewsCard item={headline} className="h-full" featured />
         </div>
 
-        {/* 右侧两个小文章 */}
+        {/* 右侧两个小文章，这并不好*/}
         <div className="space-y-6 lg:col-span-1">
-          {sideArticles.map((article, index) => (
+          {latest.map((article, index) => (
             <NewsCard item={article} showArrow={false} key={index} />
           ))}
         </div>

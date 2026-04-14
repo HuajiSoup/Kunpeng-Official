@@ -1,10 +1,11 @@
 "use client";
 
 import { useLanguage } from "@/lib/LanguageContext";
-import { NewsCard, NewsCardItem } from "./NewsCard";
+import { NewsCard } from "./NewsCard";
+import type { NewsItem } from "@/lib/api/http/getNews";
 
 interface NewsListProps {
-  news: NewsCardItem[];
+  news: NewsItem[];
 }
 
 export default function NewsList({ news }: NewsListProps) {
