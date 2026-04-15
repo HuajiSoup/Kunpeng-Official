@@ -5,23 +5,26 @@ import { HomeSectionTitle } from "./ui/HomeSectionTitle";
 import { ItemBox } from "./ui/ItemBox";
 import TianlingLogo from "@/assets/inflync.svg";
 import ShunyuLogo from "@/assets/shunyu.svg";
-import LongxingLogo from "@/assets/longxinghangdian.svg";
+import LongxingLogo from "@/assets/longxinghangdian-new.svg";
 
 const getClientsItems = (t: (key: string) => string) => [
   {
     title: t("home.coreClients.items.tianlingke.title"),
     description: t("home.coreClients.items.tianlingke.description"),
     logo: TianlingLogo,
+    size: "w-11 h-11",
   },
   {
     title: t("home.coreClients.items.shunyu.title"),
     description: t("home.coreClients.items.shunyu.description"),
     logo: ShunyuLogo,
+    size: "w-11 h-11",
   },
   {
     title: t("home.coreClients.items.longxing.title"),
     description: t("home.coreClients.items.longxing.description"),
     logo: LongxingLogo,
+    size: "w-11 h-11",
   },
 ];
 
@@ -43,9 +46,9 @@ export default function CoreClients() {
               className="text-center"
             >
               {/* Logo区域 - 圆形占位符，浅灰色背景 */}
-              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden mx-auto mb-4 group-hover:bg-gray-900 transition-all duration-300">
+              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden mx-auto mb-4 group-hover:bg-gray-200 transition-all duration-300">
                 <item.logo
-                  className="w-11 h-11 text-gray-700 group-hover:text-white transition-colors duration-300"
+                  className={item.size + " text-[#2058D1] transition-colors duration-300"}
                   aria-hidden
                   focusable="false"
                 />

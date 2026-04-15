@@ -11,8 +11,8 @@ import { NavSidebar } from "@/components/ui/NavSidebar";
 
 const getSidebarItems = (t: (key: string) => string) => [
   { id: "consulting", label: t("services.sidebar.consulting") },
-  { id: "process-workflow", label: t("services.sidebar.process") },
-  { id: "success-stories", label: t("services.sidebar.cases") },
+  // { id: "process-workflow", label: t("services.sidebar.process") },
+  // { id: "success-stories", label: t("services.sidebar.cases") },
 ];
 
 
@@ -80,10 +80,11 @@ export default function ServicesPage() {
           {/* Right Content */}
           <div className="lg:col-span-4">
             <ConsultingSection />
+            {/* ??? */}
             {/* <EngineeringSection /> */}
             {/* <TrainingSection /> */}
-            <ProcessWorkflow />
-            <SuccessStories />
+            {/* <ProcessWorkflow /> */}
+            {/* <SuccessStories /> */}
             <ServicesCTA />
           </div>
         </div>

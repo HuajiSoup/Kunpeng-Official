@@ -64,14 +64,14 @@ const getNavItems = (t: (key: string) => string) => [
         label: t("nav.servicesSubmenu.consulting"),
         href: "/services#consulting"
       },
-      {
-        label: t("nav.servicesSubmenu.process"),
-        href: "/services#process-workflow"
-      },
-      {
-        label: t("nav.servicesSubmenu.success"),
-        href: "/services#success-stories"
-      }
+      // {
+      //   label: t("nav.servicesSubmenu.process"),
+      //   href: "/services#process-workflow"
+      // },
+      // {
+      //   label: t("nav.servicesSubmenu.success"),
+      //   href: "/services#success-stories"
+      // }
     ],
   },
   {

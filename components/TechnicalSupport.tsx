@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/lib/LanguageContext";
-import LongxingLogo from "@/assets/longxinghangdian.svg";
+import LongxingLogo from "@/assets/longxinghangdian-new.svg";
 import XidianLogo from "@/assets/xiandianzi.svg";
 import ShanghaiLogo from "@/assets/SSA.svg";
 import JingkaiLogo from "@/assets/jingkaiguokong.svg";
@@ -13,21 +13,25 @@ const getSupportItems = (t: (key: string) => string) => [
     title: t("home.technicalSupport.items.longxing.title"),
     description: t("home.technicalSupport.items.longxing.description"),
     logo: LongxingLogo,
+    size: "w-12 h-12",
   },
   {
     title: t("home.technicalSupport.items.xidian.title"),
     description: t("home.technicalSupport.items.xidian.description"),
     logo: XidianLogo,
+    size: "w-14 h-14",
   },
   {
     title: t("home.technicalSupport.items.shanghai.title"),
     description: t("home.technicalSupport.items.shanghai.description"),
     logo: ShanghaiLogo,
+    size: "w-14 h-14",
   },
   {
     title: t("home.technicalSupport.items.jingkai.title"),
     description: t("home.technicalSupport.items.jingkai.description"),
     logo: JingkaiLogo,
+    size: "w-12 h-12",
   },
 ];
 
@@ -49,9 +53,9 @@ export default function TechnicalSupport() {
               className="text-center"
             >
               {/* Logo区域 - 圆形占位符，浅灰色背景 */}
-              <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden mx-auto mb-4 group-hover:bg-gray-900 transition-all duration-300">
+              <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden mx-auto mb-4 group-hover:bg-gray-200 transition-all duration-300">
                 <item.logo
-                  className={`w-11 h-11 text-gray-700 group-hover:text-white transition-colors duration-300`}
+                  className={item.size + " text-[#2058D1] transition-colors duration-300"}
                   aria-hidden
                   focusable="false"
                 />

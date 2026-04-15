@@ -73,19 +73,70 @@ export const servicesTranslations = {
       consulting: {
         title: "适航取证咨询",
         subtitle: "AIRWORTHINESS CERTIFICATION CONSULTING",
-        description: "为航空器及其零部件制造商提供全面的适航取证支持",
-        items: {
-          tc: {
-            title: "TC 型号合格证",
-            description: "型号合格证申请全程指导，技术文件编写与审核支持。"
+        description: "为航空器及其零部件制造商提供全面的适航取证支持，缩短取证周期、降低研发合规风险，加速产品上市进程。",
+        sections: {
+          airworthiness: {
+            title: "适航审定",
+            items: {
+              tc: {
+                title: "适航审定型号合格证 (TC)",
+                description: "对民用航空产品（包括无人机、eVTOL等）获取型号合格证提供取证支持。"
+              },
+              stc: {
+                title: "补充型号合格证 (STC)",
+                description: "对经过合格审定的民用航空产品的改装设计提供取证支持。"
+              },
+              mda: {
+                title: "改装设计批准书 (MDA)",
+                description: "对经过合格审定民用航空产品除大的改装以外的其他改装提供取证支持。"
+              },
+              pma: {
+                title: "零部件制造人批准书 (PMA)",
+                description: "对经合格审定的民用航空产品上作为替换或改装用的零部件提供取证支持。"
+              },
+              ctsoa: {
+                title: "技术标准规定项目批准书 (CTSOA)",
+                description: "对民航局颁布的民用航空器上所用的特定零部件的最低性能标准提供取证支持。"
+              },
+              pc: {
+                title: "生产许可证 (PC)",
+                description: "对已获得民用航空产品型号设计批准并欲重复生产该民用航空产品的制造人所进行的资格性审定提供取证支持。"
+              }
+            }
           },
-          pc: {
-            title: "PC 生产许可证",
-            description: "生产许可证质量管理体系建立与维护咨询。"
+          engineeringSupport: {
+            title: "工程支持",
+            items: {
+              arp4754: {
+                title: "民用飞机和系统研制指南 (ARP4754)",
+                description: "提供符合民用飞机及系统开发指南的流程咨询，涵盖研制计划、需求捕获、需求确认及执行验证全过程。"
+              },
+              arp4761: {
+                title: "民用飞机、系统和设备安全性评估指南 (ARP4761)",
+                description: "开展全寿命周期的安全分析，包括功能危险评估 (FHA)、初步系统安全性评估 (PSSA) 及系统安全性评估 (SSA)。"
+              },
+              do178do254: {
+                title: "机载系统和设备合格审定中的软件考虑/机载电子硬件设计保证指南 (DO-178/DO-254)",
+                description: "提供机载软件和复杂电子硬件的开发、验证与审查支持。"
+              },
+              do160g: {
+                title: "机载设备的环境条件和试验程序 (DO-160G)",
+                description: "指导设备的环境试验规划、大纲编制及试验现场问题的工程处置。"
+              }
+            }
           },
-          ctso: {
-            title: "CTSO 技术标准规定",
-            description: "技术标准规定项目申请支持，零部件适航认证。"
+          systemAndTraining: {
+            title: "体系建设与培训",
+            items: {
+              system: {
+                title: "核心适航体系构建",
+                description: "协助构建设计保证体系、构型管理体系、质量保证体系、运行支持体系、持续适航体系等。"
+              },
+              training: {
+                title: "法规与标准专题培训",
+                description: "涵盖适航规章与管理程序、适航工程管理等定制化课程。"
+              }
+            }
           }
         }
       },
@@ -298,18 +349,69 @@ export const servicesTranslations = {
         title: "Airworthiness Certification Consulting",
         subtitle: "",
         description: "Comprehensive airworthiness certification support for aircraft and components.",
-        items: {
-          tc: {
-            title: "TC Type Certificate",
-            description: "End-to-end guidance for TC applications and technical documentation support."
+        sections: {
+          airworthiness: {
+            title: "Airworthiness Certification",
+            items: {
+              tc: {
+                title: "Type Certificate (TC)",
+                description: "Support type certification for civil aviation products, including drones and eVTOL aircraft."
+              },
+              stc: {
+                title: "Supplemental Type Certificate (STC)",
+                description: "Support certification for modification designs on already certified civil aviation products."
+              },
+              mda: {
+                title: "Major Design Approval (MDA)",
+                description: "Support certification for non-major modifications of already certified civil aviation products."
+              },
+              pma: {
+                title: "Parts Manufacturer Approval (PMA)",
+                description: "Support certification for replacement or modification parts used on certified civil aviation products."
+              },
+              ctsoa: {
+                title: "Technical Standard Order Authorization (CTSOA)",
+                description: "Support compliance with minimum performance standards for specific aircraft parts specified by CAAC."
+              },
+              pc: {
+                title: "Production Certificate (PC)",
+                description: "Support qualification review for manufacturers repeating production of approved civil aviation products."
+              }
+            }
           },
-          pc: {
-            title: "PC Production Certificate",
-            description: "Consulting on establishing and maintaining PC quality management systems."
+          engineeringSupport: {
+            title: "Engineering Support",
+            items: {
+              arp4754: {
+                title: "Guidelines for Development of Civil Aircraft and Systems (ARP4754)",
+                description: "Provide process consulting aligned with civil aircraft and system development practices, covering planning, requirements capture, validation, and verification."
+              },
+              arp4761: {
+                title: "Guidelines for Safety Assessment of Civil Aircraft, Systems, and Equipment (ARP4761)",
+                description: "Perform full-lifecycle safety analysis, including FHA, PSSA, and SSA."
+              },
+              do178do254: {
+                title: "Software Considerations / Airborne Electronic Hardware Design Assurance (DO-178/DO-254)",
+                description: "Provide development, verification, and review support for airborne software and complex electronic hardware."
+              },
+              do160g: {
+                title: "Environmental Conditions and Test Procedures for Airborne Equipment (DO-160G)",
+                description: "Guide environmental test planning, test outline preparation, and on-site engineering issue handling."
+              }
+            }
           },
-          ctso: {
-            title: "CTSO Technical Standard Order",
-            description: "Support for CTSO applications and component airworthiness certification."
+          systemAndTraining: {
+            title: "System Development and Training",
+            items: {
+              system: {
+                title: "Core Airworthiness System Development",
+                description: "Assist in building design assurance, configuration management, quality assurance, operational support, and continued airworthiness systems."
+              },
+              training: {
+                title: "Regulation and Standards Training",
+                description: "Provide tailored courses on airworthiness regulations, management procedures, and airworthiness engineering management."
+              }
+            }
           }
         }
       },

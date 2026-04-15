@@ -11,10 +11,9 @@ export const aboutTranslations = {
         title: "公司简介",
         subtitle: "COMPANY PROFILE",
         paragraphs: {
-          p1: "浙江鲲鹏航空技术测试验证有限公司是龙兴航电（龙兴航电）的重要子公司，专注于航空技术测试、验证及适航咨询服务。",
-          p2: "公司依托龙兴航电深厚的技术积淀和行业资源，在浙江之江航空技术发展中心的支持下，致力于为航空产业提供专业的测试验证解决方案。"
+          p1: "浙江鲲鹏航空技术测试验证有限公司，专注于航空技术测试、验证及适航咨询服务。",
+          p2: "公司依托深厚的技术积淀和行业资源，在浙江之江航空技术发展中心的支持下，致力于为航空产业提供专业的测试验证解决方案。"
         },
-        highlight: "致力于成为国内领先的航空技术测试验证解决方案提供商。"
       },
       org: {
         title: "组织架构",
@@ -122,10 +121,9 @@ export const aboutTranslations = {
         title: "Company Profile",
         subtitle: "",
         paragraphs: {
-          p1: "Zhejiang Kunpeng Aviation Technology Testing & Verification Co., Ltd. is an important subsidiary of Longxing Avionics, focusing on aviation testing, verification, and airworthiness consulting services.",
-          p2: "Leveraging Longxing Avionics' technical foundation and industry resources, and supported by the Zhijiang Aviation Technology Development Center, we are committed to providing professional testing and verification solutions for the aviation industry."
+          p1: "Zhejiang Kunpeng Aviation Technology Testing & Verification Co., Ltd. focuses on aviation technology testing, verification, and airworthiness consulting services.",
+          p2: "Backed by deep technical expertise and industry resources, and supported by the Zhejiang Zhijiang Aviation Technology Development Center, we are committed to providing professional testing and verification solutions for the aviation industry."
         },
-        highlight: "Committed to becoming a leading provider of aviation testing and verification solutions in China."
       },
       org: {
         title: "Organization",

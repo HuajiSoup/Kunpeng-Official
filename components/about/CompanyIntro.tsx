@@ -25,9 +25,6 @@ export default function CompanyIntro() {
               <p className="text-sm lg:text-base">
                 {t("about.companyIntro.paragraphs.p2")}
               </p>
-              <p className="text-sm lg:text-base font-medium text-slate-700 mt-6 border-l-4 border-blue-500/50 pl-4 bg-blue-50/50 rounded-r-lg py-2">
-                {t("about.companyIntro.highlight")}
-              </p>
             </div>
             
             {/* 装饰元素 */}

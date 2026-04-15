@@ -45,7 +45,7 @@ export const othersTranslations = {
         slide2: {
           title: "专业航空技术测试验证",
           subtitle: "解决方案提供商",
-          description: "依托龙兴航电深厚积淀，提供一站式适航审定与检测服务",
+          description: "深耕航空技术，提供一站式适航审定与检测服务",
           cta: "了解试验能力"
         },
         slide3: {
@@ -334,7 +334,7 @@ export const othersTranslations = {
         slide2: {
           title: "Professional Aviation Testing & Verification",
           subtitle: "Solution Provider",
-          description: "Leveraging Longxing Avionics' deep expertise to provide one-stop airworthiness certification and testing services",
+          description: "With deep expertise in aviation technology, we provide one-stop airworthiness certification and testing services",
           cta: "Learn Testing Capabilities"
         },
         slide3: {
