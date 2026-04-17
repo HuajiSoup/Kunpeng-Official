@@ -34,6 +34,7 @@ export interface NewsListParams {
   limit?: number;
   category?: NewsCategory;
   status?: NewsStatus;
+  search?: string;
 }
 
 export interface HeadlineReqData {

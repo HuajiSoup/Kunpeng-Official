@@ -196,7 +196,7 @@ export const othersTranslations = {
       fairness: "公正性声明",
       followUs: "关注我们",
       qrCode: "关注公众号",
-      copyright: "© 2024 浙江鲲鹏航空技术测试验证有限公司. 保留所有权利.",
+      copyright: "© 2026 浙江鲲鹏航空技术测试验证有限公司. 保留所有权利.",
       links: "友情链接：",
       longxing: "龙兴航电"
     },
@@ -484,7 +484,7 @@ export const othersTranslations = {
       fairness: "Fairness Statement",
       followUs: "Follow Us",
       qrCode: "Follow WeChat",
-      copyright: "© 2024 Zhejiang Kunpeng Aviation Technology Testing & Verification Co., Ltd. All rights reserved.",
+      copyright: "© 2026 Zhejiang Kunpeng Aviation Technology Testing & Verification Co., Ltd. All rights reserved.",
       links: "Links:",
       longxing: "Longxing Avionics"
     },

@@ -15,15 +15,15 @@ export default function ServicesHero() {
       statistics={[
         {
           label: t("services.hero.statistics.successCases"),
-          value: "30+"
+          value: "3+"
         },
         {
           label: t("services.hero.statistics.certificationStandards"),
-          value: "50+"
+          value: "XX+"
         },
         {
           label: t("services.hero.statistics.professionalTeam"),
-          value: "10+"
+          value: "XX+"
         }
       ]}
       LabelIcon={ShieldCheck}

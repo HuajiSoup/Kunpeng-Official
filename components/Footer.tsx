@@ -100,17 +100,6 @@ export default function Footer() {
                   {t("footer.qrCode")}
                 </p>
               </div>
-              <div className="flex flex-wrap gap-2">
-                <div className="w-12 h-12 bg-blue-500/10 border border-blue-500/30 rounded flex items-center justify-center text-xs font-bold text-cyan-400 hover:bg-blue-500/20 hover:border-cyan-400/50 transition-all duration-300">
-                  CNAS
-                </div>
-                <div className="w-12 h-12 bg-blue-500/10 border border-blue-500/30 rounded flex items-center justify-center text-xs font-bold text-cyan-400 hover:bg-blue-500/20 hover:border-cyan-400/50 transition-all duration-300">
-                  CMA
-                </div>
-                <div className="w-12 h-12 bg-blue-500/10 border border-blue-500/30 rounded flex items-center justify-center text-xs font-bold text-cyan-400 hover:bg-blue-500/20 hover:border-cyan-400/50 transition-all duration-300">
-                  CAAC
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -120,17 +109,6 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
             <div className="text-xs text-gray-400">
               {t("footer.copyright")}
-            </div>
-            <div className="flex items-center space-x-4 text-xs">
-              <span className="text-gray-500">{t("footer.links")}</span>
-              <Link
-                href="https://longxing.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white transition-colors"
-              >
-                {t("footer.longxing")}
-              </Link>
             </div>
           </div>
         </div>

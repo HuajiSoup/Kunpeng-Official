@@ -81,7 +81,7 @@ export function SearchResultCard({ item, query }: SearchResultCardProps) {
             </div>
           )}
           <span className="text-gray-400 text-xs font-medium">
-            {item.type === "testing" ? "Test Image" : item.type === "service" ? "Service Image" : "News Image"}
+            News Image
           </span>
         </div>
 

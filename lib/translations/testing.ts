@@ -142,7 +142,7 @@ export const testingTranslations = {
       },
       cta: {
         title: "未找到您需要的测试项目？",
-        description: "XXXXXXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX",
+        description: "电话或邮件咨询，一对一专属服务",
         button: "联系技术专家"
       },
       devices: {
@@ -557,7 +557,7 @@ export const testingTranslations = {
       },
       cta: {
         title: "Can't find the testing you need?",
-        description: "XXXXXXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX",
+        description: "Consultation via phone or email, providing one-on-one exclusive service",
         button: "Contact a technical expert"
       },
       devices: {
