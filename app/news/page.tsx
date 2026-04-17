@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import NewsHero from "@/components/news/NewsHero";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useRouter } from "next/navigation";
@@ -49,7 +49,17 @@ export default function NewsPage() {
           </aside>
         
           <div className="lg:col-span-4">
-            <NewsOverview />
+            <Suspense
+              fallback={
+                <main className="flex-1 min-w-0 py-8">
+                  <div className="min-h-[50vh] flex items-center justify-center">
+                    <div className="text-gray-500">{t("news.loading")}</div>
+                  </div>
+                </main>
+              }
+            >
+              <NewsOverview />
+            </Suspense>
           </div>
         </div>
       </div>

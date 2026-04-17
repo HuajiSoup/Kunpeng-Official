@@ -20,7 +20,7 @@ const getSearchCategories = (t: (key: string) => string) => [
 ];
 
 // 新闻数据（从新闻中心页面获取）
-const newsData: NewsCardItem[] = [
+const newsData = [
   {
     id: "1",
     title: "浙江鲲鹏获得CNAS实验室认可证书",

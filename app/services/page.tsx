@@ -3,8 +3,6 @@
 import { useEffect, useState } from "react";
 import ServicesHero from "@/components/services/ServicesHero";
 import ConsultingSection from "@/components/services/ConsultingSection";
-import ProcessWorkflow from "@/components/services/ProcessWorkflow";
-import SuccessStories from "@/components/services/SuccessStories";
 import ServicesCTA from "@/components/services/ServicesCTA";
 import { useLanguage } from "@/lib/LanguageContext";
 import { NavSidebar } from "@/components/ui/NavSidebar";
