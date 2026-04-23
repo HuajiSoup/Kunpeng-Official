@@ -1,7 +1,6 @@
 "use client";
 
 import { useLanguage } from "@/lib/LanguageContext";
-import LongxingLogo from "@/assets/longxinghangdian-new.svg";
 import XidianLogo from "@/assets/xiandianzi.svg";
 import ShanghaiLogo from "@/assets/SSA.svg";
 import JingkaiLogo from "@/assets/jingkaiguokong.svg";
@@ -9,12 +8,6 @@ import { HomeSectionTitle } from "./ui/HomeSectionTitle";
 import { ItemBox } from "./ui/ItemBox";
 
 const getSupportItems = (t: (key: string) => string) => [
-  {
-    title: t("home.technicalSupport.items.longxing.title"),
-    description: t("home.technicalSupport.items.longxing.description"),
-    logo: LongxingLogo,
-    size: "w-12 h-12",
-  },
   {
     title: t("home.technicalSupport.items.xidian.title"),
     description: t("home.technicalSupport.items.xidian.description"),
@@ -45,14 +38,13 @@ export default function TechnicalSupport() {
         <HomeSectionTitle title={t("home.technicalSupport.title")} desc={t("home.technicalSupport.subtitle")} />
 
         {/* Support Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:flex md:justify-center gap-6 lg:gap-8">
           {supportItems.map((item, index) => (
             <ItemBox
               key={index}
               fancy
-              className="text-center"
+              className="text-center md:w-1/4"
             >
-              {/* Logo区域 - 圆形占位符，浅灰色背景 */}
               <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden mx-auto mb-4 group-hover:bg-gray-200 transition-all duration-300">
                 <item.logo
                   className={item.size + " text-[#2058D1] transition-colors duration-300"}

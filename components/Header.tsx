@@ -16,27 +16,12 @@ const getNavItems = (t: (key: string) => string) => [
   {
     label: t("nav.about"),
     href: "/about",
-    labelKey: "nav.about",
-    submenu: [
-      {
-        label: t("nav.aboutSubmenu.intro"),
-        href: "/about#company-intro"
-      },
-      {
-        label: t("nav.aboutSubmenu.culture"),
-        href: "/about#corporate-culture"
-      },
-    ],
   },
   {
     label: t("nav.testing"),
     href: "/testing",
     labelKey: "nav.testing",
     submenu: [
-      {
-        label: t("nav.testingSubmenu.devices"),
-        href: "/testing#testings-devices"
-      },
       {
         label: t("nav.testingSubmenu.env"),
         href: "/testing#environment-reliability"
@@ -49,10 +34,6 @@ const getNavItems = (t: (key: string) => string) => [
         label: t("nav.testingSubmenu.emc"),
         href: "/testing#emc-testing"
       },
-      {
-        label: t("nav.testingSubmenu.core"),
-        href: "/testing#core-testings"
-      }
     ],
   },
   {

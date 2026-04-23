@@ -17,7 +17,7 @@ const getDeviceTestings = (t: (key: string) => string): {field: string, standard
   },
   {
     field: t("testing.devices.items.i3.field"),
-    standard: t("testing.devices.items.i3.standard"),
+    standard: t("testing.standards.gjb150aSeries"),
     content: t("testing.devices.items.i3.content"),
   },
   {
@@ -27,22 +27,22 @@ const getDeviceTestings = (t: (key: string) => string): {field: string, standard
   },
   {
     field: t("testing.devices.items.i5.field"),
-    standard: t("testing.devices.items.i5.standard"),
+    standard: t("testing.standards.gbT2423SpaceSeries"),
     content: t("testing.devices.items.i5.content"),
   },
   {
     field: t("testing.devices.items.i6.field"),
-    standard: t("testing.devices.items.i6.standard"),
+    standard: t("testing.standards.gbT9254AndGb17626Series"),
     content: t("testing.devices.items.i6.content"),
   },
   {
     field: t("testing.devices.items.i7.field"),
-    standard: t("testing.devices.items.i7.standard"),
+    standard: t("testing.standards.gbT28046AndIso16750Series"),
     content: t("testing.devices.items.i7.content"),
   },
   {
     field: t("testing.devices.items.i8.field"),
-    standard: t("testing.devices.items.i8.standard"),
+    standard: t("testing.standards.gbT18655AndGbT33014Series"),
     content: t("testing.devices.items.i8.content"),
   },
   {

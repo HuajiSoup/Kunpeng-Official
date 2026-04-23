@@ -5,7 +5,7 @@ export const testingTranslations = {
         title: "试验检测中心",
         subtitle: "专业、权威、可靠的航空产品测试验证服务",
         labelTitleMain: "专业测试",
-        labelTitleBottom: "覆盖环境、EMC与软件测试，保障产品可靠性。",
+        labelTitleBottom: "覆盖环境、EMC与软件测试，保障产品可靠性",
         statistics: {
           testEquipment: "测试设备",
           testStandards: "测试标准",
@@ -16,21 +16,27 @@ export const testingTranslations = {
         all: "全部",
         devices: "设备级测试",
         environment: "环境可靠性试验",
-        mechanical: "机械及特殊环境试验",
+        mechanical: "机械试验",
         emc: "电磁兼容试验",
         components: "机载软件与元器件",
         core: "核心测试项目"
       },
       navTitle: "测试分类",
-      stickyCategories: {
-        all: "全部",
-        environment: "环境可靠性",
-        emc: "电磁兼容",
-        software: "软件测评"
+      standards: {
+        hb6167DashSeries: "HB-6167 系列",
+        gbT2423Series: "GB/T 2423系列",
+        iec60068Series: "IEC 60068-2系列",
+        gbT38924Series: "GB/T 38924系列",
+        hb6167Series: "HB 6167系列",
+        gjb150aSeries: "GJB 150A 系列",
+        gbT2423SpaceSeries: "GB/T 2423 系列",
+        gbT9254AndGb17626Series: "GB/T 9254、GB 17626 系列",
+        gbT28046AndIso16750Series: "GB/T 28046 系列、ISO 16750 系列",
+        gbT18655AndGbT33014Series: "GB/T 18655-2018、GB/T 33014 系列"
       },
       environment: {
         title: "环境可靠性试验",
-        subtitle: "ENVIRONMENTAL RELIABILITY",
+        subtitle: "ENVIRONMENTAL RELIABILITY TESTING",
         description: "拥有高精度气候环境试验设备，具备温度、湿度、高度、砂尘、流体等多因素综合模拟能力。试验箱均采用国际一流品牌控制系统，温场均匀、数据稳定，可同时满足DO-160G、GJB 150A、GB/T 2423对气候环境试验的严苛要求。特别是在高空低气压、快速温变及温-湿-高综合试验方面，具备行业领先优势。",
         items: {
           highLowTemp: {
@@ -219,10 +225,10 @@ export const testingTranslations = {
         }
       },
       mechanical: {
-        title: "机械及特殊环境试验",
-        subtitle: "Mechanical & Special Environment Testing",
+        title: "机械试验",
+        subtitle: "Mechanical Testing",
         section: {
-          description: "拥有大推力振动系统和高加速度冲击台，能够模拟从运输振动到坠撞冲击的全频谱机械应力。振动系统配置800×800mm大台面和水平滑台，可满足大尺寸机载设备及机柜的测试需求。同时，我们具备航空级防火试验能力，为机载非金属材料和电气设备提供全面的安全性评估。"
+          description: "拥有振动系统冲击台和离心机，能够模拟从运输振动坠撞冲击到加速度的全频谱机械应力。振动系统配置800mmx800mm台面和水平滑台，可满足机载设备及机柜的试验需求。"
         },
         items: {
           i1: {
@@ -234,7 +240,6 @@ export const testingTranslations = {
               p4: "空载频率范围：随机1-2600Hz，正弦1-2600Hz",
               p5: "空载加速度：980m/s²",
               p6: "位移：76mm p-p",
-              p7: "二次平台：150×150mm，加速度500~3000g"
             },
             examples: {
               e1: "正弦振动",
@@ -308,16 +313,16 @@ export const testingTranslations = {
             },
             examples: {
               e1: "温度-高度试验",
-              e2: "快速减压",
-              e3: "爆炸减压模拟"
+              e2: "快速减压"
             }
           },
           i3: {
             field: "砂尘试验",
             paras: {
               p1: "吹尘风速：1.5~8.9m/s",
-              p2: "吹尘浓度：(3.5~8.8)g/m³",
-              p3: "吹砂风速：18.0~29m/s"
+              p2: "吹尘浓度：3.5~8.8g/m³",
+              p3: "吹砂风速：18.0~29m/s",
+              p4: "吹砂浓度：0~11g/m³"
             },
             examples: {
               e1: "吹尘试验",
@@ -334,15 +339,14 @@ export const testingTranslations = {
             examples: {
               e1: "防水性试验",
               e2: "流体污染试验",
-              e3: "雨淋试验"
+              e3: "淋雨试验"
             }
           },
           i5: {
-            field: "腐蚀/霉菌/结冰",
+            field: "盐雾腐蚀",
             paras: {
-              p1: "盐雾：中性盐雾（非水加热）",
-              p2: "霉菌：符合 DO-160、GJB 150 菌种",
-              p3: "结冰：符合 DO-160、GJB 150 工况"
+              p1: "霉菌：符合 DO-160、GJB 150 菌种",
+              p2: "结冰：符合 DO-160 工况"
             },
             examples: {
               e1: "中性盐雾试验",
@@ -356,7 +360,7 @@ export const testingTranslations = {
         title: "电磁兼容性试验",
         subtitle: "Electro-Magnetic Compatibility",
         section: {
-          description: "配置3米法半电波暗室，测试系统覆盖9kHz至40GHz全频段，能够完整执行RTCA DO-160G第15至22条及第25条的全部EMC测试项目，同时兼容GJB 151B-2013及主要民品/车规EMC标准。特别是在射频辐射敏感度领域，我们具备200V/m的高场强测试能力，能够满足最严苛的航空电子设备抗干扰验证需求。"
+          description: "公司配有3米法半电波暗室和屏蔽室，测试系统覆盖25Hz至40GHz全频段，能够进行RTCA DO-160G第15至22章及第25章的全部EMC测试项目，同时具备国军标、汽车电子、无人机及消费电子产品电磁兼容项目试验能力。"
         },
         items: {
           i1: {
@@ -371,13 +375,13 @@ export const testingTranslations = {
             },
             examples: {
               e1: "磁影响(§15)",
-              e2: "电源输入(§16)",
+              e2: "电源输入(28V/30A) (§16)",
               e3: "电压尖峰(§17)",
-              e4: "音频传导敏感度(§18)",
-              e5: "感应信号敏感度(§19)",
-              e6: "射频敏感度(§20)",
+              e4: "电源线音频传导敏感度(§18)",
+              e5: "射频敏感度(§20) - 辐射敏感度(100MHz-18GHz, 200V/m)",
+              e6: "射频敏感度(§20) - 传导敏感度(10kHz-400MHz, 300mA)",
               e7: "射频能量发射(§21)",
-              e8: "雷电感应瞬态(§22)",
+              e8: "雷电感应瞬态敏感度(§22)",
               e9: "静电放电(§25)"
             }
           },
@@ -399,16 +403,24 @@ export const testingTranslations = {
           i3: {
             field: "民品/汽车电子EMC",
             paras: {
-              p1: "传导发射：CE 150kHz-30MHz/80MHz",
-              p2: "辐射发射：RE 150kHz-6GHz",
-              p3: "辐射抗扰：RS 80MHz-6GHz"
+              p1: "传导发射CE：150kHz-30MHz",
+              p2: "辐射发射RE：30MHz-40GHz",
+              p3: "辐射抗扰RS：80MHz-6GHz",
+              p4: "传导抗扰度CS：150kHz-80Mhz",
+              p5: "静电放电ESD：±30kV"
             },
-            standard3: "GB/T 33014系列",
-            examples: {
-              e1: "车载电子传导/辐射发射",
-              e2: "辐射抗扰度测试",
-              e3: "手持式无线电设备测试"
-            }
+            examples: {}
+          },
+          i4: {
+            field: "汽车电子EMC",
+            paras: {
+              p1: "传导发射CE：150kHz-245MHz",
+              p2: "辐射发射RE：150kHz-6GHz",
+              p3: "大电流注入BCI：1MHz-400MHz",
+              p4: "磁场抗扰度：DC&15Hz-150kHz",
+              p5: "便携式发射机：26MHz-5.85GHz"
+            },
+            examples: {}
           }
         }
       }
@@ -420,7 +432,7 @@ export const testingTranslations = {
         title: "Testing Center",
         subtitle: "Professional, Authoritative, Reliable Aviation Product Testing & Verification Services",
         labelTitleMain: "Professional Testing",
-        labelTitleBottom: "End-to-end environmental, EMC, and software testing for reliability.",
+        labelTitleBottom: "End-to-end environmental, EMC, and software testing for reliability",
         statistics: {
           testEquipment: "Test Equipment",
           testStandards: "Test Standards",
@@ -431,20 +443,26 @@ export const testingTranslations = {
         all: "All",
         devices: "Device-Level Testing",
         environment: "Environmental Reliability Testing",
-        mechanical: "Mechanical & Special Environment Testing",
+        mechanical: "Mechanical Testing",
         emc: "EMC Testing",
         components: "Softwars & Components",
         core: "Core Capablities"
       },
       navTitle: "Test Categories",
-      stickyCategories: {
-        all: "All",
-        environment: "Environmental Reliability",
-        emc: "EMC",
-        software: "Software Evaluation"
+      standards: {
+        hb6167DashSeries: "HB-6167 Series",
+        gbT2423Series: "GB/T 2423 Series",
+        iec60068Series: "IEC 60068-2 Series",
+        gbT38924Series: "GB/T 38924 Series",
+        hb6167Series: "HB 6167 Series",
+        gjb150aSeries: "GJB 150A Series",
+        gbT2423SpaceSeries: "GB/T 2423 Series",
+        gbT9254AndGb17626Series: "GB/T 9254 and GB 17626 Series",
+        gbT28046AndIso16750Series: "GB/T 28046 Series and ISO 16750 Series",
+        gbT18655AndGbT33014Series: "GB/T 18655-2018 and GB/T 33014 Series"
       },
       environment: {
-        title: "Environmental Reliability",
+        title: "Environmental Reliability Testing",
         subtitle: "",
         description: "Equipped with high-precision climatic test systems, we provide multi-factor integrated simulation capabilities covering temperature, humidity, altitude, sand and dust, and fluid exposure. All chambers use internationally leading control systems with uniform thermal fields and stable data, meeting stringent climatic test requirements in DO-160G, GJB 150A, and GB/T 2423. We are especially strong in high-altitude low-pressure, rapid temperature transition, and combined temperature-humidity-altitude testing.",
         items: {
@@ -634,10 +652,10 @@ export const testingTranslations = {
         }
       },
       mechanical: {
-        title: "Mechanical & Special Environment Testing",
+        title: "Mechanical Testing",
         subtitle: "",
         section: {
-          description: "With a high-thrust vibration system and high-acceleration shock table, we can simulate full-spectrum mechanical stress from transport vibration to crash impact. Our vibration system features an 800x800 mm large table and horizontal slip table, supporting large airborne equipment and cabinet-level tests. We also provide aviation-grade fire testing to deliver comprehensive safety evaluation for onboard non-metallic materials and electrical equipment."
+          description: "With vibration systems, shock tables, and a centrifuge, we can simulate a full spectrum of mechanical stress from transport vibration to crash impact and acceleration. Our vibration system features an 800 mm x 800 mm table and horizontal slip table, supporting airborne equipment and cabinet-level tests."
         },
         items: {
           i1: {
@@ -648,8 +666,7 @@ export const testingTranslations = {
               p3: "Frequency: Random 1-2000Hz, Sine 1-2000Hz",
               p4: "No-load Frequency Range: Random 1-2600Hz, Sine 1-2600Hz",
               p5: "No-load Acceleration: 980m/s²",
-              p6: "Displacement: 76mm p-p",
-              p7: "Secondary Table: 150×150mm, Acceleration 500~3000g"
+              p6: "Displacement: 76mm p-p"
             },
             examples: {
               e1: "Sine Vibration",
@@ -723,16 +740,16 @@ export const testingTranslations = {
             },
             examples: {
               e1: "Temperature-Altitude Testing",
-              e2: "Rapid Decompression",
-              e3: "Explosive Decompression Simulation"
+              e2: "Rapid Decompression"
             }
           },
           i3: {
             field: "Sand & Dust Testing",
             paras: {
               p1: "Dust-Blowing Speed: 1.5~8.9m/s",
-              p2: "Dust Concentration: (3.5~8.8)g/m³",
-              p3: "Sand-Blowing Speed: 18.0~29m/s"
+              p2: "Dust Concentration: 3.5~8.8g/m³",
+              p3: "Sand-Blowing Speed: 18.0~29m/s",
+              p4: "Sand-Blowing Concentration: 0~11g/m³"
             },
             examples: {
               e1: "Dust-Blowing Test",
@@ -741,7 +758,7 @@ export const testingTranslations = {
             }
           },
           i4: {
-            field: "Waterproof / Fluid Susceptibility Testing",
+            field: "Waterproof / Fluid Testing",
             paras: {
               p1: "Waterproof Methods: Drip, Spray, Continuous Water Flow",
               p2: "Fluid Susceptibility: Liquid Immersion, Spray"
@@ -753,11 +770,11 @@ export const testingTranslations = {
             }
           },
           i5: {
-            field: "Corrosion / Mold / Icing",
+            field: "Salt Spray Corrosion",
             paras: {
               p1: "Salt Spray: Neutral Salt Spray (Non-Water Heating)",
               p2: "Mold: DO-160 and GJB 150 compliant strains",
-              p3: "Icing: DO-160 and GJB 150 compliant conditions"
+              p3: "Icing: DO-160 compliant conditions"
             },
             examples: {
               e1: "Neutral Salt Spray Test",
@@ -771,7 +788,7 @@ export const testingTranslations = {
         title: "Electro-Magnetic Compatibility",
         subtitle: "",
         section: {
-          description: "Featuring a 3 m semi-anechoic chamber, our test system covers the full 9 kHz to 40 GHz band. We can execute all EMC items in RTCA DO-160G Sections 15 to 22 and Section 25, while also supporting GJB 151B-2013 and major commercial/automotive EMC standards. In radiated RF susceptibility, we offer high-field testing up to 200 V/m to meet the most stringent anti-interference validation requirements for avionics equipment."
+          description: "The company is equipped with a 3-meter semi-anechoic chamber and a shielded room. The test system covers the full 25 Hz to 40 GHz range and can perform all EMC tests in RTCA DO-160G Chapters 15 to 22 and 25, while also supporting military standards, automotive electronics, UAVs, and consumer electronics EMC testing."
         },
         items: {
           i1: {
@@ -786,13 +803,13 @@ export const testingTranslations = {
             },
             examples: {
               e1: "Magnetic Effect (§15)",
-              e2: "Power Input (§16)",
+              e2: "Power Input (28V/30A) (§16)",
               e3: "Voltage Spike (§17)",
-              e4: "Audio Frequency Conducted Susceptibility (§18)",
-              e5: "Induced Signal Susceptibility (§19)",
-              e6: "RF Susceptibility (§20)",
+              e4: "Power Line Audio Frequency Conducted Susceptibility (§18)",
+              e5: "RF Susceptibility (§20) - Radiated Susceptibility (100MHz-18GHz, 200V/m)",
+              e6: "RF Susceptibility (§20) - Conducted Susceptibility (10kHz-400MHz, 300mA)",
               e7: "RF Energy Emission (§21)",
-              e8: "Lightning Induced Transient (§22)",
+              e8: "Lightning Induced Transient Susceptibility (§22)",
               e9: "Electrostatic Discharge (§25)"
             }
           },
@@ -812,18 +829,26 @@ export const testingTranslations = {
             }
           },
           i3: {
-            field: "Commercial / Automotive EMC",
+            field: "Consumer / Automotive EMC",
             paras: {
-              p1: "Conducted Emissions: CE 150kHz-30MHz/80MHz",
-              p2: "Radiated Emissions: RE 150kHz-6GHz",
-              p3: "Radiated Immunity: RS 80MHz-6GHz"
+              p1: "Conducted Emissions CE: 150kHz-30MHz",
+              p2: "Radiated Emissions RE: 30MHz-40GHz",
+              p3: "Radiated Immunity RS: 80MHz-6GHz",
+              p4: "Conducted Immunity CS: 150kHz-80MHz",
+              p5: "Electrostatic Discharge ESD: ±30kV"
             },
-            standard3: "GB/T 33014 Series",
-            examples: {
-              e1: "Automotive Conducted/Radiated Emissions",
-              e2: "Radiated Immunity Testing",
-              e3: "Handheld Radio Equipment Testing"
-            }
+            examples: {}
+          },
+          i4: {
+            field: "Automotive EMC",
+            paras: {
+              p1: "Conducted Emissions CE: 150kHz-245MHz",
+              p2: "Radiated Emissions RE: 150kHz-6GHz",
+              p3: "Bulk Current Injection BCI: 1MHz-400MHz",
+              p4: "Magnetic Field Immunity: DC & 15Hz-150kHz",
+              p5: "Portable Transmitter: 26MHz-5.85GHz"
+            },
+            examples: {}
           }
         }
       }

@@ -1,8 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, Mail, MapPin, QrCode } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
+import Image from "next/image";
+
+import QrcodeImage from "@/assets/qrcode.jpg";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -23,13 +26,13 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
                 <span>{t("footer.address")}</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm">
+              {/* <div className="flex items-center space-x-2 text-sm">
                 <Phone className="w-4 h-4 flex-shrink-0" />
                 <span>400-XXX-XXXX</span>
-              </div>
+              </div> */}
               <div className="flex items-center space-x-2 text-sm">
                 <Mail className="w-4 h-4 flex-shrink-0" />
-                <span>service@kunpeng.com</span>
+                <span>shenyubin@lr-avionics.com</span>
               </div>
             </div>
           </div>
@@ -94,7 +97,13 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 p-3 rounded-lg inline-block">
                 <div className="w-24 h-24 bg-slate-800 rounded flex items-center justify-center">
-                  <QrCode className="w-12 h-12 text-slate-400" />
+                  <Image
+                    src={QrcodeImage}
+                    alt="QR Code"
+                    className="w-full h-full"
+                    width={287}
+                    height={287}
+                  />
                 </div>
                 <p className="text-xs text-slate-400 text-center mt-1.5">
                   {t("footer.qrCode")}

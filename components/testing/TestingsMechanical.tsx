@@ -14,9 +14,8 @@ const getMechanicalTests = (t: (key: string) => string): TestItem[] => [
       t("testing.mechanical.items.i1.paras.p4"),
       t("testing.mechanical.items.i1.paras.p5"),
       t("testing.mechanical.items.i1.paras.p6"),
-      t("testing.mechanical.items.i1.paras.p7"),
     ],
-    standards: ["DO-160 §8", "GJB 150.16A", "GB/T 2423.10/.56"],
+    standards: ["DO-160", "GJB 150.16A", "GB/T 2423.10/.56"],
     examples: [
       t("testing.mechanical.items.i1.examples.e1"),
       t("testing.mechanical.items.i1.examples.e2"),
@@ -32,7 +31,7 @@ const getMechanicalTests = (t: (key: string) => string): TestItem[] => [
       t("testing.mechanical.items.i2.paras.p3"),
       t("testing.mechanical.items.i2.paras.p4"),
     ],
-    standards: ["DO-160 §7", "GJB 150.15A/18A", "GB/T 2423.5/.6"],
+    standards: ["DO-160", "GJB 150.15A/18A", "GB/T 2423.5/.6"],
     examples: [
       t("testing.mechanical.items.i2.examples.e1"),
       t("testing.mechanical.items.i2.examples.e2"),
@@ -48,7 +47,7 @@ const getMechanicalTests = (t: (key: string) => string): TestItem[] => [
   {
     field: t("testing.mechanical.items.i4.field"),
     paras: [t("testing.mechanical.items.i4.paras.p1"), t("testing.mechanical.items.i4.paras.p2")],
-    standards: ["DO-160 §26", "GJB 150.23A"],
+    standards: ["DO-160", "GJB 150.23A"],
     examples: [t("testing.mechanical.items.i4.examples.e1"), t("testing.mechanical.items.i4.examples.e2")],
   },
 ];

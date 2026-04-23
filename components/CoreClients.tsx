@@ -5,7 +5,6 @@ import { HomeSectionTitle } from "./ui/HomeSectionTitle";
 import { ItemBox } from "./ui/ItemBox";
 import TianlingLogo from "@/assets/inflync.svg";
 import ShunyuLogo from "@/assets/shunyu.svg";
-import LongxingLogo from "@/assets/longxinghangdian-new.svg";
 
 const getClientsItems = (t: (key: string) => string) => [
   {
@@ -20,12 +19,6 @@ const getClientsItems = (t: (key: string) => string) => [
     logo: ShunyuLogo,
     size: "w-11 h-11",
   },
-  {
-    title: t("home.coreClients.items.longxing.title"),
-    description: t("home.coreClients.items.longxing.description"),
-    logo: LongxingLogo,
-    size: "w-11 h-11",
-  },
 ];
 
 export default function CoreClients() {
@@ -38,14 +31,13 @@ export default function CoreClients() {
         <HomeSectionTitle title={t("home.coreClients.title")} desc={t("home.coreClients.description")} />
 
         {/* Support Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:flex md:justify-center gap-6 lg:gap-8">
           {supportItems.map((item, index) => (
             <ItemBox
               key={index}
               fancy
-              className="text-center"
+              className="text-center md:w-1/4"
             >
-              {/* Logo区域 - 圆形占位符，浅灰色背景 */}
               <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden mx-auto mb-4 group-hover:bg-gray-200 transition-all duration-300">
                 <item.logo
                   className={item.size + " text-[#2058D1] transition-colors duration-300"}

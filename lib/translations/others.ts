@@ -15,7 +15,7 @@ export const othersTranslations = {
       testingSubmenu: {
         devices: "设备级测试",
         env: "环境可靠性试验",
-        mechanical: "机械及特殊环境试验",
+        mechanical: "机械试验",
         emc: "电磁兼容试验",
         components: "机载软件与元器件",
         core: "核心测试项目"
@@ -189,7 +189,7 @@ export const othersTranslations = {
     footer: {
       contact: "联系方式",
       companyName: "浙江鲲鹏航空技术测试验证有限公司",
-      address: "浙江省杭州市余杭区...",
+      address: "杭州市萧山区宁围街道旅学路177号江南电子谷产业园A3楼1楼",
       quickLinks: "快速链接",
       resources: "资源中心",
       announcement: "网站声明",
@@ -304,7 +304,7 @@ export const othersTranslations = {
       testingSubmenu: {
         devices: "Device-Level Testing",
         env: "Environmental Reliability Testing",
-        mechanical: "Mechanical & Special Environment Testing",
+        mechanical: "Mechanical Testing",
         emc: "EMC Testing",
         components: "Softwars & Components",
         core: "Core Capabilities"
@@ -478,8 +478,9 @@ export const othersTranslations = {
     footer: {
       contact: "Contact",
       companyName: "Zhejiang Kunpeng Aviation Technology Testing & Verification Co., Ltd.",
-      address: "Yuhang District, Hangzhou, Zhejiang Province...",
+      address: "First Floor, Building A3, Jiangnan Electronics Valley Industrial Park, No. 177 Lvxue Road, Ningshui Street, Xiaoshan District, Hangzhou",
       quickLinks: "Quick Links",
+      resources: "Resource Center",
       announcement: "Announcement",
       fairness: "Fairness Statement",
       followUs: "Follow Us",

@@ -5,15 +5,16 @@ export const aboutTranslations = {
         title: "走进鲲鹏",
         subtitle: "公正 · 科学 · 准确 · 高效",
         labelTitleMain: "企业实力",
-        labelTitleBottom: "权威资质与专业团队，持续输出可靠的航空技术服务。"
+        labelTitleBottom: "权威资质与专业团队，持续输出可靠的航空技术服务"
       },
       companyIntro: {
         title: "公司简介",
         subtitle: "COMPANY PROFILE",
         paragraphs: {
-          p1: "浙江鲲鹏航空技术测试验证有限公司，专注于航空技术测试、验证及适航咨询服务。",
-          p2: "公司依托深厚的技术积淀和行业资源，在浙江之江航空技术发展中心的支持下，致力于为航空产业提供专业的测试验证解决方案。"
+          p1: "浙江鲲鹏航空技术测试验证有限公司成立于2025年7月24日，公司坐落于萧山经济技术开发区，一期占地面积约5000平方米，配备各类先进仪器设备100余台（套）。",
+          p2: "作为浙江省首家航空技术测试验证中心，公司致力于填补浙江省适航测试技术服务空白，以促进民航及低空经济产业高质量发展为使命，面向航空类企业提供可靠性测试验证、质量体系建设咨询、适航咨询等一站式专业技术服务。"
         },
+        slogan: "致力于成为行业领先的航空技术测试验证解决方案提供商。"
       },
       org: {
         title: "组织架构",
@@ -115,15 +116,16 @@ export const aboutTranslations = {
         title: "About Us",
         subtitle: "Fair · Scientific · Accurate · Efficient",
         labelTitleMain: "Company Strength",
-        labelTitleBottom: "Accredited expertise and experienced teams delivering trusted aviation services."
+        labelTitleBottom: "Accredited expertise and experienced teams delivering trusted aviation services"
       },
       companyIntro: {
         title: "Company Profile",
         subtitle: "",
         paragraphs: {
-          p1: "Zhejiang Kunpeng Aviation Technology Testing & Verification Co., Ltd. focuses on aviation technology testing, verification, and airworthiness consulting services.",
-          p2: "Backed by deep technical expertise and industry resources, and supported by the Zhejiang Zhijiang Aviation Technology Development Center, we are committed to providing professional testing and verification solutions for the aviation industry."
+          p1: "Zhejiang Kunpeng Aviation Technology Testing & Verification Co., Ltd. was established on July 24, 2025. The company is located in Xiaoshan Economic and Technological Development Zone. Its first phase covers approximately 5,000 square meters and is equipped with more than 100 sets of advanced instruments and equipment.",
+          p2: "As Zhejiang Province's first aviation technology testing and verification center, the company is committed to filling the gap in airworthiness testing technical services in Zhejiang. With the mission of promoting high-quality development in civil aviation and the low-altitude economy, we provide aviation enterprises with one-stop professional technical services including reliability testing and verification, quality system consulting, and airworthiness consulting."
         },
+        slogan: "Committed to becoming an industry-leading provider of aviation technology testing and verification solutions."
       },
       org: {
         title: "Organization",

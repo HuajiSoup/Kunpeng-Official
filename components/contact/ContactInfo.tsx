@@ -1,6 +1,9 @@
 import { useLanguage } from "@/lib/LanguageContext";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Mail } from "lucide-react";
 import { ItemBox } from "../ui/ItemBox";
+import Image from "next/image";
+
+import MapImage from "@/assets/location.png";
 
 const getContacts = (t: (key: string) => string) => [
   {
@@ -12,19 +15,10 @@ const getContacts = (t: (key: string) => string) => [
     ],
   },
   {
-    title: t("contact.sections.contact.phone.title"),
-    icon: Phone,
-    lines: [
-      t("contact.sections.contact.phone.line1"),
-      t("contact.sections.contact.phone.line2"),
-    ],
-  },
-  {
     title: t("contact.sections.contact.email.title"),
     icon: Mail,
     lines: [
       t("contact.sections.contact.email.line1"),
-      t("contact.sections.contact.email.line2"),
     ],
   },
 ];
@@ -38,7 +32,7 @@ export function ContactInfo() {
       <h2 className="text-2xl font-bold text-gray-900 mb-5">{t("contact.sections.contact.title")}</h2>
 
       {/* Contact Infos */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
         {contacts.map((item, index) => {
           const Icon = item.icon;
           return (
@@ -62,10 +56,12 @@ export function ContactInfo() {
 
       {/* Map Image */}
       <div className="rounded-xl overflow-hidden border-[0.5px] border-blue-500/20 shadow-sm">
-        <img
-          src="https://placehold.co/1200x480/e2e8f0/475569?text=Map+Location+Image"
-          alt={t("contact.sections.contact.mapAlt")}
+        <Image
+          src={MapImage}
+          alt="map"
           className="w-full h-auto"
+          width={800}
+          height={300}
         />
       </div>
     </section>

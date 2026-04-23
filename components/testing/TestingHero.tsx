@@ -15,15 +15,15 @@ export default function TestingHero() {
       statistics={[
         {
           label: t("testing.hero.statistics.testEquipment"),
-          value: "10+"
+          value: "100+"
         },
         {
           label: t("testing.hero.statistics.testStandards"),
-          value: "10+"
+          value: "20+"
         },
         {
           label: t("testing.hero.statistics.testItems"),
-          value: "9+"
+          value: "30+"
         }
       ]}
       LabelIcon={Microscope}

@@ -20,8 +20,8 @@ export const contactTranslations = {
           title: "联系方式",
           address: {
             title: "公司地址",
-            line1: "浙江省杭州市",
-            line2: "之江航空技术发展中心"
+            line1: "浙江省杭州市萧山区",
+            line2: "宁围街道旅学路177号江南电子谷产业园A3楼1楼"
           },
           phone: {
             title: "联系电话",
@@ -30,8 +30,7 @@ export const contactTranslations = {
           },
           email: {
             title: "邮箱地址",
-            line1: "contact@kunpeng-aviation.com",
-            line2: "tech@kunpeng-aviation.com"
+            line1: "shenyubin@lr-avionics.com",
           },
           mapAlt: "公司位置地图"
         },
@@ -97,8 +96,8 @@ export const contactTranslations = {
           title: "Contact Information",
           address: {
             title: "Address",
-            line1: "Hangzhou, Zhejiang Province",
-            line2: "Zhijiang Aviation Technology Development Center"
+            line1: "Xiaoshan District, Hangzhou, Zhejiang Province",
+            line2: "First Floor, Building A3, Jiangnan Electronics Valley Industrial Park, No. 177 Lvxue Road, Ningshui Street"
           },
           phone: {
             title: "Phone",
@@ -107,8 +106,7 @@ export const contactTranslations = {
           },
           email: {
             title: "Email",
-            line1: "contact@kunpeng-aviation.com",
-            line2: "tech@kunpeng-aviation.com"
+            line1: "shenyubin@lr-avionics.com"
           },
           mapAlt: "Company Location Map"
         },

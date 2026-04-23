@@ -4,20 +4,15 @@ import { useState, useEffect } from "react";
 import TestingHero from "@/components/testing/TestingHero";
 import TestingsEnvironment from "@/components/testing/TestingsEnvironment";
 import TestingsEMC from "@/components/testing/TestingsEMC";
-import SoftwareComponents from "@/components/testing/SoftwareComponents";
-import CoreTestings from "@/components/testing/CoreTestings";
 import TestingCTA from "@/components/testing/TestingCTA";
 import { useLanguage } from "@/lib/LanguageContext";
 import { NavSidebar } from "@/components/ui/NavSidebar";
-import TestingsDevices from "@/components/testing/TestingsDevices";
 import TestingsMechanical from "@/components/testing/TestingsMechanical";
 
 const getCategories = (t: (key: string) => string) => [
-  { id: "testings-devices", label: t("testing.categories.devices") },
   { id: "environment-reliability", label: t("testing.categories.environment") },
   { id: "mechanical-special", label: t("testing.categories.mechanical") },
   { id: "emc-testing", label: t("testing.categories.emc") },
-  { id: "core-testings", label: t("testing.categories.core") },
 ];
 
 export default function TestingPage() {
@@ -81,12 +76,11 @@ export default function TestingPage() {
 
           {/* Right Content */}
           <div className="lg:col-span-4">
-            <TestingsDevices />
+            {/* <TestingsDevices /> */}
             <TestingsEnvironment />
             <TestingsMechanical />
             <TestingsEMC />
-            {/* <SoftwareComponents /> */}
-            <CoreTestings />
+            {/* <CoreTestings /> */}
             <TestingCTA />
           </div>
         </div>

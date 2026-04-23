@@ -78,7 +78,6 @@ export default function ServicesPage() {
           {/* Right Content */}
           <div className="lg:col-span-4">
             <ConsultingSection />
-            {/* ??? */}
             {/* <EngineeringSection /> */}
             {/* <TrainingSection /> */}
             {/* <ProcessWorkflow /> */}

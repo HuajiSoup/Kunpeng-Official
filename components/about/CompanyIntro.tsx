@@ -2,6 +2,9 @@
 
 import { useLanguage } from "@/lib/LanguageContext";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
+import Image from "next/image";
+
+import BuildingImage from "@/assets/company-building.png"
 
 export default function CompanyIntro() {
   const { t } = useLanguage();
@@ -27,7 +30,10 @@ export default function CompanyIntro() {
               </p>
             </div>
             
-            {/* 装饰元素 */}
+            <div className="text-slate-600 leading-relaxed w-full p-2 bg-blue-100/50 border-l-4 border-blue-500/40">
+              <p className="text-sm lg:text-base">{t("about.companyIntro.slogan")}</p>
+            </div>
+
             <div className="flex items-center gap-4 mt-8">
               <div className="h-px w-16 bg-gradient-to-r from-transparent to-blue-500/50"></div>
               <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
@@ -35,25 +41,14 @@ export default function CompanyIntro() {
             </div>
           </div>
 
-          {/* 右侧图片占位符 */}
-          <div className="relative">
-            <div className="aspect-[4/3] rounded-2xl bg-slate-100 flex items-center justify-center overflow-hidden border-[0.5px] border-blue-500/20 shadow-md group relative hover:border-blue-500/50 hover:shadow-lg transition-all duration-300">
-              <span className="text-slate-400 text-lg font-medium">Company Building Image</span>
-              {/* Moving Border 效果 */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="absolute inset-0 rounded-2xl border border-transparent bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-500 bg-[length:200%_100%] animate-[border-beam_3s_linear_infinite]"
-                  style={{
-                    mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-                    WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-                    maskComposite: "exclude",
-                    WebkitMaskComposite: "xor",
-                    padding: "1px",
-                  }}
-                />
-              </div>
+          <div className="relative h-full">
+            <div className="h-full rounded-2xl bg-slate-100 flex overflow-hidden border-[0.5px] border-blue-500/20 shadow-md group relative hover:border-blue-500/50 hover:shadow-lg transition-all duration-300">
+              <Image
+                src={BuildingImage}
+                alt="building"
+                style={{ objectFit: "cover" }}
+              />
             </div>
-            {/* 装饰性边框 */}
-            <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border-[0.5px] border-blue-500/10 -z-10"></div>
           </div>
         </div>
       </div>

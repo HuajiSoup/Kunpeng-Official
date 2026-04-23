@@ -4,51 +4,6 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { TestItem, TestItemBox } from "./TestItemBox";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 
-// const getEnvironmentTests = (t: (key: string) => string) => [
-//   {
-//     icon: Thermometer,
-//     title: t("testing.environment.items.highLowTemp.title"),
-//     standards: ["DO-160G", "GJB-150"],
-//     specs: t("testing.environment.items.highLowTemp.specs"),
-//     description: t("testing.environment.items.highLowTemp.description"),
-//   },
-//   {
-//     icon: Droplets,
-//     title: t("testing.environment.items.humidity.title"),
-//     standards: ["DO-160G", "RTCA/DO-160"],
-//     specs: t("testing.environment.items.humidity.specs"),
-//     description: t("testing.environment.items.humidity.description"),
-//   },
-//   {
-//     icon: Waves,
-//     title: t("testing.environment.items.vibration.title"),
-//     standards: ["DO-160G", "MIL-STD-810"],
-//     specs: t("testing.environment.items.vibration.specs"),
-//     description: t("testing.environment.items.vibration.description"),
-//   },
-//   {
-//     icon: Wind,
-//     title: t("testing.environment.items.shock.title"),
-//     standards: ["DO-160G", "GJB-150"],
-//     specs: t("testing.environment.items.shock.specs"),
-//     description: t("testing.environment.items.shock.description"),
-//   },
-//   {
-//     icon: Sun,
-//     title: t("testing.environment.items.solar.title"),
-//     standards: ["DO-160G", "MIL-STD-810"],
-//     specs: t("testing.environment.items.solar.specs"),
-//     description: t("testing.environment.items.solar.description"),
-//   },
-//   {
-//     icon: Thermometer,
-//     title: t("testing.environment.items.tempShock.title"),
-//     standards: ["DO-160G", "GJB-150"],
-//     specs: t("testing.environment.items.tempShock.specs"),
-//     description: t("testing.environment.items.tempShock.description"),
-//   },
-// ];
-
 const getEnvironmentTests = (t: (key: string) => string): TestItem[] => [
   {
     field: t("testing.environmentAdvanced.items.i1.field"),
@@ -59,7 +14,7 @@ const getEnvironmentTests = (t: (key: string) => string): TestItem[] => [
       t("testing.environmentAdvanced.items.i1.paras.p4"),
       t("testing.environmentAdvanced.items.i1.paras.p5"),
     ],
-    standards: ["DO-160 §4,5,6", "GJB 150.3A/4A/9A", "GB/T 2423.1/2/3/4"],
+    standards: ["RCTA DO-160G", "GJB 150.3A/4A/9A", "GB/T 2423.1/2/3/4", t("testing.standards.hb6167DashSeries")],
     examples: [
       t("testing.environmentAdvanced.items.i1.examples.e1"),
       t("testing.environmentAdvanced.items.i1.examples.e2"),
@@ -74,11 +29,10 @@ const getEnvironmentTests = (t: (key: string) => string): TestItem[] => [
       t("testing.environmentAdvanced.items.i2.paras.p2"),
       t("testing.environmentAdvanced.items.i2.paras.p3"),
     ],
-    standards: ["DO-160 §4", "GJB 150.6A"],
+    standards: ["RCTA DO-160G", "GJB 150.6A", t("testing.standards.gbT2423Series"), t("testing.standards.iec60068Series"), t("testing.standards.hb6167DashSeries")],
     examples: [
       t("testing.environmentAdvanced.items.i2.examples.e1"),
       t("testing.environmentAdvanced.items.i2.examples.e2"),
-      t("testing.environmentAdvanced.items.i2.examples.e3"),
     ],
   },
   {
@@ -87,8 +41,9 @@ const getEnvironmentTests = (t: (key: string) => string): TestItem[] => [
       t("testing.environmentAdvanced.items.i3.paras.p1"),
       t("testing.environmentAdvanced.items.i3.paras.p2"),
       t("testing.environmentAdvanced.items.i3.paras.p3"),
+      t("testing.environmentAdvanced.items.i3.paras.p4"),
     ],
-    standards: ["DO-160 §12", "GJB 150.8A/12A"],
+    standards: ["RTCA DO-160G", "GJB 150.12A", "HB 6167.10-2016", "GJB 360B-2009", t("testing.standards.gbT38924Series")],
     examples: [
       t("testing.environmentAdvanced.items.i3.examples.e1"),
       t("testing.environmentAdvanced.items.i3.examples.e2"),
@@ -98,7 +53,7 @@ const getEnvironmentTests = (t: (key: string) => string): TestItem[] => [
   {
     field: t("testing.environmentAdvanced.items.i4.field"),
     paras: [t("testing.environmentAdvanced.items.i4.paras.p1"), t("testing.environmentAdvanced.items.i4.paras.p2")],
-    standards: ["DO-160 §10,11", "GJB 150.8A"],
+    standards: ["RTCA DO-160G", "GJB 150.8A/26A", t("testing.standards.gbT38924Series"), t("testing.standards.hb6167Series")],
     examples: [
       t("testing.environmentAdvanced.items.i4.examples.e1"),
       t("testing.environmentAdvanced.items.i4.examples.e2"),
@@ -110,9 +65,8 @@ const getEnvironmentTests = (t: (key: string) => string): TestItem[] => [
     paras: [
       t("testing.environmentAdvanced.items.i5.paras.p1"),
       t("testing.environmentAdvanced.items.i5.paras.p2"),
-      t("testing.environmentAdvanced.items.i5.paras.p3"),
     ],
-    standards: ["DO-160 §13,14,24", "GJB 150.10A/11A"],
+    standards: ["RTCA DO-160G", "GJB 150.10A/11A", "GB/T 10125", t("testing.standards.hb6167Series")],
     examples: [
       t("testing.environmentAdvanced.items.i5.examples.e1"),
       t("testing.environmentAdvanced.items.i5.examples.e2"),
