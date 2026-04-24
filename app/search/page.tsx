@@ -1,13 +1,15 @@
 "use client";
 
-import { useState, Suspense, useRef, useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
+import { useState, Suspense, useRef, useEffect } from "react";
+
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
-import { useLanguage } from "@/lib/LanguageContext";
+
 import { SearchBar } from "@/components/search/SearchBar";
 import { SearchResultList } from "@/components/search/SearchResultList";
 import { getNewsList, NewsCategory, NewsItem, normalizeNewsItem } from "@/lib/api/http/getNews";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export type searchResultCategory = "all" | "company" | "industry" | "success";
 

@@ -1,4 +1,5 @@
 import { LucideIcon } from "lucide-react";
+
 import { HaloBackground } from "./HaloBackground";
 
 interface StatisticCardProps {

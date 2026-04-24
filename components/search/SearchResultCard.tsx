@@ -1,7 +1,9 @@
-import { SearchResult } from "@/app/search/page";
+import Link from "next/link";
+
 import { motion, Variants } from "framer-motion";
 import { FileText, Calendar, ArrowRight } from "lucide-react";
-import Link from "next/link";
+
+import { SearchResult } from "@/app/search/page";
 import { useLanguage } from "@/lib/LanguageContext";
 
 interface SearchResultCardProps {

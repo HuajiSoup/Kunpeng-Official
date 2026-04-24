@@ -1,7 +1,9 @@
+import { useEffect, useMemo, useState } from "react";
+
+import { ChevronUp, ChevronDown } from "lucide-react";
+
 import getFaq, { FaqItem } from "@/lib/api/http/getFaq";
 import { useLanguage } from "@/lib/LanguageContext";
-import { ChevronUp, ChevronDown } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
 
 function FAQItemBox({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);

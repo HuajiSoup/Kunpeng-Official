@@ -1,8 +1,10 @@
-import { useLanguage } from "@/lib/LanguageContext";
-import { motion } from "framer-motion";
-import { Search } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { FormEvent, useEffect } from "react";
+
+import { motion } from "framer-motion";
+import { Search } from "lucide-react";
+
+import { useLanguage } from "@/lib/LanguageContext";
 
 interface SearchBarProps {
   inputRef: React.RefObject<HTMLInputElement>;

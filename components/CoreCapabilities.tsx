@@ -8,7 +8,9 @@ import {
   Wrench,
   GraduationCap,
 } from "lucide-react";
+
 import { useLanguage } from "@/lib/LanguageContext";
+
 import { HomeSectionTitle } from "./ui/HomeSectionTitle";
 import { ItemBox } from "./ui/ItemBox";
 

@@ -1,10 +1,11 @@
 "use client";
 
-import { useLanguage } from "@/lib/LanguageContext";
-import { PageSectionTitle } from "../ui/PageSectionTitle";
 import Image from "next/image";
 
 import BuildingImage from "@/assets/company-building.png"
+import { useLanguage } from "@/lib/LanguageContext";
+
+import { PageSectionTitle } from "../ui/PageSectionTitle";
 
 export default function CompanyIntro() {
   const { t } = useLanguage();

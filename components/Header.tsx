@@ -1,11 +1,13 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { Search, Menu, X, ChevronDown, Globe } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useLanguage } from "@/lib/LanguageContext";
+import { useState, useEffect, useRef } from "react";
+
 import { motion, AnimatePresence } from "framer-motion";
+import { Search, Menu, X, ChevronDown, Globe } from "lucide-react";
+
+import { useLanguage } from "@/lib/LanguageContext";
 
 // 导航数据结构（使用翻译key）
 const getNavItems = (t: (key: string) => string) => [
@@ -515,8 +517,7 @@ export default function Header() {
                     English
                   </button>
                 </div>
-
-                    {t("common.language.zh")}
+                
                 <div className="flex items-center space-x-4">
                   <form
                     onSubmit={(e) => {

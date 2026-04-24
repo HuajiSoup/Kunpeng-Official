@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useLanguage } from "@/lib/LanguageContext";
-import { NavSidebar } from "@/components/ui/NavSidebar";
+
 import { ContactHero } from "@/components/contact/ContactHero";
 import { ContactInfo } from "@/components/contact/ContactInfo";
 import { Downloads } from "@/components/contact/Downloads";
 import { FAQ } from "@/components/contact/FAQ";
+import { NavSidebar } from "@/components/ui/NavSidebar";
+import { useLanguage } from "@/lib/LanguageContext";
 
 const getSections = (t: (key: string) => string) => [
   { id: "contact", label: t("contact.nav.contact") },

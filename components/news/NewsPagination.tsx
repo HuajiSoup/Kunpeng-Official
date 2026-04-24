@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
+
 import { useLanguage } from "@/lib/LanguageContext";
 
 interface NewsPaginationProps {

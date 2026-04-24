@@ -1,8 +1,10 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
 import { ReactNode, useRef, useState } from "react";
+
+import { motion } from "framer-motion";
+
+import { cn } from "@/lib/utils";
 
 interface BentoGridProps {
   className?: string;
@@ -65,7 +67,7 @@ export function BentoCard({
       transition={{ duration: 0.5 }}
       onMouseMove={handleMouseMove}
       className={cn(
-        "group relative overflow-hidden rounded-xl p-6 cursor-pointer transition-colors transition-shadow duration-300",
+        "group relative overflow-hidden rounded-xl p-6 cursor-pointer transition-colors duration-300",
         // 浅色主题样式
         isLight
           ? "bg-white border border-slate-200 shadow-md hover:border-blue-500 hover:bg-blue-50/50 hover:shadow-xl"

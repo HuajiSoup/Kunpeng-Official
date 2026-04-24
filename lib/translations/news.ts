@@ -5,7 +5,7 @@ export const newsTranslations = {
         title: "新闻中心",
         subtitle: "了解最新动态，掌握行业资讯",
         labelTitleMain: "行业动态",
-        labelTitleBottom: "聚焦政策、项目与技术进展，第一时间传递信息。"
+        labelTitleBottom: "聚焦政策、项目与技术进展，第一时间传递信息"
       },
       navTitle: "分类筛选",
       categories: {
@@ -42,7 +42,7 @@ export const newsTranslations = {
         title: "News Center",
         subtitle: "Stay Updated with Latest News and Industry Insights",
         labelTitleMain: "Industry Updates",
-        labelTitleBottom: "Tracking policy, projects, and technology progress as they happen."
+        labelTitleBottom: "Tracking policy, projects, and technology progress as they happen"
       },
       navTitle: "Categories",
       categories: {

@@ -1,12 +1,14 @@
 "use client";
 
-import { getNewsList, getHeadlineNews, NewsCategory, NewsItem, normalizeNewsItem } from "@/lib/api/http/getNews";
 import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
+
+import { getNewsList, getHeadlineNews, NewsCategory, NewsItem, normalizeNewsItem } from "@/lib/api/http/getNews";
+import { useLanguage } from "@/lib/LanguageContext";
+
 import FeaturedNews from "./FeaturedNews";
 import NewsList from "./NewsList";
 import NewsPagination from "./NewsPagination";
-import { useLanguage } from "@/lib/LanguageContext";
 
 const ITEMS_PER_PAGE = 6;
 

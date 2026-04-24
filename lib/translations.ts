@@ -1,9 +1,9 @@
 import { aboutTranslations } from "./translations/about";
-import { testingTranslations } from "./translations/testing";
-import { servicesTranslations } from "./translations/services";
-import { newsTranslations } from "./translations/news";
 import { contactTranslations } from "./translations/contact";
+import { newsTranslations } from "./translations/news";
 import { othersTranslations } from "./translations/others";
+import { servicesTranslations } from "./translations/services";
+import { testingTranslations } from "./translations/testing";
 
 export const translations = {
   zh: {

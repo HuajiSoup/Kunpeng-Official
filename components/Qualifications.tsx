@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/lib/LanguageContext";
+
 import { HomeSectionTitle } from "./ui/HomeSectionTitle";
 import { ItemBox } from "./ui/ItemBox";
 

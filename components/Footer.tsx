@@ -1,11 +1,12 @@
 "use client";
 
-import Link from "next/link";
-import { Mail, MapPin } from "lucide-react";
-import { useLanguage } from "@/lib/LanguageContext";
 import Image from "next/image";
+import Link from "next/link";
+
+import { Mail, MapPin } from "lucide-react";
 
 import QrcodeImage from "@/assets/qrcode.jpg";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Footer() {
   const { t } = useLanguage();

@@ -1,11 +1,12 @@
 "use client";
 
-import { Suspense, useState } from "react";
-import NewsHero from "@/components/news/NewsHero";
-import { useLanguage } from "@/lib/LanguageContext";
 import { useRouter } from "next/navigation";
-import { NavSidebar } from "@/components/ui/NavSidebar";
+import { Suspense, useState } from "react";
+
+import NewsHero from "@/components/news/NewsHero";
 import NewsOverview from "@/components/news/NewsOverview";
+import { NavSidebar } from "@/components/ui/NavSidebar";
+import { useLanguage } from "@/lib/LanguageContext";
 
 const getSidebarItems = (t: (key: string) => string) => [
   { id: "all", label: t("news.categories.all") },

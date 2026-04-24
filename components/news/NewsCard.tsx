@@ -1,9 +1,12 @@
 import Link from "next/link";
+
 import { Award, Calendar, ArrowRight } from "lucide-react";
-import { ItemBox } from "../ui/ItemBox";
-import { cn } from "@/lib/utils";
-import { useLanguage } from "@/lib/LanguageContext";
+
 import { type NewsItem } from "@/lib/api/http/getNews";
+import { useLanguage } from "@/lib/LanguageContext";
+import { cn } from "@/lib/utils";
+
+import { ItemBox } from "../ui/ItemBox";
 
 const getCategoryMap = (t: (key: string) => string): Record<string, string> => ({
   company_news: t("news.categories.company"),

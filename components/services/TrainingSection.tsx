@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/lib/LanguageContext";
+
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 
 const getCourses = (t: (key: string) => string) => [

@@ -1,8 +1,11 @@
 "use client";
 
 import Link from "next/link";
+
 import { ArrowRight, Code, Cpu } from "lucide-react";
+
 import { useLanguage } from "@/lib/LanguageContext";
+
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 
 export default function SoftwareComponents() {

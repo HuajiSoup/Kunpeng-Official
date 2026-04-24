@@ -1,10 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect } from "react";
+
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+
 import { useLanguage } from "@/lib/LanguageContext";
-import Link from "next/link";
 
 const carouselImages = [
   "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80&auto=format",

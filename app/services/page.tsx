@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ServicesHero from "@/components/services/ServicesHero";
+
 import ConsultingSection from "@/components/services/ConsultingSection";
 import ServicesCTA from "@/components/services/ServicesCTA";
-import { useLanguage } from "@/lib/LanguageContext";
+import ServicesHero from "@/components/services/ServicesHero";
 import { NavSidebar } from "@/components/ui/NavSidebar";
+import { useLanguage } from "@/lib/LanguageContext";
 
 const getSidebarItems = (t: (key: string) => string) => [
   { id: "consulting", label: t("services.sidebar.consulting") },

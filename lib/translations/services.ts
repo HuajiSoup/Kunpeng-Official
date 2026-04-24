@@ -5,7 +5,7 @@ export const servicesTranslations = {
         title: "适航技术服务",
         subtitle: "专业的适航审定与咨询解决方案",
         labelTitleMain: "合规认证",
-        labelTitleBottom: "专业的适航取证服务，确保您的产品符合国际标准。",
+        labelTitleBottom: "专业的适航取证服务，确保您的产品符合国际标准",
         statistics: {
           successCases: "成功案例",
           certificationStandards: "认证标准",
@@ -280,7 +280,7 @@ export const servicesTranslations = {
         title: "Aviation Services",
         subtitle: "Professional Airworthiness Certification & Consulting Solutions",
         labelTitleMain: "Compliance Certification",
-        labelTitleBottom: "Professional airworthiness certification to meet global standards.",
+        labelTitleBottom: "Professional airworthiness certification to meet global standards",
         statistics: {
           successCases: "Success Cases",
           certificationStandards: "Certification Standards",

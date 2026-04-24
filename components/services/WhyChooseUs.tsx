@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+
 import { Users, Award, Package, MessageSquare, ArrowRight } from "lucide-react";
+
 import { useLanguage } from "@/lib/LanguageContext";
 
 const getValueProps = (t: (key: string) => string) => [

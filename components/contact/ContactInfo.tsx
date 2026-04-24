@@ -1,9 +1,11 @@
-import { useLanguage } from "@/lib/LanguageContext";
-import { MapPin, Mail } from "lucide-react";
-import { ItemBox } from "../ui/ItemBox";
 import Image from "next/image";
 
+import { MapPin, Mail } from "lucide-react";
+
 import MapImage from "@/assets/location.png";
+import { useLanguage } from "@/lib/LanguageContext";
+
+import { ItemBox } from "../ui/ItemBox";
 
 const getContacts = (t: (key: string) => string) => [
   {

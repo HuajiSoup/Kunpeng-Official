@@ -1,8 +1,11 @@
 "use client";
 
 import { useRef, useState, useEffect, useCallback } from "react";
+
 import { ChevronLeft, ChevronRight } from "lucide-react";
+
 import { useLanguage } from "@/lib/LanguageContext";
+
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 
 const getTeamMembers = (t: (key: string) => string) => [

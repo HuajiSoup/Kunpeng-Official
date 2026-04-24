@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import { LanguageProvider } from "@/lib/LanguageContext";
-import Header from "@/components/Header";
+
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import { LanguageProvider } from "@/lib/LanguageContext";
+
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "浙江鲲鹏航空技术测试验证有限公司",

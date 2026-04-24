@@ -1,8 +1,10 @@
 "use client";
 
-import { useLanguage } from "@/lib/LanguageContext";
-import { SectionBanner } from "../ui/SectionBanner";
 import { Newspaper } from "lucide-react";
+
+import { useLanguage } from "@/lib/LanguageContext";
+
+import { SectionBanner } from "../ui/SectionBanner";
 
 export default function NewsHero() {
   const { t } = useLanguage();

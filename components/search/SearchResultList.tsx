@@ -1,5 +1,7 @@
-import { SearchResult } from "@/app/search/page";
 import { motion, stagger, Variants } from "framer-motion";
+
+import { SearchResult } from "@/app/search/page";
+
 import { SearchResultCard } from "./SearchResultCard";
 
 interface SearchResultListProps {

@@ -1,7 +1,9 @@
 "use client";
 
 import { Search, FileText, CheckCircle, ArrowRight, PenTool, Award } from "lucide-react";
+
 import { useLanguage } from "@/lib/LanguageContext";
+
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 
 const getSteps = (t: (key: string) => string) => [

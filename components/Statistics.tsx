@@ -1,9 +1,11 @@
 "use client";
 
 import { Award, Cpu, Users, Briefcase } from "lucide-react";
+
 import { useLanguage } from "@/lib/LanguageContext";
-import { HomeSectionTitle } from "./ui/HomeSectionTitle";
+
 import { AnimatedNumber } from "./ui/AnimatedNumber";
+import { HomeSectionTitle } from "./ui/HomeSectionTitle";
 import { ItemBox } from "./ui/ItemBox";
 
 const getStats = (t: (key: string) => string) => [

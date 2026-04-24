@@ -1,8 +1,9 @@
 "use client";
 
-import { useLanguage } from "@/lib/LanguageContext";
-import { NewsCard } from "./NewsCard";
 import type { NewsItem } from "@/lib/api/http/getNews";
+import { useLanguage } from "@/lib/LanguageContext";
+
+import { NewsCard } from "./NewsCard";
 
 interface NewsListProps {
   news: NewsItem[];

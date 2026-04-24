@@ -10,7 +10,9 @@ import {
   Shield,
   Building2,
 } from "lucide-react";
+
 import { useLanguage } from "@/lib/LanguageContext";
+
 import { ItemBox } from "../ui/ItemBox";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 

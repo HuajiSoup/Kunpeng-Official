@@ -1,13 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import TestingHero from "@/components/testing/TestingHero";
-import TestingsEnvironment from "@/components/testing/TestingsEnvironment";
-import TestingsEMC from "@/components/testing/TestingsEMC";
+
 import TestingCTA from "@/components/testing/TestingCTA";
-import { useLanguage } from "@/lib/LanguageContext";
-import { NavSidebar } from "@/components/ui/NavSidebar";
+import TestingHero from "@/components/testing/TestingHero";
+import TestingsEMC from "@/components/testing/TestingsEMC";
+import TestingsEnvironment from "@/components/testing/TestingsEnvironment";
 import TestingsMechanical from "@/components/testing/TestingsMechanical";
+import { NavSidebar } from "@/components/ui/NavSidebar";
+import { useLanguage } from "@/lib/LanguageContext";
 
 const getCategories = (t: (key: string) => string) => [
   { id: "environment-reliability", label: t("testing.categories.environment") },

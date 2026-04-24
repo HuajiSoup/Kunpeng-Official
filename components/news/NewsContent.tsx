@@ -1,10 +1,11 @@
 "use client";
 
+import Image from "@tiptap/extension-image";
+import { generateHTML } from "@tiptap/html";
+import StarterKit from "@tiptap/starter-kit";
+
 import { NewsItem } from "@/lib/api/http/getNews";
 import { useLanguage } from "@/lib/LanguageContext";
-import { generateHTML } from "@tiptap/html";
-import Image from "@tiptap/extension-image";
-import StarterKit from "@tiptap/starter-kit";
 
 interface NewsContentProps {
   news: NewsItem;

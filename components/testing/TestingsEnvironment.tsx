@@ -1,8 +1,9 @@
 "use client";
 
 import { useLanguage } from "@/lib/LanguageContext";
-import { TestItem, TestItemBox } from "./TestItemBox";
+
 import { PageSectionTitle } from "../ui/PageSectionTitle";
+import { TestItem, TestItemBox } from "./TestItemBox";
 
 const getEnvironmentTests = (t: (key: string) => string): TestItem[] => [
   {

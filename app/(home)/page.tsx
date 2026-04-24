@@ -1,9 +1,9 @@
-import HeroCarousel from "@/components/HeroCarousel";
 import CoreCapabilities from "@/components/CoreCapabilities";
-import Statistics from "@/components/Statistics";
-import Qualifications from "@/components/Qualifications";
-import TechnicalSupport from "@/components/TechnicalSupport";
 import CoreClients from "@/components/CoreClients";
+import HeroCarousel from "@/components/HeroCarousel";
+import Qualifications from "@/components/Qualifications";
+import Statistics from "@/components/Statistics";
+import TechnicalSupport from "@/components/TechnicalSupport";
 
 export default function Home() {
   return (<>

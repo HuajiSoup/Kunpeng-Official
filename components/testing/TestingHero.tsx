@@ -1,8 +1,10 @@
 "use client";
 
-import { useLanguage } from "@/lib/LanguageContext";
-import { SectionBanner } from "../ui/SectionBanner";
 import { Microscope } from "lucide-react";
+
+import { useLanguage } from "@/lib/LanguageContext";
+
+import { SectionBanner } from "../ui/SectionBanner";
 
 export default function TestingHero() {
   const { t } = useLanguage();

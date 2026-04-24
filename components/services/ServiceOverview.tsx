@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+
 import { FileText, Wrench, GraduationCap, ArrowRight } from "lucide-react";
+
 import { useLanguage } from "@/lib/LanguageContext";
 
 const getServices = (t: (key: string) => string) => [

@@ -1,7 +1,9 @@
+import { useEffect, useState } from "react";
+
+import { FileText, Download } from "lucide-react";
+
 import getDownloads, { DownloadItem } from "@/lib/api/http/getDownloads";
 import { useLanguage } from "@/lib/LanguageContext";
-import { FileText, Download } from "lucide-react";
-import { useEffect, useState } from "react";
 
 function DownloadItemBox({ item, t }: { item: DownloadItem; t: (key: string) => string }) {
   return (

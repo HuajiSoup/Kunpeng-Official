@@ -1,10 +1,11 @@
 "use client";
 
-import { useLanguage } from "@/lib/LanguageContext";
-import { HomeSectionTitle } from "./ui/HomeSectionTitle";
-import { ItemBox } from "./ui/ItemBox";
 import TianlingLogo from "@/assets/inflync.svg";
 import ShunyuLogo from "@/assets/shunyu.svg";
+import { useLanguage } from "@/lib/LanguageContext";
+
+import { HomeSectionTitle } from "./ui/HomeSectionTitle";
+import { ItemBox } from "./ui/ItemBox";
 
 const getClientsItems = (t: (key: string) => string) => [
   {

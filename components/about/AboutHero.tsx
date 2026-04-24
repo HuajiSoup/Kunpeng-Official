@@ -1,8 +1,10 @@
 "use client";
 
-import { useLanguage } from "@/lib/LanguageContext";
-import { SectionBanner } from "../ui/SectionBanner";
 import { Building2 } from "lucide-react";
+
+import { useLanguage } from "@/lib/LanguageContext";
+
+import { SectionBanner } from "../ui/SectionBanner";
 
 export default function AboutHero() {
   const { t } = useLanguage();

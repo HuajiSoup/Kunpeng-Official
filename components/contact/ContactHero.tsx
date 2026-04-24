@@ -1,8 +1,10 @@
 "use client";
 
-import { useLanguage } from "@/lib/LanguageContext";
-import { SectionBanner } from "../ui/SectionBanner";
 import { Phone } from "lucide-react";
+
+import { useLanguage } from "@/lib/LanguageContext";
+
+import { SectionBanner } from "../ui/SectionBanner";
 
 export function ContactHero() {
   const { t } = useLanguage();
