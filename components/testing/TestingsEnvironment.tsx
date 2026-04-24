@@ -79,13 +79,22 @@ const getEnvironmentTests = (t: (key: string) => string): TestItem[] => [
 export default function TestingsEnvironment() {
   const { t } = useLanguage();
   const tests = getEnvironmentTests(t);
+  const description = (
+    <>
+      {t("testing.environment.descriptionPart1")}
+      <strong><b>DO-160G</b></strong>，
+      <strong><b>GJB 150A</b></strong>，
+      <strong><b>GB/T 2423</b></strong>
+      {t("testing.environment.descriptionPart2")}
+    </>
+  );
 
   return (
     <section id="environment-reliability" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12" data-anchor="env">
       <PageSectionTitle 
         title={t("testing.environment.title")}
         subtitle={t("testing.environment.subtitle")}
-        description={t("testing.environment.description")}
+        description={description}
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-8">

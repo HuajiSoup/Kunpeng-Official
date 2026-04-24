@@ -38,6 +38,8 @@ export const testingTranslations = {
         title: "环境可靠性试验",
         subtitle: "ENVIRONMENTAL RELIABILITY TESTING",
         description: "拥有高精度气候环境试验设备，具备温度、湿度、高度、砂尘、流体等多因素综合模拟能力。试验箱均采用国际一流品牌控制系统，温场均匀、数据稳定，可同时满足DO-160G、GJB 150A、GB/T 2423对气候环境试验的严苛要求。特别是在高空低气压、快速温变及温-湿-高综合试验方面，具备行业领先优势。",
+        descriptionPart1: "拥有高精度气候环境试验设备，具备温度、湿度、高度、砂尘、流体等多因素综合模拟能力。试验箱均采用国际一流品牌控制系统，温场均匀、数据稳定，可同时满足",
+        descriptionPart2: "对气候环境试验的严苛要求。特别是在高空低气压、快速温变及温-湿-高综合试验方面，具备行业领先优势。",
         items: {
           highLowTemp: {
             title: "高低温试验",
@@ -148,7 +150,7 @@ export const testingTranslations = {
       },
       cta: {
         title: "未找到您需要的测试项目？",
-        description: "电话或邮件咨询，一对一专属服务",
+        description: "邮件咨询，一对一专属服务",
         button: "联系技术专家"
       },
       devices: {
@@ -259,7 +261,6 @@ export const testingTranslations = {
             examples: {
               e1: "工作冲击",
               e2: "坠撞安全试验",
-              e3: "包装跌落模拟"
             }
           },
           i3: {
@@ -374,15 +375,15 @@ export const testingTranslations = {
               p6: "静电放电：15kV"
             },
             examples: {
-              e1: "磁影响(§15)",
-              e2: "电源输入(28V/30A) (§16)",
-              e3: "电压尖峰(§17)",
-              e4: "电源线音频传导敏感度(§18)",
-              e5: "射频敏感度(§20) - 辐射敏感度(100MHz-18GHz, 200V/m)",
-              e6: "射频敏感度(§20) - 传导敏感度(10kHz-400MHz, 300mA)",
-              e7: "射频能量发射(§21)",
-              e8: "雷电感应瞬态敏感度(§22)",
-              e9: "静电放电(§25)"
+              e1: "第15章-磁影响",
+              e2: "第16章-电源输入(28V/30A)",
+              e3: "第17章-电压尖峰",
+              e4: "第18章-电源线音频传导敏感度",
+              e5: "第20章-射频敏感度（辐射敏感度：100MHz-18GHz, 200V/m）",
+              e6: "第20章-射频敏感度（传导敏感度：10kHz-400MHz, 300mA）",
+              e7: "第21章-射频能量发射",
+              e8: "第22章-雷电感应瞬态敏感度",
+              e9: "第25章-静电放电"
             }
           },
           i2: {
@@ -465,6 +466,8 @@ export const testingTranslations = {
         title: "Environmental Reliability Testing",
         subtitle: "",
         description: "Equipped with high-precision climatic test systems, we provide multi-factor integrated simulation capabilities covering temperature, humidity, altitude, sand and dust, and fluid exposure. All chambers use internationally leading control systems with uniform thermal fields and stable data, meeting stringent climatic test requirements in DO-160G, GJB 150A, and GB/T 2423. We are especially strong in high-altitude low-pressure, rapid temperature transition, and combined temperature-humidity-altitude testing.",
+        descriptionPart1: "Equipped with high-precision climatic test systems, we provide multi-factor integrated simulation capabilities covering temperature, humidity, altitude, sand and dust, and fluid exposure. All chambers use internationally leading control systems with uniform thermal fields and stable data, meeting stringent climatic test requirements in ",
+        descriptionPart2: ". We are especially strong in high-altitude low-pressure, rapid temperature transition, and combined temperature-humidity-altitude testing.",
         items: {
           highLowTemp: {
             title: "High/Low Temperature Test",
@@ -575,7 +578,7 @@ export const testingTranslations = {
       },
       cta: {
         title: "Can't find the testing you need?",
-        description: "Consultation via phone or email, providing one-on-one exclusive service",
+        description: "Consultation via email, providing one-on-one exclusive service",
         button: "Contact a technical expert"
       },
       devices: {
@@ -685,8 +688,7 @@ export const testingTranslations = {
             },
             examples: {
               e1: "Operational Shock",
-              e2: "Crash Safety Testing",
-              e3: "Package Drop Simulation"
+              e2: "Crash Safety Testing"
             }
           },
           i3: {
@@ -802,15 +804,15 @@ export const testingTranslations = {
               p6: "ESD: 15kV"
             },
             examples: {
-              e1: "Magnetic Effect (§15)",
-              e2: "Power Input (28V/30A) (§16)",
-              e3: "Voltage Spike (§17)",
-              e4: "Power Line Audio Frequency Conducted Susceptibility (§18)",
-              e5: "RF Susceptibility (§20) - Radiated Susceptibility (100MHz-18GHz, 200V/m)",
-              e6: "RF Susceptibility (§20) - Conducted Susceptibility (10kHz-400MHz, 300mA)",
-              e7: "RF Energy Emission (§21)",
-              e8: "Lightning Induced Transient Susceptibility (§22)",
-              e9: "Electrostatic Discharge (§25)"
+              e1: "Chapter 15 - Magnetic Effect",
+              e2: "Chapter 16 - Power Input (28V/30A)",
+              e3: "Chapter 17 - Voltage Spike",
+              e4: "Chapter 18 - Power Line Audio Frequency Conducted Susceptibility",
+              e5: "Chapter 20 - RF Susceptibility (Radiated: 100MHz-18GHz, 200V/m)",
+              e6: "Chapter 20 - RF Susceptibility (Conducted: 10kHz-400MHz, 300mA)",
+              e7: "Chapter 21 - RF Energy Emission",
+              e8: "Chapter 22 - Lightning Induced Transient Susceptibility",
+              e9: "Chapter 25 - Electrostatic Discharge"
             }
           },
           i2: {

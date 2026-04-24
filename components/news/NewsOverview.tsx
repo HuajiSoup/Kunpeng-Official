@@ -61,7 +61,7 @@ export default function NewsOverview() {
     };
   }, [activeCategory, currentPage]);
 
-  const latestNews = news.slice(0, 2);
+  const latestNews = news.length >= 2 ? news.slice(0, 2) : [];
   const totalPages = Math.ceil(newsCount / ITEMS_PER_PAGE);
 
   // 当 URL 参数改变时，更新 activeCategory 并重置为第一页

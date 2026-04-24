@@ -36,7 +36,6 @@ const getMechanicalTests = (t: (key: string) => string): TestItem[] => [
     examples: [
       t("testing.mechanical.items.i2.examples.e1"),
       t("testing.mechanical.items.i2.examples.e2"),
-      t("testing.mechanical.items.i2.examples.e3"),
     ],
   },
   {

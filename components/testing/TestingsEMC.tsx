@@ -30,7 +30,7 @@ const getEmcTests = (t: (key: string) => string): TestItem[] => [
       t("testing.emcAdvanced.items.i2.paras.p3"),
       t("testing.emcAdvanced.items.i2.paras.p4"),
     ],
-    standards: ["GJB 151B-2013"],
+    standards: ["GJB 151C-2024"],
     examples: [],
   },
   {

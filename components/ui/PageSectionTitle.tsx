@@ -1,7 +1,7 @@
 interface PageSectionTitleProps {
   title: string;
   subtitle?: React.ReactNode;
-  description?: string;
+  description?: React.ReactNode;
   align?: "start" | "center" | "end";
 }
 
