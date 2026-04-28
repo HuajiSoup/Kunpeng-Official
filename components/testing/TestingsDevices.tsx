@@ -8,7 +8,7 @@ import { PageSectionTitle } from "../ui/PageSectionTitle";
 const getDeviceTestings = (t: (key: string) => string): {field: string, standard: string, content: string}[] => [
   {
     field: t("testing.devices.items.i1.field"),
-    standard: "RTCA DO-160G",
+    standard: t("testing.devices.items.i1.standard"),
     content: t("testing.devices.items.i1.content"),
   },
   {
@@ -18,37 +18,37 @@ const getDeviceTestings = (t: (key: string) => string): {field: string, standard
   },
   {
     field: t("testing.devices.items.i3.field"),
-    standard: t("testing.standards.gjb150aSeries"),
+    standard: t("testing.devices.items.i3.standard"),
     content: t("testing.devices.items.i3.content"),
   },
   {
     field: t("testing.devices.items.i4.field"),
-    standard: "GJB 151B-2013",
+    standard: t("testing.devices.items.i4.standard"),
     content: t("testing.devices.items.i4.content"),
   },
   {
     field: t("testing.devices.items.i5.field"),
-    standard: t("testing.standards.gbT2423SpaceSeries"),
+    standard: t("testing.devices.items.i5.standard"),
     content: t("testing.devices.items.i5.content"),
   },
   {
     field: t("testing.devices.items.i6.field"),
-    standard: t("testing.standards.gbT9254AndGb17626Series"),
+    standard: t("testing.devices.items.i6.standard"),
     content: t("testing.devices.items.i6.content"),
   },
   {
     field: t("testing.devices.items.i7.field"),
-    standard: t("testing.standards.gbT28046AndIso16750Series"),
+    standard: t("testing.devices.items.i7.standard"),
     content: t("testing.devices.items.i7.content"),
   },
   {
     field: t("testing.devices.items.i8.field"),
-    standard: t("testing.standards.gbT18655AndGbT33014Series"),
+    standard: t("testing.devices.items.i8.standard"),
     content: t("testing.devices.items.i8.content"),
   },
   {
     field: t("testing.devices.items.i9.field"),
-    standard: "RTCA DO-160G、GJB 150A",
+    standard: t("testing.devices.items.i9.standard"),
     content: t("testing.devices.items.i9.content"),
   },
   {
@@ -58,17 +58,17 @@ const getDeviceTestings = (t: (key: string) => string): {field: string, standard
   },
   {
     field: t("testing.devices.items.i11.field"),
-    standard: "-",
+    standard: t("testing.devices.items.i11.standard"),
     content: t("testing.devices.items.i11.content"),
   },
   {
     field: t("testing.devices.items.i12.field"),
-    standard: "-",
+    standard: t("testing.devices.items.i12.standard"),
     content: t("testing.devices.items.i12.content"),
   },
   {
     field: t("testing.devices.items.i13.field"),
-    standard: "-",
+    standard: t("testing.devices.items.i13.standard"),
     content: t("testing.devices.items.i13.content"),
   }
 ];

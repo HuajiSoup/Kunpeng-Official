@@ -7,71 +7,116 @@ import { TestItem, TestItemBox } from "./TestItemBox";
 
 const getEnvironmentTests = (t: (key: string) => string): TestItem[] => [
   {
-    field: t("testing.environmentAdvanced.items.i1.field"),
+    field: t("testing.environment.items.i1.field"),
     paras: [
-      t("testing.environmentAdvanced.items.i1.paras.p1"),
-      t("testing.environmentAdvanced.items.i1.paras.p2"),
-      t("testing.environmentAdvanced.items.i1.paras.p3"),
-      t("testing.environmentAdvanced.items.i1.paras.p4"),
-      t("testing.environmentAdvanced.items.i1.paras.p5"),
+      t("testing.environment.items.i1.paras.p1"),
+      t("testing.environment.items.i1.paras.p2"),
+      t("testing.environment.items.i1.paras.p3"),
+      t("testing.environment.items.i1.paras.p4"),
+      t("testing.environment.items.i1.paras.p5"),
     ],
-    standards: ["RCTA DO-160G", "GJB 150.3A/4A/9A", "GB/T 2423.1/2/3/4", t("testing.standards.hb6167DashSeries")],
+    standards: [
+      t("testing.environment.items.i1.standards.s1"), 
+      t("testing.environment.items.i1.standards.s2"), 
+      t("testing.environment.items.i1.standards.s3"), 
+      t("testing.environment.items.i1.standards.s4")
+    ],
     examples: [
-      t("testing.environmentAdvanced.items.i1.examples.e1"),
-      t("testing.environmentAdvanced.items.i1.examples.e2"),
-      t("testing.environmentAdvanced.items.i1.examples.e3"),
-      t("testing.environmentAdvanced.items.i1.examples.e4"),
+      t("testing.environment.items.i1.examples.e1"),
+      t("testing.environment.items.i1.examples.e2"),
+      t("testing.environment.items.i1.examples.e3"),
+      t("testing.environment.items.i1.examples.e4"),
     ],
   },
   {
-    field: t("testing.environmentAdvanced.items.i2.field"),
+    field: t("testing.environment.items.i2.field"),
     paras: [
-      t("testing.environmentAdvanced.items.i2.paras.p1"),
-      t("testing.environmentAdvanced.items.i2.paras.p2"),
-      t("testing.environmentAdvanced.items.i2.paras.p3"),
+      t("testing.environment.items.i2.paras.p1"),
+      t("testing.environment.items.i2.paras.p2"),
+      t("testing.environment.items.i2.paras.p3"),
     ],
-    standards: ["RCTA DO-160G", "GJB 150.6A", t("testing.standards.gbT2423Series"), t("testing.standards.iec60068Series"), t("testing.standards.hb6167DashSeries")],
+    standards: [
+      t("testing.environment.items.i2.standards.s1"), 
+      t("testing.environment.items.i2.standards.s2"), 
+      t("testing.environment.items.i2.standards.s3"), 
+      t("testing.environment.items.i2.standards.s4"), 
+      t("testing.environment.items.i2.standards.s5")
+    ],
     examples: [
-      t("testing.environmentAdvanced.items.i2.examples.e1"),
-      t("testing.environmentAdvanced.items.i2.examples.e2"),
+      t("testing.environment.items.i2.examples.e1"),
+      t("testing.environment.items.i2.examples.e2"),
     ],
   },
   {
-    field: t("testing.environmentAdvanced.items.i3.field"),
+    field: t("testing.environment.items.i3.field"),
     paras: [
-      t("testing.environmentAdvanced.items.i3.paras.p1"),
-      t("testing.environmentAdvanced.items.i3.paras.p2"),
-      t("testing.environmentAdvanced.items.i3.paras.p3"),
-      t("testing.environmentAdvanced.items.i3.paras.p4"),
+      t("testing.environment.items.i3.paras.p1"),
+      t("testing.environment.items.i3.paras.p2"),
+      t("testing.environment.items.i3.paras.p3"),
+      t("testing.environment.items.i3.paras.p4"),
     ],
-    standards: ["RTCA DO-160G", "GJB 150.12A", "HB 6167.10-2016", "GJB 360B-2009", t("testing.standards.gbT38924Series")],
+    standards: [
+      t("testing.environment.items.i3.standards.s1"), 
+      t("testing.environment.items.i3.standards.s2"), 
+      t("testing.environment.items.i3.standards.s3"), 
+      t("testing.environment.items.i3.standards.s4"), 
+      t("testing.environment.items.i3.standards.s5")
+    ],
     examples: [
-      t("testing.environmentAdvanced.items.i3.examples.e1"),
-      t("testing.environmentAdvanced.items.i3.examples.e2"),
-      t("testing.environmentAdvanced.items.i3.examples.e3"),
+      t("testing.environment.items.i3.examples.e1"),
+      t("testing.environment.items.i3.examples.e2"),
+      t("testing.environment.items.i3.examples.e3"),
     ],
   },
   {
-    field: t("testing.environmentAdvanced.items.i4.field"),
-    paras: [t("testing.environmentAdvanced.items.i4.paras.p1"), t("testing.environmentAdvanced.items.i4.paras.p2")],
-    standards: ["RTCA DO-160G", "GJB 150.8A/26A", t("testing.standards.gbT38924Series"), t("testing.standards.hb6167Series")],
+    field: t("testing.environment.items.i4.field"),
+    paras: [
+      t("testing.environment.items.i4.paras.p1"),
+      t("testing.environment.items.i4.paras.p2")
+    ],
+    standards: [
+      t("testing.environment.items.i4.standards.s1"), 
+      t("testing.environment.items.i4.standards.s2"), 
+      t("testing.environment.items.i4.standards.s3"), 
+      t("testing.environment.items.i4.standards.s4")
+    ],
     examples: [
-      t("testing.environmentAdvanced.items.i4.examples.e1"),
-      t("testing.environmentAdvanced.items.i4.examples.e2"),
-      t("testing.environmentAdvanced.items.i4.examples.e3"),
+      t("testing.environment.items.i4.examples.e1"),
+      t("testing.environment.items.i4.examples.e2"),
+      t("testing.environment.items.i4.examples.e3"),
     ],
   },
   {
-    field: t("testing.environmentAdvanced.items.i5.field"),
+    field: t("testing.environment.items.i5.field"),
     paras: [
-      t("testing.environmentAdvanced.items.i5.paras.p1"),
-      t("testing.environmentAdvanced.items.i5.paras.p2"),
+      t("testing.environment.items.i5.paras.p1"),
+      t("testing.environment.items.i5.paras.p2"),
     ],
-    standards: ["RTCA DO-160G", "GJB 150.10A/11A", "GB/T 10125", t("testing.standards.hb6167Series")],
+    standards: [
+      t("testing.environment.items.i5.standards.s1"), 
+      t("testing.environment.items.i5.standards.s2"), 
+      t("testing.environment.items.i5.standards.s3"), 
+      t("testing.environment.items.i5.standards.s4")
+    ],
     examples: [
-      t("testing.environmentAdvanced.items.i5.examples.e1"),
-      t("testing.environmentAdvanced.items.i5.examples.e2"),
-      t("testing.environmentAdvanced.items.i5.examples.e3"),
+      t("testing.environment.items.i5.examples.e1"),
+      t("testing.environment.items.i5.examples.e2"),
+      t("testing.environment.items.i5.examples.e3"),
+    ],
+  },
+  {
+    field: t("testing.environment.items.i6.field"),
+    paras: [
+      t("testing.environment.items.i6.paras.p1"),
+      t("testing.environment.items.i6.paras.p2"),
+    ],
+    standards: [
+      t("testing.environment.items.i6.standards.s1"), 
+      t("testing.environment.items.i6.standards.s2")
+    ],
+    examples: [
+      t("testing.environment.items.i6.examples.e1"),
+      t("testing.environment.items.i6.examples.e2"),
     ],
   }
 ];
@@ -82,7 +127,7 @@ export default function TestingsEnvironment() {
   const description = (
     <>
       {t("testing.environment.descriptionPart1")}
-      <strong><b>DO-160G</b></strong>，
+      <strong><b>RTCA DO-160G</b></strong>，
       <strong><b>GJB 150A</b></strong>，
       <strong><b>GB/T 2423</b></strong>
       {t("testing.environment.descriptionPart2")}

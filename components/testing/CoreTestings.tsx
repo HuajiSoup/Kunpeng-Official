@@ -5,23 +5,44 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 
 const getTestNames = (t: (key: string) => string) => [
-  t("testing.core.items.i1"),
-  t("testing.core.items.i2"),
-  t("testing.core.items.i3"),
-  t("testing.core.items.i4"),
-  t("testing.core.items.i5"),
-  t("testing.core.items.i6"),
-  t("testing.core.items.i7"),
-  t("testing.core.items.i8"),
+  {
+    name: t("testing.core.items.i1.name"),
+    standard: t("testing.core.items.i1.standard"),
+  },
+  {
+    name: t("testing.core.items.i2.name"),
+    standard: t("testing.core.items.i2.standard"),
+  },
+  {
+    name: t("testing.core.items.i3.name"),
+    standard: t("testing.core.items.i3.standard"),
+  },
+  {
+    name: t("testing.core.items.i4.name"),
+    standard: t("testing.core.items.i4.standard"),
+  },
+  {
+    name: t("testing.core.items.i5.name"),
+    standard: t("testing.core.items.i5.standard"),
+  },
+  {
+    name: t("testing.core.items.i6.name"),
+    standard: t("testing.core.items.i6.standard"),
+  },
+  {
+    name: t("testing.core.items.i7.name"),
+    standard: t("testing.core.items.i7.standard"),
+  },
+  {
+    name: t("testing.core.items.i8.name"),
+    standard: t("testing.core.items.i8.standard"),
+  },
 ];
 
 export default function CoreTestings() {
   const { t } = useLanguage();
   const testNames = getTestNames(t);
-  const tests = testNames.map((testName) => ({
-    name: testName,
-    standard: "DO-160G",
-  }));
+  const tests = testNames;
 
   return (
     <section id="core-testings" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12">

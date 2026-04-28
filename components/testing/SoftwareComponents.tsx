@@ -33,7 +33,7 @@ export default function SoftwareComponents() {
 
             <div className="mb-6">
               <span className="inline-block px-3 py-1 text-xs font-semibold bg-blue-100 text-blue-700 rounded-full border border-blue-200 mb-4">
-                DO-178C
+                {t("testing.softwareComponents.softwareCard.standard")}
               </span>
             </div>
 

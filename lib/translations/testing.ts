@@ -22,91 +22,217 @@ export const testingTranslations = {
         core: "核心测试项目"
       },
       navTitle: "测试分类",
-      standards: {
-        hb6167DashSeries: "HB-6167 系列",
-        gbT2423Series: "GB/T 2423系列",
-        iec60068Series: "IEC 60068-2系列",
-        gbT38924Series: "GB/T 38924系列",
-        hb6167Series: "HB 6167系列",
-        gjb150aSeries: "GJB 150A 系列",
-        gbT2423SpaceSeries: "GB/T 2423 系列",
-        gbT9254AndGb17626Series: "GB/T 9254、GB 17626 系列",
-        gbT28046AndIso16750Series: "GB/T 28046 系列、ISO 16750 系列",
-        gbT18655AndGbT33014Series: "GB/T 18655-2018、GB/T 33014 系列"
-      },
       environment: {
         title: "环境可靠性试验",
         subtitle: "ENVIRONMENTAL RELIABILITY TESTING",
         description: "拥有高精度气候环境试验设备，具备温度、湿度、高度、砂尘、流体等多因素综合模拟能力。试验箱均采用国际一流品牌控制系统，温场均匀、数据稳定，可同时满足DO-160G、GJB 150A、GB/T 2423对气候环境试验的严苛要求。特别是在高空低气压、快速温变及温-湿-高综合试验方面，具备行业领先优势。",
         descriptionPart1: "拥有高精度气候环境试验设备，具备温度、湿度、高度、砂尘、流体等多因素综合模拟能力。试验箱均采用国际一流品牌控制系统，温场均匀、数据稳定，可同时满足",
-        descriptionPart2: "对气候环境试验的严苛要求。特别是在高空低气压、快速温变及温-湿-高综合试验方面，具备行业领先优势。",
+        descriptionPart2: "等对气候环境试验的严苛要求。特别是在高空低气压、快速温变及温-湿-高综合试验方面，具备行业领先优势。",
         items: {
-          highLowTemp: {
-            title: "高低温试验",
-            specs: "温度范围: -70°C ~ +150°C，温度变化速率: ≤10°C/min",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
+          i1: {
+            field: "温湿度试验",
+            standards: {
+              s1: "RTCA DO-160G",
+              s2: "GJB 150.3A/4A/9A",
+              s3: "GB/T 2423.1/2/3/4",
+              s4: "HB-6167 系列"
+            },
+            paras: {
+              p1: "箱体尺寸：1000*1000*1000mm",
+              p2: "温度范围：-70°C~+150°C",
+              p3: "温度变化速率：10°C/min",
+              p4: "温度冲击转换时间：≤5s",
+              p5: "湿度范围：20%RH~98%RH"
+            },
+            examples: {
+              e1: "高温/低温贮存",
+              e2: "温度循环/冲击",
+              e3: "恒定/交变湿热",
+              e4: "温度-湿度组合"
+            }
           },
-          humidity: {
-            title: "湿热试验",
-            specs: "相对湿度: 10% ~ 98% RH，温度: -10°C ~ +85°C",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
+          i2: {
+            field: "低气压/高度试验",
+            standards: {
+              s1: "RTCA DO-160G",
+              s2: "GJB 150.6A",
+              s3: "GB/T 2423 系列",
+              s4: "IEC 60068-2 系列",
+              s5: "HB 6167 系列"
+            },
+            paras: {
+              p1: "气压范围：常压~0.5kPa",
+              p2: "降压速率：≤30min（常压→1kPa，空载）",
+              p3: "快速减压：75.2kPa→18.8kPa，≤15s"
+            },
+            examples: {
+              e1: "温度-高度试验",
+              e2: "快速减压"
+            }
           },
-          vibration: {
-            title: "振动试验",
-            specs: "频率范围: 5Hz ~ 2000Hz，加速度: 0 ~ 20g",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
+          i3: {
+            field: "砂尘试验",
+            standards: {
+              s1: "RTCA DO-160G",
+              s2: "GJB 150.12A",
+              s3: "HB 6167.10-2016",
+              s4: "GJB 360B-2009",
+              s5: "GB/T 38924 系列"
+            },
+            paras: {
+              p1: "吹尘风速：1.5~8.9m/s",
+              p2: "吹尘浓度：0~11g/m³",
+              p3: "吹砂风速：18.0~29m/s",
+              p4: "吹砂浓度：0~3g/m³"
+            },
+            examples: {
+              e1: "吹尘试验",
+              e2: "吹砂试验",
+              e3: "防尘等级验证"
+            }
           },
-          shock: {
-            title: "冲击试验",
-            specs: "冲击加速度: 15g ~ 75g，持续时间: 11ms",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
+          i4: {
+            field: "防水/流体试验",
+            standards: {
+              s1: "RTCA DO-160G",
+              s2: "GJB 150.8A/26A",
+              s3: "GB/T 38924 系列",
+              s4: "HB 6167 系列"
+            },
+            paras: {
+              p1: "防水方式：滴水、喷水、连续水流",
+              p2: "流体敏感性：液体浸渍、喷淋"
+            },
+            examples: {
+              e1: "防水性试验",
+              e2: "流体污染试验",
+              e3: "淋雨试验"
+            }
           },
-          solar: {
-            title: "太阳辐射试验",
-            specs: "辐射强度: 1120 W/m²，温度: -10°C ~ +85°C",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
+          i5: {
+            field: "盐雾腐蚀/霉菌/结冰",
+            standards: {
+              s1: "RTCA DO-160G",
+              s2: "GJB 150.10A/11A",
+              s3: "GB/T 10125",
+              s4: "HB 6167 系列"
+            },
+            paras: {
+              p1: "盐雾：中性盐雾、酸性盐雾",
+              p2: "霉菌：符合 RTCA DO-160、GJB 150 菌种",
+              p3: "结冰：符合标准 RTCA DO-160 工况"
+            },
+            examples: {
+              e1: "中性/酸性盐雾",
+              e2: "霉菌生长试验",
+              e3: "结冰/冻雨试验"
+            }
           },
-          tempShock: {
-            title: "温度冲击试验",
-            specs: "温度范围: -65°C ~ +150°C，转换时间: ≤5min",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
+          i6: {
+            field: "防火/可燃性测试",
+            standards: {
+              s1: "RTCA DO-160G",
+              s2: "GJB 150.13A"
+            },
+            paras: {
+              p1: "类型：垂直/水平本生灯法",
+              p2: "火焰类型：符合航空标准"
+            },
+            examples: {
+              e1: "材料可燃性测试",
+              e2: "机载设备防火试验"
+            }
           }
         }
       },
       emc: {
         title: "电磁兼容性试验",
         subtitle: "Electro-Magnetic Compatibility",
-        description: "XXX XXX XXXXXXX",
+        description: "公司配有3米法半电波暗室和屏蔽室，测试系统覆盖25Hz至40GHz全频段，能够进行RTCA DO-160G第15至22章及第25章的全部EMC测试项目，同时具备国军标、汽车电子、无人机及消费电子产品电磁兼容项目试验能力。",
+        section: {
+          description: "公司配有3米法半电波暗室和屏蔽室，测试系统覆盖25Hz至40GHz全频段，能够进行RTCA DO-160G第15至22章及第25章的全部EMC测试项目，同时具备国军标、汽车电子、无人机及消费电子产品电磁兼容项目试验能力。"
+        },
         items: {
-          re: {
-            title: "辐射发射 (RE)",
-            specs: "频率范围: 10kHz ~ 18GHz，测量距离: 1m / 3m",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
+          i1: {
+            field: "DO-160G航空EMC",
+            standards: {
+              s1: "RTCA DO-160G"
+            },
+            paras: {
+              p1: "第15章-磁影响",
+              p2: "第16章-电源输入(28V/30A)",
+              p3: "第17章-电压尖峰",
+              p4: "第18章-电源线音频传导敏感度",
+              p5: "第19章-感应信号敏感度",
+              p6: "第20章-射频敏感度(辐射敏感度: 100MHz-18GHz, 200V/m)",
+              p7: "第21章-射频能量发射",
+              p8: "第22章-雷电感应瞬态敏感度",
+              p9: "第25章-静电放电"
+            },
+            examples: {}
           },
-          ce: {
-            title: "传导发射 (CE)",
-            specs: "频率范围: 10kHz ~ 108MHz，阻抗: 50Ω",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
+          i2: {
+            field: "军标EMC",
+            standards: {
+              s1: "GJB 151A-97",
+              s2: "GJB 151B-2013",
+              s3: "GJB 151C-2024"
+            },
+            paras: {
+              p1: "传导发射：CE101、CE102、CE107",
+              p2: "辐射发射：RE101、RE102",
+              p3: "传导敏感度：CS101、CS102、CS106、CS109、CS112、CS114、CS115、CS116",
+              p4: "辐射敏感度：RS101、RS103"
+            },
+            examples: {
+              e1: "电源线传导发射",
+              e2: "电场辐射发射",
+              e3: "大电流注入(BCI)",
+              e4: "磁场辐射敏感度"
+            }
           },
-          hirf: {
-            title: "高强辐射场 (HIRF)",
-            specs: "场强: 200V/m ~ 8000V/m，频率: 10kHz ~ 40GHz",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
+          i3: {
+            field: "民品/无人机EMC",
+            standards: {
+              s1: "IEC61000-6-1",
+              s2: "IEC61000-6-2",
+              s3: "EN55035",
+              s4: "CISPR35",
+              s5: "GB/T17799.1",
+              s6: "GB/T17799.2",
+              s7: "GB/T38909",
+              s8: "GB42590",
+              s9: "GB/T38058",
+              s10: "GB/T38997",
+              s11: "GB/T9254.2"
+            },
+            paras: {
+              p1: "传导发射CE：150kHz-30MHz",
+              p2: "辐射发射RE：30MHz-40GHz",
+              p3: "辐射抗扰度RS：80MHz-6GHz",
+              p4: "传导抗扰度CS：150kHz-80Mhz",
+              p5: "静电放电ESD：±30kV"
+            },
+            examples: {}
           },
-          lightning: {
-            title: "间接雷电效应",
-            specs: "波形: 6.4/69μs，能量: 2.5J ~ 5J",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
-          },
-          rs: {
-            title: "电磁敏感度 (RS)",
-            specs: "频率范围: 10kHz ~ 18GHz，场强: 1V/m ~ 200V/m",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
-          },
-          cs: {
-            title: "传导敏感度 (CS)",
-            specs: "频率范围: 10kHz ~ 400MHz，注入电平: 0.1V ~ 5V",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
+          i4: {
+            field: "汽车电子EMC",
+            standards: {
+              s1: "GB/T18655",
+              s2: "GB/T33014.2",
+              s3: "GB/T33014.4",
+              s4: "GB/T33014.8",
+              s5: "GB/T33014.9"
+            },
+            paras: {
+              p1: "传导发射CE：150kHz-245MHz",
+              p2: "辐射发射RE：150kHz-6GHz",
+              p3: "大电流注入BCI：1MHz-400MHz",
+              p4: "磁场抗扰度：DC&15Hz-150kHz",
+              p5: "辐射抗扰度RI：80MHz-6GHz",
+              p6: "便携式发射机：26MHz-5.85GHz"
+            },
+            examples: {}
           }
         }
       },
@@ -120,14 +246,14 @@ export const testingTranslations = {
           standard: "测试标准"
         },
         items: {
-          i1: "地面低温耐受试验和低温短时工作试验",
-          i2: "低温工作试验",
-          i3: "地面高温耐受试验和高温短时工作试验",
-          i4: "高度试验",
-          i5: "减压试验",
-          i6: "过压试验",
-          i7: "温度变化试验",
-          i8: "湿热试验"
+          i1: { name: "地面低温耐受试验和低温短时工作试验", standard: "DO-160G" },
+          i2: { name: "低温工作试验", standard: "DO-160G" },
+          i3: { name: "地面高温耐受试验和高温短时工作试验", standard: "DO-160G" },
+          i4: { name: "高度试验", standard: "DO-160G" },
+          i5: { name: "减压试验", standard: "DO-160G" },
+          i6: { name: "过压试验", standard: "DO-160G" },
+          i7: { name: "温度变化试验", standard: "DO-160G" },
+          i8: { name: "湿热试验", standard: "DO-160G" }
         }
       },
       softwareComponents: {
@@ -136,6 +262,7 @@ export const testingTranslations = {
         description: "XXX XXX XXXXXXX",
         softwareCard: {
           title: "机载软件测评",
+          standard: "DO-178C",
           linkText: "了解更多"
         },
         componentsCard: {
@@ -167,6 +294,7 @@ export const testingTranslations = {
         items: {
           i1: {
             field: "适航符合性验证",
+            standard: "-",
             content: "涵盖全部26个章节的测试服务，包括气候、机械、EMC及特殊环境试验，为民用飞机及通航设备适航取证提供数据支撑"
           },
           i2: {
@@ -181,6 +309,7 @@ export const testingTranslations = {
           },
           i4: {
             field: "军用EMC鉴定",
+            standard: "GJB 151B-2013",
             content: "提供CE101~CE107、RE101~RE102、CS101~CS116、RS101等全项目电磁兼容测试，满足陆、海、空三军装备电磁兼容性要求"
           },
           i5: {
@@ -205,6 +334,7 @@ export const testingTranslations = {
           },
           i9: {
             field: "无人机/飞行汽车",
+            standard: "RTCA DO-160G、GJB 150A",
             content: "针对低空飞行器特点，提供温度-高度综合试验、结冰试验、快速减压试验等专项测试"
           },
           i10: {
@@ -214,14 +344,17 @@ export const testingTranslations = {
           },
           i11: {
             field: "EMC设计整改",
+            standard: "-",
             content: "提供从PCB布局、滤波设计到整机屏蔽的EMC问题诊断与整改方案"
           },
           i12: {
             field: "工装夹具定制",
+            standard: "-",
             content: "根据产品结构与测试要求，设计并加工各类振动夹具、冲击夹具及测试转接板"
           },
           i13: {
             field: "测试大纲编制",
+            standard: "-",
             content: "协助客户编写符合适航、军标或行业标准要求的环境试验与EMC测试大纲"
           }
         }
@@ -235,8 +368,13 @@ export const testingTranslations = {
         items: {
           i1: {
             field: "振动试验",
+            standards: {
+              s1: "RTCA DO-160G",
+              s2: "GJB 150.16A",
+              s3: "GB/T 2423.10/.56"
+            },
             paras: {
-              p1: "推力：50KN",
+              p1: "推力：50kN",
               p2: "台面尺寸：800×800mm（水平滑台）",
               p3: "频率：随机1-2000Hz，正弦1-2000Hz",
               p4: "空载频率范围：随机1-2600Hz，正弦1-2600Hz",
@@ -252,6 +390,11 @@ export const testingTranslations = {
           },
           i2: {
             field: "冲击/坠撞试验",
+            standards: {
+              s1: "DO-160",
+              s2: "GJB 150.15A/18A",
+              s3: "GB/T 2423.5/.6"
+            },
             paras: {
               p1: "冲击台面：650×800mm",
               p2: "半正弦波：15~500g，脉冲时间2~40ms",
@@ -265,6 +408,9 @@ export const testingTranslations = {
           },
           i3: {
             field: "加速度试验",
+            standards: {
+              s1: "GJB 150.15A"
+            },
             paras: {
               p1: "量级：0.5~100g",
               p2: "加速度回转半径：2500mm"
@@ -273,158 +419,9 @@ export const testingTranslations = {
               e1: "结构耐久性",
               e2: "惯性载荷模拟"
             }
-          },
-          i4: {
-            field: "防火/可燃性测试",
-            paras: {
-              p1: "类型：垂直/水平本生灯法",
-              p2: "火焰类型：符合航空标准"
-            },
-            examples: {
-              e1: "材料可燃性测试",
-              e2: "机载设备防火试验"
-            }
           }
         }
       },
-      environmentAdvanced: {
-        items: {
-          i1: {
-            field: "温湿度试验",
-            paras: {
-              p1: "箱体尺寸：1000*1000*1000mm",
-              p2: "温度范围：-70°C~+150°C",
-              p3: "温度变化速率：10°C/min",
-              p4: "温度冲击转换时间：≤5s",
-              p5: "湿度范围：20%RH~98%RH"
-            },
-            examples: {
-              e1: "高温/低温贮存",
-              e2: "温度循环/冲击",
-              e3: "恒定/交变湿热",
-              e4: "温度-湿度组合"
-            }
-          },
-          i2: {
-            field: "低气压/高度试验",
-            paras: {
-              p1: "气压范围：常压~0.5kPa",
-              p2: "降压速率：≤30min（常压→1kPa，空载）",
-              p3: "快速减压：75.2kPa→18.8kPa，≤15s"
-            },
-            examples: {
-              e1: "温度-高度试验",
-              e2: "快速减压"
-            }
-          },
-          i3: {
-            field: "砂尘试验",
-            paras: {
-              p1: "吹尘风速：1.5~8.9m/s",
-              p2: "吹尘浓度：3.5~8.8g/m³",
-              p3: "吹砂风速：18.0~29m/s",
-              p4: "吹砂浓度：0~11g/m³"
-            },
-            examples: {
-              e1: "吹尘试验",
-              e2: "吹砂试验",
-              e3: "防尘等级验证"
-            }
-          },
-          i4: {
-            field: "防水/流体试验",
-            paras: {
-              p1: "防水方式：滴水、喷水、连续水流",
-              p2: "流体敏感性：液体浸渍、喷淋"
-            },
-            examples: {
-              e1: "防水性试验",
-              e2: "流体污染试验",
-              e3: "淋雨试验"
-            }
-          },
-          i5: {
-            field: "盐雾腐蚀",
-            paras: {
-              p1: "霉菌：符合 DO-160、GJB 150 菌种",
-              p2: "结冰：符合 DO-160 工况"
-            },
-            examples: {
-              e1: "中性盐雾试验",
-              e2: "霉菌生长试验",
-              e3: "结冰/冻雨试验"
-            }
-          }
-        }
-      },
-      emcAdvanced: {
-        title: "电磁兼容性试验",
-        subtitle: "Electro-Magnetic Compatibility",
-        section: {
-          description: "公司配有3米法半电波暗室和屏蔽室，测试系统覆盖25Hz至40GHz全频段，能够进行RTCA DO-160G第15至22章及第25章的全部EMC测试项目，同时具备国军标、汽车电子、无人机及消费电子产品电磁兼容项目试验能力。"
-        },
-        items: {
-          i1: {
-            field: "DO-160G航空EMC",
-            paras: {
-              p1: "3米法暗室",
-              p2: "磁效应：±80N/m",
-              p3: "电源输入：28V/30A",
-              p4: "系统射频辐射敏感度：10kHz-40GHz，200V/m",
-              p5: "射频传导敏感度：10kHz-400MHz，300mA",
-              p6: "静电放电：15kV"
-            },
-            examples: {
-              e1: "第15章-磁影响",
-              e2: "第16章-电源输入(28V/30A)",
-              e3: "第17章-电压尖峰",
-              e4: "第18章-电源线音频传导敏感度",
-              e5: "第20章-射频敏感度（辐射敏感度：100MHz-18GHz, 200V/m）",
-              e6: "第20章-射频敏感度（传导敏感度：10kHz-400MHz, 300mA）",
-              e7: "第21章-射频能量发射",
-              e8: "第22章-雷电感应瞬态敏感度",
-              e9: "第25章-静电放电"
-            }
-          },
-          i2: {
-            field: "军标EMC",
-            paras: {
-              p1: "传导发射：CE101、CE102、CE107",
-              p2: "辐射发射：RE101、RE102",
-              p3: "传导敏感度：CS101、CS102、CS114、CS115、CS116",
-              p4: "辐射敏感度：RS101"
-            },
-            examples: {
-              e1: "电源线传导发射",
-              e2: "电场辐射发射",
-              e3: "大电流注入(BCI)",
-              e4: "磁场辐射敏感度"
-            }
-          },
-          i3: {
-            field: "民品/汽车电子EMC",
-            paras: {
-              p1: "传导发射CE：150kHz-30MHz",
-              p2: "辐射发射RE：30MHz-40GHz",
-              p3: "辐射抗扰RS：80MHz-6GHz",
-              p4: "传导抗扰度CS：150kHz-80Mhz",
-              p5: "静电放电ESD：±30kV"
-            },
-            examples: {}
-          },
-          i4: {
-            field: "汽车电子EMC",
-            paras: {
-              p1: "传导发射CE：150kHz-245MHz",
-              p2: "辐射发射RE：150kHz-6GHz",
-              p3: "大电流注入BCI：1MHz-400MHz",
-              p4: "磁场抗扰度：DC&15Hz-150kHz",
-              p5: "便携式发射机：26MHz-5.85GHz"
-            },
-            examples: {}
-          }
-        }
-      }
     }
   },
   en: {
@@ -446,95 +443,231 @@ export const testingTranslations = {
         environment: "Environmental Reliability Testing",
         mechanical: "Mechanical Testing",
         emc: "EMC Testing",
-        components: "Softwars & Components",
-        core: "Core Capablities"
+        components: "Software & Components",
+        core: "Core Capabilities"
       },
       navTitle: "Test Categories",
-      standards: {
-        hb6167DashSeries: "HB-6167 Series",
-        gbT2423Series: "GB/T 2423 Series",
-        iec60068Series: "IEC 60068-2 Series",
-        gbT38924Series: "GB/T 38924 Series",
-        hb6167Series: "HB 6167 Series",
-        gjb150aSeries: "GJB 150A Series",
-        gbT2423SpaceSeries: "GB/T 2423 Series",
-        gbT9254AndGb17626Series: "GB/T 9254 and GB 17626 Series",
-        gbT28046AndIso16750Series: "GB/T 28046 Series and ISO 16750 Series",
-        gbT18655AndGbT33014Series: "GB/T 18655-2018 and GB/T 33014 Series"
-      },
       environment: {
         title: "Environmental Reliability Testing",
-        subtitle: "",
+        subtitle: "ENVIRONMENTAL RELIABILITY TESTING",
         description: "Equipped with high-precision climatic test systems, we provide multi-factor integrated simulation capabilities covering temperature, humidity, altitude, sand and dust, and fluid exposure. All chambers use internationally leading control systems with uniform thermal fields and stable data, meeting stringent climatic test requirements in DO-160G, GJB 150A, and GB/T 2423. We are especially strong in high-altitude low-pressure, rapid temperature transition, and combined temperature-humidity-altitude testing.",
         descriptionPart1: "Equipped with high-precision climatic test systems, we provide multi-factor integrated simulation capabilities covering temperature, humidity, altitude, sand and dust, and fluid exposure. All chambers use internationally leading control systems with uniform thermal fields and stable data, meeting stringent climatic test requirements in ",
-        descriptionPart2: ". We are especially strong in high-altitude low-pressure, rapid temperature transition, and combined temperature-humidity-altitude testing.",
+        descriptionPart2: " and so on. We are especially strong in high-altitude low-pressure, rapid temperature transition, and combined temperature-humidity-altitude testing.",
         items: {
-          highLowTemp: {
-            title: "High/Low Temperature Test",
-            specs: "Temperature range: -70°C to +150°C, ramp rate: ≤10°C/min",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
+          i1: {
+            field: "Temperature & Humidity Testing",
+            standards: {
+              s1: "RTCA DO-160G",
+              s2: "GJB 150.3A/4A/9A",
+              s3: "GB/T 2423.1/2/3/4",
+              s4: "HB-6167 Series"
+            },
+            paras: {
+              p1: "Chamber Size: 1000*1000*1000mm",
+              p2: "Temperature Range: -70°C~+150°C",
+              p3: "Temperature Change Rate: 10°C/min",
+              p4: "Thermal Shock Transfer Time: ≤5s",
+              p5: "Humidity Range: 20%RH~98%RH"
+            },
+            examples: {
+              e1: "High/Low Temperature Storage",
+              e2: "Thermal Cycling / Shock",
+              e3: "Constant / Alternating Damp Heat",
+              e4: "Temperature-Humidity Combined"
+            }
           },
-          humidity: {
-            title: "Humidity Test",
-            specs: "Humidity: 10% to 98% RH, Temperature: -10°C to +85°C",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
+          i2: {
+            field: "Low Pressure / Altitude Testing",
+            standards: {
+              s1: "RTCA DO-160G",
+              s2: "GJB 150.6A",
+              s3: "GB/T 2423 Series",
+              s4: "IEC 60068-2 Series",
+              s5: "HB 6167 Series"
+            },
+            paras: {
+              p1: "Pressure Range: Atmospheric~0.5kPa",
+              p2: "Depressurization Rate: ≤30min (Atmospheric→1kPa, No-load)",
+              p3: "Rapid Decompression: 75.2kPa→18.8kPa, ≤15s"
+            },
+            examples: {
+              e1: "Temperature-Altitude Testing",
+              e2: "Rapid Decompression"
+            }
           },
-          vibration: {
-            title: "Vibration Test",
-            specs: "Frequency: 5Hz to 2000Hz, Acceleration: 0 to 20g",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
+          i3: {
+            field: "Sand & Dust Testing",
+            standards: {
+              s1: "RTCA DO-160G",
+              s2: "GJB 150.12A",
+              s3: "HB 6167.10-2016",
+              s4: "GJB 360B-2009",
+              s5: "GB/T 38924 Series"
+            },
+            paras: {
+              p1: "Dust-Blowing Speed: 1.5~8.9m/s",
+              p2: "Dust Concentration: 0~11g/m³",
+              p3: "Sand-Blowing Speed: 18.0~29m/s",
+              p4: "Sand-Blowing Concentration: 0~3g/m³"
+            },
+            examples: {
+              e1: "Dust-Blowing Test",
+              e2: "Sand-Blowing Test",
+              e3: "Dust Protection Rating Verification"
+            }
           },
-          shock: {
-            title: "Shock Test",
-            specs: "Shock: 15g to 75g, Duration: 11ms",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
+          i4: {
+            field: "Waterproof / Fluid Testing",
+            standards: {
+              s1: "RTCA DO-160G",
+              s2: "GJB 150.8A/26A",
+              s3: "GB/T 38924 Series",
+              s4: "HB 6167 Series"
+            },
+            paras: {
+              p1: "Waterproof Methods: Drip, Spray, Continuous Water Flow",
+              p2: "Fluid Susceptibility: Liquid Immersion, Spray"
+            },
+            examples: {
+              e1: "Waterproof Test",
+              e2: "Fluid Contamination Test",
+              e3: "Rain Test"
+            }
           },
-          solar: {
-            title: "Solar Radiation Test",
-            specs: "Irradiance: 1120 W/m², Temperature: -10°C to +85°C",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
-          },
-          tempShock: {
-            title: "Thermal Shock Test",
-            specs: "Temperature range: -65°C to +150°C, Transfer time: ≤5 min",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
+          i5: {
+            field: "Salt Spray Corrosion",
+            standards: {
+              s1: "RTCA DO-160G",
+              s2: "GJB 150.10A/11A",
+              s3: "GB/T 10125",
+              s4: "HB 6167 Series"
+            },
+            paras: {
+              p1: "Salt Spray: Neutral Salt Spray, Acidic Salt Spray",
+              p2: "Mold: DO-160 and GJB 150 compliant strains",
+              p3: "Icing: DO-160 compliant conditions"
+            },
+            examples: {
+              e1: "Neutral Salt Spray Test",
+              e2: "Mold Growth Test",
+              e3: "Icing / Freezing Rain Test"
+            }
+          }
+          ,
+          i6: {
+            field: "Fire / Flammability Testing",
+            standards: {
+              s1: "RTCA DO-160G",
+              s2: "GJB 150.13A"
+            },
+            paras: {
+              p1: "Method: Vertical/Horizontal Bunsen burner",
+              p2: "Flame Type: Compliant with aviation standards"
+            },
+            examples: {
+              e1: "Material flammability testing",
+              e2: "Airborne equipment fire testing"
+            }
           }
         }
       },
       emc: {
         title: "Electro-Magnetic Compatibility",
-        subtitle: "",
-        description: "XXX XXX XXXXXXX",
+        subtitle: "ELECTRO-MAGNETIC COMPATIBILITY",
+        description: "The company is equipped with a 3-meter semi-anechoic chamber and a shielded room. The test system covers the full 25 Hz to 40 GHz range and can perform all EMC tests in RTCA DO-160G Chapters 15 to 22 and 25, while also supporting military standards, automotive electronics, UAVs, and consumer electronics EMC testing.",
+        section: {
+          description: "The company is equipped with a 3-meter semi-anechoic chamber and a shielded room. The test system covers the full 25 Hz to 40 GHz range and can perform all EMC tests in RTCA DO-160G Chapters 15 to 22 and 25, while also supporting military standards, automotive electronics, UAVs, and consumer electronics EMC testing."
+        },
         items: {
-          re: {
-            title: "Radiated Emissions (RE)",
-            specs: "Frequency: 10kHz to 18GHz, Distance: 1m / 3m",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
+          i1: {
+            field: "DO-160G Aviation EMC",
+            standards: {
+              s1: "RTCA DO-160G"
+            },
+            paras: {
+              p1: "Chapter 15 - Magnetic Effect",
+              p2: "Chapter 16 - Power Input (28V/30A)",
+              p3: "Chapter 17 - Voltage Spike",
+              p4: "Chapter 18 - Power Line Audio Frequency Conducted Susceptibility",
+              p5: "Chapter 19 - Induced Signal Susceptibility",
+              p6: "Chapter 20 - RF Susceptibility (Radiated Susceptibility: 100MHz-18GHz, 200V/m)",
+              p7: "Chapter 21 - RF Energy Emission",
+              p8: "Chapter 22 - Lightning Induced Transient Susceptibility",
+              p9: "Chapter 25 - Electrostatic Discharge"
+            },
+            examples: {
+              e1: "Chapter 15 - Magnetic Effect",
+              e2: "Chapter 16 - Power Input (28V/30A)",
+              e3: "Chapter 17 - Voltage Spike",
+              e4: "Chapter 18 - Power Line Audio Frequency Conducted Susceptibility",
+              e5: "Chapter 20 - RF Susceptibility (Radiated: 100MHz-18GHz, 200V/m)",
+              e6: "Chapter 20 - RF Susceptibility (Conducted: 10kHz-400MHz, 300mA)",
+              e7: "Chapter 21 - RF Energy Emission",
+              e8: "Chapter 22 - Lightning Induced Transient Susceptibility",
+              e9: "Chapter 25 - Electrostatic Discharge"
+            }
           },
-          ce: {
-            title: "Conducted Emissions (CE)",
-            specs: "Frequency: 10kHz to 108MHz, Impedance: 50Ω",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
+          i2: {
+            field: "Military Standard EMC",
+            standards: {
+              s1: "GJB 151A-97",
+              s2: "GJB 151B-2013",
+              s3: "GJB 151C-2024"
+            },
+            paras: {
+              p1: "Conducted Emissions: CE101, CE102, CE107",
+              p2: "Radiated Emissions: RE101, RE102",
+              p3: "Conducted Susceptibility: CS101, CS102, CS106, CS109, CS112, CS114, CS115, CS116",
+              p4: "Radiated Susceptibility: RS101, RS103"
+            },
+            examples: {
+              e1: "Power Line Conducted Emissions",
+              e2: "Electric Field Radiated Emissions",
+              e3: "Bulk Current Injection (BCI)",
+              e4: "Magnetic Field Radiated Susceptibility"
+            }
           },
-          hirf: {
-            title: "High-Intensity Radiated Fields (HIRF)",
-            specs: "Field strength: 200V/m to 8000V/m, Frequency: 10kHz to 40GHz",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
+          i3: {
+            field: "Consumer / Drone EMC",
+            standards: {
+              s1: "IEC61000-6-1",
+              s2: "IEC61000-6-2",
+              s3: "EN55035",
+              s4: "CISPR35",
+              s5: "GB/T17799.1",
+              s6: "GB/T17799.2",
+              s7: "GB/T38909",
+              s8: "GB42590",
+              s9: "GB/T38058",
+              s10: "GB/T38997",
+              s11: "GB/T9254.2"
+            },
+            paras: {
+              p1: "Conducted Emissions CE: 150kHz-30MHz",
+              p2: "Radiated Emissions RE: 30MHz-40GHz",
+              p3: "Radiated Immunity RS: 80MHz-6GHz",
+              p4: "Conducted Immunity CS: 150kHz-80MHz",
+              p5: "Electrostatic Discharge ESD: ±30kV"
+            },
+            examples: {}
           },
-          lightning: {
-            title: "Indirect Lightning Effects",
-            specs: "Waveform: 6.4/69μs, Energy: 2.5J to 5J",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
-          },
-          rs: {
-            title: "Radiated Susceptibility (RS)",
-            specs: "Frequency: 10kHz to 18GHz, Field strength: 1V/m to 200V/m",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
-          },
-          cs: {
-            title: "Conducted Susceptibility (CS)",
-            specs: "Frequency: 10kHz to 400MHz, Injection: 0.1V to 5V",
-            description: "XXXXXX XXXXXX XXXXXX XXXXXX"
+          i4: {
+            field: "Automotive EMC",
+            standards: {
+              s1: "GB/T18655",
+              s2: "GB/T33014.2",
+              s3: "GB/T33014.4",
+              s4: "GB/T33014.8",
+              s5: "GB/T33014.9"
+            },
+            paras: {
+              p1: "Conducted Emissions CE: 150kHz-245MHz",
+              p2: "Radiated Emissions RE: 150kHz-6GHz",
+              p3: "Bulk Current Injection BCI: 1MHz-400MHz",
+              p4: "Magnetic Field Immunity: DC & 15Hz-150kHz",
+              p5: "Portable Transmitter: 26MHz-5.85GHz"
+            },
+            examples: {}
           }
         }
       },
@@ -548,22 +681,23 @@ export const testingTranslations = {
           standard: "Standard"
         },
         items: {
-          i1: "Ground low-temperature endurance and short-time operation tests",
-          i2: "Low-temperature operation test",
-          i3: "Ground high-temperature endurance and short-time operation tests",
-          i4: "Altitude test",
-          i5: "Decompression test",
-          i6: "Overpressure test",
-          i7: "Temperature variation test",
-          i8: "Humidity test"
+          i1: { name: "Ground low-temperature endurance and short-time operation tests", standard: "DO-160G" },
+          i2: { name: "Low-temperature operation test", standard: "DO-160G" },
+          i3: { name: "Ground high-temperature endurance and short-time operation tests", standard: "DO-160G" },
+          i4: { name: "Altitude test", standard: "DO-160G" },
+          i5: { name: "Decompression test", standard: "DO-160G" },
+          i6: { name: "Overpressure test", standard: "DO-160G" },
+          i7: { name: "Temperature variation test", standard: "DO-160G" },
+          i8: { name: "Humidity test", standard: "DO-160G" }
         }
       },
       softwareComponents: {
-        title: "Softwars & Components",
+        title: "Software & Components",
         subtitle: "",
         description: "XXX XXX XXXXXXX",
         softwareCard: {
           title: "Airborne Software Evaluation",
+          standard: "DO-178C",
           linkText: "Learn more"
         },
         componentsCard: {
@@ -595,6 +729,7 @@ export const testingTranslations = {
         items: {
           i1: {
             field: "Airworthiness Compliance Verification",
+            standard: "-",
             content: "Comprehensive testing across all 26 chapters, including climate, mechanical, EMC, and special-environment tests, providing data support for civil aircraft and general aviation airworthiness certification."
           },
           i2: {
@@ -609,6 +744,7 @@ export const testingTranslations = {
           },
           i4: {
             field: "Military EMC Qualification",
+            standard: "GJB 151B-2013",
             content: "Provides full-scope EMC testing including CE101~CE107, RE101~RE102, CS101~CS116, and RS101, meeting electromagnetic compatibility requirements across land, sea, and air military platforms."
           },
           i5: {
@@ -633,6 +769,7 @@ export const testingTranslations = {
           },
           i9: {
             field: "UAV / Flying Car",
+            standard: "RTCA DO-160G, GJB 150A",
             content: "Offers dedicated tests such as temperature-altitude combined testing, icing testing, and rapid decompression testing based on low-altitude vehicle characteristics."
           },
           i10: {
@@ -642,14 +779,17 @@ export const testingTranslations = {
           },
           i11: {
             field: "EMC Design Rectification",
+            standard: "-",
             content: "Provides EMC issue diagnosis and rectification plans from PCB layout and filtering design to complete-system shielding."
           },
           i12: {
             field: "Custom Fixtures & Tooling",
+            standard: "-",
             content: "Designs and manufactures vibration fixtures, shock fixtures, and test interface boards according to product structure and test requirements."
           },
           i13: {
             field: "Test Outline Preparation",
+            standard: "-",
             content: "Assists customers in preparing environmental and EMC test outlines compliant with airworthiness, military, or industry standards."
           }
         }
@@ -701,159 +841,9 @@ export const testingTranslations = {
               e1: "Structural Durability",
               e2: "Inertial Load Simulation"
             }
-          },
-          i4: {
-            field: "Fire / Flammability Testing",
-            paras: {
-              p1: "Method: Vertical/Horizontal Bunsen Burner",
-              p2: "Flame Type: Compliant with aviation standards"
-            },
-            examples: {
-              e1: "Material Flammability Testing",
-              e2: "Airborne Equipment Fire Testing"
-            }
           }
         }
       },
-      environmentAdvanced: {
-        items: {
-          i1: {
-            field: "Temperature & Humidity Testing",
-            paras: {
-              p1: "Chamber Size: 1000*1000*1000mm",
-              p2: "Temperature Range: -70°C~+150°C",
-              p3: "Temperature Change Rate: 10°C/min",
-              p4: "Thermal Shock Transfer Time: ≤5s",
-              p5: "Humidity Range: 20%RH~98%RH"
-            },
-            examples: {
-              e1: "High/Low Temperature Storage",
-              e2: "Thermal Cycling / Shock",
-              e3: "Constant / Alternating Damp Heat",
-              e4: "Temperature-Humidity Combined"
-            }
-          },
-          i2: {
-            field: "Low Pressure / Altitude Testing",
-            paras: {
-              p1: "Pressure Range: Atmospheric~0.5kPa",
-              p2: "Depressurization Rate: ≤30min (Atmospheric→1kPa, No-load)",
-              p3: "Rapid Decompression: 75.2kPa→18.8kPa, ≤15s"
-            },
-            examples: {
-              e1: "Temperature-Altitude Testing",
-              e2: "Rapid Decompression"
-            }
-          },
-          i3: {
-            field: "Sand & Dust Testing",
-            paras: {
-              p1: "Dust-Blowing Speed: 1.5~8.9m/s",
-              p2: "Dust Concentration: 3.5~8.8g/m³",
-              p3: "Sand-Blowing Speed: 18.0~29m/s",
-              p4: "Sand-Blowing Concentration: 0~11g/m³"
-            },
-            examples: {
-              e1: "Dust-Blowing Test",
-              e2: "Sand-Blowing Test",
-              e3: "Dust Protection Rating Verification"
-            }
-          },
-          i4: {
-            field: "Waterproof / Fluid Testing",
-            paras: {
-              p1: "Waterproof Methods: Drip, Spray, Continuous Water Flow",
-              p2: "Fluid Susceptibility: Liquid Immersion, Spray"
-            },
-            examples: {
-              e1: "Waterproof Test",
-              e2: "Fluid Contamination Test",
-              e3: "Rain Test"
-            }
-          },
-          i5: {
-            field: "Salt Spray Corrosion",
-            paras: {
-              p1: "Salt Spray: Neutral Salt Spray (Non-Water Heating)",
-              p2: "Mold: DO-160 and GJB 150 compliant strains",
-              p3: "Icing: DO-160 compliant conditions"
-            },
-            examples: {
-              e1: "Neutral Salt Spray Test",
-              e2: "Mold Growth Test",
-              e3: "Icing / Freezing Rain Test"
-            }
-          }
-        }
-      },
-      emcAdvanced: {
-        title: "Electro-Magnetic Compatibility",
-        subtitle: "",
-        section: {
-          description: "The company is equipped with a 3-meter semi-anechoic chamber and a shielded room. The test system covers the full 25 Hz to 40 GHz range and can perform all EMC tests in RTCA DO-160G Chapters 15 to 22 and 25, while also supporting military standards, automotive electronics, UAVs, and consumer electronics EMC testing."
-        },
-        items: {
-          i1: {
-            field: "DO-160G Aviation EMC",
-            paras: {
-              p1: "3-Meter Anechoic Chamber",
-              p2: "Magnetic Effect: ±80N/m",
-              p3: "Power Input: 28V/30A",
-              p4: "System RF Radiated Susceptibility: 10kHz-40GHz, 200V/m",
-              p5: "RF Conducted Susceptibility: 10kHz-400MHz, 300mA",
-              p6: "ESD: 15kV"
-            },
-            examples: {
-              e1: "Chapter 15 - Magnetic Effect",
-              e2: "Chapter 16 - Power Input (28V/30A)",
-              e3: "Chapter 17 - Voltage Spike",
-              e4: "Chapter 18 - Power Line Audio Frequency Conducted Susceptibility",
-              e5: "Chapter 20 - RF Susceptibility (Radiated: 100MHz-18GHz, 200V/m)",
-              e6: "Chapter 20 - RF Susceptibility (Conducted: 10kHz-400MHz, 300mA)",
-              e7: "Chapter 21 - RF Energy Emission",
-              e8: "Chapter 22 - Lightning Induced Transient Susceptibility",
-              e9: "Chapter 25 - Electrostatic Discharge"
-            }
-          },
-          i2: {
-            field: "Military Standard EMC",
-            paras: {
-              p1: "Conducted Emissions: CE101, CE102, CE107",
-              p2: "Radiated Emissions: RE101, RE102",
-              p3: "Conducted Susceptibility: CS101, CS102, CS114, CS115, CS116",
-              p4: "Radiated Susceptibility: RS101"
-            },
-            examples: {
-              e1: "Power Line Conducted Emissions",
-              e2: "Electric Field Radiated Emissions",
-              e3: "Bulk Current Injection (BCI)",
-              e4: "Magnetic Field Radiated Susceptibility"
-            }
-          },
-          i3: {
-            field: "Consumer / Automotive EMC",
-            paras: {
-              p1: "Conducted Emissions CE: 150kHz-30MHz",
-              p2: "Radiated Emissions RE: 30MHz-40GHz",
-              p3: "Radiated Immunity RS: 80MHz-6GHz",
-              p4: "Conducted Immunity CS: 150kHz-80MHz",
-              p5: "Electrostatic Discharge ESD: ±30kV"
-            },
-            examples: {}
-          },
-          i4: {
-            field: "Automotive EMC",
-            paras: {
-              p1: "Conducted Emissions CE: 150kHz-245MHz",
-              p2: "Radiated Emissions RE: 150kHz-6GHz",
-              p3: "Bulk Current Injection BCI: 1MHz-400MHz",
-              p4: "Magnetic Field Immunity: DC & 15Hz-150kHz",
-              p5: "Portable Transmitter: 26MHz-5.85GHz"
-            },
-            examples: {}
-          }
-        }
-      }
     }
   }
 };
