@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Search, Menu, X, ChevronDown, Globe } from "lucide-react";
 
 import { useLanguage } from "@/lib/LanguageContext";
+// Use plain <img src="/logo.svg"> instead of SVGR component
 
 // 导航数据结构（使用翻译key）
 const getNavItems = (t: (key: string) => string) => [
@@ -212,10 +213,11 @@ export default function Header() {
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="text-xl font-semibold text-gray-900 group-hover:text-gray-700 transition-colors">
+          <Link href="/" className="inline-flex w-max shrink-0 items-center gap-0 whitespace-nowrap group">
+            <img src="/logo.svg" alt={t("nav.brand")} className="h-8 w-auto inline-block" />
+            <span className="text-2xl font-semibold text-gray-900 group-hover:text-gray-700 transition-colors whitespace-nowrap">
               {t("nav.brand")}
-            </div>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -1,8 +1,8 @@
 "use client";
 
-import JingkaiLogo from "@/assets/jingkaiguokong.svg";
-import ShanghaiLogo from "@/assets/SSA.svg";
-import XidianLogo from "@/assets/xiandianzi.svg";
+import JingkaiLogo from "@/assets/logos/jingkaiguokong.svg";
+import ShanghaiLogo from "@/assets/logos/SSA.svg";
+import XidianLogo from "@/assets/logos/xiandianzi.svg";
 import { useLanguage } from "@/lib/LanguageContext";
 
 import { HomeSectionTitle } from "./ui/HomeSectionTitle";

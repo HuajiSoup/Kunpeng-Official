@@ -18,7 +18,7 @@ export function PageSectionTitle({
   }[align];
 
   return (<>
-    <div className={`mb-12 text-${align}`}>
+    <div className={`relative z-10 mb-12 text-${align}`}>
       {subtitle && <span className="text-xs font-bold tracking-widest text-blue-600/70 uppercase block mb-4">
         {subtitle}
       </span>}
@@ -31,7 +31,7 @@ export function PageSectionTitle({
 
       <div className={`h-1 w-10 bg-gradient-to-r from-blue-500 to-cyan-500 mb-4 ${lineAlign}`}></div>
 
-      {description && <p className="text-base text-slate-600 font-light max-w-2xl mx-auto leading-relaxed">
+      {description && <p className="text-base text-slate-700 font-light max-w-2xl mx-auto leading-relaxed">
         {description}
       </p>}
     </div>

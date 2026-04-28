@@ -11,12 +11,6 @@ const nextConfig = {
   },
   images: {
     dangerouslyAllowLocalIP: true,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com"
-      }
-    ]
   },
   async rewrites() {
     return [

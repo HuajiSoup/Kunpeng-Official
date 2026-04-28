@@ -1,7 +1,7 @@
 "use client";
 
-import TianlingLogo from "@/assets/inflync.svg";
-import ShunyuLogo from "@/assets/shunyu.svg";
+import TianlingLogo from "@/assets/logos/inflync.svg";
+import ShunyuLogo from "@/assets/logos/shunyu.svg";
 import { useLanguage } from "@/lib/LanguageContext";
 
 import { HomeSectionTitle } from "./ui/HomeSectionTitle";

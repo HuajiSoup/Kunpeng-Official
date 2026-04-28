@@ -5,6 +5,9 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 import { TestItem, TestItemBox } from "./TestItemBox";
 
+import ShadowBackground from "./ShadowBackground";
+import Background from "@/assets/background/bg-testing-mechanical.jpg";
+
 const getMechanicalTests = (t: (key: string) => string): TestItem[] => [
   {
     field: t("testing.mechanical.items.i1.field"),
@@ -64,14 +67,16 @@ export default function TestingsMechanical() {
   const tests = getMechanicalTests(t);
 
   return (
-    <section id="mechanical-special" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12" data-anchor="mechanical">
+    <section id="mechanical-special" className="relative py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12" data-anchor="mechanical">
       <PageSectionTitle
         title={t("testing.mechanical.title")}
         subtitle={t("testing.mechanical.subtitle")}
         description={t("testing.mechanical.section.description")}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 xl:gap-8">
+      <ShadowBackground img={Background} />
+
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 xl:gap-8">
         {tests.map((test, index) => (
           <TestItemBox key={index} item={test} />
         ))}

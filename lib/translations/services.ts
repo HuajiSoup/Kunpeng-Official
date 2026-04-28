@@ -3,9 +3,9 @@ export const servicesTranslations = {
     services: {
       hero: {
         title: "适航技术服务",
-        subtitle: "专业的适航审定与咨询解决方案",
+        subtitle: "提供专业的适航审定和咨询服务解决方案",
         labelTitleMain: "合规认证",
-        labelTitleBottom: "专业的适航取证服务，确保您的产品符合国际标准",
+        labelTitleBottom: "专业的适航取证服务，确保您的产品符合适航标准",
         statistics: {
           successCases: "成功案例",
           certificationStandards: "认证标准",
@@ -278,9 +278,9 @@ export const servicesTranslations = {
     services: {
       hero: {
         title: "Aviation Services",
-        subtitle: "Professional Airworthiness Certification & Consulting Solutions",
+        subtitle: "Provide professional airworthiness certification and consulting service solutions",
         labelTitleMain: "Compliance Certification",
-        labelTitleBottom: "Professional airworthiness certification to meet global standards",
+        labelTitleBottom: "Professional airworthiness certification to meet airworthiness standards",
         statistics: {
           successCases: "Success Cases",
           certificationStandards: "Certification Standards",

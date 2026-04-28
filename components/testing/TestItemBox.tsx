@@ -14,7 +14,7 @@ export function TestItemBox({
 }: TestItemBoxProps) {
   return (<>
     <div
-      className="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-gray-300 hover:shadow-lg transition-all duration-300 hover-gentle-wiggle cursor-pointer"
+      className="group bg-white border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:border-gray-300 transition-all duration-300 hover-gentle-wiggle cursor-pointer"
     >
       <div className="p-6">
         <h3 className="text-2xl font-semibold text-gray-900 mb-3">

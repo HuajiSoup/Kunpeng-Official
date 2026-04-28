@@ -21,7 +21,7 @@ export const contactTranslations = {
           address: {
             title: "公司地址",
             line1: "浙江省杭州市萧山区",
-            line2: "宁围街道旅学路177号江南电子谷产业园A3楼1楼"
+            line2: "宁围街道旅学路177号江南电子谷产业园A3楼"
           },
           phone: {
             title: "联系电话",
@@ -97,7 +97,7 @@ export const contactTranslations = {
           address: {
             title: "Address",
             line1: "Xiaoshan District, Hangzhou, Zhejiang Province",
-            line2: "First Floor, Building A3, Jiangnan Electronics Valley Industrial Park, No. 177 Lvxue Road, Ningshui Street"
+            line2: "Building A3, Jiangnan Electronics Valley Industrial Park, No. 177 Lvxue Road, Ningshui Street"
           },
           phone: {
             title: "Phone",

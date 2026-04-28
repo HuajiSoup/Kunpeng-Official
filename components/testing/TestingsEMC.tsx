@@ -5,6 +5,9 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 import { TestItem, TestItemBox } from "./TestItemBox";
 
+import ShadowBackground from "./ShadowBackground";
+import Background from "@/assets/background/bg-testing-emc.jpg";
+
 const getEmcTests = (t: (key: string) => string): TestItem[] => [
   {
     field: t("testing.emc.items.i1.field"),
@@ -88,14 +91,16 @@ export default function TestingsEMC() {
   const emcTests = getEmcTests(t);
 
   return (
-    <section id="emc-testing" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12" data-anchor="emc">
+    <section id="emc-testing" className="relative py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12" data-anchor="emc">
       <PageSectionTitle 
         title={t("testing.emc.title")}
         subtitle={t("testing.emc.subtitle")}
         description={t("testing.emc.section.description")}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+      <ShadowBackground img={Background} />
+
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
         {emcTests.map((test, index) => (
           <TestItemBox key={index} item={test} />
         ))}

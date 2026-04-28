@@ -7,12 +7,17 @@ import { motion, AnimatePresence, Variants } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 import { useLanguage } from "@/lib/LanguageContext";
+import HeroImage1 from "@/assets/background/bg-hero-1.jpg";
+import HeroImage2 from "@/assets/background/bg-hero-2.jpg";
+import HeroImage3 from "@/assets/background/bg-hero-3.jpg";
+import HeroImage4 from "@/assets/background/bg-hero-4.jpg";
+import Image from "next/image";
 
 const carouselImages = [
-  "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80&auto=format",
-  "https://images.unsplash.com/photo-1517976487492-5750f3195933?w=1920&q=80&auto=format",
-  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&q=80&auto=format",
-  "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1920&q=80&auto=format",
+  HeroImage1,
+  HeroImage2,
+  HeroImage3,
+  HeroImage4,
 ];
 
 const getSlides = (t: (key: string) => string) => [
@@ -148,12 +153,10 @@ export default function HeroCarousel() {
             exit="exit"
           >
             {/* bg */}
-            <div 
-              className="absolute inset-0 w-full h-full"
-              style={{
-                background: `url(${slides[currentIndex].image}) center / cover`
-              }}
-            ></div>
+            <Image 
+              src={slides[currentIndex].image} 
+              alt="Background Image" layout="fill" objectFit="cover" className="absolute inset-0" 
+            />
             <div className="absolute inset-0 bg-black/50"></div>      
 
             {/* text content */}

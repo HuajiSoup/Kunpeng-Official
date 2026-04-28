@@ -1,7 +1,7 @@
 export const othersTranslations = {
   zh: {
     nav: {
-      brand: "鲲鹏航空",
+      brand: "浙江试验",
       home: "首页",
       about: "走进鲲鹏",
       aboutSubmenu: {
@@ -189,7 +189,7 @@ export const othersTranslations = {
     footer: {
       contact: "联系方式",
       companyName: "浙江鲲鹏航空技术测试验证有限公司",
-      address: "杭州市萧山区宁围街道旅学路177号江南电子谷产业园A3楼1楼",
+      address: "杭州市萧山区宁围街道旅学路177号江南电子谷产业园A3楼",
       quickLinks: "快速链接",
       resources: "资源中心",
       announcement: "网站声明",
@@ -290,7 +290,7 @@ export const othersTranslations = {
   },
   en: {
     nav: {
-      brand: "Kunpeng Aviation",
+      brand: "Zhejiang Testing",
       home: "Home",
       about: "About Us",
       aboutSubmenu: {
@@ -478,7 +478,7 @@ export const othersTranslations = {
     footer: {
       contact: "Contact",
       companyName: "Zhejiang Kunpeng Aviation Technology Testing & Verification Co., Ltd.",
-      address: "First Floor, Building A3, Jiangnan Electronics Valley Industrial Park, No. 177 Lvxue Road, Ningshui Street, Xiaoshan District, Hangzhou",
+      address: "Building A3, Jiangnan Electronics Valley Industrial Park, No. 177 Lvxue Road, Ningshui Street, Xiaoshan District, Hangzhou",
       quickLinks: "Quick Links",
       resources: "Resource Center",
       announcement: "Announcement",

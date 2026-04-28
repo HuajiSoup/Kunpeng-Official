@@ -5,6 +5,9 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { PageSectionTitle } from "../ui/PageSectionTitle";
 import { TestItem, TestItemBox } from "./TestItemBox";
 
+import ShadowBackground from "./ShadowBackground";
+import Background from "@/assets/background/bg-testing-env.jpg";
+
 const getEnvironmentTests = (t: (key: string) => string): TestItem[] => [
   {
     field: t("testing.environment.items.i1.field"),
@@ -135,14 +138,16 @@ export default function TestingsEnvironment() {
   );
 
   return (
-    <section id="environment-reliability" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12" data-anchor="env">
+    <section id="environment-reliability" className="relative py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12" data-anchor="env">
       <PageSectionTitle 
         title={t("testing.environment.title")}
         subtitle={t("testing.environment.subtitle")}
         description={description}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-8">
+      <ShadowBackground img={Background} />
+
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-8">
         {tests.map((test, index) => 
           <TestItemBox key={index} item={test} />
         )}
