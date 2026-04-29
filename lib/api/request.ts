@@ -20,10 +20,10 @@ type HttpInfo<Data> = HttpInfoSuccess<Data> | HttpInfoError;
 export default async function request<Data>(
   config: AxiosRequestConfig
 ): Promise<Data | null> {
-  // 规避CORS, 真正上线后不需要rewrite
+  // 浏览器请求rewrite，后端直接请求
   const baseURL = typeof window !== "undefined"
     ? "/api"
-    : "http://localhost:3000/api";
+    : process.env.NEXT_PUBLIC_SERVER_BASE_URL;
 
   const instance = axios.create({
     // baseURL: process.env.SERVER_BASE_URL,

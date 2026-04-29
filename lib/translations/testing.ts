@@ -119,7 +119,7 @@ export const testingTranslations = {
             },
             paras: {
               p1: "盐雾：中性盐雾、酸性盐雾",
-              p2: "霉菌：符合 RTCA DO-160、GJB 150 菌种",
+              p2: "霉菌：符合 RTCA DO-160G、GJB 150 菌种",
               p3: "结冰：符合标准 RTCA DO-160G 工况"
             },
             examples: {
@@ -148,10 +148,7 @@ export const testingTranslations = {
       emc: {
         title: "电磁兼容性试验",
         subtitle: "Electro-Magnetic Compatibility",
-        description: "公司配有3米法半电波暗室和屏蔽室，测试系统覆盖25Hz至40GHz全频段，能够进行RTCA DO-160G第15至22章及第25章的全部EMC测试项目，同时具备国军标、汽车电子、无人机及消费电子产品电磁兼容项目试验能力。",
-        section: {
-          description: "公司配有3米法半电波暗室和屏蔽室，测试系统覆盖25Hz至40GHz全频段，能够进行RTCA DO-160G第15至22章及第25章的全部EMC测试项目，同时具备国军标、汽车电子、无人机及消费电子产品电磁兼容项目试验能力。"
-        },
+        description: "公司配有 3 米法半电波暗室和屏蔽室，测试系统覆盖 25Hz 至 40GHz 全频段，能够进行 RTCA DO-160G 第 15 至 22 章及第 25 章的全部 EMC 测试项目，同时具备国军标、汽车电子、无人机及消费电子产品电磁兼容项目试验能力。",
         items: {
           i1: {
             field: "DO-160G航空EMC",
@@ -363,7 +360,7 @@ export const testingTranslations = {
         title: "机械试验",
         subtitle: "Mechanical Testing",
         section: {
-          description: "拥有振动系统冲击台和离心机，能够模拟从运输振动坠撞冲击到加速度的全频谱机械应力。振动系统配置800mmx800mm台面和水平滑台，可满足机载设备及机柜的试验需求。"
+          description: "拥有振动系统冲击台和离心机，能够模拟从运输振动坠撞冲击到加速度的全频谱机械应力。振动系统配置 800mmx800mm 台面和水平滑台，可满足机载设备及机柜的试验需求。"
         },
         items: {
           i1: {
@@ -449,7 +446,7 @@ export const testingTranslations = {
       navTitle: "Test Categories",
       environment: {
         title: "Environmental Reliability Testing",
-        subtitle: "ENVIRONMENTAL RELIABILITY TESTING",
+        subtitle: "",
         description: "Equipped with high-precision climatic test systems, we provide multi-factor integrated simulation capabilities covering temperature, humidity, altitude, sand and dust, and fluid exposure. All chambers use internationally leading control systems with uniform thermal fields and stable data, meeting stringent climatic test requirements in DO-160G, GJB 150A, and GB/T 2423. We are especially strong in high-altitude low-pressure, rapid temperature transition, and combined temperature-humidity-altitude testing.",
         descriptionPart1: "Equipped with high-precision climatic test systems, we provide multi-factor integrated simulation capabilities covering temperature, humidity, altitude, sand and dust, and fluid exposure. All chambers use internationally leading control systems with uniform thermal fields and stable data, meeting stringent climatic test requirements in ",
         descriptionPart2: " and so on. We are especially strong in high-altitude low-pressure, rapid temperature transition, and combined temperature-humidity-altitude testing.",
@@ -535,7 +532,7 @@ export const testingTranslations = {
             }
           },
           i5: {
-            field: "Salt Spray Corrosion",
+            field: "Salt Spray Corrosion / Mold / Icing",
             standards: {
               s1: "RTCA DO-160G",
               s2: "GJB 150.10A/11A",
@@ -544,7 +541,7 @@ export const testingTranslations = {
             },
             paras: {
               p1: "Salt Spray: Neutral Salt Spray, Acidic Salt Spray",
-              p2: "Mold: DO-160 and GJB 150 compliant strains",
+              p2: "Mold: DO-160G and GJB 150 compliant strains",
               p3: "Icing: RTCA DO-160G compliant conditions"
             },
             examples: {
@@ -573,11 +570,8 @@ export const testingTranslations = {
       },
       emc: {
         title: "Electro-Magnetic Compatibility",
-        subtitle: "ELECTRO-MAGNETIC COMPATIBILITY",
+        subtitle: "",
         description: "The company is equipped with a 3-meter semi-anechoic chamber and a shielded room. The test system covers the full 25 Hz to 40 GHz range and can perform all EMC tests in RTCA DO-160G Chapters 15 to 22 and 25, while also supporting military standards, automotive electronics, UAVs, and consumer electronics EMC testing.",
-        section: {
-          description: "The company is equipped with a 3-meter semi-anechoic chamber and a shielded room. The test system covers the full 25 Hz to 40 GHz range and can perform all EMC tests in RTCA DO-160G Chapters 15 to 22 and 25, while also supporting military standards, automotive electronics, UAVs, and consumer electronics EMC testing."
-        },
         items: {
           i1: {
             field: "DO-160G Aviation EMC",

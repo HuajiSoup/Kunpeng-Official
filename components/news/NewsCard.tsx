@@ -27,7 +27,6 @@ export function NewsCard({
 }) {
   const { t } = useLanguage();
   const categoryMap = getCategoryMap(t);
-  console.log("NewsCard - Item Data:", item);
 
   return (<>
     <Link href={`/news/${item.id}`} className={cn("block group", className)}>

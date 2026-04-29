@@ -14,6 +14,10 @@ export default async function NewsContentPage({ params }: NewsContentPageProps) 
 
   return (<>
     <NewsHero />
-    {news ? <NewsContent news={normalizeNewsItem(news)} /> : <p>文章不存在！</p>}
+    {news ? <NewsContent news={normalizeNewsItem(news)} /> : (
+      <div className="h-screen">
+        <h2 className="text-4xl text-black text-center my-20">文章不存在！</h2>
+      </div>
+    )}
   </>);
 }

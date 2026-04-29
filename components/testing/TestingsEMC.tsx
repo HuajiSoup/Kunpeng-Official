@@ -96,7 +96,7 @@ export default function TestingsEMC() {
       <PageSectionTitle 
         title={t("testing.emc.title")}
         subtitle={t("testing.emc.subtitle")}
-        description={t("testing.emc.section.description")}
+        description={t("testing.emc.description")}
       />
 
       <ShadowBackground img={Background} />
