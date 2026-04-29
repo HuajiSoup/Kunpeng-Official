@@ -215,7 +215,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="inline-flex w-max shrink-0 items-center gap-0 whitespace-nowrap group">
             <img src="/logo.svg" alt={t("nav.brand")} className="h-8 w-auto inline-block" />
-            <span className="text-2xl font-semibold text-gray-900 group-hover:text-gray-700 transition-colors whitespace-nowrap">
+            <span className="text-xl font-semibold text-gray-900 group-hover:text-gray-700 transition-colors whitespace-nowrap">
               {t("nav.brand")}
             </span>
           </Link>

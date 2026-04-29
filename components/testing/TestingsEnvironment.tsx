@@ -94,6 +94,7 @@ const getEnvironmentTests = (t: (key: string) => string): TestItem[] => [
     paras: [
       t("testing.environment.items.i5.paras.p1"),
       t("testing.environment.items.i5.paras.p2"),
+      t("testing.environment.items.i5.paras.p3")
     ],
     standards: [
       t("testing.environment.items.i5.standards.s1"), 
@@ -111,11 +112,10 @@ const getEnvironmentTests = (t: (key: string) => string): TestItem[] => [
     field: t("testing.environment.items.i6.field"),
     paras: [
       t("testing.environment.items.i6.paras.p1"),
-      t("testing.environment.items.i6.paras.p2"),
+      t("testing.environment.items.i6.paras.p2")
     ],
     standards: [
       t("testing.environment.items.i6.standards.s1"), 
-      t("testing.environment.items.i6.standards.s2")
     ],
     examples: [
       t("testing.environment.items.i6.examples.e1"),

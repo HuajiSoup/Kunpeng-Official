@@ -26,8 +26,8 @@ export const testingTranslations = {
         title: "环境可靠性试验",
         subtitle: "ENVIRONMENTAL RELIABILITY TESTING",
         description: "拥有高精度气候环境试验设备，具备温度、湿度、高度、砂尘、流体等多因素综合模拟能力。试验箱均采用国际一流品牌控制系统，温场均匀、数据稳定，可同时满足DO-160G、GJB 150A、GB/T 2423对气候环境试验的严苛要求。特别是在高空低气压、快速温变及温-湿-高综合试验方面，具备行业领先优势。",
-        descriptionPart1: "拥有高精度气候环境试验设备，具备温度、湿度、高度、砂尘、流体等多因素综合模拟能力。试验箱均采用国际一流品牌控制系统，温场均匀、数据稳定，可同时满足",
-        descriptionPart2: "等对气候环境试验的严苛要求。特别是在高空低气压、快速温变及温-湿-高综合试验方面，具备行业领先优势。",
+        descriptionPart1: "拥有高精度气候环境试验设备，具备温度、湿度、高度、砂尘、流体等多因素综合模拟能力。试验箱均采用国际一流品牌控制系统，温场均匀、数据稳定，可同时满足 ",
+        descriptionPart2: " 等对气候环境试验的严苛要求。特别是在高空低气压、快速温变及温-湿-高综合试验方面，具备行业领先优势。",
         items: {
           i1: {
             field: "温湿度试验",
@@ -81,7 +81,7 @@ export const testingTranslations = {
             },
             paras: {
               p1: "吹尘风速：1.5~8.9m/s",
-              p2: "吹尘浓度：0~11g/m³",
+              p2: "吹尘浓度：0~16g/m³",
               p3: "吹砂风速：18.0~29m/s",
               p4: "吹砂浓度：0~3g/m³"
             },
@@ -120,7 +120,7 @@ export const testingTranslations = {
             paras: {
               p1: "盐雾：中性盐雾、酸性盐雾",
               p2: "霉菌：符合 RTCA DO-160、GJB 150 菌种",
-              p3: "结冰：符合标准 RTCA DO-160 工况"
+              p3: "结冰：符合标准 RTCA DO-160G 工况"
             },
             examples: {
               e1: "中性/酸性盐雾",
@@ -391,7 +391,7 @@ export const testingTranslations = {
           i2: {
             field: "冲击/坠撞试验",
             standards: {
-              s1: "DO-160",
+              s1: "RTCA DO-160G",
               s2: "GJB 150.15A/18A",
               s3: "GB/T 2423.5/.6"
             },
@@ -506,7 +506,7 @@ export const testingTranslations = {
             },
             paras: {
               p1: "Dust-Blowing Speed: 1.5~8.9m/s",
-              p2: "Dust Concentration: 0~11g/m³",
+              p2: "Dust Concentration: 0~16g/m³",
               p3: "Sand-Blowing Speed: 18.0~29m/s",
               p4: "Sand-Blowing Concentration: 0~3g/m³"
             },
@@ -545,7 +545,7 @@ export const testingTranslations = {
             paras: {
               p1: "Salt Spray: Neutral Salt Spray, Acidic Salt Spray",
               p2: "Mold: DO-160 and GJB 150 compliant strains",
-              p3: "Icing: DO-160 compliant conditions"
+              p3: "Icing: RTCA DO-160G compliant conditions"
             },
             examples: {
               e1: "Neutral Salt Spray Test",

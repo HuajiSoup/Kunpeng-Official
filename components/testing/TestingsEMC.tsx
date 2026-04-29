@@ -74,6 +74,7 @@ const getEmcTests = (t: (key: string) => string): TestItem[] => [
       t("testing.emc.items.i4.paras.p3"),
       t("testing.emc.items.i4.paras.p4"),
       t("testing.emc.items.i4.paras.p5"),
+      t("testing.emc.items.i4.paras.p6")
     ],
     standards: [
       t("testing.emc.items.i4.standards.s1"), 
