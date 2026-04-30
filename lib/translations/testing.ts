@@ -38,11 +38,10 @@ export const testingTranslations = {
               s4: "HB-6167 系列"
             },
             paras: {
-              p1: "箱体尺寸：1000*1000*1000mm",
-              p2: "温度范围：-70°C~+150°C",
-              p3: "温度变化速率：10°C/min",
-              p4: "温度冲击转换时间：≤5s",
-              p5: "湿度范围：20%RH~98%RH"
+              p1: "温度范围：-70°C ~ +180°C",
+              p2: "温度变化速率：15°C/min",
+              p3: "温度冲击转换时间：≤15s",
+              p4: "湿度范围：20%RH~98%RH"
             },
             examples: {
               e1: "高温/低温贮存",
@@ -135,7 +134,7 @@ export const testingTranslations = {
               s2: "GJB 150.13A"
             },
             paras: {
-              p1: "类型：垂直/水平本生灯法",
+              p1: "类型：垂直/水平/45°/60° 本生灯试验",
               p2: "火焰类型：符合航空标准"
             },
             examples: {
@@ -460,11 +459,10 @@ export const testingTranslations = {
               s4: "HB-6167 Series"
             },
             paras: {
-              p1: "Chamber Size: 1000*1000*1000mm",
-              p2: "Temperature Range: -70°C~+150°C",
-              p3: "Temperature Change Rate: 10°C/min",
-              p4: "Thermal Shock Transfer Time: ≤5s",
-              p5: "Humidity Range: 20%RH~98%RH"
+              p1: "Temperature Range: -70°C ~ +180°C",
+              p2: "Temperature Change Rate: 15°C/min",
+              p3: "Thermal Shock Transfer Time: ≤15s",
+              p4: "Humidity Range: 20%RH~98%RH"
             },
             examples: {
               e1: "High/Low Temperature Storage",
@@ -558,7 +556,7 @@ export const testingTranslations = {
               s2: "GJB 150.13A"
             },
             paras: {
-              p1: "Method: Vertical/Horizontal Bunsen burner",
+              p1: "Type: Vertical/Horizontal/45°/60° Bunsen burner test",
               p2: "Flame Type: Compliant with aviation standards"
             },
             examples: {

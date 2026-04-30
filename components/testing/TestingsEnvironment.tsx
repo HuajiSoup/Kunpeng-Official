@@ -16,7 +16,6 @@ const getEnvironmentTests = (t: (key: string) => string): TestItem[] => [
       t("testing.environment.items.i1.paras.p2"),
       t("testing.environment.items.i1.paras.p3"),
       t("testing.environment.items.i1.paras.p4"),
-      t("testing.environment.items.i1.paras.p5"),
     ],
     standards: [
       t("testing.environment.items.i1.standards.s1"), 
