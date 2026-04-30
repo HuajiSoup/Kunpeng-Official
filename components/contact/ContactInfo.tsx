@@ -21,6 +21,7 @@ const getContacts = (t: (key: string) => string) => [
     icon: Mail,
     lines: [
       t("contact.sections.contact.email.line1"),
+      t("contact.sections.contact.email.line2"),
     ],
   },
 ];

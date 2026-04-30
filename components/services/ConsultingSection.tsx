@@ -18,8 +18,11 @@ import {
 
 import { useLanguage } from "@/lib/LanguageContext";
 
-import { ItemBox } from "../ui/ItemBox";
-import { PageSectionTitle } from "../ui/PageSectionTitle";
+import { ItemBox } from "@/components/ui/ItemBox";
+import { PageSectionTitle } from "@/components/ui/PageSectionTitle";
+import ShadowBackground from "@/components/ui/ShadowBackground";
+
+import Background from "@/assets/background/bg-services-consult.jpg";
 
 const getAirworthinessItems = (t: (key: string) => string) => [
   {
@@ -120,14 +123,16 @@ export default function ConsultingSection() {
   const systemAndTrainingItems = getSystemAndTrainingItems(t);
 
   return (
-    <section id="consulting" className="py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12" data-anchor="consulting">
+    <section id="consulting" className="relative py-8 lg:py-10 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12" data-anchor="consulting">
       <PageSectionTitle 
         title={t("services.consulting.title")}
         subtitle={t("services.consulting.subtitle")}
         description={t("services.consulting.description")}
       />
 
-      <div>
+      <ShadowBackground img={Background} />
+
+      <div className="relative z-10">
         <h3 className="text-xl font-semibold text-gray-900 mb-5">
           {t("services.consulting.sections.airworthiness.title")}
         </h3>

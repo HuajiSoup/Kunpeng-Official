@@ -2,10 +2,10 @@
 
 import { useLanguage } from "@/lib/LanguageContext";
 
-import { PageSectionTitle } from "../ui/PageSectionTitle";
+import { PageSectionTitle } from "@/components/ui/PageSectionTitle";
+import ShadowBackground from "@/components/ui/ShadowBackground";
 import { TestItem, TestItemBox } from "./TestItemBox";
 
-import ShadowBackground from "./ShadowBackground";
 import Background from "@/assets/background/bg-testing-mechanical.jpg";
 
 const getMechanicalTests = (t: (key: string) => string): TestItem[] => [

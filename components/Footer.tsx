@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 import QrcodeImage from "@/assets/qrcode.jpg";
 import { useLanguage } from "@/lib/LanguageContext";
@@ -27,13 +27,13 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
                 <span>{t("footer.address")}</span>
               </div>
-              {/* <div className="flex items-center space-x-2 text-sm">
+              <div className="flex items-center space-x-2 text-sm">
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                <span>400-XXX-XXXX</span>
-              </div> */}
+                <span>18072706466</span>
+              </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Mail className="w-4 h-4 flex-shrink-0" />
-                <span>shenyubin@lr-avionics.com</span>
+                <span>wangyefeng@kpaero.cn</span>
               </div>
             </div>
           </div>

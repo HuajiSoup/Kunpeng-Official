@@ -29,8 +29,9 @@ export const contactTranslations = {
             line2: "+86 XXX-XXXX-XXXX"
           },
           email: {
-            title: "邮箱地址",
-            line1: "shenyubin@lr-avionics.com",
+            title: "邮箱 & 电话",
+            line1: "邮箱：wangyefeng@kpaero.cn",
+            line2: "电话：18072706466"
           },
           mapAlt: "公司位置地图"
         },
@@ -105,8 +106,9 @@ export const contactTranslations = {
             line2: "+86 XXX-XXXX-XXXX"
           },
           email: {
-            title: "Email",
-            line1: "shenyubin@lr-avionics.com"
+            title: "Email & Phone",
+            line1: "Email: wangyefeng@kpaero.cn",
+            line2: "Phone: 18072706466"
           },
           mapAlt: "Company Location Map"
         },
