@@ -1,5 +1,4 @@
 import { NewsContent } from "@/components/news/NewsContent";
-import NewsHero from "@/components/news/NewsHero";
 import { getNewsById, normalizeNewsItem } from "@/lib/api/http/getNews";
 
 interface NewsContentPageProps {
@@ -13,7 +12,6 @@ export default async function NewsContentPage({ params }: NewsContentPageProps) 
   const news = await getNewsById(id);
 
   return (<>
-    <NewsHero />
     {news ? <NewsContent news={normalizeNewsItem(news)} /> : (
       <div className="h-screen">
         <h2 className="text-4xl text-black text-center my-20">文章不存在！</h2>

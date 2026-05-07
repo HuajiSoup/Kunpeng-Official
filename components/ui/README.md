@@ -1,5 +1,6 @@
 # Aceternity UI Components - Light Mode Adaptation
 
+下面这些是ai跑的，但是现在已经删了很多同时加了很多了。
 这些组件已适配为支持浅色主题（Light Mode），同时保持高科技感。
 
 ## 组件列表

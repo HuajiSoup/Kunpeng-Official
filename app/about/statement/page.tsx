@@ -1,7 +1,7 @@
 export default function FairnessStatement() {
   return (<>
     <section className="relative pt-20 pb-16 bg-white scroll-mt-24 px-6 sm:px-8 lg:px-12 container min-h-screen mx-auto w-full lg:w-3/5 border-x-gray-100 border-x-2">
-      <h2 className="text-5xl font-semibold text-black text-center text-8 my-5">公正性声明</h2>
+      <h2 className="text-4xl font-semibold leading-tight text-black text-center text-8 my-5">公正性声明</h2>
 
       <article className="text-black prose-base">
         　本网站由浙江鲲鹏航空技术测试验证有限公司（以下简称“鲲鹏”）创建并运行维护。任何人进入本网站、阅读任何内容、进行用户注册、从本网站下载任何材料或使用本网站提供的资料，即表示同意遵守下列条款。若不同意遵守这些条款，切勿使用本网站。鲲鹏保留随时更正、修改、更新本声明的权利。<br />
