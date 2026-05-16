@@ -120,8 +120,10 @@ export default function Footer() {
             <div className="text-xs text-gray-400">
               {t("footer.copyright")}
             </div>
-            <div className="text-xs text-gray-400">
-              {"示例：浙公网安备 33010602009975号浙B2-20080101-4"}
+            <div className="text-sm text-gray-400 hover:text-white">
+              <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">
+                {"浙ICP备 2026032768 号"}
+              </a>
             </div>
           </div>
         </div>
