@@ -35,7 +35,7 @@ export const testingTranslations = {
               s1: "RTCA DO-160G",
               s2: "GJB 150.3A/4A/9A",
               s3: "GB/T 2423.1/2/3/4",
-              s4: "HB-6167 系列"
+              s4: "HB 6167 系列"
             },
             paras: {
               p1: "温度范围：-70°C ~ +180°C",
@@ -194,13 +194,13 @@ export const testingTranslations = {
               s2: "IEC61000-6-2",
               s3: "EN55035",
               s4: "CISPR35",
-              s5: "GB/T17799.1",
-              s6: "GB/T17799.2",
-              s7: "GB/T38909",
-              s8: "GB42590",
-              s9: "GB/T38058",
-              s10: "GB/T38997",
-              s11: "GB/T9254.2"
+              s5: "GB/T 17799.1",
+              s6: "GB/T 17799.2",
+              s7: "GB/T 38909",
+              s8: "GB 42590",
+              s9: "GB/T 38058",
+              s10: "GB/T 38997",
+              s11: "GB/T 9254.2"
             },
             paras: {
               p1: "传导发射CE：150kHz-30MHz",
@@ -214,17 +214,17 @@ export const testingTranslations = {
           i4: {
             field: "汽车电子EMC",
             standards: {
-              s1: "GB/T18655",
-              s2: "GB/T33014.2",
-              s3: "GB/T33014.4",
-              s4: "GB/T33014.8",
-              s5: "GB/T33014.9"
+              s1: "GB/T 18655",
+              s2: "GB/T 33014.2",
+              s3: "GB/T 33014.4",
+              s4: "GB/T 33014.8",
+              s5: "GB/T 33014.9"
             },
             paras: {
               p1: "传导发射CE：150kHz-245MHz",
               p2: "辐射发射RE：150kHz-6GHz",
               p3: "大电流注入BCI：1MHz-400MHz",
-              p4: "磁场抗扰度：DC&15Hz-150kHz",
+              p4: "磁场抗扰度MFI：DC&15Hz-150kHz",
               p5: "辐射抗扰度RI：80MHz-6GHz",
               p6: "便携式发射机：26MHz-5.85GHz"
             },
@@ -367,7 +367,7 @@ export const testingTranslations = {
             standards: {
               s1: "RTCA DO-160G",
               s2: "GJB 150.16A",
-              s3: "GB/T 2423.10/.56"
+              s3: "GB/T 2423.10/.56/.58"
             },
             paras: {
               p1: "推力：50kN",
@@ -389,7 +389,7 @@ export const testingTranslations = {
             standards: {
               s1: "RTCA DO-160G",
               s2: "GJB 150.15A/18A",
-              s3: "GB/T 2423.5/.6"
+              s3: "GB/T 2423.5"
             },
             paras: {
               p1: "冲击台面：650×800mm",
@@ -456,7 +456,7 @@ export const testingTranslations = {
               s1: "RTCA DO-160G",
               s2: "GJB 150.3A/4A/9A",
               s3: "GB/T 2423.1/2/3/4",
-              s4: "HB-6167 Series"
+              s4: "HB 6167 Series"
             },
             paras: {
               p1: "Temperature Range: -70°C ~ +180°C",
@@ -626,13 +626,13 @@ export const testingTranslations = {
               s2: "IEC61000-6-2",
               s3: "EN55035",
               s4: "CISPR35",
-              s5: "GB/T17799.1",
-              s6: "GB/T17799.2",
-              s7: "GB/T38909",
-              s8: "GB42590",
-              s9: "GB/T38058",
-              s10: "GB/T38997",
-              s11: "GB/T9254.2"
+              s5: "GB/T 17799.1",
+              s6: "GB/T 17799.2",
+              s7: "GB/T 38909",
+              s8: "GB 42590",
+              s9: "GB/T 38058",
+              s10: "GB/T 38997",
+              s11: "GB/T 9254.2"
             },
             paras: {
               p1: "Conducted Emissions CE: 150kHz-30MHz",
@@ -646,11 +646,11 @@ export const testingTranslations = {
           i4: {
             field: "Automotive EMC",
             standards: {
-              s1: "GB/T18655",
-              s2: "GB/T33014.2",
-              s3: "GB/T33014.4",
-              s4: "GB/T33014.8",
-              s5: "GB/T33014.9"
+              s1: "GB/T 18655",
+              s2: "GB/T 33014.2",
+              s3: "GB/T 33014.4",
+              s4: "GB/T 33014.8",
+              s5: "GB/T 33014.9"
             },
             paras: {
               p1: "Conducted Emissions CE: 150kHz-245MHz",
